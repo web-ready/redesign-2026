@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Page title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/tailwind/tailwind.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="shuffle-for-tailwind.png">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js" defer></script>
+</head>
+<body class="antialiased bg-body text-body font-body">
+    <div class="">
+                
+      <section class="px-4 md:px-24 bg-black ">
+        <div x-data="{ mobileNavOpen: false }">
+          <nav class="relative bg-black p-4">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <a href="#" class="inline-block">
+                  <img class="h-14" src="images/svgviewer-output.svg" alt="Oasis of Change">
+                </a>
+              </div>
+              <ul class="hidden xl:flex items-center gap-2">
+                <li>
+                  <a href="#" class="inline-block py-2 px-3 hover:bg-gray-900 transition duration-200 rounded-full">
+                    <div class="flex items-center gap-2">
+                      <span class="text-white text-sm font-medium tracking-tight">Products</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewbox="0 0 17 16" fill="none">
+                        <path d="M12.848 6L8.18132 10.6667L3.51465 6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </div>
+                  </a>
+                </li>
+                <li><a href="#" class="inline-block py-2 px-3 hover:bg-gray-900 transition duration-200 text-white text-sm font-medium tracking-tight rounded-full">Case Studies</a></li>
+                <li><a href="#" class="inline-block py-2 px-3 hover:bg-gray-900 transition duration-200 text-white text-sm font-medium tracking-tight rounded-full">Support</a></li>
+                <li>
+                  <a href="#" class="inline-block py-2 px-3 hover:bg-gray-900 transition duration-200 rounded-full">
+                    <div class="flex items-center gap-2">
+                      <span class="text-white text-sm font-medium tracking-tight">Resources</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewbox="0 0 17 16" fill="none">
+                        <path d="M12.848 6L8.18132 10.6667L3.51465 6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+              <a href="#" class="rounded-full border border-gray-200 bg-white px-5 py-3 h-14 hover:bg-gray-50 focus:ring-4 focus:ring-gray-200 hidden xl:inline-flex items-center justify-center gap-2 transition duration-200">
+                <span class="text-sm font-semibold tracking-tight">Get A Free Consultation</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none">
+                  <path d="M14 6.66666H7.33333C4.38781 6.66666 2 9.05447 2 12V13.3333M14 6.66666L10 10.6667M14 6.66666L10 2.66666" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </a>
+              <a x-on:click.prevent="mobileNavOpen = !mobileNavOpen" href="#" class="xl:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="navbar-burger text-white" width="51" height="51" viewbox="0 0 56 56" fill="none">
+                  <rect width="56" height="56" rx="28" fill="currentColor"></rect>
+                  <path d="M37 32H19M37 24H19" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </a>
+            </div>
+          </nav>
+          <div :class="{'hidden': !mobileNavOpen}" class="hidden fixed top-0 left-0 bottom-0 w-5/6 max-w-xs z-50">
+            <div x-on:click.prevent="mobileNavOpen = !mobileNavOpen" class="fixed inset-0 bg-black opacity-20"></div>
+            <nav class="relative p-8 w-full h-full bg-white overflow-y-auto">
+              <div class="flex items-center justify-between">
+                <a href="#" class="inline-block">
+                  <img class="h-7" src="images/svgviewer-output.svg" alt="Oasis of Change">
+                </a>
+                <a x-on:click.prevent="mobileNavOpen = !mobileNavOpen" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
+                    <path d="M6 18L18 6M6 6L18 18" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </a>
+              </div>
+              <ul class="flex flex-col gap-12 py-12">
+                <li>
+                  <a href="#" class="inline-block py-2 px-3 hover:bg-gray-50 transition duration-200 rounded-full">
+                    <div class="flex items-center gap-2">
+                      <span class="text-sm font-medium tracking-tight">Products</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewbox="0 0 17 16" fill="none">
+                        <path d="M12.848 6L8.18132 10.6667L3.51465 6" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </div>
+                  </a>
+                </li>
+                <li><a href="#" class="inline-block py-2 px-3 hover:bg-gray-50 transition duration-200 text-sm font-medium tracking-tight rounded-full">Case Studies</a></li>
+                <li><a href="#" class="inline-block py-2 px-3 hover:bg-gray-50 transition duration-200 text-sm font-medium tracking-tight rounded-full">Support</a></li>
+                <li>
+                  <a href="#" class="inline-block py-2 px-3 hover:bg-gray-50 transition duration-200 rounded-full">
+                    <div class="flex items-center gap-2">
+                      <span class="text-sm font-medium tracking-tight">Resources</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewbox="0 0 17 16" fill="none">
+                        <path d="M12.848 6L8.18132 10.6667L3.51465 6" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+              <div class="flex flex-col gap-4">
+                <a href="#" class="rounded-full bg-black px-5 py-3 h-14 hover:bg-orange-600 focus:bg-orange-500 focus:ring-4 focus:ring-orange-200 inline-flex items-center justify-center gap-2 transition duration-200">
+                  <span class="text-white text-sm font-semibold tracking-tight">Get A Free Consultation</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none">
+                    <path d="M14 6.66666H7.33333C4.38781 6.66666 2 9.05447 2 12V13.3333M14 6.66666L10 10.6667M14 6.66666L10 2.66666" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </a>
+              </div>
+            </nav>
+          </div>
+        </div>
+        <div class="pt-20">
+          <div class="flex flex-wrap items-end -m-4 mb-18">
+            <div class="w-full lg:w-1/2 p-4">
+              <h1 class="font-heading tracking-tight text-white text-5xl md:text-7xl font-medium max-w-md md:max-w-2xl">Making the internet sustainable</h1>
+            </div>
+            <div class="w-full lg:w-1/2 p-4">
+              <p class="text-gray-200 text-xl max-w-xl">Oasis of Change is a not-for-profit dedicated to solving the internet's carbon crisis. Through our Web-Ready initiative, we build optimized, low-carbon websites while planting trees and educating others about digital sustainability.</p>
+            </div>
+          </div>
+          <div class="bg-black relative overflow-hidden py-16">
+            <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full">
+              <div class="flex items-center gap-16 animate-ticker animation-linear text-white text-4xl">
+                <p class="tracking-tight font-medium whitespace-nowrap">Award-Winning Impact</p>
+                <p class="tracking-tight font-medium whitespace-nowrap">Performance + Planet</p>
+                <p class="tracking-tight font-medium whitespace-nowrap">Up to 99% Carbon Reduction (so far)</p>
+                <p class="tracking-tight font-medium whitespace-nowrap">9,000+ Trees Planted</p>
+                <p class="tracking-tight font-medium whitespace-nowrap">20+ Countries</p>
+                <p class="tracking-tight font-medium whitespace-nowrap">Youth-Founded</p>
+                <p class="tracking-tight font-medium whitespace-nowrap">Vancouver Based</p>
+                <p class="tracking-tight font-medium whitespace-nowrap">Not-For-Profit</p>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <img class="w-full rounded-tl-2xl rounded-tr-2xl" style="height:500px;" src="images/photo-1508514177221-188b1cf16e9d.avif" alt="">
+            <div class="absolute -top-24 right-1/4"></div>
+          </div>
+        </div>
+      </section>
+                
+      <section class="bg-black py-56 relative overflow-hidden">
+        <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full">
+          <div class="flex flex-col justify-center h-full">
+            
+          </div>
+        </div>
+        <div class="relative z-50">
+          <div class="container mx-auto px-4">
+            <div class="flex flex-wrap -m-4">
+              <div class="w-full lg:w-1/3 p-4">
+                <h2 class="font-heading tracking-tight text-7xl font-medium text-center mb-6 text-white">$850k</h2>
+                <p class="text-center tracking-tight text-white text-xl font-semibold mb-4">In-Kind Technology Grants Secured</p>
+                <p class="tracking-tight text-gray-300 text-center max-w-xs mx-auto">It is a long established fact that a reader will be that the distracted by the  readable content of a page when looking.</p>
+              </div>
+              <div class="w-full lg:w-1/3 p-4">
+                <h2 class="font-heading tracking-tight text-7xl font-medium text-center mb-6 text-white">9k+</h2>
+                <p class="text-center tracking-tight text-white text-xl font-semibold mb-4">Trees Planted</p>
+                <p class="tracking-tight text-gray-300 text-center max-w-xs mx-auto">It is a long established fact that a reader will be that the distracted by the  readable content of a page when looking.</p>
+              </div>
+              <div class="w-full lg:w-1/3 p-4">
+                <h2 class="font-heading tracking-tight text-7xl font-medium text-center mb-6 text-white">20+</h2>
+                <p class="text-center tracking-tight text-white text-xl font-semibold mb-4">Countries Impacted</p>
+                <p class="tracking-tight text-gray-300 text-center max-w-xs mx-auto">It is a long established fact that a reader will be that the distracted by the  readable content of a page when looking.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+                
+      <div class="py-20 bg-white">
+        <div class="px-8 md:px-24 flex flex-wrap -m-4">
+          <div class="w-full lg:w-1/3 p-4">
+            <div class="bg-gray-50 rounded-2xl p-10 h-full">
+              <div class="bg-white rounded-full w-20 h-20 flex items-center justify-center mb-10">
+                <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewbox="0 0 38 38" fill="none">
+                  <path d="M19 6.89411C20.1605 5.57928 21.8584 4.75 23.75 4.75C27.2478 4.75 30.0833 7.58553 30.0833 11.0833C30.0833 14.5811 27.2478 17.4167 23.75 17.4167C21.8584 17.4167 20.1605 16.5874 19 15.2726M23.75 33.25H4.75V31.6667C4.75 26.42 9.00329 22.1667 14.25 22.1667C19.4967 22.1667 23.75 26.42 23.75 31.6667V33.25ZM23.75 33.25H33.25V31.6667C33.25 26.42 28.9967 22.1667 23.75 22.1667C22.0196 22.1667 20.3973 22.6293 19 23.4376M20.5833 11.0833C20.5833 14.5811 17.7478 17.4167 14.25 17.4167C10.7522 17.4167 7.91667 14.5811 7.91667 11.0833C7.91667 7.58553 10.7522 4.75 14.25 4.75C17.7478 4.75 20.5833 7.58553 20.5833 11.0833Z" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+              <p class="tracking-tight text-xl font-semibold mb-4">Website Optimization</p>
+              <p class="tracking-tight text-gray-700 max-w-xs">We turn bloated websites into lean, efficient ones by converting images to web-ready formats, removing unused code, and cutting your digital carbon footprint by up to 99%.</p>
+            </div>
+          </div>
+          <div class="w-full lg:w-1/3 p-4">
+            <div class="bg-gray-50 rounded-2xl p-10 h-full">
+              <div class="bg-white rounded-full w-20 h-20 flex items-center justify-center mb-10">
+                <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewbox="0 0 38 38" fill="none">
+                  <path d="M14.25 19H23.75M14.25 25.3333H23.75M26.9166 33.25H11.0833C9.33439 33.25 7.91663 31.8322 7.91663 30.0833V7.91667C7.91663 6.16776 9.33439 4.75 11.0833 4.75H19.9275C20.3474 4.75 20.7501 4.91682 21.047 5.21375L29.6195 13.7863C29.9165 14.0832 30.0833 14.4859 30.0833 14.9058V30.0833C30.0833 31.8322 28.6655 33.25 26.9166 33.25Z" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+              <p class="tracking-tight text-xl font-semibold mb-4">Carbon Auditing</p>
+              <p class="tracking-tight text-gray-700 max-w-xs">Get a comprehensive analysis of your website's environmental impact. We measure your emissions, identify inefficiencies, and provide a roadmap to a cleaner digital presence.</p>
+            </div>
+          </div>
+          <div class="w-full lg:w-1/3 p-4">
+            <div class="bg-gray-50 rounded-2xl p-10 h-full">
+              <div class="bg-white rounded-full w-20 h-20 flex items-center justify-center mb-10">
+                <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewbox="0 0 38 38" fill="none">
+                  <path d="M19 3.75V7.91667M19 30.0833V34.25M7.91667 19H3.75M34.25 19H30.0833M29.0104 29.0104L26.125 26.125M26.125 11.875L29.0104 8.98959M8.98959 29.0104L11.875 26.125M11.875 11.875L8.98959 8.98959M25.3333 19C25.3333 22.4978 22.4978 25.3333 19 25.3333C15.5023 25.3333 12.6667 22.4978 12.6667 19C12.6667 15.5023 15.5023 12.6667 19 12.6667C22.4978 12.6667 25.3333 15.5023 25.3333 19Z" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+              <p class="tracking-tight text-xl font-semibold mb-4">Real Impact</p>
+              <p class="tracking-tight text-gray-700 max-w-xs">We plant trees for every project we complete. So far we've planted over 9,000 trees across 20+ countries, turning your website improvements into lasting environmental change.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+                
+      <section class="pt-32 pb-48 px-8 md:px-24 bg-[#062113]">
+        <div class="flex flex-wrap items-center -m-4">
+          <div class="w-full lg:w-1/2 p-4 flex justify-center lg:justify-start">
+            <img class="w-full max-w-md lg:max-w-lg h-auto object-contain" src="images/logo-web-ready.svg" alt="Web-Ready logo">
+          </div>
+          <div class="w-full lg:w-1/2 p-4">
+            <div class="pt-8 lg:pt-14">
+              <h1 class="font-heading text-4xl font-medium tracking-tight text-white mb-6">Our Programs</h1>
+              <div class="max-w-xl space-y-4">
+                <p class="text-white/80 text-lg tracking-tight leading-relaxed">
+                  Oasis of Change is the founding nonprofit behind several initiatives that make the internet more sustainable and more accessible.
+                </p>
+                <p class="text-white/70 tracking-tight leading-relaxed">
+                  These programs are independently branded platforms, but all are projects of Oasis of Change.
+                </p>
+              </div>
+              <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-3 xl:mt-12">
+                <a href="#" target="_blank" rel="noopener" class="group rounded-2xl bg-white/5 border border-white/10 px-5 py-5 flex flex-col justify-between hover:bg-white/10 hover:border-white/30 transition duration-200">
+                  <div>
+                    <p class="text-xs font-semibold tracking-[0.16em] uppercase text-emerald-300 mb-2">Low‑Carbon Web Studio</p>
+                    <p class="text-lg font-semibold tracking-tight text-white mb-2">Web‑Ready</p>
+                    <p class="text-sm tracking-tight text-white/80">
+                      Our flagship program for designing and rebuilding low‑carbon, high‑performance websites for mission‑driven organizations.
+                    </p>
+                  </div>
+                  <div class="mt-4 inline-flex items-center text-xs font-semibold tracking-tight text-emerald-300">
+                    Visit site
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-1" width="14" height="14" viewbox="0 0 16 16" fill="none">
+                      <path d="M14 6.66669H7.33333C4.38781 6.66669 2 9.0545 2 12V13.3334M14 6.66669L10 10.6667M14 6.66669L10 2.66669" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </a>
+                <a href="#" target="_blank" rel="noopener" class="group rounded-2xl bg-white/5 border border-white/10 px-5 py-5 flex flex-col justify-between hover:bg-white/10 hover:border-white/30 transition duration-200">
+                  <div>
+                    <p class="text-xs font-semibold tracking-[0.16em] uppercase text-emerald-300 mb-2">Grant &amp; Tool Access</p>
+                    <p class="text-lg font-semibold tracking-tight text-white mb-2">Web‑Ready Access Platform</p>
+                    <p class="text-sm tracking-tight text-white/80">
+                      A platform that helps not‑for‑profits unlock technology grants, credits, and tools they can use to grow their impact.
+                    </p>
+                  </div>
+                  <div class="mt-4 inline-flex items-center text-xs font-semibold tracking-tight text-emerald-300">
+                    Visit site
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-1" width="14" height="14" viewbox="0 0 16 16" fill="none">
+                      <path d="M14 6.66669H7.33333C4.38781 6.66669 2 9.0545 2 12V13.3334M14 6.66669L10 10.6667M14 6.66669L10 2.66669" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </a>
+                <a href="#" target="_blank" rel="noopener" class="group rounded-2xl bg-white/5 border border-white/10 px-5 py-5 flex flex-col justify-between hover:bg-white/10 hover:border-white/30 transition duration-200">
+                  <div>
+                    <p class="text-xs font-semibold tracking-[0.16em] uppercase text-emerald-300 mb-2">Research &amp; Advocacy</p>
+                    <p class="text-lg font-semibold tracking-tight text-white mb-2">V‑C‑A‑S‑S‑E</p>
+                    <p class="text-sm tracking-tight text-white/80">
+                      A youth‑led initiative focused on research, education, and advocacy around climate‑aligned digital infrastructure.
+                    </p>
+                  </div>
+                  <div class="mt-4 inline-flex items-center text-xs font-semibold tracking-tight text-emerald-300">
+                    Visit site
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-1" width="14" height="14" viewbox="0 0 16 16" fill="none">
+                      <path d="M14 6.66669H7.33333C4.38781 6.66669 2 9.0545 2 12V13.3334M14 6.66669L10 10.6667M14 6.66669L10 2.66669" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+                
+      <section class="px-8 md:px-24 py-32 ">
+        <div class="flex flex-wrap items-center -m-4">
+          <div class="w-full lg:w-1/2 p-4">
+            <h1 class="font-heading tracking-tight text-4xl md:text-6xl font-medium max-w-sm md:max-w-xl mb-4">Founded by a Pioneer in Digital Sustainability</h1>
+            <div class="max-w-xl">
+              <p class="tracking-tight text-gray-700 text-lg mb-6">Gabriel Dalton taught himself to code at 10 years old and founded Oasis of Change to tackle the digital world’s carbon problem.</p>
+      
+              <p class="tracking-tight text-gray-700 text-lg mb-6">Now one of the only specialists in Canada and globally focused on sustainable web development, his work earned him the youth Impact &amp; Innovation Award at the 2025 Vancouver Award Ceremony.</p> </div>
+            <div class="flex flex-wrap items-center gap-6"><a href="#" class="bg-black h-16 rounded-full px-6 py-4 inline-flex items-center justify-center hover:bg-orange-600 focus:bg-orange-500 focus:ring-4 focus:ring-orange-200 transition duration-200 tracking-tight font-bold text-white">Get in Touch</a></div>
+          </div>
+          <div class="w-full lg:w-1/2 p-4">
+            <img class="lg:ml-auto object-cover" style="height:535px;" src="images/Gabriel-Dalton.webp" alt="">
+          </div>
+        </div>
+      </section>
+                
+      <div class="pt-20 pb-32 overflow-hidden bg-black">
+        
+        <div class="container mx-auto px-4">
+          <div class="flex flex-wrap -m-4">
+            <div class="w-full lg:w-1/3 p-4">
+              <div class="flex flex-col items-start justify-between gap-8 h-full">
+                <img class="h-12 mb-24" src="consulty-assets/logos/consulty-logo3.svg" alt="">
+                <p class="tracking-tight text-gray-200 max-w-sm">Consulty gives you the blocks &amp; components you need to create a truly professional website, landing page or admin panel for your SaaS.</p>
+              </div>
+            </div>
+            <div class="w-full lg:w-2/3 p-4">
+              <div class="flex flex-wrap lg:justify-end gap-24">
+                <div>
+                  <p class="tracking-tight text-gray-600 font-medium mb-6">Platform</p>
+                  <ul class="flex flex-col gap-6">
+                    <li>
+                      <a href="#" class="tracking-tight text-gray-100 hover:text-orange-500 transition duration-200">Services</a>
+                    </li>
+                    <li>
+                      <a href="#" class="tracking-tight text-gray-100 hover:text-orange-500 transition duration-200">Book A Call</a>
+                    </li>
+                    <li>
+                      <a href="#" class="tracking-tight text-gray-100 hover:text-orange-500 transition duration-200">Pricing</a>
+                    </li>
+                    <li>
+                      <a href="#" class="tracking-tight text-gray-100 hover:text-orange-500 transition duration-200">Products</a>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="tracking-tight text-gray-600 font-medium mb-6">Company</p>
+                  <ul class="flex flex-col gap-6">
+                    <li>
+                      <a href="#" class="tracking-tight text-gray-100 hover:text-orange-500 transition duration-200">About</a>
+                    </li>
+                    <li>
+                      <a href="#" class="tracking-tight text-gray-100 hover:text-orange-500 transition duration-200">Our Mission</a>
+                    </li>
+                    <li>
+                      <div class="flex items-center flex-wrap gap-2">
+                        <a href="#" class="tracking-tight text-gray-100 hover:text-orange-500 transition duration-200">Careers</a>
+                        <span class="inline-block px-2 py-1 rounded-full bg-orange-100 tracking-tight text-gray-600 text-xs font-semibold">WE ARE HIRING</span>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="#" class="tracking-tight text-gray-100 hover:text-orange-500 transition duration-200">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="tracking-tight text-gray-600 font-medium mb-6">Resources</p>
+                  <ul class="flex flex-col gap-6">
+                    <li>
+                      <a href="#" class="tracking-tight text-gray-100 hover:text-orange-500 transition duration-200">Tutorials</a>
+                    </li>
+                    <li>
+                      <a href="#" class="tracking-tight text-gray-100 hover:text-orange-500 transition duration-200">Blog</a>
+                    </li>
+                    <li>
+                      <a href="#" class="tracking-tight text-gray-100 hover:text-orange-500 transition duration-200">Help Center</a>
+                    </li>
+                    <li>
+                      <a href="#" class="tracking-tight text-gray-100 hover:text-orange-500 transition duration-200">Support</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
+
