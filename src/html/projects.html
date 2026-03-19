@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Page title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/tailwind/tailwind.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="shuffle-for-tailwind.png">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js" defer></script>
+</head>
+<body class="antialiased bg-body text-body font-body">
+    <div class="">
+                
+      <section class="px-4 md:px-24 pt-8 bg-white ">
+        <div x-data="{ mobileNavOpen: false }">
+          <!-- NAV -->
+          <nav class="bg-black rounded-2xl px-6 py-4 border border-white/10">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <a href="#" class="inline-block">
+                  <img class="h-14" src="images/svgviewer-output.svg" alt="">
+                </a>
+              </div>
+              <ul class="hidden xl:flex items-center gap-2">
+                <li><a href="#" class="inline-block py-2 px-3 hover:bg-gray-900 transition duration-200 text-white text-sm font-medium tracking-tight rounded-full">Home</a></li>
+                <li>
+                  <a href="#" class="inline-block py-2 px-3 hover:bg-gray-900 transition duration-200 rounded-full">
+                    <div class="flex items-center gap-2">
+                      <span class="text-white text-sm font-medium tracking-tight">Projects</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewbox="0 0 17 16" fill="none">
+                        <path d="M12.848 6L8.18132 10.6667L3.51465 6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </div>
+                  </a>
+                </li>
+                <li><a href="#" class="inline-block py-2 px-3 hover:bg-gray-900 transition duration-200 text-white text-sm font-medium tracking-tight rounded-full">Case Studies</a></li>
+                <li>
+                  <a href="#" class="inline-block py-2 px-3 hover:bg-gray-900 transition duration-200 rounded-full">
+                    <div class="flex items-center gap-2">
+                      <span class="text-white text-sm font-medium tracking-tight">Company</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewbox="0 0 17 16" fill="none">
+                        <path d="M12.848 6L8.18132 10.6667L3.51465 6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+              <a href="#" class="rounded-full border border-gray-200 bg-white px-5 py-3 h-14 hover:bg-gray-50 focus:ring-4 focus:ring-gray-200 hidden xl:inline-flex items-center justify-center gap-2 transition duration-200">
+                <span class="text-sm font-semibold tracking-tight">Support Our Mission</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none">
+                  <path d="M14 6.66666H7.33333C4.38781 6.66666 2 9.05447 2 12V13.3333M14 6.66666L10 10.6667M14 6.66666L10 2.66666" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </a>
+              <a x-on:click.prevent="mobileNavOpen = !mobileNavOpen" href="#" class="xl:hidden">
+                <svg class="navbar-burger text-white" width="51" height="51" viewbox="0 0 56 56" fill="none">
+                  <rect width="56" height="56" rx="28" fill="currentColor"></rect>
+                  <path d="M37 32H19M37 24H19" stroke="black" stroke-width="1.5" stroke-linecap="round"></path>
+                </svg>
+              </a>
+            </div>
+          </nav>
+          <section class="px-8 md:px-24 py-32" x-data="{ activeProject: 1 }">
+            <div class="max-w-6xl mx-auto">
+              <div class="max-w-3xl mb-14">
+                <p class="text-sm font-semibold tracking-[0.18em] uppercase text-gray-500 mb-4">Our ecosystem</p>
+                <h2 class="font-heading text-4xl md:text-6xl font-medium tracking-tight text-black mb-6">Explore the projects built by Oasis of Change</h2>
+                <p class="text-lg text-gray-700 leading-8">From sustainable web development to digital access and emerging innovation, these initiatives reflect how Oasis of Change turns ideas into practical, mission-driven platforms with measurable impact.</p>
+              </div>
+              <!-- Project 1 -->
+              <div class="border-t border-gray-200">
+                <button @click="activeProject = activeProject === 1 ? null : 1" class="w-full text-left py-10 md:py-12 hover:bg-black/[0.02] transition duration-200">
+                  <div class="grid grid-cols-[auto_1fr_auto] items-center gap-6 md:gap-8">
+                    <p class="text-lg font-medium text-gray-500">01.</p>
+                    <h3 class="font-heading text-4xl md:text-6xl font-medium tracking-tight text-black leading-none">Web-Ready</h3>
+                    <span class="text-black transition-transform duration-300 ease-out inline-flex rotate-0 rotate-90" :class="activeProject === 1 ? 'rotate-90' : 'rotate-0'">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewbox="0 0 48 48" fill="none">
+                        <path d="M28 10L42 24M42 24L28 38M42 24L6 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+                <div x-show="activeProject === 1" x-collapse="" class="pb-12">
+                  <div class="pl-0 md:pl-[4.5rem] max-w-3xl">
+                    <p class="text-lg text-gray-700 leading-8 mb-6">Web-Ready is our sustainable web design initiative, helping organizations build faster, lower-carbon, and more accessible websites with measurable environmental impact.</p>
+                    <a href="#" class="inline-flex items-center gap-2 text-base font-semibold text-black hover:opacity-70 transition">
+                      <span>Explore Web-Ready</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewbox="0 0 16 16" fill="none">
+                        <path d="M14 6.66666H7.33333C4.38781 6.66666 2 9.05447 2 12V13.3333M14 6.66666L10 10.6667M14 6.66666L10 2.66666" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- Project 2 -->
+              <div class="border-t border-gray-200">
+                <button @click="activeProject = activeProject === 2 ? null : 2" class="w-full text-left py-10 md:py-12 hover:bg-black/[0.02] transition duration-200">
+                  <div class="grid grid-cols-[auto_1fr_auto] items-center gap-6 md:gap-8">
+                    <p class="text-lg font-medium text-gray-500">02.</p>
+                    <h3 class="font-heading text-4xl md:text-6xl font-medium tracking-tight text-black leading-none">WRA Platform</h3>
+                    <span class="text-black transition-transform duration-300 ease-out inline-flex rotate-0" :class="activeProject === 2 ? 'rotate-90' : 'rotate-0'">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewbox="0 0 48 48" fill="none">
+                        <path d="M28 10L42 24M42 24L28 38M42 24L6 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+                <div x-show="activeProject === 2" x-collapse="" class="pb-12" style="display: none;">
+                  <div class="pl-0 md:pl-[4.5rem] max-w-3xl">
+                    <p class="text-lg text-gray-700 leading-8 mb-6">The Web-Ready Access Platform helps nonprofits and mission-driven organizations access tools, resources, and in-kind technology support to strengthen their digital presence.</p>
+                    <a href="#" class="inline-flex items-center gap-2 text-base font-semibold text-black hover:opacity-70 transition">
+                      <span>Explore the platform</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewbox="0 0 16 16" fill="none">
+                        <path d="M14 6.66666H7.33333C4.38781 6.66666 2 9.05447 2 12V13.3333M14 6.66666L10 10.6667M14 6.66666L10 2.66666" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- Project 3 -->
+              <div class="border-t border-b border-gray-200">
+                <button @click="activeProject = activeProject === 3 ? null : 3" class="w-full text-left py-10 md:py-12 hover:bg-black/[0.02] transition duration-200">
+                  <div class="grid grid-cols-[auto_1fr_auto] items-center gap-6 md:gap-8">
+                    <p class="text-lg font-medium text-gray-500">03.</p>
+                    <div class="flex flex-wrap items-center gap-4">
+                      <h3 class="font-heading text-4xl md:text-6xl font-medium tracking-tight text-black leading-none">VCASSE</h3>
+                      <span class="inline-flex rounded-full px-3 py-1 text-sm font-medium bg-gray-100 text-gray-500">Coming Soon</span>
+                    </div>
+                    <span class="text-black transition-transform duration-300 ease-out inline-flex rotate-0" :class="activeProject === 3 ? 'rotate-90' : 'rotate-0'">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewbox="0 0 48 48" fill="none">
+                        <path d="M28 10L42 24M42 24L28 38M42 24L6 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+                <div x-show="activeProject === 3" x-collapse="" class="pb-12" style="display: none;">
+                  <div class="pl-0 md:pl-[4.5rem] max-w-3xl">
+                    <p class="text-lg text-gray-700 leading-8 mb-6">VCASSE is an upcoming AI-related initiative currently in development, focused on how intelligent systems can be applied to real-world sustainability and social-impact challenges.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+                
+      <div class="pt-20 pb-8 overflow-hidden bg-black">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-wrap -m-4">
+            <div class="w-full lg:w-1/3 p-4">
+              <div class="flex flex-col items-start justify-between gap-8 h-full">
+                <div class="flex flex-col items-start gap-4">
+                  <img class="h-16 mb-2" src="images/svgviewer-output.svg" alt="Oasis of Change logo">
+                  <p class="tracking-tight text-white max-w-sm">Building a more sustainable digital future through energy-efficient websites, transparent impact, and technology that supports communities and the planet.</p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full lg:w-2/3 p-4">
+              <div class="flex flex-wrap lg:justify-end gap-24">
+                <div>
+                  <p class="tracking-tight text-white font-semibold mb-6">General</p>
+                  <ul class="flex flex-col gap-6">
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Home</a></li>
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Blog</a></li>
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Case Studies</a></li>
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Tree Planting</a></li>
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Sustainability Statement</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="tracking-tight text-white font-semibold mb-6">Subsidiaries / Projects</p>
+                  <ul class="flex flex-col gap-6">
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Web-Ready</a></li>
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">WRA Platform</a></li>
+                    <li>
+                      <div class="flex items-center flex-wrap gap-2"><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">VCASSE</a></div>
+                    </li>
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Sustainable Technology Week</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="tracking-tight text-white font-semibold mb-6">Company</p>
+                  <ul class="flex flex-col gap-6">
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Our Story</a></li>
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Our Mission</a></li>
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Our Founder</a></li>
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Our Board</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-gray-800 mt-16 pt-6">
+            <p class="text-center text-gray-600 text-sm tracking-tight">
+              ©
+              <span class="copyright-year">2026</span>
+              Oasis of Change, Inc. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/853802.js?v=1773884543" data-custom-component-id="853802"></script>
+</body>
+</html>
+
