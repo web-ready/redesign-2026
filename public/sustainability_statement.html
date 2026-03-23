@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Page title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/tailwind/tailwind.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="shuffle-for-tailwind.png">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js" defer></script>
+</head>
+<body class="antialiased bg-body text-body font-body">
+    <div class="">
+                
+      <section class="px-4 md:px-24 pt-8 bg-white ">
+        <div x-data="{ mobileNavOpen: false }">
+          <!-- NAV -->
+          <nav class="bg-black rounded-2xl px-6 py-4 border border-white/10">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <a href="#" class="inline-block">
+                  <img class="h-14" src="images/svgviewer-output.svg" alt="">
+                </a>
+              </div>
+              <ul class="hidden xl:flex items-center gap-2">
+                <li><a href="#" class="inline-block py-2 px-3 hover:bg-gray-900 transition duration-200 text-white text-sm font-medium tracking-tight rounded-full">Home</a></li>
+                <li>
+                  <a href="#" class="inline-block py-2 px-3 hover:bg-gray-900 transition duration-200 rounded-full">
+                    <div class="flex items-center gap-2">
+                      <span class="text-white text-sm font-medium tracking-tight">Projects</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewbox="0 0 17 16" fill="none">
+                        <path d="M12.848 6L8.18132 10.6667L3.51465 6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </div>
+                  </a>
+                </li>
+                <li><a href="#" class="inline-block py-2 px-3 hover:bg-gray-900 transition duration-200 text-white text-sm font-medium tracking-tight rounded-full">Case Studies</a></li>
+                <li>
+                  <a href="#" class="inline-block py-2 px-3 hover:bg-gray-900 transition duration-200 rounded-full">
+                    <div class="flex items-center gap-2">
+                      <span class="text-white text-sm font-medium tracking-tight">Company</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewbox="0 0 17 16" fill="none">
+                        <path d="M12.848 6L8.18132 10.6667L3.51465 6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+              <a href="#" class="rounded-full border border-gray-200 bg-white px-5 py-3 h-14 hover:bg-gray-50 focus:ring-4 focus:ring-gray-200 hidden xl:inline-flex items-center justify-center gap-2 transition duration-200">
+                <span class="text-sm font-semibold tracking-tight">Support Our Mission</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none">
+                  <path d="M14 6.66666H7.33333C4.38781 6.66666 2 9.05447 2 12V13.3333M14 6.66666L10 10.6667M14 6.66666L10 2.66666" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </a>
+              <a x-on:click.prevent="mobileNavOpen = !mobileNavOpen" href="#" class="xl:hidden">
+                <svg class="navbar-burger text-white" width="51" height="51" viewbox="0 0 56 56" fill="none">
+                  <rect width="56" height="56" rx="28" fill="currentColor"></rect>
+                  <path d="M37 32H19M37 24H19" stroke="black" stroke-width="1.5" stroke-linecap="round"></path>
+                </svg>
+              </a>
+            </div>
+          </nav>
+          <div class="pt-10 md:pt-12 pb-16 md:pb-20">
+            <div class="max-w-5xl mx-auto">
+              <!-- Sustainability statement -->
+              <div class="mb-5 md:mb-6 bg-white border border-gray-200 rounded-[32px] p-7 md:p-10 lg:p-12">
+                <h2 class="font-heading tracking-tight text-black text-3xl md:text-4xl lg:text-[3.2rem] leading-[1.04] font-medium max-w-4xl mb-5">Sustainability Statement</h2>
+                <p class="text-gray-700 text-base md:text-lg leading-8 max-w-3xl" spellcheck="false">We think about digital sustainability in two parts: the infrastructure our websites are developed and hosted on, and the electricity behind the devices used to build them. We develop most of our websites on Amazon Web Services (AWS) infrastructure, and our team works from Vancouver, British Columbia, where the electricity system is powered by over 98% renewable energy.</p>
+              </div>
+              <!-- Two-part proof block -->
+              <div class="bg-black rounded-[32px] p-7 md:p-10 lg:p-12">
+                <p class="text-white/70 text-[11px] md:text-xs font-semibold tracking-[0.22em] uppercase mb-6">Two-Part Energy Context</p>
+                <div class="grid gap-4 md:gap-5">
+                  <!-- Part 1 -->
+                  <div class="rounded-[24px] border border-white/10 bg-white/5 p-5 md:p-6">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                      <div class="max-w-2xl">
+                        <p class="text-white text-xl md:text-2xl font-medium tracking-tight mb-2">1. Website infrastructure</p>
+                        <p class="text-sm md:text-base leading-7 text-white" spellcheck="false">We develop most of our websites on AWS infrastructure. Amazon reports that 100% of the electricity consumed across its global operations, including data centers, has been matched with renewable energy sources.<sup class="text-white/50 text-xs ml-0.5">1</sup></p>
+                      </div>
+                      <div class="shrink-0 rounded-[22px] border border-white/10 bg-black px-5 py-4 min-w-[160px]">
+                        <p class="text-white text-4xl md:text-5xl font-medium tracking-tight leading-none mb-2">100%</p>
+                        <p class="text-white/65 text-sm leading-6">renewable electricity matched</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Part 2 -->
+                  <div class="rounded-[24px] border border-white/10 bg-white/5 p-5 md:p-6">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                      <div class="flex items-start gap-4 max-w-2xl">
+                        <div>
+                          <p class="text-white text-xl md:text-2xl font-medium tracking-tight mb-2">2. Devices used to build the work</p>
+                          <p class="text-sm md:text-base leading-7 text-white" spellcheck="false">Because our team is based in Vancouver, our day-to-day workstations run within British Columbia's electricity system. BC Hydro states that over 98% of the power it generates comes from clean, renewable sources, primarily hydroelectricity.<sup class="text-white/50 text-xs ml-0.5">2</sup></p>
+                        </div>
+                      </div>
+                      <div class="shrink-0 rounded-[22px] border border-white/10 bg-black px-5 py-4 min-w-[160px]">
+                        <p class="text-white text-4xl md:text-5xl font-medium tracking-tight leading-none mb-2">98%+</p>
+                        <p class="text-white/65 text-sm leading-6">clean, renewable generation</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Footnotes -->
+                <div class="mt-7 pt-6 border-t border-white/10">
+                  <ol class="list-none space-y-3">
+                    <li class="flex gap-3 text-white/45 text-xs leading-5">
+                      <span class="shrink-0 font-medium text-white/55">We think about digital sustainability in two parts: the infrastructure our websites are developed and hosted on, and the electricity behind the devices used to build them. We develop most of our websites on Amazon Web Services (AWS) infrastructure, and our team works from Vancouver, British Columbia, where the electricity system is powered by over 98% renewable energy.</span>
+                      <span>Amazon Web Services. "Sustainability in the Cloud." AWS Energy &amp; Utilities. Amazon committed to matching 100% of electricity consumption with renewable energy sources across its global operations. Source: <a href="https://aws.amazon.com/energy-utilities/sustainability/" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 text-white/55 hover:text-white/80 transition-colors duration-150">aws.amazon.com/energy-utilities/sustainability</a></span>
+                    </li>
+                    <li class="flex gap-3 text-white/45 text-xs leading-5">
+                      <span class="shrink-0 font-medium text-white/55">2.</span>
+                      <span>BC Hydro. "Our Clean System." About BC Hydro — Sustainability. BC Hydro states that over 98% of the electricity it generates comes from clean, renewable sources, with the majority being hydroelectric. Source: <a href="https://www.bchydro.com/toolbar/about/sustainability/our-clean-system.html" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 text-white/55 hover:text-white/80 transition-colors duration-150">bchydro.com/toolbar/about/sustainability/our-clean-system.html</a></span>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+                
+      <div class="pt-20 pb-8 overflow-hidden bg-black">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-wrap -m-4">
+            <div class="w-full lg:w-1/3 p-4">
+              <div class="flex flex-col items-start justify-between gap-8 h-full">
+                <div class="flex flex-col items-start gap-4">
+                  <img class="h-16 mb-2" src="images/svgviewer-output.svg" alt="Oasis of Change logo">
+                  <p class="tracking-tight text-white max-w-sm">Building a more sustainable digital future through energy-efficient websites, transparent impact, and technology that supports communities and the planet.</p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full lg:w-2/3 p-4">
+              <div class="flex flex-wrap lg:justify-end gap-24">
+                <div>
+                  <p class="tracking-tight text-white font-semibold mb-6">General</p>
+                  <ul class="flex flex-col gap-6">
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Home</a></li>
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Blog</a></li>
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Case Studies</a></li>
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Tree Planting</a></li>
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Sustainability Statement</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="tracking-tight text-white font-semibold mb-6">Subsidiaries / Projects</p>
+                  <ul class="flex flex-col gap-6">
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Web-Ready</a></li>
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">WRA Platform</a></li>
+                    <li>
+                      <div class="flex items-center flex-wrap gap-2"><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">VCASSE</a></div>
+                    </li>
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Sustainable Technology Week</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="tracking-tight text-white font-semibold mb-6">Company</p>
+                  <ul class="flex flex-col gap-6">
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Our Story</a></li>
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Our Mission</a></li>
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Our Founder</a></li>
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Our Board</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-gray-800 mt-16 pt-6">
+            <p class="text-center text-gray-600 text-sm tracking-tight">
+              ©
+              <span class="copyright-year">2026</span>
+              Oasis of Change, Inc. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/853802.js?v=1774244725" data-custom-component-id="853802"></script>
+</body>
+</html>
+
