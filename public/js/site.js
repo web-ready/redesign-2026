@@ -34,26 +34,51 @@
       });
     }
 
+    function viewportCapPx() {
+      var top = panel.getBoundingClientRect().top;
+      var margin = 20;
+      return Math.max(200, window.innerHeight - top - margin);
+    }
+
+    function applyPanelHeight() {
+      if (!isOpen) return;
+      var cap = viewportCapPx();
+      var want = panel.scrollHeight;
+      panel.style.maxHeight = Math.min(want, cap) + 'px';
+    }
+
     function syncOuterPanelHeight() {
       if (!isOpen) return;
-      panel.style.maxHeight = panel.scrollHeight + 'px';
+      applyPanelHeight();
+      requestAnimationFrame(function () {
+        requestAnimationFrame(applyPanelHeight);
+      });
+      setTimeout(applyPanelHeight, 50);
+      setTimeout(applyPanelHeight, 240);
     }
 
     function open() {
       isOpen = true;
       panel.style.display = '';
+      panel.style.overflowX = 'hidden';
+      panel.style.overflowY = 'auto';
+      panel.style.overscrollBehavior = 'contain';
+      panel.style.setProperty('-webkit-overflow-scrolling', 'touch');
       void panel.offsetHeight;
-      panel.style.maxHeight = panel.scrollHeight + 'px';
+      applyPanelHeight();
       panel.style.opacity = '1';
       toggle.setAttribute('aria-expanded', 'true');
       toggle.setAttribute('aria-label', 'Close navigation menu');
       setToggleIcons(true);
+      syncOuterPanelHeight();
     }
 
     function close() {
       isOpen = false;
       panel.style.maxHeight = '0';
       panel.style.opacity = '0';
+      panel.style.overflowY = 'hidden';
+      panel.style.overflowX = 'hidden';
       toggle.setAttribute('aria-expanded', 'false');
       toggle.setAttribute('aria-label', 'Open navigation menu');
       setToggleIcons(false);
@@ -70,6 +95,10 @@
     panel.style.opacity = '0';
     panel.style.overflow = 'hidden';
     panel.style.transition = 'max-height 0.3s ease, opacity 0.25s ease';
+
+    window.addEventListener('resize', function () {
+      if (isOpen) syncOuterPanelHeight();
+    });
 
     if (menuIcon && closeIcon) {
       closeIcon.style.opacity = '0';

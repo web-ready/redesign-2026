@@ -194,22 +194,24 @@
                 <div class="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 mt-5 sm:mt-6"><a href="#what-we-are-building" class="js-scroll-to-ways min-h-14 rounded-full px-5 py-3 inline-flex items-center justify-center tracking-tight font-semibold text-sm transition duration-200 bg-transparent border border-white text-white hover:bg-white hover:text-black w-full sm:w-auto text-center">What We're Working On</a><a href="case-studies.html" class="min-h-14 rounded-full px-5 py-3 inline-flex items-center justify-center tracking-tight font-semibold text-sm transition duration-200 bg-white text-black hover:bg-gray-100 w-full sm:w-auto text-center">View Case Studies</a></div>
               </div>
             </div>
-            <!-- STATS: readable on small screens; marquee from md up -->
-            <div class="md:hidden mb-8 sm:mb-10">
-              <ul class="flex flex-wrap gap-2 sm:gap-3" role="list" aria-label="Highlights">
-                <li><span class="inline-block rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs sm:text-sm font-medium tracking-tight text-white">Up to 98% lower impact</span></li>
-                <li><span class="inline-block rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs sm:text-sm font-medium tracking-tight text-white">Award-winning team</span></li>
-                <li><span class="inline-block rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs sm:text-sm font-medium tracking-tight text-white">Not-for-profit</span></li>
-                <li><span class="inline-block rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs sm:text-sm font-medium tracking-tight text-white">17,000+ trees planted</span></li>
-                <li><span class="inline-block rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs sm:text-sm font-medium tracking-tight text-white">32 countries</span></li>
-                <li><span class="inline-block rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs sm:text-sm font-medium tracking-tight text-white">Youth-founded</span></li>
-                <li><span class="inline-block rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs sm:text-sm font-medium tracking-tight text-white">Vancouver-based</span></li>
-              </ul>
-            </div>
-            <div class="hidden md:block bg-black relative overflow-hidden py-8 sm:py-10 md:py-12 mb-10 md:mb-14 lg:mb-16">
-              <style>@keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } } .ticker-track { display: flex; width: max-content; animation: ticker-scroll 18s linear infinite; } .ticker-track:hover { animation-play-state: paused; } .ticker-group { display: flex; align-items: center; flex-shrink: 0; }</style>
-              <div class="ticker-track text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl">
-                <div class="ticker-group items-center gap-8 sm:gap-12 md:gap-16">
+            <!-- STATS TICKER (all breakpoints) -->
+            <div class="bg-black relative overflow-hidden py-5 sm:py-8 md:py-10 lg:py-12 mb-8 sm:mb-10 md:mb-14 lg:mb-16" role="region" aria-label="Impact highlights">
+              <style>
+                @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+                .ticker-track { display: flex; width: max-content; animation: ticker-scroll 18s linear infinite; }
+                @media (max-width: 639px) { .ticker-track { animation-duration: 26s; } }
+                @media (prefers-reduced-motion: reduce) { .ticker-track { animation-duration: 80s; } }
+                .ticker-track:hover { animation-play-state: paused; }
+                .ticker-group { display: flex; align-items: center; flex-shrink: 0; }
+                .ticker-fade { position: absolute; top: 0; bottom: 0; width: 2rem; z-index: 10; pointer-events: none; }
+                @media (min-width: 640px) { .ticker-fade { width: 3rem; } }
+                .ticker-fade-left { left: 0; background: linear-gradient(to right, #000 20%, transparent); }
+                .ticker-fade-right { right: 0; background: linear-gradient(to left, #000 20%, transparent); }
+              </style>
+              <div class="ticker-fade ticker-fade-left" aria-hidden="true"></div>
+              <div class="ticker-fade ticker-fade-right" aria-hidden="true"></div>
+              <div class="ticker-track text-white text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+                <div class="ticker-group items-center gap-6 sm:gap-8 md:gap-12 lg:gap-16">
                   <p class="tracking-tight font-medium whitespace-nowrap px-4 sm:px-6 md:px-8">Up to 98% Lower Carbon, Energy, and Water Impact</p>
                   <p class="tracking-tight font-medium whitespace-nowrap px-4 sm:px-6 md:px-8">Award-Winning Team</p>
                   <p class="tracking-tight font-medium whitespace-nowrap px-4 sm:px-6 md:px-8">Not-for-Profit</p>
@@ -218,7 +220,7 @@
                   <p class="tracking-tight font-medium whitespace-nowrap px-4 sm:px-6 md:px-8">Youth-Founded</p>
                   <p class="tracking-tight font-medium whitespace-nowrap px-4 sm:px-6 md:px-8">Vancouver-Based</p>
                 </div>
-                <div aria-hidden="true" class="ticker-group items-center gap-8 sm:gap-12 md:gap-16">
+                <div aria-hidden="true" class="ticker-group items-center gap-6 sm:gap-8 md:gap-12 lg:gap-16">
                   <p class="tracking-tight font-medium whitespace-nowrap px-4 sm:px-6 md:px-8">Up to 98% Lower Carbon, Energy, and Water Impact</p>
                   <p class="tracking-tight font-medium whitespace-nowrap px-4 sm:px-6 md:px-8">Award-Winning Team</p>
                   <p class="tracking-tight font-medium whitespace-nowrap px-4 sm:px-6 md:px-8">Not-for-Profit</p>
