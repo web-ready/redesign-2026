@@ -99,49 +99,69 @@
                 </svg>
               </a>
               <button data-mobile-toggle type="button" class="xl:hidden inline-flex items-center justify-center w-12 h-12 rounded-full border border-white/20 bg-white/5 text-white hover:bg-white/10 transition duration-200 shrink-0" aria-label="Open navigation menu" aria-expanded="false">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewbox="0 0 20 20" fill="none">
-                  <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-                </svg>
+                <div class="relative w-5 h-4">
+                  <span data-bar class="absolute left-0 top-0 block h-[2px] w-5 rounded-full bg-white transition-all duration-300 origin-center"></span>
+                  <span data-bar class="absolute left-0 top-[7px] block h-[2px] w-5 rounded-full bg-white transition-all duration-300 origin-center"></span>
+                  <span data-bar class="absolute left-0 top-[14px] block h-[2px] w-5 rounded-full bg-white transition-all duration-300 origin-center"></span>
+                </div>
               </button>
             </div>
             <!-- MOBILE NAV PANEL -->
             <div data-mobile-panel class="xl:hidden pt-4" style="display: none;">
               <div class="border-t border-white/10 pt-4 pb-2">
-                <div class="flex flex-col gap-2">
+                <div class="flex flex-col gap-1">
                   <a href="index.html" class="text-white text-sm font-medium tracking-tight py-3 px-3 rounded-xl hover:bg-gray-900 transition">Home</a>
-                  <div class="rounded-xl border border-white/10 px-3 py-3">
-                    <p class="text-white text-sm font-medium tracking-tight mb-3">Initiatives</p>
-                    <div class="mb-3">
-                      <p class="text-[10px] uppercase tracking-[0.18em] text-gray-500 mb-2">Subsidiaries</p>
-                      <div class="flex flex-col gap-1">
-                        <a href="web-ready.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Web-Ready</a>
-                        <a href="vcasse.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">VCASSE</a>
-                      </div>
-                    </div>
-                    <div class="mb-3 border-t border-white/10 pt-3">
-                      <p class="text-[10px] uppercase tracking-[0.18em] text-gray-500 mb-2">Projects</p>
-                      <div class="flex flex-col gap-1">
-                        <a href="sustainable-technology-week.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Sustainable Technology Week</a>
-                        <a href="wra_platform.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">WRA Platform</a>
-                      </div>
-                    </div>
-                    <div class="border-t border-white/10 pt-3">
-                      <p class="text-[10px] uppercase tracking-[0.18em] text-gray-500 mb-2">Accountability</p>
-                      <div class="flex flex-col gap-1">
-                        <a href="https://impact.oasisofchange.com" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Impact Dashboard</a>
+                  <div>
+                    <button data-nav-dropdown-toggle class="flex items-center justify-between w-full text-white text-sm font-medium tracking-tight py-3 px-3 rounded-xl hover:bg-gray-900 transition">
+                      <span>Initiatives</span>
+                      <svg data-nav-dropdown-chevron class="w-4 h-4 text-gray-400 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="none">
+                        <path d="M6 8l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </button>
+                    <div data-nav-dropdown-content class="overflow-hidden" style="display: none;">
+                      <div class="rounded-xl border border-white/10 px-3 py-3 ml-3 mb-2">
+                        <div class="mb-3">
+                          <p class="text-[10px] uppercase tracking-[0.18em] text-gray-500 mb-2">Subsidiaries</p>
+                          <div class="flex flex-col gap-1">
+                            <a href="web-ready.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Web-Ready</a>
+                            <a href="vcasse.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">VCASSE</a>
+                          </div>
+                        </div>
+                        <div class="mb-3 border-t border-white/10 pt-3">
+                          <p class="text-[10px] uppercase tracking-[0.18em] text-gray-500 mb-2">Projects</p>
+                          <div class="flex flex-col gap-1">
+                            <a href="sustainable-technology-week.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Sustainable Technology Week</a>
+                            <a href="wra_platform.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">WRA Platform</a>
+                          </div>
+                        </div>
+                        <div class="border-t border-white/10 pt-3">
+                          <p class="text-[10px] uppercase tracking-[0.18em] text-gray-500 mb-2">Accountability</p>
+                          <div class="flex flex-col gap-1">
+                            <a href="https://impact.oasisofchange.com" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Impact Dashboard</a>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                   <a href="case-studies.html" class="text-white text-sm font-medium tracking-tight py-3 px-3 rounded-xl hover:bg-gray-900 transition">Case Studies</a>
-                  <div class="rounded-xl border border-white/10 px-3 py-3">
-                    <p class="text-white text-sm font-medium tracking-tight mb-3">Company</p>
-                    <div class="flex flex-col gap-1">
-                      <a href="about.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Our Story</a>
-                      <a href="about.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Our Mission</a>
-                      <a href="gabriel-dalton.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Our Founder</a>
-                      <a href="about.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Our Board</a>
-                      <a href="annual_reports.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Annual Reports</a>
-                      <a href="news_release.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">News / Press</a>
+                  <div>
+                    <button data-nav-dropdown-toggle class="flex items-center justify-between w-full text-white text-sm font-medium tracking-tight py-3 px-3 rounded-xl hover:bg-gray-900 transition">
+                      <span>Company</span>
+                      <svg data-nav-dropdown-chevron class="w-4 h-4 text-gray-400 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="none">
+                        <path d="M6 8l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </button>
+                    <div data-nav-dropdown-content class="overflow-hidden" style="display: none;">
+                      <div class="rounded-xl border border-white/10 px-3 py-3 ml-3 mb-2">
+                        <div class="flex flex-col gap-1">
+                          <a href="about.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Our Story</a>
+                          <a href="about.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Our Mission</a>
+                          <a href="gabriel-dalton.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Our Founder</a>
+                          <a href="about.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Our Board</a>
+                          <a href="annual_reports.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Annual Reports</a>
+                          <a href="news_release.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">News / Press</a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <a href="get_involved.html" class="mt-2 rounded-full border border-gray-200 bg-white px-5 py-3 hover:bg-gray-50 transition inline-flex items-center justify-center gap-2">
@@ -388,17 +408,17 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8 md:mb-10 max-w-3xl">
                   <div class="rounded-2xl bg-gray-50 border border-gray-200 p-4 sm:p-5 flex flex-col items-center text-center">
                     <p class="text-sm text-gray-500 mb-2">Energy per visit</p>
-                    <p class="text-2xl font-semibold tracking-tight">â†“ 98.2%</p>
+                    <p class="text-2xl font-semibold tracking-tight">↓ 98.2%</p>
                     <p class="text-sm text-gray-600">From 0.0139 to 0.0002 kWh</p>
                   </div>
                   <div class="rounded-2xl bg-gray-50 border border-gray-200 p-4 sm:p-5 flex flex-col items-center text-center">
                     <p class="text-sm text-gray-500 mb-2">Carbon per visit</p>
-                    <p class="text-2xl font-semibold tracking-tight">â†“ 98.1%</p>
-                    <p class="text-sm text-gray-600">From 5.31g to 0.10g COâ‚‚</p>
+                    <p class="text-2xl font-semibold tracking-tight">↓ 98.1%</p>
+                    <p class="text-sm text-gray-600">From 5.31g to 0.10g CO₂</p>
                   </div>
                   <div class="rounded-2xl bg-gray-50 border border-gray-200 p-4 sm:p-5 flex flex-col items-center text-center sm:col-span-2 lg:col-span-1">
                     <p class="text-sm text-gray-500 mb-2">Water per visit</p>
-                    <p class="text-2xl font-semibold tracking-tight">â†“ 98.1%</p>
+                    <p class="text-2xl font-semibold tracking-tight">↓ 98.1%</p>
                     <p class="text-sm text-gray-600">From 2.95L to 0.06L</p>
                   </div>
                 </div>
@@ -426,7 +446,7 @@
               </h2>
       
               <p class="tracking-tight text-gray-700 text-base sm:text-lg leading-7 sm:leading-8 mb-5">
-                Gabriel Dalton taught himself to code at 10 years old and founded Oasis of Change to tackle the digital worldâ€™s carbon problem.
+                Gabriel Dalton taught himself to code at 10 years old and founded Oasis of Change to tackle the digital world’s carbon problem.
               </p>
       
               <p class="tracking-tight text-gray-700 text-base sm:text-lg leading-7 sm:leading-8 mb-8">
@@ -434,7 +454,7 @@
               </p>
       
               <a href="#" class="inline-flex min-h-14 px-6 py-3 rounded-full items-center justify-center text-center bg-black hover:bg-green-400 transition duration-200 font-semibold text-white w-full sm:w-auto">
-                View Gabrielâ€™s biography
+                View Gabriel’s biography
               </a>
             </div>
       
@@ -486,11 +506,11 @@
         <div class="flex flex-wrap items-center -m-4">
           <div class="w-full lg:w-1/2 p-4">
             <p class="tracking-tight text-gray-500 font-medium mb-4">Transparency &amp; Impact</p>
-            <h2 class="font-heading tracking-tight text-4xl md:text-6xl font-medium max-w-sm md:max-w-2xl mb-4">2025â€“2026 Tree Planting Complete</h2>
+            <h2 class="font-heading tracking-tight text-4xl md:text-6xl font-medium max-w-sm md:max-w-2xl mb-4">2025–2026 Tree Planting Complete</h2>
             <p class="tracking-tight text-gray-700 text-lg mb-7 max-w-2xl">Explore Oasis of Change's live transparency platform with verified planting data, project locations, partner contributions, and climate outcomes all in one place. See how every tree is counted across our global impact ecosystem.</p>
             <div class="flex flex-wrap gap-4 mb-8">
               <div class="rounded-2xl border border-gray-200 px-5 py-4 bg-white">
-                <p class="text-sm text-gray-500 tracking-tight mb-1">2025â€“2026 FY</p>
+                <p class="text-sm text-gray-500 tracking-tight mb-1">2025–2026 FY</p>
                 <p class="text-2xl font-semibold tracking-tight">7,144</p>
                 <p class="text-sm text-gray-600 tracking-tight">trees planted</p>
               </div>
@@ -505,14 +525,14 @@
                 <p class="text-sm text-gray-600 tracking-tight">trees planted</p>
               </div>
             </div>
-            <div class="flex flex-wrap items-center gap-6"><a href="https://impact.oasisofchange.com" target="_blank" rel="noopener noreferrer" class="bg-black h-16 rounded-full px-6 py-4 inline-flex items-center justify-center hover:bg-orange-600 focus:bg-orange-500 focus:ring-4 focus:ring-orange-200 transition duration-200 tracking-tight font-bold text-white">View Impact</a></div>
+            <div class="flex flex-wrap items-center gap-6"><a href="https://impact.oasisofchange.com" target="_blank" rel="noopener noreferrer" class="bg-black h-16 rounded-full px-6 py-4 inline-flex items-center justify-center hover:bg-green-400 focus:bg-green-400 focus:ring-4 focus:ring-green-200 transition duration-200 tracking-tight font-bold text-white">View Impact</a></div>
           </div>
           <div class="w-full lg:w-1/2 p-4">
             <figure class="lg:ml-auto">
               <img class="object-cover rounded-t-2xl w-full" style="height:535px;" src="https://impact.oasisofchange.com/assets/images/planting-sites/2024-2025-fy/Madagascar/Mangrove_Tree.jpg" alt="Mangrove tree planting site featured in Oasis of Change's transparency platform">
               <figcaption class="text-white text-sm tracking-tight px-4 py-2 rounded-b-2xl bg-black text-center">
                 <span class="font-semibold">Mangrove Tree (Rhizophora mucronata)</span>
-                â€” Eden Reforestation Projects, Madagascar
+                — Eden Reforestation Projects, Madagascar
               </figcaption>
             </figure>
           </div>
@@ -588,7 +608,7 @@
       
           <div class="border-t border-gray-800 mt-16 pt-6">
             <p class="text-center text-gray-600 text-sm tracking-tight">
-              Â©
+              ©
               <span class="copyright-year">2026</span>
               Oasis of Change, Inc. All rights reserved.
             </p>
