@@ -162,15 +162,26 @@
             </div>
             <!-- STATS TICKER -->
             <div class="bg-black relative overflow-hidden py-8 sm:py-10 md:py-12">
-              <style><![CDATA[@keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } } .ticker-track { display: flex; width: max-content; animation: ticker-scroll 18s linear infinite; } .ticker-track:hover { animation-play-state: paused; }]]></style>
-              <div class="ticker-track items-center gap-8 sm:gap-12 md:gap-16 text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl">
-                <p class="tracking-tight font-medium whitespace-nowrap px-4 sm:px-6 md:px-8">Up to 98% Lower Carbon, Energy, and Water Impact</p>
-                <p class="tracking-tight font-medium whitespace-nowrap px-4 sm:px-6 md:px-8">Award-Winning Team</p>
-                <p class="tracking-tight font-medium whitespace-nowrap px-4 sm:px-6 md:px-8">Not-for-Profit</p>
-                <p class="tracking-tight font-medium whitespace-nowrap px-4 sm:px-6 md:px-8">17,000+ Trees Planted</p>
-                <p class="tracking-tight font-medium whitespace-nowrap px-4 sm:px-6 md:px-8">32 Countries Impacted</p>
-                <p class="tracking-tight font-medium whitespace-nowrap px-4 sm:px-6 md:px-8">Youth-Founded</p>
-                <p class="tracking-tight font-medium whitespace-nowrap px-4 sm:px-6 md:px-8">Vancouver-Based</p>
+              <style>@keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } } .ticker-track { display: flex; width: max-content; animation: ticker-scroll 18s linear infinite; } .ticker-track:hover { animation-play-state: paused; } .ticker-group { display: flex; align-items: center; flex-shrink: 0; }</style>
+              <div class="ticker-track text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+                <div class="ticker-group items-center gap-8 sm:gap-12 md:gap-16">
+                  <p class="tracking-tight font-medium whitespace-nowrap px-4 sm:px-6 md:px-8">Up to 98% Lower Carbon, Energy, and Water Impact</p>
+                  <p class="tracking-tight font-medium whitespace-nowrap px-4 sm:px-6 md:px-8">Award-Winning Team</p>
+                  <p class="tracking-tight font-medium whitespace-nowrap px-4 sm:px-6 md:px-8">Not-for-Profit</p>
+                  <p class="tracking-tight font-medium whitespace-nowrap px-4 sm:px-6 md:px-8">17,000+ Trees Planted</p>
+                  <p class="tracking-tight font-medium whitespace-nowrap px-4 sm:px-6 md:px-8">32 Countries Impacted</p>
+                  <p class="tracking-tight font-medium whitespace-nowrap px-4 sm:px-6 md:px-8">Youth-Founded</p>
+                  <p class="tracking-tight font-medium whitespace-nowrap px-4 sm:px-6 md:px-8">Vancouver-Based</p>
+                </div>
+                <div aria-hidden="true" class="ticker-group items-center gap-8 sm:gap-12 md:gap-16">
+                  <p class="tracking-tight font-medium whitespace-nowrap px-4 sm:px-6 md:px-8">Up to 98% Lower Carbon, Energy, and Water Impact</p>
+                  <p class="tracking-tight font-medium whitespace-nowrap px-4 sm:px-6 md:px-8">Award-Winning Team</p>
+                  <p class="tracking-tight font-medium whitespace-nowrap px-4 sm:px-6 md:px-8">Not-for-Profit</p>
+                  <p class="tracking-tight font-medium whitespace-nowrap px-4 sm:px-6 md:px-8">17,000+ Trees Planted</p>
+                  <p class="tracking-tight font-medium whitespace-nowrap px-4 sm:px-6 md:px-8">32 Countries Impacted</p>
+                  <p class="tracking-tight font-medium whitespace-nowrap px-4 sm:px-6 md:px-8">Youth-Founded</p>
+                  <p class="tracking-tight font-medium whitespace-nowrap px-4 sm:px-6 md:px-8">Vancouver-Based</p>
+                </div>
               </div>
             </div>
             <!-- HERO IMAGE -->
