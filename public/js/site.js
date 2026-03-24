@@ -1,7 +1,20 @@
 (function () {
   'use strict';
 
+  function injectMobileNavFocusStyles() {
+    if (document.getElementById('site-mobile-nav-focus')) return;
+    var ring = 'rgb(74, 222, 128)';
+    var s = document.createElement('style');
+    s.id = 'site-mobile-nav-focus';
+    s.textContent =
+      '[data-mobile-toggle]:focus-visible{outline:2px solid ' + ring + ';outline-offset:2px}' +
+      '[data-nav-dropdown-toggle]:focus-visible{outline:2px solid ' + ring + ';outline-offset:2px}' +
+      '[data-mobile-panel] a:focus-visible{outline:2px solid ' + ring + ';outline-offset:2px}';
+    document.head.appendChild(s);
+  }
+
   function initMobileNav() {
+    injectMobileNavFocusStyles();
     var toggle = document.querySelector('[data-mobile-toggle]');
     var panel = document.querySelector('[data-mobile-panel]');
     if (!toggle || !panel) return;
@@ -40,21 +53,29 @@
       return Math.max(200, window.innerHeight - top - margin);
     }
 
-    function applyPanelHeight() {
+    function applyPanelHeight(allowTransition) {
       if (!isOpen) return;
       var cap = viewportCapPx();
       var want = panel.scrollHeight;
-      panel.style.maxHeight = Math.min(want, cap) + 'px';
+      var next = Math.min(want, cap) + 'px';
+      if (allowTransition === false) {
+        var prevTransition = panel.style.transition;
+        panel.style.transition = 'none';
+        panel.style.maxHeight = next;
+        void panel.offsetHeight;
+        panel.style.transition = prevTransition;
+      } else {
+        panel.style.maxHeight = next;
+      }
     }
 
     function syncOuterPanelHeight() {
       if (!isOpen) return;
-      applyPanelHeight();
       requestAnimationFrame(function () {
-        requestAnimationFrame(applyPanelHeight);
+        requestAnimationFrame(function () {
+          applyPanelHeight(false);
+        });
       });
-      setTimeout(applyPanelHeight, 50);
-      setTimeout(applyPanelHeight, 240);
     }
 
     function open() {
@@ -65,7 +86,7 @@
       panel.style.overscrollBehavior = 'contain';
       panel.style.setProperty('-webkit-overflow-scrolling', 'touch');
       void panel.offsetHeight;
-      applyPanelHeight();
+      applyPanelHeight(true);
       panel.style.opacity = '1';
       toggle.setAttribute('aria-expanded', 'true');
       toggle.setAttribute('aria-label', 'Close navigation menu');
@@ -97,7 +118,7 @@
     panel.style.transition = 'max-height 0.3s ease, opacity 0.25s ease';
 
     window.addEventListener('resize', function () {
-      if (isOpen) syncOuterPanelHeight();
+      if (isOpen) applyPanelHeight(false);
     });
 
     if (menuIcon && closeIcon) {
