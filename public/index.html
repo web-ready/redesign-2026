@@ -249,24 +249,65 @@
         </div>
       </section>
                 
+      <style>
+        .impact-stats-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          row-gap: 2.75rem;
+          column-gap: 1.75rem;
+        }
+        .impact-stat-item {
+          padding: 0 0.5rem;
+        }
+        .impact-stat-value {
+          font-size: 3.25rem;
+          line-height: 1;
+          white-space: nowrap;
+          margin: 0 0 0.6rem;
+        }
+        .impact-stat-label {
+          font-size: 2rem;
+          line-height: 1.2;
+          margin: 0;
+        }
+        @media (min-width: 640px) {
+          .impact-stats-grid { row-gap: 3rem; }
+          .impact-stat-value { font-size: 3.75rem; }
+          .impact-stat-label { font-size: 2.25rem; }
+        }
+        @media (min-width: 1024px) {
+          .impact-stats-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            row-gap: 0;
+            column-gap: 2rem;
+          }
+          .impact-stat-value { font-size: 3.75rem; }
+          .impact-stat-label { font-size: 1.8rem; }
+        }
+        @media (min-width: 1280px) {
+          .impact-stats-grid { column-gap: 2.5rem; }
+          .impact-stat-value { font-size: 4.25rem; }
+          .impact-stat-label { font-size: 2rem; }
+        }
+      </style>
       <section class="bg-black py-12 sm:py-14 md:py-16 xl:py-18 relative overflow-hidden">
         <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full">
           <div class="flex flex-col justify-center h-full"></div>
         </div>
         <div class="relative z-50">
           <div class="container mx-auto px-4 sm:px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-y-8 sm:gap-y-10 lg:gap-y-0 gap-x-6 md:gap-x-8 lg:gap-x-6 xl:gap-x-10">
-              <div class="px-2 md:px-3">
-                <h2 class="font-heading tracking-tight font-medium leading-none text-center mb-2 sm:mb-3 text-white whitespace-nowrap text-5xl sm:text-6xl lg:text-5xl xl:text-6xl">$870,000+</h2>
-                <p class="text-center tracking-tight text-white font-semibold px-2 text-xl sm:text-2xl lg:text-xl xl:text-2xl leading-tight">In-Kind Technology Grants Secured</p>
+            <div class="impact-stats-grid">
+              <div class="impact-stat-item">
+                <h2 class="impact-stat-value font-heading tracking-tight font-medium text-center text-white">$870,000+</h2>
+                <p class="impact-stat-label text-center tracking-tight text-white font-semibold">In-Kind Technology Grants Secured</p>
               </div>
-              <div class="px-2 md:px-3">
-                <h2 class="font-heading tracking-tight font-medium leading-none text-center mb-2 sm:mb-3 text-white whitespace-nowrap text-5xl sm:text-6xl lg:text-5xl xl:text-6xl">17,000+</h2>
-                <p class="text-center tracking-tight text-white font-semibold px-2 text-xl sm:text-2xl lg:text-xl xl:text-2xl leading-tight">Trees Planted</p>
+              <div class="impact-stat-item">
+                <h2 class="impact-stat-value font-heading tracking-tight font-medium text-center text-white">17,000+</h2>
+                <p class="impact-stat-label text-center tracking-tight text-white font-semibold">Trees Planted</p>
               </div>
-              <div class="px-2 md:px-3">
-                <h2 class="font-heading tracking-tight font-medium leading-none text-center mb-2 sm:mb-3 text-white whitespace-nowrap text-5xl sm:text-6xl lg:text-5xl xl:text-6xl">32</h2>
-                <p class="text-center tracking-tight text-white font-semibold px-2 text-xl sm:text-2xl lg:text-xl xl:text-2xl leading-tight">Countries Impacted</p>
+              <div class="impact-stat-item">
+                <h2 class="impact-stat-value font-heading tracking-tight font-medium text-center text-white">32</h2>
+                <p class="impact-stat-label text-center tracking-tight text-white font-semibold">Countries Impacted</p>
               </div>
             </div>
           </div>
