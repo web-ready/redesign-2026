@@ -23,7 +23,7 @@
       <section class="px-4 sm:px-6 md:px-12 lg:px-24 bg-black">
         <div>
           <!-- NAV -->
-          <nav class="relative z-[100] bg-black rounded-2xl px-6 py-4 border border-white/10 mb-6 shadow-[0_12px_30px_rgba(0,0,0,0.12)]">
+          <nav class="relative z-[100] bg-black rounded-2xl px-4 py-3 sm:px-6 sm:py-4 border border-white/10 mb-4 sm:mb-6 shadow-[0_12px_30px_rgba(0,0,0,0.12)]">
             <div class="flex items-center justify-between gap-4">
               <div class="flex items-center gap-3 min-w-0">
                 <a href="index.html" class="inline-block shrink-0">
@@ -98,12 +98,17 @@
                   <path d="M14 6.66666H7.33333C4.38781 6.66666 2 9.05447 2 12V13.3333M14 6.66666L10 10.6667M14 6.66666L10 2.66666" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
               </a>
-              <button data-mobile-toggle type="button" class="xl:hidden inline-flex items-center justify-center w-12 h-12 rounded-full border border-white/20 bg-white/5 text-white hover:bg-white/10 transition duration-200 shrink-0" aria-label="Open navigation menu" aria-expanded="false">
-                <div class="relative w-5 h-4">
-                  <span data-bar class="absolute left-0 top-0 block h-[2px] w-5 rounded-full bg-white transition-all duration-300 origin-center"></span>
-                  <span data-bar class="absolute left-0 top-[7px] block h-[2px] w-5 rounded-full bg-white transition-all duration-300 origin-center"></span>
-                  <span data-bar class="absolute left-0 top-[14px] block h-[2px] w-5 rounded-full bg-white transition-all duration-300 origin-center"></span>
-                </div>
+              <button data-mobile-toggle type="button" class="relative xl:hidden inline-flex items-center justify-center w-12 h-12 rounded-full border border-white/20 bg-white/5 text-white hover:bg-white/10 transition duration-200 shrink-0" aria-label="Open navigation menu" aria-expanded="false">
+                <span data-icon-menu class="absolute inset-0 flex items-center justify-center transition-opacity duration-150" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M4 6h16M4 12h16M4 18h16"></path>
+                  </svg>
+                </span>
+                <span data-icon-close class="absolute inset-0 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-150" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M6 6l12 12M18 6L6 18"></path>
+                  </svg>
+                </span>
               </button>
             </div>
             <!-- MOBILE NAV PANEL -->
@@ -118,8 +123,9 @@
                         <path d="M6 8l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                       </svg>
                     </button>
-                    <div data-nav-dropdown-content class="overflow-hidden" style="display: none;">
-                      <div class="rounded-xl border border-white/10 px-3 py-3 ml-3 mb-2">
+                    <div data-nav-dropdown-content class="grid overflow-hidden" style="display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.2s ease-out;">
+                      <div class="min-h-0 overflow-hidden">
+                        <div class="rounded-xl border border-white/10 px-3 py-3 ml-3 mb-2">
                         <div class="mb-3">
                           <p class="text-[10px] uppercase tracking-[0.18em] text-gray-500 mb-2">Subsidiaries</p>
                           <div class="flex flex-col gap-1">
@@ -141,6 +147,7 @@
                           </div>
                         </div>
                       </div>
+                      </div>
                     </div>
                   </div>
                   <a href="case-studies.html" class="text-white text-sm font-medium tracking-tight py-3 px-3 rounded-xl hover:bg-gray-900 transition">Case Studies</a>
@@ -151,8 +158,9 @@
                         <path d="M6 8l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                       </svg>
                     </button>
-                    <div data-nav-dropdown-content class="overflow-hidden" style="display: none;">
-                      <div class="rounded-xl border border-white/10 px-3 py-3 ml-3 mb-2">
+                    <div data-nav-dropdown-content class="grid overflow-hidden" style="display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.2s ease-out;">
+                      <div class="min-h-0 overflow-hidden">
+                        <div class="rounded-xl border border-white/10 px-3 py-3 ml-3 mb-2">
                         <div class="flex flex-col gap-1">
                           <a href="about.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Our Story</a>
                           <a href="about.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Our Mission</a>
@@ -161,6 +169,7 @@
                           <a href="annual_reports.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Annual Reports</a>
                           <a href="news_release.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">News / Press</a>
                         </div>
+                      </div>
                       </div>
                     </div>
                   </div>
@@ -175,18 +184,29 @@
             </div>
           </nav>
           <!-- HERO -->
-          <div class="pt-10 sm:pt-14 md:pt-16 lg:pt-20">
-            <div class="grid grid-cols-1 lg:grid-cols-[1fr_0.95fr] gap-8 lg:gap-6 xl:gap-8 items-center mb-12 md:mb-16">
-              <div class="w-full lg:pl-12 xl:pl-16">
-                <h1 class="font-heading tracking-tight text-white text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] xl:text-[4.75rem] font-medium max-w-[8.5ch] leading-[0.92]">Making the internet sustainable</h1>
+          <div class="pt-6 sm:pt-10 md:pt-14 lg:pt-20">
+            <div class="grid grid-cols-1 lg:grid-cols-[1fr_0.95fr] gap-5 sm:gap-7 lg:gap-6 xl:gap-8 items-center mb-8 sm:mb-10 md:mb-14 lg:mb-16">
+              <div class="w-full min-w-0 lg:pl-12 xl:pl-16">
+                <h1 class="font-heading tracking-tight text-white text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] xl:text-[4.75rem] font-medium max-w-none lg:max-w-[8.5ch] leading-snug sm:leading-tight lg:leading-[0.92]">Making the internet sustainable</h1>
               </div>
-              <div class="w-full max-w-xl lg:max-w-[34rem] lg:pt-2">
-                <p class="text-gray-200 text-lg sm:text-xl leading-8" spellcheck="false">Building digital sustainability projects that improve efficiency, accessibility, and responsible technology use.</p>
-                <div class="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 mt-6"><a href="#what-we-are-building" class="js-scroll-to-ways min-h-14 rounded-full px-5 py-3 inline-flex items-center justify-center tracking-tight font-semibold text-sm transition duration-200 bg-transparent border border-white text-white hover:bg-white hover:text-black w-full sm:w-auto">What We're Working On</a><a href="#" class="min-h-14 rounded-full px-5 py-3 inline-flex items-center justify-center tracking-tight font-semibold text-sm transition duration-200 bg-white text-black hover:bg-gray-100 w-full sm:w-auto">View Case Studies</a></div>
+              <div class="w-full min-w-0 max-w-xl lg:max-w-[34rem] lg:pt-2">
+                <p class="text-gray-200 text-base sm:text-lg md:text-xl leading-relaxed sm:leading-8" spellcheck="false">Building digital sustainability projects that improve efficiency, accessibility, and responsible technology use.</p>
+                <div class="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 mt-5 sm:mt-6"><a href="#what-we-are-building" class="js-scroll-to-ways min-h-14 rounded-full px-5 py-3 inline-flex items-center justify-center tracking-tight font-semibold text-sm transition duration-200 bg-transparent border border-white text-white hover:bg-white hover:text-black w-full sm:w-auto text-center">What We're Working On</a><a href="case-studies.html" class="min-h-14 rounded-full px-5 py-3 inline-flex items-center justify-center tracking-tight font-semibold text-sm transition duration-200 bg-white text-black hover:bg-gray-100 w-full sm:w-auto text-center">View Case Studies</a></div>
               </div>
             </div>
-            <!-- STATS TICKER -->
-            <div class="bg-black relative overflow-hidden py-8 sm:py-10 md:py-12 mb-12 md:mb-16">
+            <!-- STATS: readable on small screens; marquee from md up -->
+            <div class="md:hidden mb-8 sm:mb-10">
+              <ul class="flex flex-wrap gap-2 sm:gap-3" role="list" aria-label="Highlights">
+                <li><span class="inline-block rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs sm:text-sm font-medium tracking-tight text-white">Up to 98% lower impact</span></li>
+                <li><span class="inline-block rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs sm:text-sm font-medium tracking-tight text-white">Award-winning team</span></li>
+                <li><span class="inline-block rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs sm:text-sm font-medium tracking-tight text-white">Not-for-profit</span></li>
+                <li><span class="inline-block rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs sm:text-sm font-medium tracking-tight text-white">17,000+ trees planted</span></li>
+                <li><span class="inline-block rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs sm:text-sm font-medium tracking-tight text-white">32 countries</span></li>
+                <li><span class="inline-block rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs sm:text-sm font-medium tracking-tight text-white">Youth-founded</span></li>
+                <li><span class="inline-block rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs sm:text-sm font-medium tracking-tight text-white">Vancouver-based</span></li>
+              </ul>
+            </div>
+            <div class="hidden md:block bg-black relative overflow-hidden py-8 sm:py-10 md:py-12 mb-10 md:mb-14 lg:mb-16">
               <style>@keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } } .ticker-track { display: flex; width: max-content; animation: ticker-scroll 18s linear infinite; } .ticker-track:hover { animation-play-state: paused; } .ticker-group { display: flex; align-items: center; flex-shrink: 0; }</style>
               <div class="ticker-track text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl">
                 <div class="ticker-group items-center gap-8 sm:gap-12 md:gap-16">
@@ -225,16 +245,16 @@
           <div class="container mx-auto px-4">
             <div class="flex flex-wrap -m-4">
               <div class="w-full lg:w-1/3 p-4">
-                <h2 class="font-heading tracking-tight text-7xl font-medium text-center mb-6 text-white" spellcheck="true">$870,000+</h2>
-                <p class="text-center tracking-tight text-white text-xl font-semibold mb-4">In-Kind Technology Grants Secured</p>
+                <h2 class="font-heading tracking-tight text-5xl sm:text-6xl md:text-7xl font-medium text-center mb-4 sm:mb-6 text-white break-words px-1" spellcheck="true">$870,000+</h2>
+                <p class="text-center tracking-tight text-white text-lg sm:text-xl font-semibold mb-4 px-2">In-Kind Technology Grants Secured</p>
                   </div>
               <div class="w-full lg:w-1/3 p-4">
-                <h2 class="font-heading tracking-tight text-7xl font-medium text-center mb-6 text-white">17,000+</h2>
-                <p class="text-center tracking-tight text-white text-xl font-semibold mb-4">Trees Planted</p>
+                <h2 class="font-heading tracking-tight text-5xl sm:text-6xl md:text-7xl font-medium text-center mb-4 sm:mb-6 text-white">17,000+</h2>
+                <p class="text-center tracking-tight text-white text-lg sm:text-xl font-semibold mb-4 px-2">Trees Planted</p>
                   </div>
               <div class="w-full lg:w-1/3 p-4">
-                <h2 class="font-heading tracking-tight text-7xl font-medium text-center mb-6 text-white" spellcheck="false">32</h2>
-                <p class="text-center tracking-tight text-white text-xl font-semibold mb-4">Countries Impacted</p>
+                <h2 class="font-heading tracking-tight text-5xl sm:text-6xl md:text-7xl font-medium text-center mb-4 sm:mb-6 text-white" spellcheck="false">32</h2>
+                <p class="text-center tracking-tight text-white text-lg sm:text-xl font-semibold mb-4 px-2">Countries Impacted</p>
                  </div>
             </div>
           </div>

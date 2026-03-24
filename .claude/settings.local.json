@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /c/Users/Gabriel/Documents/GitHub/redesign-2026/public -name *.html -type f)",
+      "Bash(xargs grep:*)",
+      "Bash(find /c/Users/Gabriel/Documents/GitHub/redesign-2026/public/css -name *.css -type f)",
+      "Bash(find /c/Users/Gabriel/Documents/GitHub/redesign-2026/public -name \"*.html\" -type f -exec grep -l 'href=\"\"\"\"#\"\"\"\"' {})",
+      "Bash(find /c/Users/Gabriel/Documents/GitHub/redesign-2026/public/js -name *.js -type f)",
+      "Bash(ls -1 /c/Users/Gabriel/Documents/GitHub/redesign-2026/public/*.html)",
+      "Bash(xargs -I {} basename {})",
+      "Bash(while read:*)",
+      "Bash(do echo:*)",
+      "Read(//c/Users/Gabriel/Documents/GitHub/redesign-2026/**)",
+      "Bash(done)",
+      "Bash(grep -E '\\\\.\\(html|css\\)$')",
+      "Bash(grep -r \"832338\\\\|854172\" /c/Users/Gabriel/Documents/GitHub/redesign-2026/public/*.html)",
+      "Bash(grep -n 'data-accordion\\\\|data-mobile\\\\|js-scroll' /c/Users/Gabriel/Documents/GitHub/redesign-2026/public/*.html)",
+      "Bash(grep -l \"832338\\\\|854172\" /c/Users/Gabriel/Documents/GitHub/redesign-2026/public/*.html)",
+      "Bash(grep -oh consulty-assets/[^\"\"]*.[a-z]* /c/Users/Gabriel/Documents/GitHub/redesign-2026/public/*.html)",
+      "Bash(find /c/Users/Gabriel/Documents/GitHub/redesign-2026/public/consulty-assets -type f -name *.png -o -name *.svg)"
+    ]
+  }
+}

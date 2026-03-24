@@ -60,12 +60,17 @@
                   <path d="M14 6.66666H7.33333C4.38781 6.66666 2 9.05447 2 12V13.3333M14 6.66666L10 10.6667M14 6.66666L10 2.66666" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
               </a>
-              <button data-mobile-toggle type="button" class="xl:hidden inline-flex items-center justify-center w-12 h-12 rounded-full border border-white/20 bg-white/5 text-white hover:bg-white/10 transition duration-200 shrink-0" aria-label="Open navigation menu" aria-expanded="false">
-                <div class="relative w-5 h-4">
-                  <span data-bar class="absolute left-0 top-0 block h-[2px] w-5 rounded-full bg-white transition-all duration-300 origin-center"></span>
-                  <span data-bar class="absolute left-0 top-[7px] block h-[2px] w-5 rounded-full bg-white transition-all duration-300 origin-center"></span>
-                  <span data-bar class="absolute left-0 top-[14px] block h-[2px] w-5 rounded-full bg-white transition-all duration-300 origin-center"></span>
-                </div>
+              <button data-mobile-toggle type="button" class="relative xl:hidden inline-flex items-center justify-center w-12 h-12 rounded-full border border-white/20 bg-white/5 text-white hover:bg-white/10 transition duration-200 shrink-0" aria-label="Open navigation menu" aria-expanded="false">
+                <span data-icon-menu class="absolute inset-0 flex items-center justify-center transition-opacity duration-150" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M4 6h16M4 12h16M4 18h16"></path>
+                  </svg>
+                </span>
+                <span data-icon-close class="absolute inset-0 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-150" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M6 6l12 12M18 6L6 18"></path>
+                  </svg>
+                </span>
               </button>
             </div>
             <div data-mobile-panel class="xl:hidden pt-4" style="display: none;">
@@ -79,8 +84,9 @@
                         <path d="M6 8l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                       </svg>
                     </button>
-                    <div data-nav-dropdown-content class="overflow-hidden" style="display: none;">
-                      <div class="rounded-xl border border-white/10 px-3 py-3 ml-3 mb-2">
+                    <div data-nav-dropdown-content class="grid overflow-hidden" style="display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.2s ease-out;">
+                      <div class="min-h-0 overflow-hidden">
+                        <div class="rounded-xl border border-white/10 px-3 py-3 ml-3 mb-2">
                         <div class="mb-3">
                           <p class="text-[10px] uppercase tracking-[0.18em] text-gray-500 mb-2">Subsidiaries</p>
                           <div class="flex flex-col gap-1">
@@ -102,6 +108,7 @@
                           </div>
                         </div>
                       </div>
+                      </div>
                     </div>
                   </div>
                   <a href="case-studies.html" class="text-white text-sm font-medium tracking-tight py-3 px-3 rounded-xl hover:bg-gray-900 transition">Case Studies</a>
@@ -112,8 +119,9 @@
                         <path d="M6 8l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                       </svg>
                     </button>
-                    <div data-nav-dropdown-content class="overflow-hidden" style="display: none;">
-                      <div class="rounded-xl border border-white/10 px-3 py-3 ml-3 mb-2">
+                    <div data-nav-dropdown-content class="grid overflow-hidden" style="display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.2s ease-out;">
+                      <div class="min-h-0 overflow-hidden">
+                        <div class="rounded-xl border border-white/10 px-3 py-3 ml-3 mb-2">
                         <div class="flex flex-col gap-1">
                           <a href="about.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Our Story</a>
                           <a href="about.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Our Mission</a>
@@ -122,6 +130,7 @@
                           <a href="annual_reports.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Annual Reports</a>
                           <a href="news_release.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">News / Press</a>
                         </div>
+                      </div>
                       </div>
                     </div>
                   </div>
