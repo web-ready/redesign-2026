@@ -32,7 +32,7 @@
             <div class="flex items-center justify-between gap-4">
               <div class="flex items-center gap-3 min-w-0">
                 <a href="index.html" class="inline-block shrink-0">
-                  <img class="h-11 sm:h-12 md:h-14 w-auto" src="images/svgviewer-output.svg" alt="Oasis of Change">
+                  <img class="h-11 sm:h-12 md:h-14 w-auto" src="images/logo/Oasis_of_Change_Logo.svg" alt="Oasis of Change">
                 </a>
               </div>
               <ul class="hidden xl:flex items-center gap-2">
@@ -538,22 +538,27 @@
               </div>
       
               <!-- LABELS -->
-              <div class="absolute top-4 left-4 z-20">
-                <span data-compare-label-before class="inline-flex items-center rounded-full px-4 py-2 text-xs md:text-sm font-semibold border transition duration-200 bg-gray-900 text-white border-gray-900 shadow-[0_8px_20px_rgba(0,0,0,0.22)]">
+              <div class="absolute top-3 left-3 md:top-4 md:left-4 z-20">
+                <span data-compare-label-before class="inline-flex items-center rounded-full px-3 md:px-4 py-2 text-xs md:text-sm font-semibold border transition duration-200 bg-[#b42318] text-white border-[#8f1e15] shadow-[0_10px_26px_rgba(180,35,24,0.35)] ring-2 ring-white">
                   Before
                 </span>
               </div>
       
-              <div class="absolute top-4 right-4 z-20">
-                <span data-compare-label-after class="inline-flex items-center rounded-full px-4 py-2 text-xs md:text-sm font-semibold border transition duration-200 bg-white text-gray-900 border-gray-300 shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
+              <div class="absolute top-3 right-3 md:top-4 md:right-4 z-20">
+                <span data-compare-label-after class="inline-flex items-center rounded-full px-3 md:px-4 py-2 text-xs md:text-sm font-semibold border transition duration-200 bg-white text-gray-900 border-gray-300 shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
                   After
+                </span>
+              </div>
+              <div class="pointer-events-none absolute top-3 left-1/2 z-20 -translate-x-1/2 md:top-4">
+                <span data-compare-status class="inline-flex items-center rounded-full bg-black/80 text-white px-3 py-1.5 text-[11px] md:text-xs font-semibold tracking-[0.08em] uppercase shadow-[0_8px_20px_rgba(0,0,0,0.2)]">
+                  Currently viewing: Before
                 </span>
               </div>
       
               <!-- DIVIDER -->
               <div data-compare-divider class="absolute inset-y-0 z-20" style="left: calc(50% - 1px);">
                 <div class="relative h-full w-[2px] bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.12)]">
-                  <button data-compare-handle type="button" class="absolute left-1/2 top-1/2 flex h-11 w-11 md:h-12 md:w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-gray-300 bg-white shadow-[0_10px_24px_rgba(0,0,0,0.16)] cursor-ew-resize touch-none" aria-label="Drag to compare before and after designs">
+                  <button data-compare-handle type="button" class="absolute left-1/2 top-1/2 flex h-12 w-12 md:h-14 md:w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-gray-300 bg-white shadow-[0_10px_24px_rgba(0,0,0,0.16)] cursor-ew-resize touch-none focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2" aria-label="Drag to compare before and after designs" aria-controls="audit-compare-range">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-700" viewbox="0 0 24 24" fill="none" aria-hidden="true">
                       <path d="M8 7L3 12L8 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
                       <path d="M16 7L21 12L16 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -561,8 +566,21 @@
                   </button>
                 </div>
               </div>
+              <label for="audit-compare-range" class="sr-only">Comparison slider position</label>
+              <input
+                id="audit-compare-range"
+                data-compare-range
+                type="range"
+                min="0"
+                max="100"
+                value="50"
+                step="1"
+                class="absolute inset-x-0 bottom-0 z-30 h-16 w-full cursor-ew-resize opacity-0"
+                aria-valuetext="50 percent before website shown"
+              >
             </div>
           </div>
+          <p class="mt-4 text-center text-sm text-gray-500">Drag the handle (or use arrow keys on the slider) to compare before and after views.</p>
         </div>
       </section>
                 
@@ -778,7 +796,7 @@
             <!-- Left brand block -->
             <div class="w-full lg:w-[24%]">
               <div class="flex flex-col items-start gap-4">
-                <img class="h-16 mb-2" src="images/svgviewer-output.svg" alt="Oasis of Change logo">
+                <img class="h-16 mb-2" src="images/logo/Oasis_of_Change_Logo.svg" alt="Oasis of Change logo">
                 <p class="tracking-tight text-white max-w-sm leading-relaxed">
                   Building a more sustainable digital future through energy-efficient websites, transparent impact, and technology that supports communities and the planet.
                 </p>
@@ -792,11 +810,11 @@
                 <div>
                   <p class="tracking-tight text-white font-semibold mb-6">General</p>
                   <ul class="flex flex-col gap-6">
-                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Home</a></li>
-                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Blog</a></li>
-                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Case Studies</a></li>
-                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Contact</a></li>
-                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Get Involved</a></li>
+                    <li><a href="index.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Home</a></li>
+                    <li><a href="blog.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Blog</a></li>
+                    <li><a href="case-studies.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Case Studies</a></li>
+                    <li><a href="contact.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Contact</a></li>
+                    <li><a href="get_involved.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Get Involved</a></li>
                   </ul>
                 </div>
       
@@ -804,10 +822,10 @@
                 <div class="min-w-0">
                   <p class="tracking-tight text-white font-semibold mb-6">Initiatives</p>
                   <ul class="flex flex-col gap-6">
-                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Web-Ready</a></li>
-                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">VCASSE</a></li>
-                    <li><a href="#" class="block max-w-[22rem] tracking-tight leading-snug text-gray-200 hover:text-green-400 transition duration-200 break-words">Sustainable Technology Week</a></li>
-                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">WRA Platform</a></li>
+                    <li><a href="web-ready.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Web-Ready</a></li>
+                    <li><a href="vcasse.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">VCASSE</a></li>
+                    <li><a href="sustainable-technology-week.html" class="block max-w-[22rem] tracking-tight leading-snug text-gray-200 hover:text-green-400 transition duration-200 break-words">Sustainable Technology Week</a></li>
+                    <li><a href="wra_platform.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">WRA Platform</a></li>
                   </ul>
                 </div>
       
@@ -815,12 +833,12 @@
                 <div>
                   <p class="tracking-tight text-white font-semibold mb-6">Company</p>
                   <ul class="flex flex-col gap-6">
-                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Our Story</a></li>
-                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Our Mission</a></li>
-                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Our Founder</a></li>
-                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Our Board</a></li>
-                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Annual Reports</a></li>
-                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">News / Press</a></li>
+                    <li><a href="about.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Our Story</a></li>
+                    <li><a href="about.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Our Mission</a></li>
+                    <li><a href="gabriel-dalton.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Our Founder</a></li>
+                    <li><a href="about.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Our Board</a></li>
+                    <li><a href="annual_reports.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Annual Reports</a></li>
+                    <li><a href="news_release.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">News / Press</a></li>
                   </ul>
                 </div>
       
@@ -828,11 +846,11 @@
                 <div>
                   <p class="tracking-tight text-white font-semibold mb-6">Accountability</p>
                   <ul class="flex flex-col gap-6">
-                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Impact Dashboard</a></li>
-                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Sustainability Statement</a></li>
-                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Tree Planting Statement</a></li>
-                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Accessibility Statement</a></li>
-                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Privacy Policy</a></li>
+                    <li><a href="https://impact.oasisofchange.com" target="_blank" rel="noopener noreferrer" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Impact Dashboard</a></li>
+                    <li><a href="sustainability_statement.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Sustainability Statement</a></li>
+                    <li><a href="tree_planting.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Tree Planting Statement</a></li>
+                    <li><a href="accessibility_statement.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Accessibility Statement</a></li>
+                    <li><a href="privacy-policy.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Privacy Policy</a></li>
                   </ul>
                 </div>
               </div>
