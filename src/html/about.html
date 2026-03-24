@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Page title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/tailwind/tailwind.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="shuffle-for-tailwind.png">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js" defer></script>
+</head>
+<body class="antialiased bg-body text-body font-body">
+    <div class="">
+                
+      <div>
+      <section class="px-4 md:px-8 pt-8 bg-white">
+        <div x-data="{ mobileNavOpen: false }" class="max-w-[1400px] mx-auto">
+          <!-- NAV -->
+          <nav class="bg-black rounded-2xl px-6 py-4 border border-white/10">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <a href="#" class="inline-block">
+                  <img class="h-14" src="images/svgviewer-output.svg" alt="">
+                </a>
+              </div>
+              <ul class="hidden xl:flex items-center gap-2">
+                <li><a href="#" class="inline-block py-2 px-3 hover:bg-gray-900 transition duration-200 text-white text-sm font-medium tracking-tight rounded-full">Home</a></li>
+                <li>
+                  <a href="#" class="inline-block py-2 px-3 hover:bg-gray-900 transition duration-200 rounded-full">
+                    <div class="flex items-center gap-2">
+                      <span class="text-white text-sm font-medium tracking-tight">Projects</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewbox="0 0 17 16" fill="none">
+                        <path d="M12.848 6L8.18132 10.6667L3.51465 6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </div>
+                  </a>
+                </li>
+                <li><a href="#" class="inline-block py-2 px-3 hover:bg-gray-900 transition duration-200 text-white text-sm font-medium tracking-tight rounded-full">Case Studies</a></li>
+                <li>
+                  <a href="#" class="inline-block py-2 px-3 hover:bg-gray-900 transition duration-200 rounded-full">
+                    <div class="flex items-center gap-2">
+                      <span class="text-white text-sm font-medium tracking-tight">Company</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewbox="0 0 17 16" fill="none">
+                        <path d="M12.848 6L8.18132 10.6667L3.51465 6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+              <a href="#" class="rounded-full border border-gray-200 bg-white px-5 py-3 h-14 hover:bg-gray-50 focus:ring-4 focus:ring-gray-200 hidden xl:inline-flex items-center justify-center gap-2 transition duration-200">
+                <span class="text-sm font-semibold tracking-tight">Support Our Mission</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none">
+                  <path d="M14 6.66666H7.33333C4.38781 6.66666 2 9.05447 2 12V13.3333M14 6.66666L10 10.6667M14 6.66666L10 2.66666" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </a>
+              <a x-on:click.prevent="mobileNavOpen = !mobileNavOpen" href="#" class="xl:hidden">
+                <svg class="navbar-burger text-white" width="51" height="51" viewbox="0 0 56 56" fill="none">
+                  <rect width="56" height="56" rx="28" fill="currentColor"></rect>
+                  <path d="M37 32H19M37 24H19" stroke="black" stroke-width="1.5" stroke-linecap="round"></path>
+                </svg>
+              </a>
+            </div>
+          </nav>
+          <section class="py-24 px-8 md:px-24">
+            <div class="flex flex-wrap -m-4">
+              <div class="w-full lg:w-1/2 p-4">
+                <p class="mb-4 tracking-tight">              About Oasis of Change</p>
+                <h1 class="text-4xl md:text-6xl font-medium tracking-tight mb-16 max-w-xs md:max-w-lg">              Building a more sustainable digital future</h1>
+                <img class="rounded-2xl lg:ml-auto object-cover" style="height:419px;" src="consulty-assets/about/picture9.png" alt="">
+              </div>
+              <div class="w-full lg:w-1/2 p-4">
+                <img class="rounded-2xl mb-20 object-cover object-right" style="height:516px;" src="images/ChatGPT-Image-Mar-23-2026-05-30-36-PM.png" alt="">
+                <p class="tracking-tight text-lg max-w-lg">              Oasis of Change was founded to promote digital sustainability through low-carbon, energy-efficient websites and practical innovation that helps people rethink the environmental impact of technology.</p>
+              </div>
+            </div>
+          </section>
+          <!-- MOBILE NAV PANEL -->
+          <div x-show="mobileNavOpen" x-transition="" class="xl:hidden mt-4 bg-black rounded-2xl px-6 py-6" style="display: none;">
+            <div class="flex flex-col gap-2">
+              <a href="#" class="text-white text-sm font-medium tracking-tight py-3 px-2 rounded-xl hover:bg-gray-900 transition">Home</a><a href="#" class="text-white text-sm font-medium tracking-tight py-3 px-2 rounded-xl hover:bg-gray-900 transition">Projects</a><a href="#" class="text-white text-sm font-medium tracking-tight py-3 px-2 rounded-xl hover:bg-gray-900 transition">Case Studies</a><a href="#" class="text-white text-sm font-medium tracking-tight py-3 px-2 rounded-xl hover:bg-gray-900 transition">Company</a>
+              <a href="#" class="mt-2 rounded-full border border-gray-200 bg-white px-5 py-3 hover:bg-gray-50 transition inline-flex items-center justify-center gap-2">
+                <span class="text-sm font-semibold tracking-tight">Support Our Mission</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none">
+                  <path d="M14 6.66666H7.33333C4.38781 6.66666 2 9.05447 2 12V13.3333M14 6.66666L10 10.6667M14 6.66666L10 2.66666" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="w-full px-6 md:px-10 py-12 bg-white">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="rounded-[24px] border border-[#d4d4d4] bg-white p-8 md:p-10 min-h-[310px] flex flex-col justify-between">
+            <div>
+              <p class="text-[1.5rem] md:text-[1.75rem] leading-[1.1] font-bold tracking-[-0.02em] text-black mb-6">Our Mission</p>
+              <p class="text-[1.0625rem] md:text-[1.125rem] leading-[1.55] text-[#4f4f4f] max-w-[28ch]">To promote digital sustainability.</p>
+            </div>
+          </div>
+          <div class="rounded-[24px] border border-[#d4d4d4] bg-white p-8 md:p-10 min-h-[310px] flex flex-col justify-between">
+            <div>
+              <p class="text-[1.5rem] md:text-[1.75rem] leading-[1.1] font-bold tracking-[-0.02em] text-black mb-6">Our Vision</p>
+              <p class="text-[1.0625rem] md:text-[1.125rem] leading-[1.55] text-[#4f4f4f] max-w-[34ch]">A future where digital sustainability is a core part of how people build, use, and understand technology, with lower-impact digital practices clearly understood, widely adopted, and recognized as a standard of responsible technology.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="px-4 md:px-8 py-12 md:py-16">
+        <div class="max-w-[1280px] mx-auto">
+          <div class="rounded-[36px] bg-black px-7 py-8 md:px-10 md:py-10 lg:px-12 lg:py-12">
+            <p class="text-[11px] md:text-xs font-semibold tracking-[0.22em] uppercase text-white/60 mb-6">How we founded it</p>
+            <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+              <div>
+                <p class="text-white text-2xl md:text-3xl font-medium tracking-tight mb-3">01</p>
+                <h3 class="text-white text-lg md:text-xl font-medium tracking-tight mb-3">A problem was identified</h3>
+                <p class="text-white/70 leading-7">The environmental impact of everyday digital activity raised a deeper question about how websites and online systems are built.</p>
+              </div>
+              <div>
+                <p class="text-white text-2xl md:text-3xl font-medium tracking-tight mb-3">02</p>
+                <h3 class="text-white text-lg md:text-xl font-medium tracking-tight mb-3">Two interests came together</h3>
+                <p class="text-white/70 leading-7">Web development and sustainability were combined into one focused direction: creating lower-impact digital experiences.</p>
+              </div>
+              <div>
+                <p class="text-white text-2xl md:text-3xl font-medium tracking-tight mb-3">03</p>
+                <h3 class="text-white text-lg md:text-xl font-medium tracking-tight mb-3">A mission took shape</h3>
+                <p class="text-white/70 leading-7">Oasis of Change was founded to prove that digital sustainability is not only possible, but something that can be implemented at scale.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="px-6 md:px-16 lg:px-24 py-24"><div class="bg-black rounded-2xl p-10 md:p-16 lg:p-20"><div class="grid lg:grid-cols-2 gap-12 items-center"><!-- Portrait --><div><div class="bg-white rounded-2xl overflow-hidden"><img class="w-full object-cover" src="images/Gabriel-Dalton.webp" alt="Gabriel Dalton portrait"></div></div><!-- Bio --><div><p class="text-gray-400 tracking-wide uppercase text-sm mb-4">Founder</p><h2 class="font-heading tracking-tight text-white text-3xl md:text-4xl font-semibold mb-6">Gabriel Dalton</h2><p class="text-gray-300 text-lg mb-6 max-w-xl">Gabriel Dalton is the founder of Oasis of Change, a nonprofit focused on digital sustainability and climate-conscious technology. After teaching himself to code at age 10, he began exploring how websites and digital infrastructure impact energy consumption, emissions, and global resources.</p><p class="text-gray-300 text-lg mb-8 max-w-xl">Today his work focuses on building low-carbon websites, improving digital efficiency, and helping organizations reduce the environmental footprint of the internet. His work in sustainable web development earned him the Youth Impact &amp; Innovation Award at the 2025 Vancouver Awards.</p><div class="flex items-center gap-6"><a href="/contact" class="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition">Get in Touch</a><a href="/about" class="text-white font-semibold hover:underline">Learn more →</a></div></div></div></div></section>
+      <section class="px-6 md:px-16 lg:px-24 py-24">
+        <div class="bg-black rounded-2xl p-10 md:p-16 lg:p-20">
+          <div class="mb-14 text-center">
+            <p class="text-gray-400 tracking-wide uppercase text-sm mb-4">Leadership</p>
+            <h2 class="font-heading tracking-tight text-white text-3xl md:text-4xl font-semibold">Board of Directors</h2>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-8 md:gap-10 max-w-3xl mx-auto">
+            <div class="text-center">
+              <div class="bg-white rounded-2xl overflow-hidden mb-5 aspect-[4/5]">
+                <img class="w-full h-full object-cover" src="images/Nigel-Philips.webp" alt="Nigel Philips">
+              </div>
+              <h3 class="text-white text-xl font-semibold mb-1">Nigel Philips</h3>
+              <p class="text-gray-400 text-sm">Chair</p>
+            </div>
+            <div class="text-center">
+              <div class="bg-white rounded-2xl overflow-hidden mb-5 aspect-[4/5]">
+                <img class="w-full h-full object-cover" src="images/Catherine-Longul.webp" alt="Catherine Longul">
+              </div>
+              <h3 class="text-white text-xl font-semibold mb-1">Catherine Longul</h3>
+              <p class="text-gray-400 text-sm">Treasurer</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="w-full px-6 md:px-10 py-12 bg-white">
+        <div class="max-w-6xl mx-auto">
+          <div class="mb-8">
+            <h2 class="font-serif text-4xl md:text-5xl leading-tight tracking-tight text-black">Our Values</h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="rounded-3xl border border-gray-200 bg-gray-50 p-8 md:p-10">
+              <h3 class="font-serif text-2xl md:text-3xl leading-tight tracking-tight text-black mb-5">Transparency &amp; Integrity</h3>
+              <p class="text-base md:text-lg leading-relaxed text-gray-600">We believe trust matters. We are committed to being honest, accountable, and clear about our work so that the impact we create is real, measurable, and credible.</p>
+            </div>
+            <div class="rounded-3xl border border-gray-200 bg-gray-50 p-8 md:p-10">
+              <h3 class="font-serif text-2xl md:text-3xl leading-tight tracking-tight text-black mb-5">Sustainability</h3>
+              <p class="text-base md:text-lg leading-relaxed text-gray-600">We strive to ensure that our projects create meaningful impact in ways that are environmentally and operationally sustainable over the long term.</p>
+            </div>
+            <div class="rounded-3xl border border-gray-200 bg-gray-50 p-8 md:p-10">
+              <h3 class="font-serif text-2xl md:text-3xl leading-tight tracking-tight text-black mb-5">Accessibility</h3>
+              <p class="text-base md:text-lg leading-relaxed text-gray-600">We are committed to making our platforms, projects, and subsidiaries accessible and inclusive, including for persons with disabilities.</p>
+            </div>
+            <div class="rounded-3xl border border-gray-200 bg-gray-50 p-8 md:p-10">
+              <h3 class="font-serif text-2xl md:text-3xl leading-tight tracking-tight text-black mb-5">Innovation</h3>
+              <p class="text-base md:text-lg leading-relaxed text-gray-600">We believe progress requires fresh thinking. We are committed to developing new ideas and solutions rather than remaining stuck in outdated ways of doing things.</p>
+            </div>
+            <div class="rounded-3xl border border-gray-200 bg-gray-50 p-8 md:p-10">
+              <h3 class="font-serif text-2xl md:text-3xl leading-tight tracking-tight text-black mb-5">Community</h3>
+              <p class="text-base md:text-lg leading-relaxed text-gray-600">We recognize that lasting change is strongest when people work together. We value alignment with the communities we serve, including the Vancouver community, to create more meaningful and effective impact.</p>
+            </div>
+            <div class="rounded-3xl border border-gray-200 bg-gray-50 p-8 md:p-10">
+              <h3 class="font-serif text-2xl md:text-3xl leading-tight tracking-tight text-black mb-5">Impact</h3>
+              <p class="text-base md:text-lg leading-relaxed text-gray-600">At the heart of everything we do is a commitment to creating real change. Through accessibility, innovation, sustainability, and community building, we aim to make a meaningful impact.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-20 md:py-24 lg:py-28 bg-black relative overflow-hidden">
+        <div class="relative z-50">
+          <div class="container mx-auto px-5 sm:px-6 lg:px-8">
+            <h2 class="font-heading tracking-tight text-left lg:text-center text-white text-4xl sm:text-5xl lg:text-6xl leading-[1.05] font-medium mb-6 max-w-[12ch] sm:max-w-2xl lg:max-w-5xl lg:mx-auto">
+              What does Oasis of Change even mean?
+            </h2>
+            <p class="tracking-tight text-left lg:text-center text-gray-300 text-base sm:text-lg leading-8 lg:leading-9 mb-0 max-w-xl lg:max-w-3xl lg:mx-auto">
+              Our name reflects the kind of impact we want to create. An oasis is a place of renewal, possibility, and hope. Change is the action that turns that hope into something real. Together, Oasis of Change represents a future where people, communities, and technology can move toward something better.
+            </p>
+          </div>
+        </div>
+      </section>
+      <div data-from-ai="true" class="pt-20 pb-8 overflow-hidden bg-black bs-section-dragged">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-col lg:flex-row lg:justify-between gap-12 lg:gap-16">
+      
+            <!-- Left brand block -->
+            <div class="w-full lg:w-[30%]">
+              <div class="flex flex-col items-start gap-4">
+                <img class="h-16 mb-2" src="images/svgviewer-output.svg" alt="Oasis of Change logo">
+                <p class="tracking-tight text-white max-w-sm leading-relaxed">
+                  Building a more sustainable digital future through energy-efficient websites, transparent impact, and technology that supports communities and the planet.
+                </p>
+              </div>
+            </div>
+      
+            <!-- Right links block -->
+            <div class="w-full lg:w-[70%]">
+              <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12 xl:gap-16">
+      
+                <!-- General -->
+                <div>
+                  <p class="tracking-tight text-white font-semibold mb-6">General</p>
+                  <ul class="flex flex-col gap-6">
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Home</a></li>
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Blog</a></li><li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Case Studies</a></li>
+                    
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Tree Planting</a></li>
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Sustainability Statement</a></li>
+                  </ul>
+                </div>
+      
+                <!-- Subsidiaries / Projects -->
+                <div class="min-w-0">
+                  <p class="tracking-tight text-white font-semibold mb-6">Subsidiaries / Projects</p>
+                  <ul class="flex flex-col gap-6">
+                    <li>
+                      <a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">
+                        Web-Ready
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="block max-w-[22rem] tracking-tight leading-snug text-gray-200 hover:text-green-400 transition duration-200 break-words">
+                        Vancouver Centre for AI Safety, Sustainability, and Ethics (VCASSE)
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">
+                        Sustainable Technology Week
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">
+                        WRA Platform
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+      
+                <!-- Company -->
+                <div>
+                  <p class="tracking-tight text-white font-semibold mb-6">Company</p>
+                  <ul class="flex flex-col gap-6">
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Our Story</a></li>
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Our Mission</a></li>
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Our Founder</a></li>
+                    <li><a href="#" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Our Board</a></li>
+                  </ul>
+                </div>
+      
+              </div>
+            </div>
+          </div>
+      
+          <div class="border-t border-gray-800 mt-16 pt-6">
+            <p class="text-center text-gray-600 text-sm tracking-tight">
+              © <span class="copyright-year">2026</span> Oasis of Change, Inc. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+</body>
+</html>
+
