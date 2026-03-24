@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Page title</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Web-Ready Access Platform | Oasis of Change, Inc.</title>
+    <meta name="description" content="Learn about the Web-Ready Access Platform and how it extends digital access through tools aligned with Oasis of Change's sustainability mission.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Web-Ready Access Platform | Oasis of Change, Inc.">
+    <meta property="og:description" content="Learn about the Web-Ready Access Platform and how it extends digital access through tools aligned with Oasis of Change's sustainability mission.">
+    <meta property="og:site_name" content="Oasis of Change, Inc.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Web-Ready Access Platform | Oasis of Change, Inc.">
+    <meta name="twitter:description" content="Learn about the Web-Ready Access Platform and how it extends digital access through tools aligned with Oasis of Change's sustainability mission.">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/tailwind/tailwind.min.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="shuffle-for-tailwind.png">
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js" defer></script>
+    <script src="js/site.js" defer></script>
 </head>
 <body class="antialiased bg-body text-body font-body">
     <div class="">
                 
       <section class="px-4 md:px-24 pt-8 bg-white ">
-        <div x-data="{ mobileNavOpen: false }">
+        <div>
           <!-- NAV -->
           <nav class="bg-black rounded-2xl px-6 py-4 border border-white/10">
             <div class="flex items-center justify-between">
@@ -53,12 +60,59 @@
                   <path d="M14 6.66666H7.33333C4.38781 6.66666 2 9.05447 2 12V13.3333M14 6.66666L10 10.6667M14 6.66666L10 2.66666" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
               </a>
-              <a x-on:click.prevent="mobileNavOpen = !mobileNavOpen" href="#" class="xl:hidden">
-                <svg class="navbar-burger text-white" width="51" height="51" viewbox="0 0 56 56" fill="none">
-                  <rect width="56" height="56" rx="28" fill="currentColor"></rect>
-                  <path d="M37 32H19M37 24H19" stroke="black" stroke-width="1.5" stroke-linecap="round"></path>
+              <button data-mobile-toggle type="button" class="xl:hidden inline-flex items-center justify-center w-12 h-12 rounded-full border border-white/20 bg-white/5 text-white hover:bg-white/10 transition duration-200" aria-label="Open navigation menu" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewbox="0 0 20 20" fill="none">
+                  <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
                 </svg>
-              </a>
+              </button>
+            </div>
+            <div data-mobile-panel class="xl:hidden pt-4" style="display: none;">
+              <div class="border-t border-white/10 pt-4 pb-2">
+                <div class="flex flex-col gap-2">
+                  <a href="index.html" class="text-white text-sm font-medium tracking-tight py-3 px-3 rounded-xl hover:bg-gray-900 transition">Home</a>
+                  <div class="rounded-xl border border-white/10 px-3 py-3">
+                    <p class="text-white text-sm font-medium tracking-tight mb-3">Initiatives</p>
+                    <div class="mb-3">
+                      <p class="text-[10px] uppercase tracking-[0.18em] text-gray-500 mb-2">Subsidiaries</p>
+                      <div class="flex flex-col gap-1">
+                        <a href="web-ready.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Web-Ready</a>
+                        <a href="vcasse.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">VCASSE</a>
+                      </div>
+                    </div>
+                    <div class="mb-3 border-t border-white/10 pt-3">
+                      <p class="text-[10px] uppercase tracking-[0.18em] text-gray-500 mb-2">Projects</p>
+                      <div class="flex flex-col gap-1">
+                        <a href="sustainable-technology-week.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Sustainable Technology Week</a>
+                        <a href="wra_platform.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">WRA Platform</a>
+                      </div>
+                    </div>
+                    <div class="border-t border-white/10 pt-3">
+                      <p class="text-[10px] uppercase tracking-[0.18em] text-gray-500 mb-2">Accountability</p>
+                      <div class="flex flex-col gap-1">
+                        <a href="https://impact.oasisofchange.com" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Impact Dashboard</a>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="case-studies.html" class="text-white text-sm font-medium tracking-tight py-3 px-3 rounded-xl hover:bg-gray-900 transition">Case Studies</a>
+                  <div class="rounded-xl border border-white/10 px-3 py-3">
+                    <p class="text-white text-sm font-medium tracking-tight mb-3">Company</p>
+                    <div class="flex flex-col gap-1">
+                      <a href="about.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Our Story</a>
+                      <a href="about.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Our Mission</a>
+                      <a href="gabriel-dalton.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Our Founder</a>
+                      <a href="about.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Our Board</a>
+                      <a href="annual_reports.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Annual Reports</a>
+                      <a href="news_release.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">News / Press</a>
+                    </div>
+                  </div>
+                  <a href="get_involved.html" class="mt-2 rounded-full border border-gray-200 bg-white px-5 py-3 hover:bg-gray-50 transition inline-flex items-center justify-center gap-2">
+                    <span class="text-sm font-semibold tracking-tight">Support Our Mission</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none">
+                      <path d="M14 6.66666H7.33333C4.38781 6.66666 2 9.05447 2 12V13.3333M14 6.66666L10 10.6667M14 6.66666L10 2.66666" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
             </div>
           </nav>
           <section class="bg-[#f8f8f4] min-h-screen">

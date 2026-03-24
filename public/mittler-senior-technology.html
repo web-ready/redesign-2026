@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Page title</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Mittler Senior Technology Case Study | Oasis of Change, Inc.</title>
+    <meta name="description" content="Case study: how Mittler Senior Technology reached roughly 98% lower energy use and moved from an F to a B digital sustainability rating, cutting emissions and water use at scale with Oasis of Change.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mittler Senior Technology Case Study | Oasis of Change, Inc.">
+    <meta property="og:description" content="Case study: how Mittler Senior Technology reached roughly 98% lower energy use and moved from an F to a B digital sustainability rating, cutting emissions and water use at scale with Oasis of Change.">
+    <meta property="og:site_name" content="Oasis of Change, Inc.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mittler Senior Technology Case Study | Oasis of Change, Inc.">
+    <meta name="twitter:description" content="Case study: how Mittler Senior Technology reached roughly 98% lower energy use and moved from an F to a B digital sustainability rating, cutting emissions and water use at scale with Oasis of Change.">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/tailwind/tailwind.min.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="shuffle-for-tailwind.png">
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js" defer></script>
+    <script src="js/site.js" defer></script>
 </head>
 <body class="antialiased bg-body text-body font-body">
     <div class="">
                 
       <section class="px-4 md:px-8 pt-8 bg-white">
-        <div x-data="{ mobileNavOpen: false }" class="max-w-[1400px] mx-auto">
+        <div class="max-w-[1400px] mx-auto">
           <!-- NAV -->
           <nav class="bg-black rounded-2xl px-6 py-4 border border-white/10">
             <div class="flex items-center justify-between">
@@ -53,12 +60,59 @@
                   <path d="M14 6.66666H7.33333C4.38781 6.66666 2 9.05447 2 12V13.3333M14 6.66666L10 10.6667M14 6.66666L10 2.66666" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
               </a>
-              <a x-on:click.prevent="mobileNavOpen = !mobileNavOpen" href="#" class="xl:hidden">
-                <svg class="navbar-burger text-white" width="51" height="51" viewbox="0 0 56 56" fill="none">
-                  <rect width="56" height="56" rx="28" fill="currentColor"></rect>
-                  <path d="M37 32H19M37 24H19" stroke="black" stroke-width="1.5" stroke-linecap="round"></path>
+              <button data-mobile-toggle type="button" class="xl:hidden inline-flex items-center justify-center w-12 h-12 rounded-full border border-white/20 bg-white/5 text-white hover:bg-white/10 transition duration-200" aria-label="Open navigation menu" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewbox="0 0 20 20" fill="none">
+                  <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
                 </svg>
-              </a>
+              </button>
+            </div>
+            <div data-mobile-panel class="xl:hidden pt-4" style="display: none;">
+              <div class="border-t border-white/10 pt-4 pb-2">
+                <div class="flex flex-col gap-2">
+                  <a href="index.html" class="text-white text-sm font-medium tracking-tight py-3 px-3 rounded-xl hover:bg-gray-900 transition">Home</a>
+                  <div class="rounded-xl border border-white/10 px-3 py-3">
+                    <p class="text-white text-sm font-medium tracking-tight mb-3">Initiatives</p>
+                    <div class="mb-3">
+                      <p class="text-[10px] uppercase tracking-[0.18em] text-gray-500 mb-2">Subsidiaries</p>
+                      <div class="flex flex-col gap-1">
+                        <a href="web-ready.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Web-Ready</a>
+                        <a href="vcasse.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">VCASSE</a>
+                      </div>
+                    </div>
+                    <div class="mb-3 border-t border-white/10 pt-3">
+                      <p class="text-[10px] uppercase tracking-[0.18em] text-gray-500 mb-2">Projects</p>
+                      <div class="flex flex-col gap-1">
+                        <a href="sustainable-technology-week.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Sustainable Technology Week</a>
+                        <a href="wra_platform.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">WRA Platform</a>
+                      </div>
+                    </div>
+                    <div class="border-t border-white/10 pt-3">
+                      <p class="text-[10px] uppercase tracking-[0.18em] text-gray-500 mb-2">Accountability</p>
+                      <div class="flex flex-col gap-1">
+                        <a href="https://impact.oasisofchange.com" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Impact Dashboard</a>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="case-studies.html" class="text-white text-sm font-medium tracking-tight py-3 px-3 rounded-xl hover:bg-gray-900 transition">Case Studies</a>
+                  <div class="rounded-xl border border-white/10 px-3 py-3">
+                    <p class="text-white text-sm font-medium tracking-tight mb-3">Company</p>
+                    <div class="flex flex-col gap-1">
+                      <a href="about.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Our Story</a>
+                      <a href="about.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Our Mission</a>
+                      <a href="gabriel-dalton.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Our Founder</a>
+                      <a href="about.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Our Board</a>
+                      <a href="annual_reports.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Annual Reports</a>
+                      <a href="news_release.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">News / Press</a>
+                    </div>
+                  </div>
+                  <a href="get_involved.html" class="mt-2 rounded-full border border-gray-200 bg-white px-5 py-3 hover:bg-gray-50 transition inline-flex items-center justify-center gap-2">
+                    <span class="text-sm font-semibold tracking-tight">Support Our Mission</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none">
+                      <path d="M14 6.66666H7.33333C4.38781 6.66666 2 9.05447 2 12V13.3333M14 6.66666L10 10.6667M14 6.66666L10 2.66666" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
             </div>
           </nav>
           <!-- HERO -->
@@ -138,18 +192,6 @@
                 </div>
               </div>
       
-            </div>
-          </div>
-          <!-- MOBILE NAV PANEL -->
-          <div x-show="mobileNavOpen" x-transition="" class="xl:hidden mt-4 bg-black rounded-2xl px-6 py-6" style="display: none;">
-            <div class="flex flex-col gap-2">
-              <a href="#" class="text-white text-sm font-medium tracking-tight py-3 px-2 rounded-xl hover:bg-gray-900 transition">Home</a><a href="#" class="text-white text-sm font-medium tracking-tight py-3 px-2 rounded-xl hover:bg-gray-900 transition">Projects</a><a href="#" class="text-white text-sm font-medium tracking-tight py-3 px-2 rounded-xl hover:bg-gray-900 transition">Case Studies</a><a href="#" class="text-white text-sm font-medium tracking-tight py-3 px-2 rounded-xl hover:bg-gray-900 transition">Company</a>
-              <a href="#" class="mt-2 rounded-full border border-gray-200 bg-white px-5 py-3 hover:bg-gray-50 transition inline-flex items-center justify-center gap-2">
-                <span class="text-sm font-semibold tracking-tight">Support Our Mission</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none">
-                  <path d="M14 6.66666H7.33333C4.38781 6.66666 2 9.05447 2 12V13.3333M14 6.66666L10 10.6667M14 6.66666L10 2.66666" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>
-              </a>
             </div>
           </div>
         </div>
@@ -407,43 +449,33 @@
             </p>
           </div>
       
-          <div class="relative overflow-hidden rounded-[28px] border border-gray-200 bg-white shadow-[0_16px_40px_rgba(0,0,0,0.06)] select-none" x-data="{ pos: 50, dragging: false }" x-on:pointermove.window="
-                                        if (dragging) {
-                                        let rect = $el.getBoundingClientRect();
-                                        let x = $event.clientX - rect.left;
-                                        pos = Math.max(0, Math.min(100, (x / rect.width) * 100));
-                                        }
-                                        " x-on:pointerup.window="dragging = false" x-on:pointercancel.window="dragging = false">
+          <div data-image-compare class="relative overflow-hidden rounded-[28px] border border-gray-200 bg-white shadow-[0_16px_40px_rgba(0,0,0,0.06)] select-none">
             <div class="relative aspect-[16/11] md:aspect-[16/10] lg:aspect-[16/9] w-full bg-gray-50">
               <!-- AFTER -->
               <img src="images/image-2026-03-18T173402-509.png" alt="Redesigned Mittler Senior Technology website" class="absolute inset-0 h-full w-full object-cover object-top" loading="lazy">
       
               <!-- BEFORE REVEAL -->
-              <div class="absolute inset-y-0 left-0 overflow-hidden" :style="`width:${pos}%`">
+              <div data-compare-reveal class="absolute inset-y-0 left-0 overflow-hidden" style="width: 50%;">
                 <img src="images/image-2026-03-18T173301-253.png" alt="Previous Mittler Senior Technology website before redesign" class="absolute inset-0 h-full w-full object-cover" style="max-width:none; object-position: 15% top;" loading="lazy">
               </div>
       
               <!-- LABELS -->
               <div class="absolute top-4 left-4 z-20">
-                <span class="inline-flex items-center rounded-full px-4 py-2 text-xs md:text-sm font-semibold border transition duration-200" :class="pos &gt;= 50
-                              ? 'bg-gray-900 text-white border-gray-900 shadow-[0_8px_20px_rgba(0,0,0,0.22)]'
-                              : 'bg-white text-gray-900 border-gray-300 shadow-[0_4px_12px_rgba(0,0,0,0.08)]'">
+                <span data-compare-label-before class="inline-flex items-center rounded-full px-4 py-2 text-xs md:text-sm font-semibold border transition duration-200 bg-gray-900 text-white border-gray-900 shadow-[0_8px_20px_rgba(0,0,0,0.22)]">
                   Before
                 </span>
               </div>
       
               <div class="absolute top-4 right-4 z-20">
-                <span class="inline-flex items-center rounded-full px-4 py-2 text-xs md:text-sm font-semibold border transition duration-200" :class="pos &lt; 50
-                              ? 'bg-gray-900 text-white border-gray-900 shadow-[0_8px_20px_rgba(0,0,0,0.22)]'
-                              : 'bg-white text-gray-900 border-gray-300 shadow-[0_4px_12px_rgba(0,0,0,0.08)]'">
+                <span data-compare-label-after class="inline-flex items-center rounded-full px-4 py-2 text-xs md:text-sm font-semibold border transition duration-200 bg-white text-gray-900 border-gray-300 shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
                   After
                 </span>
               </div>
       
               <!-- DIVIDER -->
-              <div class="absolute inset-y-0 z-20" :style="`left: calc(${pos}% - 1px)`">
+              <div data-compare-divider class="absolute inset-y-0 z-20" style="left: calc(50% - 1px);">
                 <div class="relative h-full w-[2px] bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.12)]">
-                  <button type="button" class="absolute left-1/2 top-1/2 flex h-11 w-11 md:h-12 md:w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-gray-300 bg-white shadow-[0_10px_24px_rgba(0,0,0,0.16)] cursor-ew-resize touch-none" x-on:pointerdown="dragging = true" aria-label="Drag to compare before and after designs">
+                  <button data-compare-handle type="button" class="absolute left-1/2 top-1/2 flex h-11 w-11 md:h-12 md:w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-gray-300 bg-white shadow-[0_10px_24px_rgba(0,0,0,0.16)] cursor-ew-resize touch-none" aria-label="Drag to compare before and after designs">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-700" viewbox="0 0 24 24" fill="none" aria-hidden="true">
                       <path d="M8 7L3 12L8 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
                       <path d="M16 7L21 12L16 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
