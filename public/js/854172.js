@@ -4,10 +4,9 @@
   const divider = compare ? compare.querySelector('[data-compare-divider]') : null;
   const handle = compare ? compare.querySelector('[data-compare-handle]') : null;
   const range = compare ? compare.querySelector('[data-compare-range]') : null;
-  const beforeLabel = compare ? compare.querySelector('[data-compare-label-before]') : null;
-  const afterLabel = compare ? compare.querySelector('[data-compare-label-after]') : null;
+  const statusLabel = document.querySelector('[data-compare-status]');
 
-  if (!compare || !reveal || !divider || !handle || !range || !beforeLabel || !afterLabel) return;
+  if (!compare || !reveal || !divider || !handle || !range || !statusLabel) return;
 
   let dragging = false;
 
@@ -18,14 +17,12 @@
   }
 
   function updateActiveLabels(percent) {
-    const beforeActive = percent <= 50;
-
-    if (beforeActive) {
-      beforeLabel.className = 'inline-flex items-center rounded-full px-3 md:px-4 py-2 text-xs md:text-sm font-semibold border transition duration-200 bg-[#b42318] text-white border-[#8f1e15] shadow-[0_10px_26px_rgba(180,35,24,0.35)] ring-2 ring-white';
-      afterLabel.className = 'inline-flex items-center rounded-full px-3 md:px-4 py-2 text-xs md:text-sm font-semibold border transition duration-200 bg-white text-gray-900 border-gray-300 shadow-[0_4px_12px_rgba(0,0,0,0.08)]';
+    if (percent < 40) {
+      statusLabel.textContent = 'Mostly viewing: Before';
+    } else if (percent > 60) {
+      statusLabel.textContent = 'Mostly viewing: After';
     } else {
-      beforeLabel.className = 'inline-flex items-center rounded-full px-3 md:px-4 py-2 text-xs md:text-sm font-semibold border transition duration-200 bg-white text-gray-900 border-gray-300 shadow-[0_4px_12px_rgba(0,0,0,0.08)]';
-      afterLabel.className = 'inline-flex items-center rounded-full px-3 md:px-4 py-2 text-xs md:text-sm font-semibold border transition duration-200 bg-[#166534] text-white border-[#14532d] shadow-[0_10px_26px_rgba(22,101,52,0.32)] ring-2 ring-white';
+      statusLabel.textContent = 'Comparing both versions';
     }
   }
 
