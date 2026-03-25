@@ -90,9 +90,9 @@
                     <div class="w-[300px] rounded-2xl border border-white/10 bg-[#111111] p-5 shadow-2xl">
                       <ul class="flex flex-col gap-2">
                         <li><a href="about.html" class="block rounded-xl px-3 py-2 text-sm text-white hover:bg-gray-900 transition">Our Story</a></li>
-                        <li><a href="about.html" class="block rounded-xl px-3 py-2 text-sm text-white hover:bg-gray-900 transition">Our Mission</a></li>
+                        <li><a href="about.html#OurMission" class="block rounded-xl px-3 py-2 text-sm text-white hover:bg-gray-900 transition">Our Mission</a></li>
                         <li><a href="gabriel-dalton.html" class="block rounded-xl px-3 py-2 text-sm text-white hover:bg-gray-900 transition">Our Founder</a></li>
-                        <li><a href="about.html" class="block rounded-xl px-3 py-2 text-sm text-white hover:bg-gray-900 transition">Our Board</a></li>
+                        <li><a href="about.html#our-board" class="block rounded-xl px-3 py-2 text-sm text-white hover:bg-gray-900 transition">Our Board</a></li>
                         <li><a href="annual_reports.html" class="block rounded-xl px-3 py-2 text-sm text-white hover:bg-gray-900 transition">Annual Reports</a></li>
                         <li><a href="news_release.html" class="block rounded-xl px-3 py-2 text-sm text-white hover:bg-gray-900 transition">News / Press</a></li>
                       </ul>
@@ -172,9 +172,9 @@
                         <div class="rounded-xl border border-white/10 px-3 py-3 ml-3 mb-2">
                         <div class="flex flex-col gap-1">
                           <a href="about.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Our Story</a>
-                          <a href="about.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Our Mission</a>
+                          <a href="about.html#OurMission" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Our Mission</a>
                           <a href="gabriel-dalton.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Our Founder</a>
-                          <a href="about.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Our Board</a>
+                          <a href="about.html#our-board" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Our Board</a>
                           <a href="annual_reports.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">Annual Reports</a>
                           <a href="news_release.html" class="text-gray-300 text-sm py-1.5 px-2 rounded-lg hover:bg-gray-900 hover:text-white transition">News / Press</a>
                         </div>
@@ -194,6 +194,13 @@
           </nav>
 
           <section class="px-8 md:px-24 py-24 md:py-32">
+            <nav aria-label="Breadcrumb" class="text-sm text-gray-500 mb-6">
+              <a href="index.html" class="hover:text-black transition">Home</a>
+              <span class="mx-2" aria-hidden="true">/</span>
+              <a href="about.html" class="hover:text-black transition">Company</a>
+              <span class="mx-2" aria-hidden="true">/</span>
+              <span class="text-gray-700">News / Press</span>
+            </nav>
             <p class="tracking-tight text-gray-600 font-medium mb-4">News &amp; Press</p>
             <h1 class="font-heading tracking-tight text-4xl md:text-6xl font-medium mb-16 max-w-lg md:max-w-4xl text-black">News, media coverage, and public updates from Oasis of Change</h1>
       
@@ -339,11 +346,9 @@
           </section>
         </div>
       </section>
-                
-      <div class="pt-20 pb-8 overflow-hidden bg-black bs-section-dragged">
+      <footer class="site-global-footer pt-20 pb-8 overflow-hidden bg-black bs-section-dragged" role="contentinfo">
         <div class="container mx-auto px-4">
           <div class="flex flex-col lg:flex-row lg:justify-between gap-12 lg:gap-16">
-            <!-- Left brand block -->
             <div class="w-full lg:w-[24%]">
               <div class="flex flex-col items-start gap-4">
                 <img class="h-16 mb-2" src="images/logo/Oasis_of_Change_Logo.svg" alt="Oasis of Change logo">
@@ -352,11 +357,8 @@
                 </p>
               </div>
             </div>
-      
-            <!-- Right links block -->
             <div class="w-full lg:w-[76%]">
               <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-12 xl:gap-16">
-                <!-- General -->
                 <div>
                   <p class="tracking-tight text-white font-semibold mb-6">General</p>
                   <ul class="flex flex-col gap-6">
@@ -365,10 +367,9 @@
                     <li><a href="case-studies.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Case Studies</a></li>
                     <li><a href="contact.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Contact</a></li>
                     <li><a href="get_involved.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Get Involved</a></li>
+                    <li><a href="nonprofits.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">For Nonprofits</a></li>
                   </ul>
                 </div>
-      
-                <!-- Initiatives -->
                 <div class="min-w-0">
                   <p class="tracking-tight text-white font-semibold mb-6">Initiatives</p>
                   <ul class="flex flex-col gap-6">
@@ -378,8 +379,6 @@
                     <li><a href="wra_platform.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">WRA Platform</a></li>
                   </ul>
                 </div>
-      
-                <!-- Company -->
                 <div>
                   <p class="tracking-tight text-white font-semibold mb-6">Company</p>
                   <ul class="flex flex-col gap-6">
@@ -391,8 +390,6 @@
                     <li><a href="news_release.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">News / Press</a></li>
                   </ul>
                 </div>
-      
-                <!-- Accountability -->
                 <div>
                   <p class="tracking-tight text-white font-semibold mb-6">Accountability</p>
                   <ul class="flex flex-col gap-6">
@@ -406,16 +403,14 @@
               </div>
             </div>
           </div>
-      
           <div class="border-t border-gray-800 mt-16 pt-6">
-            <p class="text-center text-gray-600 text-sm tracking-tight">
-              ©
-              <span class="copyright-year">2026</span>
-              Oasis of Change, Inc. All rights reserved.
+            <p class="text-center text-gray-300 text-sm tracking-tight">
+              © 2026 Oasis of Change, Inc. All rights reserved.
             </p>
           </div>
         </div>
-      </div>
+      </footer>
+
     </div>
 </body>
 </html>

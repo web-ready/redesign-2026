@@ -13,8 +13,52 @@
     document.head.appendChild(s);
   }
 
+  function injectMobileNavScrollbarStyles() {
+    if (document.getElementById('site-mobile-nav-scrollbar')) return;
+    var s = document.createElement('style');
+    s.id = 'site-mobile-nav-scrollbar';
+    s.textContent =
+      '[data-mobile-panel]{scrollbar-width:none;-ms-overflow-style:none}' +
+      '[data-mobile-panel]::-webkit-scrollbar{width:0;height:0;display:none}';
+    document.head.appendChild(s);
+  }
+
+  /** External-site indicator for Impact Dashboard in the global footer (hover / focus-visible). */
+  function injectFooterExternalLinkIconStyles() {
+    if (document.getElementById('site-footer-external-link-icon')) return;
+    var svg =
+      'data:image/svg+xml,' +
+      encodeURIComponent(
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="black" d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>'
+      );
+    var s = document.createElement('style');
+    s.id = 'site-footer-external-link-icon';
+    s.textContent =
+      '.site-global-footer a[href*="impact.oasisofchange.com"]{' +
+      'display:inline-flex;align-items:center;gap:0.28em}' +
+      '.site-global-footer a[href*="impact.oasisofchange.com"]::after{' +
+      'content:"";flex-shrink:0;width:0.85em;height:0.85em;opacity:0;' +
+      'transition:opacity .15s ease;' +
+      'background-color:currentColor;' +
+      '-webkit-mask-image:url("' +
+      svg +
+      '");mask-image:url("' +
+      svg +
+      '");' +
+      '-webkit-mask-size:contain;mask-size:contain;' +
+      '-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;' +
+      '-webkit-mask-position:center;mask-position:center}' +
+      '.site-global-footer a[href*="impact.oasisofchange.com"]:hover::after,' +
+      '.site-global-footer a[href*="impact.oasisofchange.com"]:focus-visible::after{' +
+      'opacity:1}' +
+      '@media (prefers-reduced-motion:reduce){' +
+      '.site-global-footer a[href*="impact.oasisofchange.com"]::after{transition:none}}';
+    document.head.appendChild(s);
+  }
+
   function initMobileNav() {
     injectMobileNavFocusStyles();
+    injectMobileNavScrollbarStyles();
     var toggle = document.querySelector('[data-mobile-toggle]');
     var panel = document.querySelector('[data-mobile-panel]');
     if (!toggle || !panel) return;
@@ -22,6 +66,11 @@
     var menuIcon = toggle.querySelector('[data-icon-menu]');
     var closeIcon = toggle.querySelector('[data-icon-close]');
     var isOpen = false;
+    // One duration + easing for panel + toggle icons so the header doesn't feel "ahead" of the menu.
+    var navMotionMs = 240;
+    var navEase = 'cubic-bezier(0.2, 0.9, 0.2, 1)';
+    var navTransitionCss =
+      'height ' + navMotionMs + 'ms ' + navEase + ', opacity ' + navMotionMs + 'ms ' + navEase + ', transform ' + navMotionMs + 'ms ' + navEase;
 
     function setToggleIcons(open) {
       if (menuIcon && closeIcon) {
@@ -55,19 +104,44 @@
       return Math.max(200, window.innerHeight - top - margin);
     }
 
-    function applyPanelHeight(allowTransition) {
-      if (!isOpen) return;
+    function prefersReducedMotion() {
+      try {
+        return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    function getNaturalPanelContentPx() {
+      var inner = panel.firstElementChild;
+      if (!inner || inner.nodeType !== 1) {
+        return panel.scrollHeight;
+      }
+      var cs = window.getComputedStyle(panel);
+      var padY =
+        (parseFloat(cs.paddingTop) || 0) + (parseFloat(cs.paddingBottom) || 0);
+      // When the panel has a fixed JS height, scrollHeight often stays at that height even after
+      // inner content shrinks (e.g. switching from Initiatives to Company). Measure the inner
+      // block instead so the black shell tracks the current dropdown state.
+      return inner.offsetHeight + padY;
+    }
+
+    function getPanelTargetPx() {
       var cap = viewportCapPx();
-      var want = panel.scrollHeight;
-      var next = Math.min(want, cap) + 'px';
+      var want = getNaturalPanelContentPx();
+      return Math.min(want, cap);
+    }
+
+    function setPanelHeightPx(px, allowTransition) {
+      var next = Math.max(0, px) + 'px';
       if (allowTransition === false) {
         var prevTransition = panel.style.transition;
         panel.style.transition = 'none';
-        panel.style.maxHeight = next;
+        panel.style.height = next;
         void panel.offsetHeight;
         panel.style.transition = prevTransition;
       } else {
-        panel.style.maxHeight = next;
+        panel.style.height = next;
       }
     }
 
@@ -75,7 +149,7 @@
       if (!isOpen) return;
       requestAnimationFrame(function () {
         requestAnimationFrame(function () {
-          applyPanelHeight(false);
+          setPanelHeightPx(getPanelTargetPx(), false);
         });
       });
     }
@@ -87,40 +161,101 @@
       panel.style.overflowY = 'auto';
       panel.style.overscrollBehavior = 'contain';
       panel.style.setProperty('-webkit-overflow-scrolling', 'touch');
-      void panel.offsetHeight;
-      applyPanelHeight(true);
-      panel.style.opacity = '1';
+      panel.style.willChange = 'height, transform, opacity';
+
+      if (prefersReducedMotion()) {
+        panel.style.transform = 'none';
+        panel.style.opacity = '1';
+        setPanelHeightPx(getPanelTargetPx(), false);
+      } else {
+        // Start closed (in-flow), then animate to measured height.
+        panel.style.transform = 'translateY(-6px)';
+        panel.style.opacity = '0';
+        setPanelHeightPx(0, false);
+        void panel.offsetHeight;
+
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            panel.style.opacity = '1';
+            panel.style.transform = 'translateY(0)';
+            setPanelHeightPx(getPanelTargetPx(), true);
+          });
+        });
+      }
       toggle.setAttribute('aria-expanded', 'true');
       toggle.setAttribute('aria-label', 'Close navigation menu');
       setToggleIcons(true);
-      syncOuterPanelHeight();
+    }
+
+    function finalizeMobilePanelHidden() {
+      if (isOpen) return;
+      panel.style.display = 'none';
+      panel.style.willChange = '';
+      panel.removeEventListener('transitionend', onNavPanelTransitionEnd);
+      collapseAllDropdowns();
+    }
+
+    function onNavPanelTransitionEnd(e) {
+      if (e.target !== panel) return;
+      if (e.propertyName !== 'height') return;
+      finalizeMobilePanelHidden();
     }
 
     function close() {
       isOpen = false;
-      panel.style.maxHeight = '0';
-      panel.style.opacity = '0';
+      // Reset scroll so height/overflow match the top of the menu (avoids a second layout beat at
+      // the bottom where the Support CTA lives).
+      try {
+        panel.scrollTop = 0;
+      } catch (err) {}
+
       panel.style.overflowY = 'hidden';
       panel.style.overflowX = 'hidden';
+      void panel.offsetHeight;
+
+      panel.style.willChange = 'height, transform, opacity';
+      panel.removeEventListener('transitionend', onNavPanelTransitionEnd);
+      panel.addEventListener('transitionend', onNavPanelTransitionEnd);
+
+      if (prefersReducedMotion()) {
+        panel.style.opacity = '0';
+        panel.style.transform = 'none';
+        setPanelHeightPx(0, false);
+        finalizeMobilePanelHidden();
+      } else {
+        // Use the *rendered* height (not scrollHeight math) so it stays in sync with scrollbar /
+        // flex layout — avoids the menu "stopping" while the Support CTA catches up.
+        var startPx = panel.offsetHeight;
+        if (!startPx || startPx < 1) {
+          startPx = getPanelTargetPx();
+        }
+        setPanelHeightPx(startPx, false);
+        void panel.offsetHeight;
+        panel.style.opacity = '0';
+        panel.style.transform = 'translateY(-6px)';
+        setPanelHeightPx(0, true);
+        setTimeout(function () {
+          if (!isOpen) finalizeMobilePanelHidden();
+        }, navMotionMs + 40);
+      }
+
       toggle.setAttribute('aria-expanded', 'false');
       toggle.setAttribute('aria-label', 'Open navigation menu');
       setToggleIcons(false);
-      setTimeout(function () {
-        if (!isOpen) {
-          panel.style.display = 'none';
-          collapseAllDropdowns();
-        }
-      }, 300);
     }
 
     panel.style.display = 'none';
-    panel.style.maxHeight = '0';
+    panel.style.height = '0';
     panel.style.opacity = '0';
     panel.style.overflow = 'hidden';
-    panel.style.transition = 'max-height 0.3s ease, opacity 0.25s ease';
+    panel.style.transform = 'translateY(-6px)';
+    panel.style.transition = navTransitionCss;
+
+    if (menuIcon) menuIcon.style.transition = 'opacity ' + navMotionMs + 'ms ' + navEase;
+    if (closeIcon) closeIcon.style.transition = 'opacity ' + navMotionMs + 'ms ' + navEase;
 
     window.addEventListener('resize', function () {
-      if (isOpen) applyPanelHeight(false);
+      if (isOpen) setPanelHeightPx(getPanelTargetPx(), false);
     });
 
     if (menuIcon && closeIcon) {
@@ -266,6 +401,7 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
+    injectFooterExternalLinkIconStyles();
     initMobileNav();
     initAccordion();
     initBlogToggle();
