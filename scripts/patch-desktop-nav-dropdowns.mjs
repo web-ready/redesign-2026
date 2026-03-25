@@ -83,8 +83,9 @@ const paths = {
     '<path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />',
   book:
     '<path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />',
-  flag:
-    '<path stroke-linecap="round" stroke-linejoin="round" d="M3 3v1.5M3 21v-6m0 0l2.77-.693a9 9 0 016.208.682l.008.004a9.083 9.083 0 006.252 0l.008-.004a9.083 9.083 0 005.17-2.525 9.09 9.09 0 00.419-1.845V9.394a9 9 0 00-.419-1.845 9.09 9.09 0 00-5.17-2.525l-.008-.004a9.083 9.083 0 00-6.252 0l-.008.004a9.083 9.083 0 00-5.17 2.525L3 12.75M3 9.75V21" />',
+  /** Viewfinder + center mark — reads as aim / focus (“our mission”) (Heroicons 24 outline). */
+  mission:
+    '<path stroke-linecap="round" stroke-linejoin="round" d="M7.5 3.75H6A2.25 2.25 0 0 0 3.75 6v1.5M16.5 3.75H18A2.25 2.25 0 0 1 20.25 6v1.5m0 9V18A2.25 2.25 0 0 1 18 20.25h-1.5m-9 0H6A2.25 2.25 0 0 1 3.75 18v-1.5M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />',
   user:
     '<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />',
   users:
@@ -182,7 +183,7 @@ function buildCompanyPanel(I, withNonprofits) {
   const li = (a) => `${I2}<li>\n${I3}${a}\n${I2}</li>`;
   const rows = [
     linkRow('about.html', 'Our Story', paths.book),
-    linkRow('about.html#OurMission', 'Our Mission', paths.flag),
+    linkRow('about.html#OurMission', 'Our Mission', paths.mission),
     linkRow('gabriel-dalton.html', 'Our Founder', paths.user),
     linkRow('about.html#our-board', 'Our Board', paths.users),
     linkRow('annual_reports.html', 'Annual Reports', paths.doc),

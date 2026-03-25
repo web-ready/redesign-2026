@@ -81,7 +81,8 @@
       'box-shadow:0 25px 50px -12px rgba(0,0,0,0.45)}' +
       '.nav-dd-panel--company{' +
       'max-width:min(15.5rem,calc(100vw - 2rem));' +
-      'padding:0.45rem 0.4rem}' +
+      'padding:0.65rem 0.55rem}' +
+      '.nav-dd-company-popover{padding-top:1rem}' +
       '.nav-dd-initiatives-popover{' +
       'left:50%;' +
       'right:auto;' +
@@ -141,6 +142,7 @@
       '[data-site-nav-dropdown] ul{' +
       'list-style:none;margin:0;padding:0;width:100%;' +
       'display:flex;flex-direction:column;gap:0.125rem}' +
+      '.nav-dd-panel--company ul{gap:0.35rem}' +
       '[data-site-nav-dropdown] .nav-dd-link{' +
       'display:flex;align-items:center;gap:0.5rem;' +
       'width:100%;box-sizing:border-box;' +
@@ -150,6 +152,10 @@
       'font-weight:400;' +
       'color:#fff;text-decoration:none;' +
       'transition:background-color .15s ease,color .15s ease}' +
+      '.nav-dd-panel--company .nav-dd-link{' +
+      'gap:0.6rem;' +
+      'padding:0.5rem 0.55rem;' +
+      'line-height:1.35}' +
       '[data-site-nav-dropdown] .nav-dd-link.font-medium{font-weight:500}' +
       '[data-site-nav-dropdown] .nav-dd-link:hover,' +
       '[data-site-nav-dropdown] .nav-dd-link:focus-visible{' +
@@ -159,6 +165,8 @@
       '[data-site-nav-dropdown] .nav-dd-icon{' +
       'flex-shrink:0;width:1rem;height:1rem;' +
       'color:#6b7280;transition:color .15s ease}' +
+      '.nav-dd-panel--company .nav-dd-icon{' +
+      'width:1.125rem;height:1.125rem}' +
       '[data-site-nav-dropdown] .nav-dd-link:hover .nav-dd-icon,' +
       '[data-site-nav-dropdown] .nav-dd-link:focus-visible .nav-dd-icon{' +
       'color:#d1d5db}' +
