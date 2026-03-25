@@ -25,8 +25,8 @@
 <body class="antialiased bg-body text-body font-body">
     <div class="">
                 
-      <section class="px-4 md:px-24 pt-8 bg-white ">
-        <div>
+      <section class="px-4 md:px-8 pt-8 bg-white">
+        <div class="max-w-[1400px] mx-auto">
           <!-- NAV -->
           <nav class="relative z-[100] bg-black rounded-2xl px-4 py-3 sm:px-6 sm:py-4 border border-white/10 mb-4 sm:mb-6 shadow-[0_12px_30px_rgba(0,0,0,0.12)]">
             <div class="flex items-center justify-between gap-4">
@@ -94,7 +94,7 @@
                 <li><a href="case-studies.html" class="inline-block py-2 px-3 hover:bg-gray-900 transition duration-200 text-white text-sm font-medium tracking-tight rounded-full">Case Studies</a></li>
                 <!-- Company -->
                 <li class="relative group">
-                  <a href="about.html" class="inline-block py-2 px-3 hover:bg-gray-900 transition duration-200 rounded-full">
+                  <a href="company.html" class="inline-block py-2 px-3 hover:bg-gray-900 transition duration-200 rounded-full">
                     <div class="flex items-center gap-2">
                       <span class="text-white text-sm font-medium tracking-tight">Company</span>
                       <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewbox="0 0 17 16" fill="none">
@@ -255,28 +255,22 @@
               <!-- COMING SOON -->
               <div class="xl:col-span-4">
                 <article class="group">
-                  <div class="relative overflow-hidden rounded-[2rem] mb-6">
-                    <img class="w-full h-[260px] sm:h-[320px] xl:h-[360px] object-cover object-[center_78%] transition duration-500 group-hover:scale-[1.02]" src="images/photo-1508514177221-188b1cf16e9d.avif" alt="Oasis of Change website case study preview">
-                    <div class="absolute bottom-0 right-0">
-                      <div class="bg-[#f7faf8] rounded-tl-[2rem] p-4">
-                        <div class="bg-gray-200 rounded-2xl flex items-center justify-center w-20 h-20 text-black">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewbox="0 0 28 28" fill="none">
+                  <div class="relative mb-6 rounded-[2rem] overflow-hidden isolate">
+                    <div class="overflow-hidden rounded-[2rem] h-[260px] sm:h-[320px] xl:h-[360px]">
+                      <img class="w-full h-full object-cover object-[center_78%] transition duration-500 group-hover:scale-[1.02] will-change-transform" src="images/photo-1508514177221-188b1cf16e9d.avif" alt="Oasis of Change website case study preview">
+                    </div>
+                    <div class="absolute bottom-0 right-0 z-10 pointer-events-none">
+                      <div class="pointer-events-auto bg-[#f7faf8] rounded-tl-[2rem] rounded-br-[2rem] p-4 shadow-[0_0_0_4px_#f7faf8] [transform:translateZ(0)]">
+                        <a href="oasis-of-change-website.html" class="bg-gray-200 rounded-2xl flex items-center justify-center w-20 h-20 text-black hover:bg-gray-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition duration-200" aria-label="Read case study: Oasis of Change website, sustainability-first">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewbox="0 0 28 28" fill="none" aria-hidden="true">
                             <path d="M21.875 7V18.375C21.875 18.6071 21.7828 18.8296 21.6187 18.9937C21.4546 19.1578 21.2321 19.25 21 19.25C20.7679 19.25 20.5454 19.1578 20.3813 18.9937C20.2172 18.8296 20.125 18.6071 20.125 18.375V9.11203L7.61906 21.6191C7.45488 21.7832 7.23219 21.8755 7 21.8755C6.7678 21.8755 6.54512 21.7832 6.38094 21.6191C6.21675 21.4549 6.12451 21.2322 6.12451 21C6.12451 20.7678 6.21675 20.5451 6.38094 20.3809L18.888 7.875H9.625C9.39293 7.875 9.17037 7.78281 9.00628 7.61872C8.84219 7.45462 8.75 7.23206 8.75 7C8.75 6.76794 8.84219 6.54538 9.00628 6.38128C9.17037 6.21719 9.39293 6.125 9.625 6.125H21C21.2321 6.125 21.4546 6.21719 21.6187 6.38128C21.7828 6.54538 21.875 6.76794 21.875 7Z" fill="currentColor"></path>
                           </svg>
-                        </div>
+                        </a>
                       </div>
                     </div>
                   </div>
                   <span class="inline-flex rounded-full px-3 py-1 border border-gray-200 text-gray-700 text-sm font-medium tracking-tight mb-4">New Case Study</span>
                   <h3 class="tracking-tight text-2xl sm:text-3xl font-semibold max-w-md leading-[1.08] text-black">How we built the Oasis of Change website to be sustainability-first</h3>
-                  <a href="oasis-of-change-website.html" class="mt-5 inline-flex items-center gap-0 rounded-2xl overflow-hidden bg-black hover:bg-[#111111] text-white transition duration-200">
-                    <span class="px-5 py-4 text-sm font-semibold tracking-tight whitespace-nowrap">Read case study</span>
-                    <span class="w-14 h-14 flex items-center justify-center bg-[#1f1f1f]">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewbox="0 0 28 28" fill="none">
-                        <path d="M21.875 7V18.375C21.875 18.6071 21.7828 18.8296 21.6187 18.9937C21.4546 19.1578 21.2321 19.25 21 19.25C20.7679 19.25 20.5454 19.1578 20.3813 18.9937C20.2172 18.8296 20.125 18.6071 20.125 18.375V9.11203L7.61906 21.6191C7.45488 21.7832 7.23219 21.8755 7 21.8755C6.7678 21.8755 6.54512 21.7832 6.38094 21.6191C6.21675 21.4549 6.12451 21.2322 6.12451 21C6.12451 20.7678 6.21675 20.5451 6.38094 20.3809L18.888 7.875H9.625C9.39293 7.875 9.17037 7.78281 9.00628 7.61872C8.84219 7.45462 8.75 7.23206 8.75 7C8.75 6.76794 8.84219 6.54538 9.00628 6.38128C9.17037 6.21719 9.39293 6.125 9.625 6.125H21C21.2321 6.125 21.4546 6.21719 21.6187 6.38128C21.7828 6.54538 21.875 6.76794 21.875 7Z" fill="currentColor"></path>
-                      </svg>
-                    </span>
-                  </a>
                 </article>
               </div>
             </div>
@@ -301,11 +295,11 @@
                   <p class="tracking-tight text-white font-semibold mb-4 sm:mb-5 text-sm uppercase">General</p>
                   <ul class="flex flex-col gap-3 sm:gap-4">
                     <li><a href="index.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm sm:text-base">Home</a></li>
+                    <li><a href="get_involved.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm sm:text-base">Get Involved</a></li>
+                    <li><a href="nonprofits.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm sm:text-base">For Nonprofits</a></li>
                     <li><a href="blog.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm sm:text-base">Blog</a></li>
                     <li><a href="case-studies.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm sm:text-base">Case Studies</a></li>
                     <li><a href="contact.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm sm:text-base">Contact</a></li>
-                    <li><a href="get_involved.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm sm:text-base">Get Involved</a></li>
-                    <li><a href="nonprofits.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm sm:text-base">For Nonprofits</a></li>
                   </ul>
                 </div>
 
