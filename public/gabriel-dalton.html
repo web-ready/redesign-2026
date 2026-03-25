@@ -47,32 +47,48 @@
                       </svg>
                     </div>
                   </a>
-                  <div class="absolute left-0 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200 z-[120]">
-                    <div class="w-[340px] rounded-2xl border border-white/10 bg-[#111111] p-5 shadow-2xl">
-                      <ul class="flex flex-col gap-2 mb-5">
-                        <li><a href="initiatives.html" class="block rounded-xl px-3 py-2 text-sm font-medium text-white hover:bg-gray-900 transition">All initiatives</a></li>
-                      </ul>
-                      <div class="mb-5 border-t border-white/10 pt-5">
-                        <p class="text-xs uppercase tracking-[0.18em] text-gray-500 mb-3">Subsidiaries</p>
-                        <ul class="flex flex-col gap-2">
-                          <li><a href="web-ready.html" class="block rounded-xl px-3 py-2 text-sm text-white hover:bg-gray-900 transition">Web-Ready</a></li>
-                          <li><a href="vcasse.html" class="block rounded-xl px-3 py-2 text-sm text-white hover:bg-gray-900 transition">VCASSE</a></li>
+                  <div class="absolute top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200 z-[120] nav-dd-initiatives-popover">
+                    <div data-site-nav-dropdown class="nav-dd-panel nav-dd-panel--initiatives">
+                      <div class="nav-dd-initiatives-top">
+                        <ul>
+                          <li>
+                            <a href="initiatives.html" class="nav-dd-link nav-dd-link--init font-medium"><span class="nav-dd-link-stack"><span class="nav-dd-link-title">All initiatives</span><span class="nav-dd-link-desc">See the full portfolio and all our initiatives in one place.</span></span><svg class="nav-dd-icon shrink-0 w-4 h-4 text-gray-500 transition-colors" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM13.5 6c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125h-2.25A1.125 1.125 0 0113.5 8.25V6zM3.75 15.75a2.25 2.25 0 012.25-2.25h2.25a2.25 2.25 0 012.25 2.25v2.25a2.25 2.25 0 01-2.25 2.25h-2.25a2.25 2.25 0 01-2.25-2.25v-2.25zM13.5 15.75c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125v-2.25z" /></svg></a>
+                          </li>
                         </ul>
                       </div>
-                      <div class="mb-5 border-t border-white/10 pt-5">
-                        <p class="text-xs uppercase tracking-[0.18em] text-gray-500 mb-3">Projects</p>
-                        <ul class="flex flex-col gap-2">
-                          <li><a href="sustainable-technology-week.html" class="block rounded-xl px-3 py-2 text-sm text-white hover:bg-gray-900 transition">Sustainable Technology Week</a></li>
-                          <li><a href="wra_platform.html" class="block rounded-xl px-3 py-2 text-sm text-white hover:bg-gray-900 transition">WRA Platform</a></li>
+                      <div class="nav-dd-initiatives-split">
+                        <div class="nav-dd-initiatives-col">
+                          <p class="nav-dd-kicker">Subsidiaries</p>
+                          <ul>
+                            <li>
+                              <a href="web-ready.html" class="nav-dd-link nav-dd-link--init"><span class="nav-dd-link-stack"><span class="nav-dd-link-title">Web-Ready</span><span class="nav-dd-link-desc">Lower-carbon, accessible websites and digital grants support.</span></span></a>
+                            </li>
+                            <li>
+                              <a href="vcasse.html" class="nav-dd-link nav-dd-link--init"><span class="nav-dd-link-stack"><span class="nav-dd-link-title">VCASSE</span><span class="nav-dd-link-desc">Venture capacity building for social and environmental enterprise.</span></span></a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="nav-dd-initiatives-col">
+                          <p class="nav-dd-kicker">Projects</p>
+                          <ul>
+                            <li>
+                              <a href="sustainable-technology-week.html" class="nav-dd-link nav-dd-link--init"><span class="nav-dd-link-stack"><span class="nav-dd-link-title">Sustainable Technology Week</span><span class="nav-dd-link-desc">A focused week of programming on sustainable technology and culture.</span></span></a>
+                            </li>
+                            <li>
+                              <a href="wra_platform.html" class="nav-dd-link nav-dd-link--init"><span class="nav-dd-link-stack"><span class="nav-dd-link-title">WRA Platform</span><span class="nav-dd-link-desc">Web-Ready Access tools, standards, and platform workstreams.</span></span></a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="nav-dd-initiatives-foot">
+                        <p class="nav-dd-kicker">Accountability</p>
+                        <ul>
+                          <li>
+                            <a href="https://impact.oasisofchange.com" target="_blank" rel="noopener noreferrer" class="nav-dd-link nav-dd-link--init"><span class="nav-dd-link-stack"><span class="nav-dd-link-title">Impact Dashboard</span><span class="nav-dd-link-desc">Live metrics, transparency, and program outcomes.</span></span><svg class="nav-dd-icon shrink-0 w-4 h-4 text-gray-500 transition-colors" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /></svg></a>
+                          </li>
                         </ul>
                       </div>
-                      <div class="border-t border-white/10 pt-5">
-                        <p class="text-xs uppercase tracking-[0.18em] text-gray-500 mb-3">Accountability</p>
-                        <ul class="flex flex-col gap-2">
-                          <li><a href="https://impact.oasisofchange.com" class="block rounded-xl px-3 py-2 text-sm text-white hover:bg-gray-900 transition">Impact Dashboard</a></li>
-                        </ul>
-                      </div>
-                    </div>
+</div>
                   </div>
                 </li>
                 <li><a href="case-studies.html" class="inline-block py-2 px-3 hover:bg-gray-900 transition duration-200 text-white text-sm font-medium tracking-tight rounded-full">Case Studies</a></li>
@@ -87,16 +103,28 @@
                     </div>
                   </a>
                   <div class="absolute left-0 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200 z-[120]">
-                    <div class="w-[300px] rounded-2xl border border-white/10 bg-[#111111] p-5 shadow-2xl">
-                      <ul class="flex flex-col gap-2">
-                        <li><a href="about.html" class="block rounded-xl px-3 py-2 text-sm text-white hover:bg-gray-900 transition">Our Story</a></li>
-                        <li><a href="about.html#OurMission" class="block rounded-xl px-3 py-2 text-sm text-white hover:bg-gray-900 transition">Our Mission</a></li>
-                        <li><a href="gabriel-dalton.html" class="block rounded-xl px-3 py-2 text-sm text-white hover:bg-gray-900 transition">Our Founder</a></li>
-                        <li><a href="about.html#our-board" class="block rounded-xl px-3 py-2 text-sm text-white hover:bg-gray-900 transition">Our Board</a></li>
-                        <li><a href="annual_reports.html" class="block rounded-xl px-3 py-2 text-sm text-white hover:bg-gray-900 transition">Annual Reports</a></li>
-                        <li><a href="news_release.html" class="block rounded-xl px-3 py-2 text-sm text-white hover:bg-gray-900 transition">News / Press</a></li>
+                    <div data-site-nav-dropdown class="nav-dd-panel nav-dd-panel--company">
+                      <ul class="flex flex-col gap-0.5">
+                        <li>
+                          <a href="about.html" class="nav-dd-link"><svg class="nav-dd-icon shrink-0 w-4 h-4 text-gray-500 transition-colors" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg><span class="whitespace-nowrap">Our Story</span></a>
+                        </li>
+                        <li>
+                          <a href="about.html#OurMission" class="nav-dd-link"><svg class="nav-dd-icon shrink-0 w-4 h-4 text-gray-500 transition-colors" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3v1.5M3 21v-6m0 0l2.77-.693a9 9 0 016.208.682l.008.004a9.083 9.083 0 006.252 0l.008-.004a9.083 9.083 0 005.17-2.525 9.09 9.09 0 00.419-1.845V9.394a9 9 0 00-.419-1.845 9.09 9.09 0 00-5.17-2.525l-.008-.004a9.083 9.083 0 00-6.252 0l-.008.004a9.083 9.083 0 00-5.17 2.525L3 12.75M3 9.75V21" /></svg><span class="whitespace-nowrap">Our Mission</span></a>
+                        </li>
+                        <li>
+                          <a href="gabriel-dalton.html" class="nav-dd-link"><svg class="nav-dd-icon shrink-0 w-4 h-4 text-gray-500 transition-colors" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg><span class="whitespace-nowrap">Our Founder</span></a>
+                        </li>
+                        <li>
+                          <a href="about.html#our-board" class="nav-dd-link"><svg class="nav-dd-icon shrink-0 w-4 h-4 text-gray-500 transition-colors" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" /></svg><span class="whitespace-nowrap">Our Board</span></a>
+                        </li>
+                        <li>
+                          <a href="annual_reports.html" class="nav-dd-link"><svg class="nav-dd-icon shrink-0 w-4 h-4 text-gray-500 transition-colors" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg><span class="whitespace-nowrap">Annual Reports</span></a>
+                        </li>
+                        <li>
+                          <a href="news_release.html" class="nav-dd-link"><svg class="nav-dd-icon shrink-0 w-4 h-4 text-gray-500 transition-colors" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M13.5 7.5h-9v9h9v-9z" /></svg><span class="whitespace-nowrap">News / Press</span></a>
+                        </li>
                       </ul>
-                    </div>
+</div>
                   </div>
                 </li>
               </ul>
@@ -285,64 +313,69 @@
         </div>
       </section>
       <footer class="site-global-footer pt-20 pb-8 overflow-hidden bg-black bs-section-dragged" role="contentinfo">
-        <div class="container mx-auto px-4">
-          <div class="flex flex-col lg:flex-row lg:justify-between gap-12 lg:gap-16">
-            <div class="w-full lg:w-[24%]">
-              <div class="flex flex-col items-start gap-4">
-                <img class="h-16 mb-2" src="images/logo/Oasis_of_Change_Logo.svg" alt="Oasis of Change logo">
-                <p class="tracking-tight text-white max-w-sm leading-relaxed">
-                  Building a more sustainable digital future through energy-efficient websites, transparent impact, and technology that supports communities and the planet.
-                </p>
+        <div class="container mx-auto px-4 sm:px-6">
+          <div class="flex flex-col lg:flex-row lg:justify-between gap-12 xl:gap-16">
+            <div class="w-full max-w-md shrink-0">
+              <div class="mb-4">
+                <img class="h-14 sm:h-16 w-auto shrink-0" src="images/logo/Oasis_of_Change_Logo.svg" alt="Oasis of Change" width="64" height="64">
               </div>
+              <p class="tracking-tight text-gray-200 leading-relaxed text-sm sm:text-base max-w-md">
+                Building a more sustainable digital future through energy-efficient websites, transparent impact, and technology that supports communities and the planet.
+              </p>
             </div>
-            <div class="w-full lg:w-[76%]">
-              <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-12 xl:gap-16">
-                <div>
-                  <p class="tracking-tight text-white font-semibold mb-6">General</p>
-                  <ul class="flex flex-col gap-6">
-                    <li><a href="index.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Home</a></li>
-                    <li><a href="blog.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Blog</a></li>
-                    <li><a href="case-studies.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Case Studies</a></li>
-                    <li><a href="contact.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Contact</a></li>
-                    <li><a href="get_involved.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Get Involved</a></li>
-                    <li><a href="nonprofits.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">For Nonprofits</a></li>
-                  </ul>
-                </div>
+
+            <div class="w-full min-w-0 flex-1">
+              <nav class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 sm:gap-12 lg:gap-12" aria-label="Footer">
                 <div class="min-w-0">
-                  <p class="tracking-tight text-white font-semibold mb-6">Initiatives</p>
-                  <ul class="flex flex-col gap-6">
-                    <li><a href="web-ready.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Web-Ready</a></li>
-                    <li><a href="vcasse.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">VCASSE</a></li>
-                    <li><a href="sustainable-technology-week.html" class="block max-w-[22rem] tracking-tight leading-snug text-gray-200 hover:text-green-400 transition duration-200 break-words">Sustainable Technology Week</a></li>
-                    <li><a href="wra_platform.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">WRA Platform</a></li>
+                  <p class="tracking-tight text-white font-semibold mb-4 sm:mb-5 text-sm uppercase">General</p>
+                  <ul class="flex flex-col gap-3 sm:gap-4">
+                    <li><a href="index.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm sm:text-base">Home</a></li>
+                    <li><a href="blog.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm sm:text-base">Blog</a></li>
+                    <li><a href="case-studies.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm sm:text-base">Case Studies</a></li>
+                    <li><a href="contact.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm sm:text-base">Contact</a></li>
+                    <li><a href="get_involved.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm sm:text-base">Get Involved</a></li>
+                    <li><a href="nonprofits.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm sm:text-base">For Nonprofits</a></li>
                   </ul>
                 </div>
-                <div>
-                  <p class="tracking-tight text-white font-semibold mb-6">Company</p>
-                  <ul class="flex flex-col gap-6">
-                    <li><a href="about.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Our Story</a></li>
-                    <li><a href="about.html#OurMission" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Our Mission</a></li>
-                    <li><a href="gabriel-dalton.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Our Founder</a></li>
-                    <li><a href="about.html#our-board" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Our Board</a></li>
-                    <li><a href="annual_reports.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Annual Reports</a></li>
-                    <li><a href="news_release.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">News / Press</a></li>
+
+                <div class="min-w-0">
+                  <p class="tracking-tight text-white font-semibold mb-4 sm:mb-5 text-sm uppercase">Initiatives</p>
+                  <ul class="flex flex-col gap-3 sm:gap-4">
+                    <li><a href="web-ready.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm sm:text-base">Web-Ready</a></li>
+                    <li><a href="vcasse.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm sm:text-base">VCASSE</a></li>
+                    <li><a href="sustainable-technology-week.html" class="block tracking-tight leading-snug text-gray-200 hover:text-green-400 transition duration-200 break-words text-sm sm:text-base">Sustainable Technology Week</a></li>
+                    <li><a href="wra_platform.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm sm:text-base">WRA Platform</a></li>
                   </ul>
                 </div>
-                <div>
-                  <p class="tracking-tight text-white font-semibold mb-6">Accountability</p>
-                  <ul class="flex flex-col gap-6">
-                    <li><a href="https://impact.oasisofchange.com" target="_blank" rel="noopener noreferrer" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Impact Dashboard</a></li>
-                    <li><a href="sustainability_statement.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Sustainability Statement</a></li>
-                    <li><a href="tree_planting.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Tree Planting Statement</a></li>
-                    <li><a href="accessibility_statement.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Accessibility Statement</a></li>
-                    <li><a href="privacy-policy.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200">Privacy Policy</a></li>
+
+                <div class="min-w-0">
+                  <p class="tracking-tight text-white font-semibold mb-4 sm:mb-5 text-sm uppercase">Company</p>
+                  <ul class="flex flex-col gap-3 sm:gap-4">
+                    <li><a href="about.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm sm:text-base">Our Story</a></li>
+                    <li><a href="about.html#OurMission" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm sm:text-base">Our Mission</a></li>
+                    <li><a href="gabriel-dalton.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm sm:text-base">Our Founder</a></li>
+                    <li><a href="about.html#our-board" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm sm:text-base">Our Board</a></li>
+                    <li><a href="annual_reports.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm sm:text-base">Annual Reports</a></li>
+                    <li><a href="news_release.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm sm:text-base">News / Press</a></li>
                   </ul>
                 </div>
-              </div>
+
+                <div class="min-w-0">
+                  <p class="tracking-tight text-white font-semibold mb-4 sm:mb-5 text-sm uppercase">Accountability</p>
+                  <ul class="flex flex-col gap-3 sm:gap-4">
+                    <li><a href="https://impact.oasisofchange.com" target="_blank" rel="noopener noreferrer" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm sm:text-base">Impact Dashboard</a></li>
+                    <li><a href="sustainability_statement.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm sm:text-base">Sustainability Statement</a></li>
+                    <li><a href="tree_planting.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm sm:text-base">Tree Planting Statement</a></li>
+                    <li><a href="accessibility_statement.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm sm:text-base">Accessibility Statement</a></li>
+                    <li><a href="privacy-policy.html" class="tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm sm:text-base">Privacy Policy</a></li>
+                  </ul>
+                </div>
+              </nav>
             </div>
           </div>
+
           <div class="border-t border-gray-800 mt-16 pt-6">
-            <p class="text-center text-gray-300 text-sm tracking-tight">
+            <p class="text-center text-gray-300 text-xs sm:text-sm tracking-tight px-2">
               © 2026 Oasis of Change, Inc. All rights reserved.
             </p>
           </div>
