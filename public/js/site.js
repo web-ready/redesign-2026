@@ -56,6 +56,109 @@
     document.head.appendChild(s);
   }
 
+  function injectGlobalFooterStyles() {
+    if (document.getElementById('site-global-footer-layout')) return;
+    var s = document.createElement('style');
+    s.id = 'site-global-footer-layout';
+    s.textContent =
+      '.site-global-footer .site-footer-layout{' +
+      'display:flex;flex-direction:column;gap:2.5rem}' +
+      '.site-global-footer .site-footer-brand{' +
+      'max-width:26rem}' +
+      '.site-global-footer .site-footer-nav{' +
+      'display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2.5rem 1.5rem}' +
+      '.site-global-footer .site-footer-heading{' +
+      'margin:0 0 1rem}' +
+      '.site-global-footer .site-footer-list{' +
+      'margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:.75rem}' +
+      '.site-global-footer .site-footer-link{' +
+      'display:inline-block;max-width:100%;word-break:normal;overflow-wrap:normal;hyphens:none}' +
+      '@media (min-width:640px){' +
+      '.site-global-footer .site-footer-nav{grid-template-columns:repeat(4,minmax(0,1fr));gap:1.25rem}' +
+      '}' +
+      '@media (min-width:768px){' +
+      '.site-global-footer .site-footer-layout{flex-direction:row;align-items:flex-start;gap:2.25rem}' +
+      '.site-global-footer .site-footer-brand{width:220px;min-width:220px;max-width:220px}' +
+      '.site-global-footer .site-footer-nav{flex:1;min-width:0;gap:1rem 1.25rem}' +
+      '}' +
+      '@media (min-width:1024px){' +
+      '.site-global-footer .site-footer-layout{gap:2.5rem}' +
+      '.site-global-footer .site-footer-brand{width:240px;min-width:240px;max-width:240px}' +
+      '.site-global-footer .site-footer-nav{gap:1rem 1.5rem}' +
+      '}' +
+      '@media (min-width:1280px){' +
+      '.site-global-footer .site-footer-layout{gap:3rem}' +
+      '.site-global-footer .site-footer-brand{width:280px;min-width:280px;max-width:280px}' +
+      '.site-global-footer .site-footer-nav{gap:1rem 2rem}' +
+      '}';
+    document.head.appendChild(s);
+  }
+
+  function renderGlobalFooter() {
+    var footer = document.querySelector('.site-global-footer');
+    if (!footer) return;
+
+    footer.innerHTML =
+      '<div class="container mx-auto px-4 sm:px-6">' +
+      '<div class="site-footer-layout">' +
+      '<div class="site-footer-brand">' +
+      '<div class="mb-4">' +
+      '<img class="h-14 sm:h-16 w-auto" src="images/logo/Oasis_of_Change_Logo.svg" alt="Oasis of Change" width="64" height="64">' +
+      '</div>' +
+      '<p class="tracking-tight text-gray-200 leading-relaxed text-sm">' +
+      'Building a more sustainable digital future through energy-efficient websites, transparent impact, and technology that supports communities and the planet.' +
+      '</p>' +
+      '</div>' +
+      '<nav class="site-footer-nav" aria-label="Footer">' +
+      '<div>' +
+      '<p class="site-footer-heading tracking-tight text-white font-semibold text-sm uppercase">General</p>' +
+      '<ul class="site-footer-list">' +
+      '<li><a href="index.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm">Home</a></li>' +
+      '<li><a href="get_involved.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Get Involved</a></li>' +
+      '<li><a href="nonprofits.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">For Nonprofits</a></li>' +
+      '<li><a href="blog.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm">Blog</a></li>' +
+      '<li><a href="case-studies.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Case Studies</a></li>' +
+      '<li><a href="contact.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm">Contact</a></li>' +
+      '</ul>' +
+      '</div>' +
+      '<div>' +
+      '<p class="site-footer-heading tracking-tight text-white font-semibold text-sm uppercase">Initiatives</p>' +
+      '<ul class="site-footer-list">' +
+      '<li><a href="web-ready.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Web-Ready</a></li>' +
+      '<li><a href="vcasse.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm leading-snug">Vancouver Centre for AI Safety, Sustainability, and Ethics (VCASSE)</a></li>' +
+      '<li><a href="sustainable-technology-week.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm leading-snug">Sustainable Technology Week</a></li>' +
+      '<li><a href="wra_platform.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">WRA Platform</a></li>' +
+      '</ul>' +
+      '</div>' +
+      '<div>' +
+      '<p class="site-footer-heading tracking-tight text-white font-semibold text-sm uppercase">Company</p>' +
+      '<ul class="site-footer-list">' +
+      '<li><a href="about.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Our Story</a></li>' +
+      '<li><a href="about.html#OurMission" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Our Mission</a></li>' +
+      '<li><a href="gabriel-dalton.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Our Founder</a></li>' +
+      '<li><a href="about.html#our-board" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Our Board</a></li>' +
+      '<li><a href="annual_reports.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Annual Reports</a></li>' +
+      '<li><a href="news_release.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">News / Press</a></li>' +
+      '</ul>' +
+      '</div>' +
+      '<div>' +
+      '<p class="site-footer-heading tracking-tight text-white font-semibold text-sm uppercase">Accountability</p>' +
+      '<ul class="site-footer-list">' +
+      '<li><a href="https://impact.oasisofchange.com" target="_blank" rel="noopener noreferrer" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Impact Dashboard</a></li>' +
+      '<li><a href="sustainability_statement.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm leading-snug">Sustainability Statement</a></li>' +
+      '<li><a href="tree_planting.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm leading-snug">Tree Planting Statement</a></li>' +
+      '<li><a href="accessibility_statement.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm leading-snug">Accessibility Statement</a></li>' +
+      '<li><a href="privacy-policy.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Privacy Policy</a></li>' +
+      '</ul>' +
+      '</div>' +
+      '</nav>' +
+      '</div>' +
+      '<div class="border-t border-gray-800 mt-16 pt-6">' +
+      '<p class="text-center text-gray-300 text-xs sm:text-sm tracking-tight px-2">© 2026 Oasis of Change, Inc. All rights reserved.</p>' +
+      '</div>' +
+      '</div>';
+  }
+
   /**
    * Desktop nav mega-menu: layout, hover/focus, dividers. (Prebuilt tailwind.min.css omits w-max,
    * max-w-[min()], and hover:bg-white/10, so these classes did nothing in browsers.)
@@ -546,6 +649,8 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
+    injectGlobalFooterStyles();
+    renderGlobalFooter();
     injectFooterExternalLinkIconStyles();
     injectNavDesktopDropdownStyles();
     initMobileNav();
