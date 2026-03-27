@@ -307,10 +307,6 @@
     var toggle = document.querySelector('[data-mobile-toggle]');
     var panel = document.querySelector('[data-mobile-panel]');
     if (!toggle || !panel) return;
-    var nav = toggle.closest('nav');
-    var desktopLinks = nav ? nav.querySelector('ul.hidden.xl\\:flex') : null;
-    var desktopCta = nav ? nav.querySelector('a.hidden.xl\\:inline-flex') : null;
-
     var menuIcon = toggle.querySelector('[data-icon-menu]');
     var closeIcon = toggle.querySelector('[data-icon-close]');
     var isOpen = false;
@@ -501,25 +497,8 @@
     }
 
     function syncNavByViewport() {
-      if (desktopNavActive()) {
-        if (isOpen) close();
-        toggle.style.display = 'none';
-        panel.style.display = 'none';
-        panel.style.height = '0';
-        panel.style.opacity = '0';
-        panel.style.transform = 'translateY(-6px)';
-        if (desktopLinks) desktopLinks.style.display = 'flex';
-        if (desktopCta) desktopCta.style.display = 'inline-flex';
-      } else {
-        toggle.style.display = '';
-        if (desktopLinks) desktopLinks.style.display = '';
-        if (desktopCta) desktopCta.style.display = '';
-        if (!isOpen) {
-          panel.style.display = 'none';
-          panel.style.height = '0';
-          panel.style.opacity = '0';
-          panel.style.transform = 'translateY(-6px)';
-        }
+      if (desktopNavActive() && isOpen) {
+        close();
       }
     }
 
@@ -685,6 +664,42 @@
     });
   }
 
+  function logCuriousCoderMessage() {
+    if (typeof window === 'undefined' || !window.console) return;
+    if (window.__oocConsoleMessageShown) return;
+    window.__oocConsoleMessageShown = true;
+
+    var logo =
+      '    ____             _     \n' +
+      '  / __ \\____ ______(_)____\n' +
+      ' / / / / __ `/ ___/ / ___/\n' +
+      '/ /_/ / /_/ (__  ) (__  )\n' +
+      '\\____/\\__,_/____/_/____/\n' +
+      '\n' +
+      '   ____  ______\n' +
+      '  / __ \\/ ____/\n' +
+      ' / / / / /_    \n' +
+      '/ /_/ / __/    \n' +
+      '\\____/_/       \n' +
+      '\n' +
+      '   ________                          \n' +
+      '  / ____/ /_  ____ _____  ____ ____  \n' +
+      ' / /   / __ \\/ __ `/ __ \\/ __ `/ _ \\ \n' +
+      '/ /___/ / / / /_/ / / / / /_/ /  __/ \n' +
+      '\\____/_/ /_/\\__,_/_/ /_/\\__, /\\___/  \n' +
+      '                       /____/         ';
+
+    console.log('%c' + logo, 'color:#4ade80;font-family:monospace;font-weight:700;');
+    console.log(
+      '%cIf you opened DevTools out of curiosity, you are our kind of people.',
+      'color:#e5e7eb;font-size:13px;font-weight:600;'
+    );
+    console.log(
+      '%cOasis of Change is building sustainable tech for real-world impact. If you code with purpose, come say hi: /contact',
+      'color:#9ca3af;font-size:12px;'
+    );
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     injectGlobalFooterStyles();
     renderGlobalFooter();
@@ -694,5 +709,6 @@
     initAccordion();
     initBlogToggle();
     initImageSlider();
+    logCuriousCoderMessage();
   });
 })();

@@ -1,0 +1,25 @@
+---
+description: Rules for the site-wide navigation bar — never modify unless explicitly asked
+globs: public/**/*.html, public/js/site.js
+alwaysApply: false
+---
+
+# Navigation Bar — Do Not Modify
+
+The navigation bar (black rounded `<nav>` with logo, links, CTA, and hamburger) is shared across every page. **Never change it unless the user explicitly asks.**
+
+## Current breakpoint contract
+
+| Element | CSS class | Visible at |
+|---------|-----------|------------|
+| Desktop nav links `<ul>` | `hidden lg:flex` | >= 1024px |
+| Support Our Mission CTA `<a>` | `hidden lg:inline-flex` | >= 1024px (now in CSS) |
+| Hamburger toggle `<button>` | `lg:hidden` | < 1024px |
+| Mobile panel `<div>` | `lg:hidden` | < 1024px |
+
+## Rules
+
+1. **CSS controls visibility, not JS.** Never set `element.style.display` on the nav links, CTA button, or hamburger toggle from JavaScript. The Tailwind responsive classes already handle show/hide at the correct breakpoints.
+2. **No JS viewport sync for nav display.** The `syncNavByViewport()` function in `site.js` must only close the mobile panel if resizing to desktop while it's open. It must not force-set `display` on any nav element.
+3. **Avoid FOUC.** If the hamburger briefly flashes on desktop before JS loads, the fix belongs in CSS/HTML (e.g. correct `hidden`/`lg:hidden` classes), not in JS that runs after DOMContentLoaded.
+4. **Breakpoint changes cascade.** If you change a nav breakpoint (e.g. `xl:flex` to `lg:flex`), you must also update every page's nav HTML and verify `site.js` selectors still match.
