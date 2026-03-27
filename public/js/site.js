@@ -307,6 +307,9 @@
     var toggle = document.querySelector('[data-mobile-toggle]');
     var panel = document.querySelector('[data-mobile-panel]');
     if (!toggle || !panel) return;
+    var nav = toggle.closest('nav');
+    var desktopLinks = nav ? nav.querySelector('ul.hidden.xl\\:flex') : null;
+    var desktopCta = nav ? nav.querySelector('a.hidden.xl\\:inline-flex') : null;
 
     var menuIcon = toggle.querySelector('[data-icon-menu]');
     var closeIcon = toggle.querySelector('[data-icon-close]');
@@ -489,6 +492,37 @@
       setToggleIcons(false);
     }
 
+    function desktopNavActive() {
+      try {
+        return window.matchMedia && window.matchMedia('(min-width: 1024px)').matches;
+      } catch (e) {
+        return window.innerWidth >= 1024;
+      }
+    }
+
+    function syncNavByViewport() {
+      if (desktopNavActive()) {
+        if (isOpen) close();
+        toggle.style.display = 'none';
+        panel.style.display = 'none';
+        panel.style.height = '0';
+        panel.style.opacity = '0';
+        panel.style.transform = 'translateY(-6px)';
+        if (desktopLinks) desktopLinks.style.display = 'flex';
+        if (desktopCta) desktopCta.style.display = 'inline-flex';
+      } else {
+        toggle.style.display = '';
+        if (desktopLinks) desktopLinks.style.display = '';
+        if (desktopCta) desktopCta.style.display = '';
+        if (!isOpen) {
+          panel.style.display = 'none';
+          panel.style.height = '0';
+          panel.style.opacity = '0';
+          panel.style.transform = 'translateY(-6px)';
+        }
+      }
+    }
+
     panel.style.display = 'none';
     panel.style.height = '0';
     panel.style.opacity = '0';
@@ -500,6 +534,7 @@
     if (closeIcon) closeIcon.style.transition = 'opacity ' + navMotionMs + 'ms ' + navEase;
 
     window.addEventListener('resize', function () {
+      syncNavByViewport();
       if (isOpen) setPanelHeightPx(getPanelTargetPx(), false);
     });
 
@@ -532,6 +567,8 @@
         syncOuterPanelHeight();
       });
     });
+
+    syncNavByViewport();
   }
 
   function initAccordion() {
