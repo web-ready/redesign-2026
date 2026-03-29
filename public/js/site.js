@@ -103,7 +103,7 @@
       '<div class="site-footer-layout">' +
       '<div class="site-footer-brand">' +
       '<div class="mb-4">' +
-      '<img class="h-14 sm:h-16 w-auto" src="images/logo/Oasis_of_Change_Logo.svg" alt="Oasis of Change" width="64" height="64">' +
+      '<img class="h-14 sm:h-16 w-auto" src="images/logo/Oasis_of_Change-official.svg" alt="Oasis of Change" width="64" height="64">' +
       '</div>' +
       '<p class="tracking-tight text-gray-200 leading-relaxed text-sm">' +
       'Building a more sustainable digital future through energy-efficient websites, transparent impact, and technology that supports communities and the planet.' +
