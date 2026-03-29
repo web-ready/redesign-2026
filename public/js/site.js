@@ -664,6 +664,25 @@
     });
   }
 
+  function initSmoothScroll() {
+    var scrollLinks = document.querySelectorAll('.js-scroll-to-ways');
+    scrollLinks.forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        var targetId = this.getAttribute('href');
+        if (!targetId || !targetId.startsWith('#')) return;
+        
+        var targetElement = document.querySelector(targetId);
+        if (!targetElement) return;
+
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      });
+    });
+  }
+
   function logCuriousCoderMessage() {
     if (typeof window === 'undefined' || !window.console) return;
     if (window.__oocConsoleMessageShown) return;
@@ -709,6 +728,7 @@
     initAccordion();
     initBlogToggle();
     initImageSlider();
+    initSmoothScroll();
     logCuriousCoderMessage();
   });
 })();
