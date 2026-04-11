@@ -17,7 +17,23 @@
       "Bash(grep -n 'data-accordion\\\\|data-mobile\\\\|js-scroll' /c/Users/Gabriel/Documents/GitHub/redesign-2026/public/*.html)",
       "Bash(grep -l \"832338\\\\|854172\" /c/Users/Gabriel/Documents/GitHub/redesign-2026/public/*.html)",
       "Bash(grep -oh consulty-assets/[^\"\"]*.[a-z]* /c/Users/Gabriel/Documents/GitHub/redesign-2026/public/*.html)",
-      "Bash(find /c/Users/Gabriel/Documents/GitHub/redesign-2026/public/consulty-assets -type f -name *.png -o -name *.svg)"
+      "Bash(find /c/Users/Gabriel/Documents/GitHub/redesign-2026/public/consulty-assets -type f -name *.png -o -name *.svg)",
+      "Bash(grep -r \"data-src\\\\|style.*background\\\\|url\\(\" /c/Users/Gabriel/Documents/GitHub/redesign-2026/public/*.html)",
+      "Bash(grep -n \"about.html#OurMission\\\\|about.html#our-board\" /c/Users/Gabriel/Documents/GitHub/redesign-2026/public/*.html)",
+      "Bash(grep -n \"src=\\\\\"images/\" /c/Users/Gabriel/Documents/GitHub/redesign-2026/public/*.html)",
+      "Bash(grep -l \"Tailwind\\\\|tailwind\\\\|@tailwind\" /c/Users/Gabriel/Documents/GitHub/redesign-2026/public/*.html)",
+      "Bash(grep -n \"News.*Press\\\\|news_release\" /c/Users/Gabriel/Documents/GitHub/redesign-2026/public/*.html)",
+      "Bash(grep -n \"data-src=\" /c/Users/Gabriel/Documents/GitHub/redesign-2026/public/*.html)",
+      "Bash(grep -roh 'src=\"images/[^\"]*\"' /c/Users/Gabriel/Documents/GitHub/redesign-2026/public/*.html)",
+      "Bash(grep -roh \"src='images/[^']*'\" /c/Users/Gabriel/Documents/GitHub/redesign-2026/public/*.html)",
+      "Bash([ ! -f \"/c/Users/Gabriel/Documents/GitHub/redesign-2026/public/$img\" ])",
+      "Bash(grep -n \"^      <main\\\\|^    <main\\\\|^  <main\" /c/Users/Gabriel/Documents/GitHub/redesign-2026/public/*.html)",
+      "Bash(grep:*)",
+      "WebSearch",
+      "Bash(pip install:*)",
+      "Bash([ ! -f \"/c/Users/Gabriel/Documents/GitHub/redesign-2026/public/$page\" ])",
+      "Bash(wc:*)",
+      "Bash(graphify claude:*)"
     ]
   }
 }
