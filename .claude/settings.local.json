@@ -33,7 +33,15 @@
       "Bash(pip install:*)",
       "Bash([ ! -f \"/c/Users/Gabriel/Documents/GitHub/redesign-2026/public/$page\" ])",
       "Bash(wc:*)",
-      "Bash(graphify claude:*)"
+      "Bash(graphify claude:*)",
+      "Bash(graphify install:*)",
+      "Bash(python -c \"import graphify\")",
+      "Bash(python -c \" import json from graphify.detect import detect from pathlib import Path result = detect\\(Path\\('.'\\)\\) print\\(json.dumps\\(result\\)\\) \")",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(d\\)\\)\")",
+      "Bash(ls *.html)",
+      "Bash(ls public/*.html)",
+      "Bash(python:*)",
+      "Bash(ls:*)"
     ]
   }
 }
