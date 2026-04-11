@@ -94,72 +94,6 @@
     document.head.appendChild(s);
   }
 
-  function renderGlobalFooter() {
-    var footer = document.querySelector('.site-global-footer');
-    if (!footer) return;
-
-    footer.innerHTML =
-      '<div class="container mx-auto px-4 sm:px-6">' +
-      '<div class="site-footer-layout">' +
-      '<div class="site-footer-brand">' +
-      '<div class="flex items-start gap-2.5 mb-4">' +
-      '<img class="h-8 w-auto flex-shrink-0" src="images/logo/oasis-of-change-icon.svg" alt="" width="32" height="32" aria-hidden="true">' +
-      '<span class="text-white font-bold text-base uppercase tracking-tight leading-tight">Oasis of Change</span>' +
-      '</div>' +
-      '<p class="tracking-tight text-gray-200 leading-relaxed text-sm">' +
-      'Building a more sustainable digital future through energy-efficient websites, transparent impact, and technology that supports communities and the planet.' +
-      '</p>' +
-      '</div>' +
-      '<nav class="site-footer-nav" aria-label="Footer">' +
-      '<div>' +
-      '<p class="site-footer-heading tracking-tight text-white font-semibold text-sm uppercase">General</p>' +
-      '<ul class="site-footer-list">' +
-      '<li><a href="index.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm">Home</a></li>' +
-      '<li><a href="get_involved.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Get Involved</a></li>' +
-      '<li><a href="nonprofits.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">For Nonprofits</a></li>' +
-      '<li><a href="blog.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm">Blog</a></li>' +
-      '<li><a href="case-studies.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Case Studies</a></li>' +
-      '<li><a href="contact.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm">Contact</a></li>' +
-      '</ul>' +
-      '</div>' +
-      '<div>' +
-      '<p class="site-footer-heading tracking-tight text-white font-semibold text-sm uppercase">Initiatives</p>' +
-      '<ul class="site-footer-list">' +
-      '<li><a href="web-ready.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Web-Ready</a></li>' +
-      '<li><a href="vcasse.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm leading-snug">Vancouver Centre for AI Safety, Sustainability, and Ethics (VCASSE)</a></li>' +
-      '<li><a href="sustainable-technology-week.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm leading-snug">Sustainable Technology Week</a></li>' +
-      '<li><a href="wra_platform.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">WRA Platform</a></li>' +
-      '</ul>' +
-      '</div>' +
-      '<div>' +
-      '<p class="site-footer-heading tracking-tight text-white font-semibold text-sm uppercase">Company</p>' +
-      '<ul class="site-footer-list">' +
-      '<li><a href="about.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Our Story</a></li>' +
-      '<li><a href="about.html#OurMission" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Our Mission</a></li>' +
-      '<li><a href="gabriel-dalton.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Our Founder</a></li>' +
-      '<li><a href="about.html#our-board" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Our Board</a></li>' +
-      '<li><a href="annual_reports.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Annual Reports</a></li>' +
-      '<li><a href="news_release.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">News / Press</a></li>' +
-      '</ul>' +
-      '</div>' +
-      '<div>' +
-      '<p class="site-footer-heading tracking-tight text-white font-semibold text-sm uppercase">Accountability</p>' +
-      '<ul class="site-footer-list">' +
-      '<li><a href="https://impact.oasisofchange.com" target="_blank" rel="noopener noreferrer" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Impact Dashboard</a></li>' +
-      '<li><a href="sustainability_statement.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm leading-snug">Sustainability Statement</a></li>' +
-      '<li><a href="tree_planting.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm leading-snug">Tree Planting Statement</a></li>' +
-      '<li><a href="accessibility_statement.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm leading-snug">Accessibility Statement</a></li>' +
-      '<li><a href="privacy-policy.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Privacy Policy</a></li>' +
-      '</ul>' +
-      '</div>' +
-      '</nav>' +
-      '</div>' +
-      '<div class="border-t border-gray-800 mt-16 pt-6">' +
-      '<p class="text-center text-gray-300 text-xs sm:text-sm tracking-tight px-2">© 2026 Oasis of Change, Inc. All rights reserved.</p>' +
-      '</div>' +
-      '</div>';
-  }
-
   /**
    * Desktop nav mega-menu: layout, hover/focus, dividers. (Prebuilt tailwind.min.css omits w-max,
    * max-w-[min()], and hover:bg-white/10, so these classes did nothing in browsers.)
@@ -311,11 +245,28 @@
     var menuIcon = toggle.querySelector('[data-icon-menu]');
     var closeIcon = toggle.querySelector('[data-icon-close]');
     var isOpen = false;
+
+    // -- Nav overflow guard: collapse to hamburger when items don't fit --
+    var navEl = toggle.closest('nav');
+    var flexRow = navEl ? navEl.firstElementChild : null;
+    var overflowActive = false;
+    (function injectNavOverflowStyles() {
+      if (document.getElementById('site-nav-overflow')) return;
+      var os = document.createElement('style');
+      os.id = 'site-nav-overflow';
+      os.textContent =
+        '.nav-overflow-active .hidden.lg\\:flex{display:none!important}' +
+        '.nav-overflow-active .hidden.lg\\:inline-flex{display:none!important}' +
+        '.nav-overflow-active .relative.lg\\:hidden{display:inline-flex!important}';
+      document.head.appendChild(os);
+    })();
+
     // One duration + easing for panel + toggle icons so the header doesn't feel "ahead" of the menu.
     var navMotionMs = 240;
     var navEase = 'cubic-bezier(0.2, 0.9, 0.2, 1)';
     var navTransitionCss =
-      'height ' + navMotionMs + 'ms ' + navEase + ', opacity ' + navMotionMs + 'ms ' + navEase + ', transform ' + navMotionMs + 'ms ' + navEase;
+      'height ' + navMotionMs + 'ms ' + navEase + ', opacity ' + navMotionMs + 'ms ' + navEase + ', transform ' + navMotionMs + 'ms ' + navEase +
+      ', padding-top ' + navMotionMs + 'ms ' + navEase + ', padding-bottom ' + navMotionMs + 'ms ' + navEase;
 
     function setToggleIcons(open) {
       if (menuIcon && closeIcon) {
@@ -402,6 +353,8 @@
     function open() {
       isOpen = true;
       panel.style.display = '';
+      panel.style.paddingTop = '';
+      panel.style.paddingBottom = '';
       panel.style.overflowX = 'hidden';
       panel.style.overflowY = 'auto';
       panel.style.overscrollBehavior = 'contain';
@@ -465,6 +418,8 @@
       if (prefersReducedMotion()) {
         panel.style.opacity = '0';
         panel.style.transform = 'none';
+        panel.style.paddingTop = '0';
+        panel.style.paddingBottom = '0';
         setPanelHeightPx(0, false);
         finalizeMobilePanelHidden();
       } else {
@@ -478,6 +433,8 @@
         void panel.offsetHeight;
         panel.style.opacity = '0';
         panel.style.transform = 'translateY(-6px)';
+        panel.style.paddingTop = '0';
+        panel.style.paddingBottom = '0';
         setPanelHeightPx(0, true);
         setTimeout(function () {
           if (!isOpen) finalizeMobilePanelHidden();
@@ -490,10 +447,48 @@
     }
 
     function desktopNavActive() {
+      if (overflowActive) return false;
       try {
         return window.matchMedia && window.matchMedia('(min-width: 1024px)').matches;
       } catch (e) {
         return window.innerWidth >= 1024;
+      }
+    }
+
+    function checkNavOverflow() {
+      if (!navEl || !flexRow) return;
+      if (window.innerWidth < 1024) {
+        navEl.classList.remove('nav-overflow-active');
+        overflowActive = false;
+        return;
+      }
+      // Remove class temporarily so desktop items are visible for measurement
+      navEl.classList.remove('nav-overflow-active');
+      overflowActive = false;
+      // Prevent flex shrinking so children report natural widths
+      var children = flexRow.children;
+      var savedShrink = [];
+      for (var i = 0; i < children.length; i++) {
+        savedShrink.push(children[i].style.flexShrink);
+        children[i].style.flexShrink = '0';
+      }
+      // Force layout and measure
+      var containerWidth = flexRow.clientWidth;
+      var totalWidth = 0;
+      var visibleCount = 0;
+      for (var i = 0; i < children.length; i++) {
+        var w = children[i].offsetWidth;
+        if (w > 0) { totalWidth += w; visibleCount++; }
+      }
+      // Account for gap-4 (16px) between visible flex children
+      if (visibleCount > 1) totalWidth += 16 * (visibleCount - 1);
+      // Restore flex-shrink
+      for (var i = 0; i < children.length; i++) {
+        children[i].style.flexShrink = savedShrink[i];
+      }
+      if (totalWidth > containerWidth) {
+        navEl.classList.add('nav-overflow-active');
+        overflowActive = true;
       }
     }
 
@@ -514,6 +509,7 @@
     if (closeIcon) closeIcon.style.transition = 'opacity ' + navMotionMs + 'ms ' + navEase;
 
     window.addEventListener('resize', function () {
+      checkNavOverflow();
       syncNavByViewport();
       if (isOpen) setPanelHeightPx(getPanelTargetPx(), false);
     });
@@ -522,6 +518,10 @@
       closeIcon.style.opacity = '0';
       closeIcon.style.pointerEvents = 'none';
     }
+
+    // Initial overflow check + re-check after all resources load
+    checkNavOverflow();
+    window.addEventListener('load', checkNavOverflow);
 
     toggle.addEventListener('click', function (e) {
       e.preventDefault();
@@ -722,7 +722,6 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     injectGlobalFooterStyles();
-    renderGlobalFooter();
     injectFooterExternalLinkIconStyles();
     injectNavDesktopDropdownStyles();
     initMobileNav();

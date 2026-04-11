@@ -42,7 +42,10 @@
       "Bash(ls public/*.html)",
       "Bash(python:*)",
       "Bash(ls:*)",
-      "Skill(humanizer)"
+      "Skill(humanizer)",
+      "Bash(find:*)",
+      "Bash(python3 -c ':*)",
+      "Bash(node -e ':*)"
     ]
   }
 }
