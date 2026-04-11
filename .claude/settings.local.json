@@ -69,7 +69,12 @@
       "Bash(magick --version)",
       "Bash(convert --version)",
       "Bash(python3 scripts/optimize_classes.py)",
-      "Bash(python3 scripts/add_skip_link_css.py)"
+      "Bash(python3 scripts/add_skip_link_css.py)",
+      "Bash(curl -sL -o /tmp/Mangrove_Tree.jpg \"https://impact.oasisofchange.com/assets/images/planting-sites/2024-2025-fy/Madagascar/Mangrove_Tree.jpg\")",
+      "Read(//tmp/**)",
+      "Bash(identify /tmp/Mangrove_Tree.jpg)",
+      "Bash(pip show:*)",
+      "Bash(pip3 show:*)"
     ]
   }
 }

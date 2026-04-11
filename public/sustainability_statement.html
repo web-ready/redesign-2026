@@ -24,12 +24,12 @@
     <link rel="stylesheet" href="css/tailwind/tailwind.min.css?v=2">
     <script src="js/site.js" defer></script>
 </head>
-<body class="antialiased bg-body text-body font-body">
+<body class="antialiased bg-black text-white font-body">
     <a href="#main-content" class="skip-to-content sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-6 focus:py-3 focus:bg-white focus:text-black focus:rounded-lg focus:shadow-lg focus:text-sm focus:font-semibold focus:outline-none focus:ring-4 focus:ring-green-500">Skip to main content</a>
     <div class="">
       <main id="main-content">
                 
-      <section class="px-4 md:px-8 pt-8 bg-white">
+      <section class="px-4 md:px-8 pt-8 bg-black">
         <div class="max-w-[1400px] mx-auto">
           <!-- NAV -->
           <nav aria-label="Main" class="relative z-[100] bg-black rounded-2xl px-4 py-3 sm:px-6 sm:py-4 border border-white/10 mb-4 sm:mb-6 shadow-[0_12px_30px_rgba(0,0,0,0.12)]">
@@ -225,66 +225,95 @@
             </div>
           </nav>
 
-          <div class="pt-10 md:pt-12 pb-16 md:pb-20">
-            <div class="max-w-5xl mx-auto">
-              <nav aria-label="Breadcrumb" class="text-sm text-gray-700 mb-6 md:mb-8">
-                <a href="index.html" class="hover:text-black transition">Home</a>
+          <!-- SUSTAINABILITY STATEMENT PAGE -->
+          <section class="bg-black rounded-2xl border border-white/10 px-6 md:px-10 lg:px-16 py-16 md:py-20 lg:py-24 mb-12 md:mb-16">
+            <div class="max-w-6xl mx-auto">
+              <nav aria-label="Breadcrumb" class="text-sm text-gray-400 mb-6">
+                <a href="index.html" class="hover:text-white transition">Home</a>
                 <span class="mx-2" aria-hidden="true">/</span>
-                <span class="text-gray-700">Sustainability Statement</span>
+                <span class="text-gray-300">Sustainability Statement</span>
               </nav>
-              <!-- Sustainability statement -->
-              <div class="mb-5 md:mb-6 bg-white border border-gray-200 rounded-[32px] p-7 md:p-10 lg:p-12">
-                <h1 class="font-heading tracking-tight text-black text-3xl md:text-4xl lg:text-[3.2rem] leading-[1.04] font-medium max-w-4xl mb-5 text-center">Sustainability Statement</h1>
-                <p class="text-gray-700 text-base md:text-lg leading-8 max-w-3xl break-words" spellcheck="false">We think about digital sustainability in two parts: the infrastructure our websites are developed and hosted on, and the electricity behind the devices used to build them. We develop most of our websites on Amazon Web Services (AWS) infrastructure, and our team works from Vancouver, British Columbia, where the electricity system is powered by over 98% renewable energy.</p>
+
+              <!-- HERO -->
+              <div class="mb-12 md:mb-16">
+                <h1 class="font-heading tracking-tight text-white text-4xl md:text-6xl font-medium mb-5 max-w-4xl leading-[1.02]">Sustainability Statement</h1>
+                <p class="text-gray-400 text-lg md:text-xl tracking-tight max-w-2xl leading-relaxed">How we approach energy transparency across our hosting, infrastructure, and daily operations.</p>
               </div>
-              <!-- Two-part proof block -->
-              <div class="bg-black rounded-[32px] p-7 md:p-10 lg:p-12 overflow-hidden text-white">
-                <p class="text-white/70 text-[11px] md:text-xs font-semibold tracking-[0.22em] uppercase mb-6">Two-Part Energy Context</p>
-                <div class="grid gap-4 md:gap-5">
-                  <!-- Part 1 -->
-                  <div class="rounded-[24px] border border-white/10 bg-white/5 p-5 md:p-6">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                      <div class="min-w-0 flex-1">
-                        <p class="text-xl md:text-2xl font-medium tracking-tight mb-2">1. Website infrastructure</p>
-                        <p class="text-sm md:text-base leading-7 break-words" spellcheck="false">We develop most of our websites on AWS infrastructure. Amazon reports that 100% of the electricity consumed across its global operations, including data centres, has been matched with renewable energy sources.<sup class="text-white/50 text-xs ml-0.5">1</sup></p>
-                      </div>
-                      <div class="shrink-0 rounded-[22px] border border-white/10 bg-black px-5 py-4 w-full md:w-44">
-                        <p class="text-4xl md:text-5xl font-medium tracking-tight leading-none mb-2">100%</p>
-                        <p class="text-white/65 text-sm leading-6">renewable electricity matched</p>
-                      </div>
+
+              <!-- INTRO BLOCK -->
+              <div class="rounded-[2rem] border border-white/10 bg-[#111111] px-6 py-7 md:px-10 md:py-10 mb-10">
+                <div class="flex items-center gap-3 mb-5">
+                  <span class="w-6 h-[2px] rounded-full bg-[#156633]" aria-hidden="true"></span>
+                  <p class="text-sm uppercase tracking-[0.18em] text-gray-400">Our approach</p>
+                </div>
+                <p class="text-xl md:text-2xl leading-relaxed tracking-tight text-white max-w-5xl">We think about digital sustainability in two parts: the infrastructure our websites are developed and hosted on, and the electricity behind the devices used to build them. We develop most of our websites on Amazon Web Services (AWS) infrastructure, and our team works from Vancouver, British Columbia, where the electricity system is powered by over 98% renewable energy.</p>
+              </div>
+
+              <!-- TWO-PART ENERGY CONTEXT -->
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-10">
+                <!-- Card 1 — Cloud infrastructure -->
+                <div>
+                  <div class="rounded-[2rem] border border-white/10 bg-[#111111] p-6 md:p-8 h-full flex flex-col">
+                    <div class="flex items-center gap-3 mb-6">
+                      <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-gray-300">1</span>
+                      <p class="text-sm uppercase tracking-[0.18em] text-gray-400">Cloud hosting</p>
                     </div>
-                  </div>
-                  <!-- Part 2 -->
-                  <div class="rounded-[24px] border border-white/10 bg-white/5 p-5 md:p-6">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                      <div class="min-w-0 flex-1">
-                        <p class="text-xl md:text-2xl font-medium tracking-tight mb-2">2. Devices used to build the work</p>
-                        <p class="text-sm md:text-base leading-7 break-words" spellcheck="false">Because our team is based in Vancouver, our day-to-day workstations run within British Columbia's electricity system. BC Hydro states that over 98% of the power it generates comes from clean, renewable sources, primarily hydroelectricity.<sup class="text-white/50 text-xs ml-0.5">2</sup></p>
-                      </div>
-                      <div class="shrink-0 rounded-[22px] border border-white/10 bg-black px-5 py-4 w-full md:w-44">
-                        <p class="text-4xl md:text-5xl font-medium tracking-tight leading-none mb-2">98%+</p>
-                        <p class="text-white/65 text-sm leading-6">clean, renewable generation</p>
-                      </div>
+                    <div class="rounded-xl border border-white/10 bg-black/40 px-6 py-5 mb-6">
+                      <p class="text-5xl md:text-6xl font-medium tracking-tight leading-none text-white mb-1">100<span class="text-green-400">%</span></p>
+                      <p class="text-gray-400 text-sm leading-6">renewable electricity matched by AWS</p>
                     </div>
+                    <h2 class="text-white text-xl md:text-2xl font-heading tracking-tight mb-3">Website infrastructure</h2>
+                    <p class="text-gray-400 leading-7 text-sm flex-1">We develop most of our websites on AWS infrastructure. Amazon reports that 100% of the electricity consumed across its global operations, including data centres, has been matched with renewable energy sources.<sup class="text-gray-500 text-xs ml-0.5">1</sup></p>
                   </div>
                 </div>
-                <!-- Footnotes -->
-                <div class="mt-7 pt-6 border-t border-white/10">
-                  <p class="text-white/55 text-[11px] font-semibold tracking-widest uppercase mb-4">Notes</p>
-                  <ol class="list-none space-y-3">
-                    <li class="flex gap-2 text-white/45 text-xs leading-5 min-w-0">
-                      <span class="shrink-0 font-semibold text-white/55 w-4">1.</span>
-                      <span class="min-w-0 break-words">Amazon Web Services. "Sustainability in the Cloud." AWS Energy &amp; Utilities. Amazon committed to matching 100% of electricity consumption with renewable energy sources across its global operations. Source: <a href="https://aws.amazon.com/energy-utilities/sustainability/" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 text-white/55 hover:text-white/80 transition-colors duration-150 break-all">aws.amazon.com/energy-utilities/sustainability</a></span>
-                    </li>
-                    <li class="flex gap-2 text-white/45 text-xs leading-5 min-w-0">
-                      <span class="shrink-0 font-semibold text-white/55 w-4">2.</span>
-                      <span class="min-w-0 break-words">BC Hydro. "Our Clean System." About BC Hydro — Sustainability. BC Hydro states that over 98% of the electricity it generates comes from clean, renewable sources, with the majority being hydroelectric. Source: <a href="https://www.bchydro.com/toolbar/about/sustainability/our-clean-system.html" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 text-white/55 hover:text-white/80 transition-colors duration-150 break-all">bchydro.com/toolbar/about/sustainability/our-clean-system.html</a></span>
-                    </li>
-                  </ol>
+                <!-- Card 2 — Local operations -->
+                <div>
+                  <div class="rounded-[2rem] border border-white/10 bg-[#111111] p-6 md:p-8 h-full flex flex-col">
+                    <div class="flex items-center gap-3 mb-6">
+                      <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-gray-300">2</span>
+                      <p class="text-sm uppercase tracking-[0.18em] text-gray-400">Local operations</p>
+                    </div>
+                    <div class="rounded-xl border border-white/10 bg-black/40 px-6 py-5 mb-6">
+                      <p class="text-5xl md:text-6xl font-medium tracking-tight leading-none text-white mb-1">98<span class="text-green-400">%+</span></p>
+                      <p class="text-gray-400 text-sm leading-6">clean, renewable generation in BC</p>
+                    </div>
+                    <h2 class="text-white text-xl md:text-2xl font-heading tracking-tight mb-3">Devices used to build the work</h2>
+                    <p class="text-gray-400 leading-7 text-sm flex-1">Because our team is based in Vancouver, our day-to-day workstations run within British Columbia's electricity system. BC Hydro states that over 98% of the power it generates comes from clean, renewable sources, primarily hydroelectricity.<sup class="text-gray-500 text-xs ml-0.5">2</sup></p>
+                  </div>
                 </div>
+              </div>
+
+              <!-- SOURCES -->
+              <div class="rounded-[2rem] border border-white/10 bg-[#0a0a0a] p-6 md:p-8">
+                <div class="flex items-center gap-3 mb-5">
+                  <span class="w-6 h-[2px] rounded-full bg-white/20" aria-hidden="true"></span>
+                  <p class="text-sm uppercase tracking-[0.18em] text-gray-400">Sources</p>
+                </div>
+                <ol class="list-none space-y-5">
+                  <li class="flex gap-3 min-w-0">
+                    <span class="shrink-0 font-semibold text-gray-500 text-sm w-4 pt-0.5">1.</span>
+                    <div class="min-w-0">
+                      <p class="text-gray-300 text-sm leading-7">Amazon Web Services. "Sustainability in the Cloud." AWS Energy &amp; Utilities. Amazon committed to matching 100% of electricity consumption with renewable energy sources across its global operations.</p>
+                      <a href="https://aws.amazon.com/energy-utilities/sustainability/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-gray-500 hover:text-white text-xs mt-1.5 transition-colors duration-150">
+                        <span class="underline underline-offset-2">aws.amazon.com/energy-utilities/sustainability</span>
+                        <svg class="w-3 h-3 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-4.5-6H18m0 0v4.5m0-4.5l-7.5 7.5" /></svg>
+                      </a>
+                    </div>
+                  </li>
+                  <li class="border-t border-white/5 pt-5 flex gap-3 min-w-0">
+                    <span class="shrink-0 font-semibold text-gray-500 text-sm w-4 pt-0.5">2.</span>
+                    <div class="min-w-0">
+                      <p class="text-gray-300 text-sm leading-7">BC Hydro. "Our Clean System." About BC Hydro — Sustainability. BC Hydro states that over 98% of the electricity it generates comes from clean, renewable sources, with the majority being hydroelectric.</p>
+                      <a href="https://www.bchydro.com/toolbar/about/sustainability/our-clean-system.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-gray-500 hover:text-white text-xs mt-1.5 transition-colors duration-150">
+                        <span class="underline underline-offset-2">bchydro.com/...sustainability/our-clean-system</span>
+                        <svg class="w-3 h-3 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-4.5-6H18m0 0v4.5m0-4.5l-7.5 7.5" /></svg>
+                      </a>
+                    </div>
+                  </li>
+                </ol>
               </div>
             </div>
-          </div>
+          </section>
         </div>
       </section>
       </main>
