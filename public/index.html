@@ -281,25 +281,35 @@
         .impact-stats { display: flex; flex-direction: column; gap: 2.5rem; }
         .impact-stat { text-align: center; }
         .impact-stat-number { font-size: 2.25rem; line-height: 1; font-weight: 700; color: #fff; margin-bottom: .5rem; }
-        .impact-stat-label { font-size: 1rem; line-height: 1.4; color: #a3a3a3; font-weight: 500; white-space: nowrap; }
+        .impact-stat-label { font-size: 1rem; line-height: 1.4; color: #a3a3a3; font-weight: 500; }
         @media (min-width: 640px) {
           .impact-stat-number { font-size: 3rem; }
           .impact-stat-label { font-size: 1.125rem; }
         }
         @media (min-width: 768px) {
-          .impact-stats { flex-direction: row; gap: 0; align-items: center; }
-          .impact-stat { flex: 1 1 0%; padding: 0 1.25rem; }
-          .impact-stat + .impact-stat { border-left: 1px solid rgba(255,255,255,.12); }
+          /* Flex with equal thirds + min-width:0 so content can never push a column wider.
+             Separator lines are absolute-positioned at exactly 33.33% and 66.66% —
+             completely independent of content width, so they sit at the true
+             geometric midpoint between each pair of stats at every viewport size. */
+          .impact-stats { flex-direction: row; gap: 0; align-items: center; position: relative; }
+          .impact-stat { flex: 1 1 0%; min-width: 0; padding: 1rem 1.5rem; }
+          .impact-stats::before,
+          .impact-stats::after {
+            content: ''; position: absolute; top: 12%; height: 76%;
+            width: 1px; background: rgba(255,255,255,.15); pointer-events: none;
+          }
+          .impact-stats::before { left: 33.333%; }
+          .impact-stats::after  { left: 66.666%; }
           .impact-stat-number { font-size: 2.5rem; }
-          .impact-stat-label { font-size: .95rem; white-space: normal; }
+          .impact-stat-label { font-size: .95rem; }
         }
         @media (min-width: 1024px) {
-          .impact-stat { padding: 0 2rem; }
+          .impact-stat { padding: 1rem 2rem; }
           .impact-stat-number { font-size: 3.5rem; }
-          .impact-stat-label { font-size: 1.1rem; white-space: nowrap; }
+          .impact-stat-label { font-size: 1.1rem; }
         }
         @media (min-width: 1280px) {
-          .impact-stat { padding: 0 2.5rem; }
+          .impact-stat { padding: 1rem 2.5rem; }
           .impact-stat-number { font-size: 4.5rem; }
           .impact-stat-label { font-size: 1.35rem; }
         }
@@ -630,7 +640,7 @@
       <div class="site-footer-layout">
         <div class="site-footer-brand">
           <div class="mb-4">
-            <img class="h-14 sm:h-16 w-auto" style="margin-top:-0.5rem" src="images/logo/Oasis_of_Change-official.svg" alt="Oasis of Change" width="64" height="64">
+            <img class="h-14 sm:h-16 w-auto" style="margin-top:-1.05rem" src="images/logo/Oasis_of_Change-official.svg" alt="Oasis of Change" width="64" height="64">
           </div>
           <p class="tracking-tight text-gray-200 leading-relaxed text-sm">
             Building a more sustainable digital future through energy-efficient websites, transparent impact, and technology that supports communities and the planet.
