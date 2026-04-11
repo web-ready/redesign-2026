@@ -86,6 +86,36 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://oasisofchange.com/blog-accessible-web-nonprofits.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://oasisofchange.com/blog-ai-ethics-environment.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://oasisofchange.com/blog-sustainable-web-design.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://oasisofchange.com/blog-tree-planting-update.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://oasisofchange.com/blog-website-carbon-footprint.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://oasisofchange.com/blog-wra-platform-launch.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://oasisofchange.com/blog-example-article.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
