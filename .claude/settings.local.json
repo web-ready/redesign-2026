@@ -74,7 +74,8 @@
       "Read(//tmp/**)",
       "Bash(identify /tmp/Mangrove_Tree.jpg)",
       "Bash(pip show:*)",
-      "Bash(pip3 show:*)"
+      "Bash(pip3 show:*)",
+      "Bash(bash /tmp/analyze.sh)"
     ]
   }
 }
