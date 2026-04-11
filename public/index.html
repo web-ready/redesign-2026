@@ -272,46 +272,60 @@
             </div>
             <!-- HERO IMAGE -->
             <div class="relative">
-              <img class="w-full rounded-t-2xl object-cover object-bottom h-[240px] sm:h-[320px] md:h-[420px]" src="images/nature-sustainability-hero.avif" alt="Solar panels representing sustainable technology">
+              <img class="w-full rounded-t-2xl object-cover object-bottom h-[240px] sm:h-[320px] md:h-[420px]" src="images/case-studies/nature-sustainability-hero.avif" alt="Solar panels representing sustainable technology">
             </div>
           </div>
       </section>
                 
       <style>
-        .impact-stats { display: flex; flex-direction: column; gap: 2.5rem; }
+        /* ── Impact stats: mobile-first (stacked) ── */
+        .impact-stats { display: flex; flex-direction: column; gap: 2rem; align-items: center; }
         .impact-stat { text-align: center; }
         .impact-stat-number { font-size: 2.25rem; line-height: 1; font-weight: 700; color: #fff; margin-bottom: .5rem; }
         .impact-stat-label { font-size: 1rem; line-height: 1.4; color: #a3a3a3; font-weight: 500; }
+
         @media (min-width: 640px) {
-          .impact-stat-number { font-size: 3rem; }
-          .impact-stat-label { font-size: 1.125rem; }
+          .impact-stat-number { font-size: 2.75rem; }
+          .impact-stat-label { font-size: 1.05rem; }
         }
+
+        /* ── md+: horizontal row, auto-width columns, equal padding = equal gaps ── */
         @media (min-width: 768px) {
-          /* Flex with equal thirds + min-width:0 so content can never push a column wider.
-             Separator lines are absolute-positioned at exactly 33.33% and 66.66% —
-             completely independent of content width, so they sit at the true
-             geometric midpoint between each pair of stats at every viewport size. */
-          .impact-stats { flex-direction: row; gap: 0; align-items: center; position: relative; }
-          .impact-stat { flex: 1 1 0%; min-width: 0; padding: 1rem 1.5rem; }
-          .impact-stats::before,
-          .impact-stats::after {
-            content: ''; position: absolute; top: 12%; height: 76%;
-            width: 1px; background: rgba(255,255,255,.15); pointer-events: none;
+          .impact-stats {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
           }
-          .impact-stats::before { left: 33.333%; }
-          .impact-stats::after  { left: 66.666%; }
+          .impact-stat {
+            position: relative;
+            padding: 0.75rem 2rem;
+          }
+          /* Separator via ::after on first two stats — sits at right padding edge,
+             so the gap on each side is exactly the padding value (equal). */
+          .impact-stat:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 8%;
+            height: 84%;
+            width: 1px;
+            background: rgba(255, 255, 255, .15);
+          }
           .impact-stat-number { font-size: 2.5rem; }
-          .impact-stat-label { font-size: .95rem; }
+          .impact-stat-label { font-size: .9rem; }
         }
+
         @media (min-width: 1024px) {
-          .impact-stat { padding: 1rem 2rem; }
+          .impact-stat { padding: 0.75rem 2.75rem; }
           .impact-stat-number { font-size: 3.5rem; }
-          .impact-stat-label { font-size: 1.1rem; }
+          .impact-stat-label { font-size: 1.05rem; }
         }
+
         @media (min-width: 1280px) {
-          .impact-stat { padding: 1rem 2.5rem; }
+          .impact-stat { padding: 0.75rem 3.5rem; }
           .impact-stat-number { font-size: 4.5rem; }
-          .impact-stat-label { font-size: 1.35rem; }
+          .impact-stat-label { font-size: 1.25rem; }
         }
       </style>
       <section class="bg-black py-8 sm:py-10 md:py-16 relative overflow-hidden">
@@ -555,7 +569,7 @@
       
             <div class="flex justify-center lg:justify-end">
               <div class="w-full max-w-md lg:max-w-lg rounded-2xl overflow-hidden aspect-[3/4]">
-                <img class="w-full h-full object-cover object-top" src="images/Gabriel_Dalton_TEDx_Talk.jpg" alt="Gabriel Dalton speaking at TEDx">
+                <img class="w-full h-full object-cover object-top" src="images/about/Gabriel_Dalton_TEDx_Talk.jpg" alt="Gabriel Dalton speaking at TEDx">
               </div>
             </div>
       
@@ -572,25 +586,25 @@
           <ul class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 list-none p-0 m-0">
             <li>
               <div class="min-h-[110px] md:min-h-[128px] rounded-xl bg-gray-50 px-5 py-5 md:px-6 md:py-6 flex items-center justify-center">
-                <img class="max-h-12 md:max-h-14 w-auto max-w-full object-contain" src="images/WESN-Colour-Logo-scaled.png" alt="West End Seniors' Network logo">
+                <img class="max-h-12 md:max-h-14 w-auto max-w-full object-contain" src="images/partners/WESN-Colour-Logo-scaled.png" alt="West End Seniors' Network logo">
               </div>
             </li>
       
             <li>
               <div class="min-h-[110px] md:min-h-[128px] rounded-xl bg-gray-50 px-5 py-5 md:px-6 md:py-6 flex items-center justify-center">
-                <img class="max-h-12 md:max-h-14 w-auto max-w-full object-contain" src="images/stanley-park-ecology-society-logo.png" alt="Stanley Park Ecology Society logo">
+                <img class="max-h-12 md:max-h-14 w-auto max-w-full object-contain" src="images/partners/stanley-park-ecology-society-logo.png" alt="Stanley Park Ecology Society logo">
               </div>
             </li>
       
             <li>
               <div class="min-h-[110px] md:min-h-[128px] rounded-xl bg-gray-50 px-5 py-5 md:px-6 md:py-6 flex items-center justify-center">
-                <img class="max-h-12 md:max-h-14 w-auto max-w-full object-contain" src="images/sustainable-www-logo.png" alt="Sustainable WWW logo">
+                <img class="max-h-12 md:max-h-14 w-auto max-w-full object-contain" src="images/partners/sustainable-www-logo.png" alt="Sustainable WWW logo">
               </div>
             </li>
       
             <li>
               <div class="min-h-[110px] md:min-h-[128px] rounded-xl bg-gray-50 px-5 py-5 md:px-6 md:py-6 flex items-center justify-center">
-                <img class="max-h-12 md:max-h-14 w-auto max-w-full object-contain" src="images/denman-1.avif" alt="Denman Place Mall logo">
+                <img class="max-h-12 md:max-h-14 w-auto max-w-full object-contain" src="images/partners/denman-1.avif" alt="Denman Place Mall logo">
               </div>
             </li>
           </ul>

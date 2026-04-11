@@ -54,7 +54,10 @@
       "Bash(python3 scripts/generate_css_supplement.py)",
       "Bash(python3 scripts/fix_shadows.py)",
       "Bash(python3 scripts/clean_css.py)",
-      "Bash(python3 scripts/verify_classes.py)"
+      "Bash(python3 scripts/verify_classes.py)",
+      "Bash(python3 scripts/test_and_delete.py --test-only)",
+      "Bash(python3 scripts/test_and_delete.py)",
+      "Bash(xxd public/images/blog/blog-ai-network-visualization.png)"
     ]
   }
 }

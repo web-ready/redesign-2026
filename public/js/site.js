@@ -651,34 +651,22 @@
     if (window.__oocConsoleMessageShown) return;
     window.__oocConsoleMessageShown = true;
 
-    var logo =
-      '    ____             _     \n' +
-      '  / __ \\____ ______(_)____\n' +
-      ' / / / / __ `/ ___/ / ___/\n' +
-      '/ /_/ / /_/ (__  ) (__  )\n' +
-      '\\____/\\__,_/____/_/____/\n' +
-      '\n' +
-      '   ____  ______\n' +
-      '  / __ \\/ ____/\n' +
-      ' / / / / /_    \n' +
-      '/ /_/ / __/    \n' +
-      '\\____/_/       \n' +
-      '\n' +
-      '   ________                          \n' +
-      '  / ____/ /_  ____ _____  ____ ____  \n' +
-      ' / /   / __ \\/ __ `/ __ \\/ __ `/ _ \\ \n' +
-      '/ /___/ / / / /_/ / / / / /_/ /  __/ \n' +
-      '\\____/_/ /_/\\__,_/_/ /_/\\__, /\\___/  \n' +
-      '                       /____/         ';
+    var logo = '  ___            _          __    ___ _                          \n' +
+      ' / _ \\ __ _ ___ (_)___  __ / _|  / __| |_  __ _ _ _  __ _ ___   \n' +
+      '| (_) / _` (_-< | (_-< / _|  _| | (__| \' \\/ _` | \' \\/ _` / -_)  \n' +
+      ' \\___/\\__,_/__/ |_/__/ \\__|_|    \\___|_||_\\__,_|_||_\\__, \\___|  \n' +
+      '                                                    |___/        ';
 
-    console.log('%c' + logo, 'color:#4ade80;font-family:monospace;font-weight:700;');
+    console.log('%c' + logo, 'color:#4ade80;font-family:monospace;font-weight:700;line-height:1.3;');
     console.log(
-      '%cIf you opened DevTools out of curiosity, you are our kind of people.',
-      'color:#e5e7eb;font-size:13px;font-weight:600;'
+      '%c  Hey, conscious coder. %cYou just inspected a website that\n  tries to leave the internet better than it found it.',
+      'color:#4ade80;font-size:13px;font-weight:700;',
+      'color:#d1d5db;font-size:13px;font-weight:400;'
     );
     console.log(
-      '%cOasis of Change is building sustainable tech for real-world impact. If you code with purpose, come say hi: /contact',
-      'color:#9ca3af;font-size:12px;'
+      '%c  We build sustainable, accessible tech for nonprofits and\n' +
+      '  environmental orgs. Every page is lightweight by design.',
+      'color:#9ca3af;font-size:12px;line-height:1.5;'
     );
   }
 
