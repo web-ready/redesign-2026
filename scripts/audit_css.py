@@ -24,7 +24,7 @@ CUSTOM_CLASSES = {
     'site-footer-brand', 'site-footer-heading', 'site-footer-layout', 'site-footer-link',
     'site-footer-list', 'site-footer-nav', 'site-global-footer',
     # Other custom/JS classes
-    'about-hero-image-mobile-hidden', 'bs-section-dragged', 'js-scroll-to-ways',
+    'about-hero-image-mobile-hidden', 'bs-section-dragged', 'js-scroll-to-ways', 'skip-to-content',
     # Slider/comparison widget
     'slider', 'slider-2', 'slider-container', 'slide-2',
     # Custom checkbox

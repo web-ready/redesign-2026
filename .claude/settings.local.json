@@ -67,7 +67,9 @@
       "Bash(awk 'NF > 5 && $1 >= 4 && $2 !~ /^site-/ && $2 !~ /^nav-/')",
       "Bash(python3 -c:*)",
       "Bash(magick --version)",
-      "Bash(convert --version)"
+      "Bash(convert --version)",
+      "Bash(python3 scripts/optimize_classes.py)",
+      "Bash(python3 scripts/add_skip_link_css.py)"
     ]
   }
 }
