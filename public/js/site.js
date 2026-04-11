@@ -56,44 +56,6 @@
     document.head.appendChild(s);
   }
 
-  function injectGlobalFooterStyles() {
-    if (document.getElementById('site-global-footer-layout')) return;
-    var s = document.createElement('style');
-    s.id = 'site-global-footer-layout';
-    s.textContent =
-      '.site-global-footer .site-footer-layout{' +
-      'display:flex;flex-direction:column;gap:2.5rem}' +
-      '.site-global-footer .site-footer-brand{' +
-      'max-width:26rem}' +
-      '.site-global-footer .site-footer-nav{' +
-      'display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2.5rem 1.5rem}' +
-      '.site-global-footer .site-footer-heading{' +
-      'margin:0 0 1rem}' +
-      '.site-global-footer .site-footer-list{' +
-      'margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:.75rem}' +
-      '.site-global-footer .site-footer-link{' +
-      'display:inline-block;max-width:100%;word-break:normal;overflow-wrap:normal;hyphens:none}' +
-      '@media (min-width:640px){' +
-      '.site-global-footer .site-footer-nav{grid-template-columns:repeat(4,minmax(0,1fr));gap:1.25rem}' +
-      '}' +
-      '@media (min-width:768px){' +
-      '.site-global-footer .site-footer-layout{flex-direction:row;align-items:flex-start;gap:2.25rem}' +
-      '.site-global-footer .site-footer-brand{width:220px;min-width:220px;max-width:220px}' +
-      '.site-global-footer .site-footer-nav{flex:1;min-width:0;gap:1rem 1.25rem}' +
-      '}' +
-      '@media (min-width:1024px){' +
-      '.site-global-footer .site-footer-layout{gap:2.5rem}' +
-      '.site-global-footer .site-footer-brand{width:240px;min-width:240px;max-width:240px}' +
-      '.site-global-footer .site-footer-nav{gap:1rem 1.5rem}' +
-      '}' +
-      '@media (min-width:1280px){' +
-      '.site-global-footer .site-footer-layout{gap:3rem}' +
-      '.site-global-footer .site-footer-brand{width:280px;min-width:280px;max-width:280px}' +
-      '.site-global-footer .site-footer-nav{gap:1rem 2rem}' +
-      '}';
-    document.head.appendChild(s);
-  }
-
   /**
    * Desktop nav mega-menu: layout, hover/focus, dividers. (Prebuilt tailwind.min.css omits w-max,
    * max-w-[min()], and hover:bg-white/10, so these classes did nothing in browsers.)
@@ -721,7 +683,6 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    injectGlobalFooterStyles();
     injectFooterExternalLinkIconStyles();
     injectNavDesktopDropdownStyles();
     initMobileNav();

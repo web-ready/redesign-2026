@@ -45,7 +45,9 @@
       "Skill(humanizer)",
       "Bash(find:*)",
       "Bash(python3 -c ':*)",
-      "Bash(node -e ':*)"
+      "Bash(node -e ':*)",
+      "Bash(awk 'NR==3{print \"END OF LINE 3: ...\" substr\\($0,length\\($0\\)-80\\)} NR==4{print \"START OF LINE 4: \" substr\\($0,1,80\\)}' \"c:/Users/Gabriel/Documents/GitHub/redesign-2026/public/css/tailwind/tailwind.min.css\")",
+      "Bash(awk 'END{print \"LAST LINE: \" substr\\($0,1,100\\)}' \"c:/Users/Gabriel/Documents/GitHub/redesign-2026/public/css/tailwind/tailwind.min.css\")"
     ]
   }
 }
