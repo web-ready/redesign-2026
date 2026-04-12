@@ -91,18 +91,18 @@
   var isDropdownOpen = false;
 
   /* ── Persistence ───────────────────────────────────────────── */
+  function sanitizeLangCode(code) {
+    var v = (code || '').toLowerCase().trim();
+    return v && findLang(v) ? v : null;
+  }
+
   function loadLangFromURL() {
     try {
-      var params = new URLSearchParams(window.location.search || '');
-      var code = null;
-      params.forEach(function (value, key) {
-        if (code) return;
-        var name = (key || '').toLowerCase();
-        if (name === 'l' || name === 'lang' || name === 'language') {
-          code = (value || '').toLowerCase().trim();
-        }
-      });
-      return code && findLang(code) ? code : null;
+      var params = new URLSearchParams(window.location.search);
+      return sanitizeLangCode(params.get('l')) ||
+             sanitizeLangCode(params.get('L')) ||
+             sanitizeLangCode(params.get('lang')) ||
+             sanitizeLangCode(params.get('language'));
     } catch (e) {
       return null;
     }
@@ -114,7 +114,7 @@
       saveLang(fromURL);
       return fromURL;
     }
-    try { var v = localStorage.getItem(STORAGE_KEY); return v && findLang(v) ? v : 'en'; }
+    try { return sanitizeLangCode(localStorage.getItem(STORAGE_KEY)) || 'en'; }
     catch (e) { return 'en'; }
   }
   function saveLang(code) {
@@ -460,6 +460,8 @@
   /* ── Init ──────────────────────────────────────────────────── */
   document.addEventListener('DOMContentLoaded', function () {
     activeLang = loadLang();
+    // Keep GT cookie aligned with selected language even for English,
+    // so shared links can reliably reset translation back to default.
     setGTCookie(activeLang);
 
     // 1. Hide Google Translate's default chrome
