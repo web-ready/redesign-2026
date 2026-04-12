@@ -24,7 +24,7 @@
     <script src="js/site.js" defer></script>
     <script src="js/i18n.js" defer></script>
 </head>
-<body class="antialiased bg-white text-body font-body">
+<body class="antialiased bg-black text-body font-body">
     <div class="">
       <main id="main-content">
                 
@@ -228,111 +228,132 @@
             </div>
           </nav>
 
-      
-          <!-- ANNUAL REPORTS PANEL -->
-          <section class="bg-black rounded-2xl border border-white/10 px-6 md:px-10 lg:px-16 py-16 md:py-20 lg:py-24 mb-12 md:mb-16">
-            <div class="max-w-6xl">
-              <nav aria-label="Breadcrumb" class="text-sm text-gray-600 mb-6">
+
+          <!-- ANNUAL REPORTS -->
+          <div class="mb-16 md:mb-24">
+
+            <!-- Header -->
+            <div class="pt-14 md:pt-20 pb-10 md:pb-12 border-b border-white/10">
+              <nav aria-label="Breadcrumb" class="text-sm text-gray-600 mb-8">
                 <a href="index.html" class="hover:text-white transition">Home</a>
                 <span class="mx-2" aria-hidden="true">/</span>
                 <a href="company.html" class="hover:text-white transition">Company</a>
                 <span class="mx-2" aria-hidden="true">/</span>
                 <span class="text-gray-300">Annual Reports</span>
               </nav>
-      
-              
-              <h1 class="font-heading tracking-tight text-white text-4xl md:text-6xl font-medium mb-6 max-w-4xl leading-[1.02]">
-                Annual Reports
-              </h1>
-              <p class="tracking-tight text-gray-300 text-lg leading-8 max-w-3xl mb-12">
-                This page brings together Oasis of Change’s annual reports across multiple fiscal years. As new reports are completed, they will be added here to support transparency, accountability, and a clearer understanding of our work over time.
-              </p>
-      
-              <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
-                <!-- SIDEBAR -->
-                <div class="lg:col-span-4">
-                  <div class="rounded-[2rem] border border-white/10 bg-[#111111] p-6 md:p-8 text-white">
-                    <p class="text-sm uppercase tracking-[0.18em] text-gray-600 mb-4">At a glance</p>
-                    <div class="space-y-4 text-gray-300 leading-7">
-                      <div class="border-t border-white/10 pt-4">
-                        <p class="text-sm text-gray-600 mb-1">Purpose</p>
-                        <p>Provide a public record of our annual progress, activities, and development.</p>
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                <div>
+                  <h1 class="font-heading tracking-tight text-white text-4xl md:text-6xl font-medium leading-[1.02]">
+                    Annual Reports
+                  </h1>
+                </div>
+                <div class="lg:pt-2">
+                  <p class="text-gray-300 text-lg leading-8">
+                    A public record of Oasis of Change’s annual progress, activities, and organizational development published across fiscal years.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Reports -->
+            <div class="pt-10 md:pt-12 pb-16 md:pb-24">
+              <p class="text-xs uppercase tracking-[0.18em] text-gray-600 mb-6">Available reports</p>
+
+              <div class="space-y-4">
+
+                <!-- 2025–2026 -->
+                <a href="annual_report_2025_2026.html" class="group block rounded-2xl border border-white/10 p-7 md:p-10 hover:border-white/20 transition-all duration-200">
+                  <div class="flex flex-col md:flex-row md:items-center gap-6 md:gap-8">
+                    <div class="shrink-0">
+                      <p class="font-heading tracking-tight text-white font-medium leading-none" style="font-size: clamp(2.4rem, 4vw, 3.25rem);">2025<br>–2026</p>
+                    </div>
+                    <div class="flex-1 md:border-l md:border-white/10 md:pl-8">
+                      <div class="mb-3">
+                        <span class="report-status report-status--published">
+                          <span class="report-status__dot" aria-hidden="true"></span>
+                          Published
+                        </span>
                       </div>
-                      <div class="border-t border-white/10 pt-4">
-                        <p class="text-sm text-gray-600 mb-1">Includes</p>
-                        <p>Reports from multiple fiscal years as they become available.</p>
+                      <h2 class="font-heading tracking-tight text-white text-xl md:text-2xl font-medium mb-2">Fiscal Year Annual Report</h2>
+                      <p class="text-gray-300 leading-7 text-sm mb-5">
+                        A summary of organizational progress, major initiatives, and key developments during the 2025–2026 fiscal year.
+                      </p>
+                      <span class="inline-flex items-center gap-2 text-sm font-medium text-white" aria-hidden="true">
+                        Read report
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                      </span>
+                    </div>
+                  </div>
+                </a>
+
+                <!-- 2024–2025 -->
+                <a href="annual_report_2024_2025.html" class="group block rounded-2xl border border-white/10 p-7 md:p-10 hover:border-white/20 transition-all duration-200">
+                  <div class="flex flex-col md:flex-row md:items-center gap-6 md:gap-8">
+                    <div class="shrink-0">
+                      <p class="font-heading tracking-tight text-white font-medium leading-none" style="font-size: clamp(2.4rem, 4vw, 3.25rem);">2024<br>–2025</p>
+                    </div>
+                    <div class="flex-1 md:border-l md:border-white/10 md:pl-8">
+                      <div class="mb-3">
+                        <span class="report-status report-status--published">
+                          <span class="report-status__dot" aria-hidden="true"></span>
+                          Published
+                        </span>
                       </div>
-                      <div class="border-t border-white/10 pt-4">
-                        <p class="text-sm text-gray-600 mb-1">Focus</p>
-                        <p>Transparency, organizational growth, and long-term accountability.</p>
+                      <h2 class="font-heading tracking-tight text-white text-xl md:text-2xl font-medium mb-2">Fiscal Year Annual Report</h2>
+                      <p class="text-gray-300 leading-7 text-sm mb-5">
+                        A summary of organizational activities, milestones, and growth during the 2024–2025 fiscal year.
+                      </p>
+                      <span class="inline-flex items-center gap-2 text-sm font-medium text-white" aria-hidden="true">
+                        Read report
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                      </span>
+                    </div>
+                  </div>
+                </a>
+
+                <!-- Future placeholder -->
+                <div class="rounded-2xl border border-dashed border-white/10 p-7 md:p-10">
+                  <div class="flex flex-col md:flex-row md:items-center gap-6 md:gap-8">
+                    <div class="shrink-0">
+                      <p class="font-heading font-medium leading-none" style="font-size: clamp(2.4rem, 4vw, 3.25rem); color: #333;">2026<br>–2027</p>
+                    </div>
+                    <div class="flex-1 md:border-l md:border-white/10 md:pl-8">
+                      <div class="mb-3">
+                        <span class="report-status report-status--coming">
+                          <span class="report-status__dot" aria-hidden="true"></span>
+                          Coming soon
+                        </span>
                       </div>
+                      <p class="text-gray-700 text-sm leading-7">
+                        This report will be published once the fiscal year is complete and has been reviewed and approved.
+                      </p>
                     </div>
                   </div>
                 </div>
-      
-                <!-- MAIN CONTENT -->
-                <div class="lg:col-span-8">
-                  <div class="rounded-[2rem] border border-white/10 bg-[#111111] p-6 md:p-8 text-white">
-                    <div class="mb-8">
-                      <h2 class="text-2xl md:text-3xl font-heading tracking-tight mb-4">Available reports</h2>
-                      <p class="text-gray-300 leading-8">
-                        Explore reports by fiscal year. You can replace the placeholder links below with your actual report files or report pages as they become available.
-                      </p>
-                    </div>
-      
-                    <div class="space-y-4">
-                      <!-- Report item -->
-                      <div class="rounded-[1.5rem] border border-white/10 bg-black/30 p-5 md:px-6 md:py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                        <div>
-                          <p class="text-sm uppercase tracking-[0.18em] text-gray-600 mb-2">Fiscal Year</p>
-                          <h3 class="text-xl md:text-2xl font-heading tracking-tight mb-2">2025–2026 Annual Report</h3>
-                          <p class="text-gray-300 leading-7">
-                            Summary of organizational progress, major initiatives, and key developments during the 2025–2026 fiscal year.
-                          </p>
-                        </div>
-                        <div class="shrink-0">
-                          <a href="#" class="inline-flex items-center justify-center rounded-full border border-white/10 bg-white px-5 py-3 text-sm font-semibold tracking-tight text-black hover:bg-gray-100 transition">
-                            View Report
-                          </a>
-                        </div>
-                      </div>
-      
-                      <!-- Report item -->
-                      <div class="rounded-[1.5rem] border border-white/10 bg-black/30 p-5 md:px-6 md:py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                        <div>
-                          <p class="text-sm uppercase tracking-[0.18em] text-gray-600 mb-2">Fiscal Year</p>
-                          <h3 class="text-xl md:text-2xl font-heading tracking-tight mb-2">2024–2025 Annual Report</h3>
-                          <p class="text-gray-300 leading-7">
-                            Summary of organizational activities, milestones, and growth during the 2024–2025 fiscal year.
-                          </p>
-                        </div>
-                        <div class="shrink-0">
-                          <a href="#" class="inline-flex items-center justify-center rounded-full border border-white/10 bg-white px-5 py-3 text-sm font-semibold tracking-tight text-black hover:bg-gray-100 transition">
-                            View Report
-                          </a>
-                        </div>
-                      </div>
-      
-                      <!-- Empty state / future reports -->
-                      <div class="rounded-[1.5rem] border border-dashed border-white/10 bg-black/20 px-5 py-6 md:px-6 md:py-7">
-                        <p class="text-lg font-medium tracking-tight mb-2">More fiscal years will be added here</p>
-                        <p class="text-gray-300 leading-7">
-                          Future annual reports will be published on this page as they are completed and approved.
-                        </p>
-                      </div>
-                    </div>
-      
-                    <div class="mt-10 border-t border-white/10 pt-8">
-                      <h2 class="text-2xl md:text-3xl font-heading tracking-tight mb-4">Why this page matters</h2>
-                      <p class="text-gray-300 leading-8">
-                        Annual reports help provide continuity across our work by showing how Oasis of Change evolves from one fiscal year to the next. They support transparency for partners, supporters, and the broader community, while also helping document the progress of our mission over time.
-                      </p>
-                    </div>
+
+              </div>
+
+              <!-- Why it matters -->
+              <div class="mt-12 pt-10 border-t border-white/10">
+                <p class="text-xs uppercase tracking-[0.18em] text-gray-600 mb-8">Why annual reports matter</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div>
+                    <p class="text-sm font-medium text-white mb-2">Transparency</p>
+                    <p class="text-gray-300 leading-7 text-sm">Annual reports help Oasis of Change maintain an open, accessible record of its activities, decisions, and priorities.</p>
+                  </div>
+                  <div>
+                    <p class="text-sm font-medium text-white mb-2">Accountability</p>
+                    <p class="text-gray-300 leading-7 text-sm">Publishing yearly reports supports accountability to partners, supporters, and the broader public we serve.</p>
+                  </div>
+                  <div>
+                    <p class="text-sm font-medium text-white mb-2">Progress over time</p>
+                    <p class="text-gray-300 leading-7 text-sm">Together, the reports document how the organization evolves and grows from one fiscal year to the next.</p>
                   </div>
                 </div>
               </div>
             </div>
-          </section>
+
+          </div>
         </div>
       </section>
       </main>
