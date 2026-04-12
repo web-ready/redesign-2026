@@ -256,7 +256,7 @@
                 <div class="lg:col-span-3">
                   <div style="position: sticky; top: 1.5rem;">
                     <div class="lg:border lg:border-white/10 rounded-2xl p-5">
-                      <p class="text-xs uppercase tracking-[0.18em] text-gray-600 mb-3">Contents</p>
+                      <p class="text-xs uppercase tracking-[0.18em] text-gray-400 mb-3">Contents</p>
                       <nav aria-label="Policy sections">
                         <a href="#pp-s1" class="toc-link is-active">1. Information we collect</a>
                         <a href="#pp-s2" class="toc-link">2. How we use information</a>
@@ -358,6 +358,12 @@
         }, { rootMargin: '-15% 0px -75% 0px', threshold: 0 });
 
         sections.forEach(function (s) { observer.observe(s); });
+
+        window.addEventListener('scroll', function () {
+          if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+            setActive(sections[sections.length - 1].id);
+          }
+        }, { passive: true });
       })();
       </script>
       <footer class="site-global-footer pt-20 pb-8 overflow-hidden bg-black bs-section-dragged">

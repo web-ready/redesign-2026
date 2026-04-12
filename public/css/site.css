@@ -624,21 +624,19 @@
   display: block;
   font-size: 0.875rem;
   line-height: 1.45;
-  color: #6b7280;
+  color: #d1d5db;
   text-decoration: none;
-  padding: 0.45rem 0.75rem 0.45rem 0.875rem;
+  padding: 0.45rem 0.75rem;
   border-radius: 0.5rem;
-  border-left: 2px solid transparent;
-  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+  transition: color 0.15s ease, background-color 0.15s ease;
 }
 .toc-link:hover {
-  color: #e5e7eb;
+  color: #fff;
   background-color: rgba(255, 255, 255, 0.04);
 }
 .toc-link.is-active {
   color: #fff;
-  border-left-color: rgba(255, 255, 255, 0.45);
-  background-color: rgba(255, 255, 255, 0.06);
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
 /* ── Report status badge ──────────────────────────────────────────────────── */
