@@ -9,12 +9,12 @@
     var closeIcon = toggle.querySelector('[data-icon-close]');
     var isOpen = false;
 
-    // -- Nav overflow guard: collapse to hamburger when items don't fit --
+    
     var navEl = toggle.closest('nav');
     var flexRow = navEl ? navEl.firstElementChild : null;
     var overflowActive = false;
 
-    // -- Logo compaction: swap to icon-only logo before collapsing to hamburger --
+    
     var logoFull = navEl ? navEl.querySelector('img[src*="Oasis_of_Change-official"]') : null;
     var logoIcon = null;
     if (logoFull) {
@@ -34,7 +34,7 @@
       logoIcon.style.display = compact ? '' : 'none';
     }
 
-    // -- Nav spacing compaction: tighten gaps/padding to reclaim space --
+    
     var navUl = flexRow ? flexRow.querySelector('ul') : null;
     var supportWrap = flexRow ? flexRow.querySelector('.justify-end') : null;
 
@@ -54,7 +54,7 @@
       if (supportWrap) supportWrap.style.gap = compact ? '0.25rem' : '';
     }
 
-    // One duration + easing for panel + toggle icons so the header doesn't feel "ahead" of the menu.
+    
     var navMotionMs = 240;
     var navEase = 'cubic-bezier(0.2, 0.9, 0.2, 1)';
     var navTransitionCss =
@@ -109,9 +109,9 @@
       var cs = window.getComputedStyle(panel);
       var padY =
         (parseFloat(cs.paddingTop) || 0) + (parseFloat(cs.paddingBottom) || 0);
-      // When the panel has a fixed JS height, scrollHeight often stays at that height even after
-      // inner content shrinks (e.g. switching from Initiatives to Company). Measure the inner
-      // block instead so the black shell tracks the current dropdown state.
+      
+      
+      
       return inner.offsetHeight + padY;
     }
 
@@ -159,7 +159,7 @@
         panel.style.opacity = '1';
         setPanelHeightPx(getPanelTargetPx(), false);
       } else {
-        // Start closed (in-flow), then animate to measured height.
+        
         panel.style.transform = 'translateY(-6px)';
         panel.style.opacity = '0';
         setPanelHeightPx(0, false);
@@ -194,8 +194,8 @@
 
     function close() {
       isOpen = false;
-      // Reset scroll so height/overflow match the top of the menu (avoids a second layout beat at
-      // the bottom where the Support CTA lives).
+      
+      
       try {
         panel.scrollTop = 0;
       } catch (err) {}
@@ -216,8 +216,8 @@
         setPanelHeightPx(0, false);
         finalizeMobilePanelHidden();
       } else {
-        // Use the *rendered* height (not scrollHeight math) so it stays in sync with scrollbar /
-        // flex layout — avoids the menu "stopping" while the Support CTA catches up.
+        
+        
         var startPx = panel.offsetHeight;
         if (!startPx || startPx < 1) {
           startPx = getPanelTargetPx();
@@ -278,24 +278,24 @@
         setNavCompact(false);
         return;
       }
-      // Reset everything for measurement
+      
       navEl.classList.remove('nav-overflow-active');
       overflowActive = false;
       setLogoCompact(false);
       setNavCompact(false);
 
-      // Stage 1: full logo, normal spacing — if everything fits, done
+      
       if (!measureNavOverflow()) return;
 
-      // Stage 2: full logo, compact spacing — tighten gaps to keep logo visible
+      
       setNavCompact(true);
       if (!measureNavOverflow()) return;
 
-      // Stage 3: icon logo, compact spacing
+      
       setLogoCompact(true);
       if (!measureNavOverflow()) return;
 
-      // Stage 4: nothing fits — collapse to hamburger
+      
       setLogoCompact(false);
       setNavCompact(false);
       navEl.classList.add('nav-overflow-active');
@@ -329,7 +329,7 @@
       closeIcon.style.pointerEvents = 'none';
     }
 
-    // Initial overflow check + re-check after all resources load
+    
     checkNavOverflow();
     window.addEventListener('load', checkNavOverflow);
 

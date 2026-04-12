@@ -1,13 +1,7 @@
 (function () {
   'use strict';
 
-  /* ═══════════════════════════════════════════════════════════════
-     i18n.js — Language switcher for Oasis of Change
-     ─────────────────────────────────────────────────────────────
-     Pure Google Translate integration with a custom UI.
-     Zero hardcoded strings — any text change on the site is
-     automatically translated. Nothing to maintain.
-     ═══════════════════════════════════════════════════════════════ */
+  
 
   var STORAGE_KEY = 'ooc-lang';
   var LANGS = [
@@ -21,7 +15,7 @@
   var desktopDropdownEl = null;
   var isDropdownOpen = false;
 
-  /* ── Persistence ───────────────────────────────────────────── */
+  
   function loadLang() {
     try { var v = localStorage.getItem(STORAGE_KEY); return v && findLang(v) ? v : 'en'; }
     catch (e) { return 'en'; }
@@ -44,7 +38,7 @@
     } catch (e) { return null; }
   }
 
-  /* ── Google Translate cookie ───────────────────────────────── */
+  
   function setGTCookie(langCode) {
     var val = langCode === 'en' ? '' : '/en/' + langCode;
     var expires = langCode === 'en'
@@ -59,7 +53,7 @@
     } catch (e) {}
   }
 
-  /* ── Google Translate loader ───────────────────────────────── */
+  
   function loadGoogleTranslate() {
     var el = document.createElement('div');
     el.id = 'google_translate_element';
@@ -83,7 +77,7 @@
 
     var s = document.createElement('script');
     s.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-    s.onerror = function () { /* GT unavailable — page stays in English */ };
+    s.onerror = function () {  };
     document.head.appendChild(s);
   }
 
@@ -96,7 +90,7 @@
     }, 120);
   }
 
-  /* ── Hide Google Translate's default chrome ─────────────────── */
+  
   function injectGTHideCSS() {
     var s = document.createElement('style');
     s.id = 'ooc-gt-hide';
@@ -112,7 +106,7 @@
     document.head.appendChild(s);
   }
 
-  /* ── SVG helpers ───────────────────────────────────────────── */
+  
   function globeSvg() {
     return '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">' +
       '<path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />' +
@@ -130,7 +124,7 @@
       '<polyline points="20 6 9 17 4 12"></polyline></svg>';
   }
 
-  /* ── Build desktop switcher ────────────────────────────────── */
+  
   function buildDesktopSwitcher() {
     var wrap = document.createElement('div');
     wrap.setAttribute('data-lang-switcher', '');
@@ -176,7 +170,7 @@
     return wrap;
   }
 
-  /* ── Build mobile switcher ─────────────────────────────────── */
+  
   function buildMobileSwitcher() {
     var row = document.createElement('div');
     row.className = 'lang-switcher-mobile notranslate';
@@ -199,7 +193,7 @@
     return row;
   }
 
-  /* ── Inject switchers into the page ────────────────────────── */
+  
   function inject() {
     var supportContainer = null;
     var supportLink = null;
@@ -231,11 +225,11 @@
     initMobilePills();
     initClickOutside();
 
-    // Re-trigger nav overflow check now that the switcher has added width
+    
     window.dispatchEvent(new Event('resize'));
   }
 
-  /* ── Desktop dropdown behaviour ────────────────────────────── */
+  
   function openDropdown() {
     if (!desktopDropdownEl) return;
     isDropdownOpen = true;
@@ -292,7 +286,7 @@
     });
   }
 
-  /* ── Update switcher UI ────────────────────────────────────── */
+  
   function updateSwitcherUI() {
     var info = findLang(activeLang);
     if (!info) return;
@@ -316,7 +310,7 @@
     }
   }
 
-  /* ── Switch language ───────────────────────────────────────── */
+  
   function switchTo(code) {
     if (code === activeLang) return;
     saveLang(code);
@@ -324,7 +318,7 @@
     location.reload();
   }
 
-  /* ── Init ──────────────────────────────────────────────────── */
+  
   document.addEventListener('DOMContentLoaded', function () {
     var urlLang = getUrlLang();
     activeLang = urlLang || loadLang();
@@ -333,20 +327,20 @@
       setGTCookie(urlLang);
     }
 
-    // 1. Hide Google Translate's default chrome
+    
     injectGTHideCSS();
 
-    // 2. Build and inject our custom language switcher
+    
     inject();
     updateSwitcherUI();
 
-    // 3. Set cookie so GT auto-translates on load
+    
     if (activeLang !== 'en') {
       setGTCookie(activeLang);
       document.documentElement.lang = activeLang;
     }
 
-    // 4. Load Google Translate — it handles ALL translation
+    
     loadGoogleTranslate();
   });
 })();

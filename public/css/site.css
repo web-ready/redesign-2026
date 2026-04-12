@@ -1,8 +1,3 @@
-/* =====================================================================
-   site.css — Styles previously injected at runtime by site.js
-   ===================================================================== */
-
-/* -- 1. Mobile nav focus rings ---------------------------------------- */
 [data-mobile-toggle]:focus-visible,
 [data-nav-dropdown-toggle]:focus-visible,
 [data-mobile-panel] a:focus-visible {
@@ -10,7 +5,6 @@
   outline-offset: 2px;
 }
 
-/* -- 2. Mobile nav scrollbar hiding ----------------------------------- */
 [data-mobile-panel] {
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -21,7 +15,6 @@
   display: none;
 }
 
-/* -- 3. Desktop nav dropdown / mega-menu ------------------------------ */
 .nav-dd-panel {
   width: max-content;
   max-width: min(22rem, calc(100vw - 2rem));
@@ -217,7 +210,6 @@
   }
 }
 
-/* -- 5. Language switcher --------------------------------------------- */
 [data-lang-switcher] {
   position: relative;
 }
@@ -377,7 +369,6 @@
   }
 }
 
-/* -- 6. Founder section: compact portrait on mobile, full on desktop -- */
 .founder-section {
   display: grid;
   grid-template-columns: 1fr 8rem;
@@ -412,7 +403,6 @@
   .founder-section { gap: 5rem; }
 }
 
-/* -- 7. Footer external-link icon (Impact Dashboard) ------------------ */
 .site-global-footer a[href*="impact.oasisofchange.com"] {
   display: inline-flex;
   align-items: center;
@@ -445,7 +435,6 @@
   }
 }
 
-/* -- 8. Nav overflow (collapse to hamburger when items don't fit) ------ */
 .nav-overflow-active .hidden.lg\:flex {
   display: none !important;
 }
@@ -456,7 +445,6 @@
   display: inline-flex !important;
 }
 
-/* -- 7. Case-studies layout helpers -------------------------------------- */
 @media (min-width: 1024px) {
   .lg\:col-span-6  { grid-column: span 6 / span 6; }
   .lg\:col-span-12 { grid-column: span 12 / span 12; }
