@@ -410,7 +410,30 @@
   }
 }
 
-/* -- 6. Nav overflow (collapse to hamburger when items don't fit) ------ */
+/* -- 6. Stat cards: center orphan on 2-col tablet layout -------------- */
+@media (min-width: 640px) {
+  .stat-cards > :nth-child(3):last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 0.5rem);
+  }
+}
+@media (min-width: 1024px) {
+  .stat-cards > :nth-child(3):last-child {
+    grid-column: auto;
+    justify-self: auto;
+    width: auto;
+  }
+}
+
+/* -- 7. Footer: allow wrapping when translated (longer text) ---------- */
+.site-global-footer .site-footer-link {
+  white-space: normal !important;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+/* -- 7. Nav overflow (collapse to hamburger when items don't fit) ------ */
 .nav-overflow-active .hidden.lg\:flex {
   display: none !important;
 }
