@@ -34,6 +34,26 @@
       logoIcon.style.display = compact ? '' : 'none';
     }
 
+    // -- Nav spacing compaction: tighten gaps/padding to reclaim space --
+    var navUl = flexRow ? flexRow.querySelector('ul') : null;
+    var supportWrap = flexRow ? flexRow.querySelector('.justify-end') : null;
+
+    function setNavCompact(compact) {
+      if (!flexRow) return;
+      flexRow.style.gap = compact ? '0.25rem' : '';
+      if (navUl) {
+        navUl.style.gap = compact ? '0' : '';
+        for (var i = 0; i < navUl.children.length; i++) {
+          var a = navUl.children[i].querySelector('a');
+          if (a) {
+            a.style.paddingLeft = compact ? '0.375rem' : '';
+            a.style.paddingRight = compact ? '0.375rem' : '';
+          }
+        }
+      }
+      if (supportWrap) supportWrap.style.gap = compact ? '0.25rem' : '';
+    }
+
     // One duration + easing for panel + toggle icons so the header doesn't feel "ahead" of the menu.
     var navMotionMs = 240;
     var navEase = 'cubic-bezier(0.2, 0.9, 0.2, 1)';
@@ -255,22 +275,29 @@
         navEl.classList.remove('nav-overflow-active');
         overflowActive = false;
         setLogoCompact(false);
+        setNavCompact(false);
         return;
       }
-      // Reset to full state for measurement
+      // Reset everything for measurement
       navEl.classList.remove('nav-overflow-active');
       overflowActive = false;
       setLogoCompact(false);
+      setNavCompact(false);
 
-      // Stage 1: measure with full logo — if everything fits, done
+      // Stage 1: full logo, normal spacing — if everything fits, done
       if (!measureNavOverflow()) return;
 
-      // Stage 2: try compact (icon-only) logo to free up space
-      setLogoCompact(true);
-      if (!measureNavOverflow()) return; // compact logo freed enough space
+      // Stage 2: full logo, compact spacing — tighten gaps to keep logo visible
+      setNavCompact(true);
+      if (!measureNavOverflow()) return;
 
-      // Stage 3: still doesn't fit — collapse to hamburger
+      // Stage 3: icon logo, compact spacing
+      setLogoCompact(true);
+      if (!measureNavOverflow()) return;
+
+      // Stage 4: nothing fits — collapse to hamburger
       setLogoCompact(false);
+      setNavCompact(false);
       navEl.classList.add('nav-overflow-active');
       overflowActive = true;
     }
