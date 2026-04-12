@@ -410,20 +410,9 @@
   }
 }
 
-/* -- 6. Stat cards: center orphan on 2-col tablet layout -------------- */
-@media (min-width: 640px) {
-  .stat-cards > :nth-child(3):last-child {
-    grid-column: 1 / -1;
-    justify-self: center;
-    width: calc(50% - 0.5rem);
-  }
-}
-@media (min-width: 1024px) {
-  .stat-cards > :nth-child(3):last-child {
-    grid-column: auto;
-    justify-self: auto;
-    width: auto;
-  }
+/* -- 6. Mittler case study: push CTA to bottom on desktop ------------- */
+.mittler-cta {
+  margin-top: auto;
 }
 
 /* -- 7. Footer: allow wrapping when translated (longer text) ---------- */
