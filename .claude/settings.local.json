@@ -5,7 +5,8 @@
       "Read(//c/Users/Gabriel/Documents/GitHub/redesign-2026/**)",
       "Read(//tmp/**)",
       "WebSearch",
-      "Skill(humanizer)"
+      "Skill(humanizer)",
+      "WebFetch(domain:playwright.dev)"
     ]
   }
 }
