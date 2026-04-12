@@ -91,7 +91,29 @@
   var isDropdownOpen = false;
 
   /* ── Persistence ───────────────────────────────────────────── */
+  function loadLangFromURL() {
+    try {
+      var params = new URLSearchParams(window.location.search || '');
+      var code = null;
+      params.forEach(function (value, key) {
+        if (code) return;
+        var name = (key || '').toLowerCase();
+        if (name === 'l' || name === 'lang' || name === 'language') {
+          code = (value || '').toLowerCase().trim();
+        }
+      });
+      return code && findLang(code) ? code : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
   function loadLang() {
+    var fromURL = loadLangFromURL();
+    if (fromURL) {
+      saveLang(fromURL);
+      return fromURL;
+    }
     try { var v = localStorage.getItem(STORAGE_KEY); return v && findLang(v) ? v : 'en'; }
     catch (e) { return 'en'; }
   }
@@ -438,6 +460,7 @@
   /* ── Init ──────────────────────────────────────────────────── */
   document.addEventListener('DOMContentLoaded', function () {
     activeLang = loadLang();
+    setGTCookie(activeLang);
 
     // 1. Hide Google Translate's default chrome
     injectGTHideCSS();
@@ -448,7 +471,6 @@
 
     // 3. If non-English, apply curated dictionary immediately (fast, no flash)
     if (activeLang !== 'en') {
-      setGTCookie(activeLang);
       applyDictionary(activeLang);
       document.documentElement.lang = activeLang;
     }
