@@ -1,0 +1,134 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=e3]:
+    - main [ref=e4]:
+      - generic [ref=e6]:
+        - navigation "Main" [ref=e7]:
+          - generic [ref=e8]:
+            - link "Oasis of Change" [ref=e10] [cursor=pointer]:
+              - /url: index.html
+              - img "Oasis of Change" [ref=e11]
+            - button "Open navigation menu" [ref=e12] [cursor=pointer]:
+              - img [ref=e14]
+              - generic:
+                - img
+        - generic [ref=e16]:
+          - navigation "Breadcrumb" [ref=e17]:
+            - link "Home" [ref=e18] [cursor=pointer]:
+              - /url: index.html
+            - text: / Case Studies
+          - generic [ref=e19]:
+            - paragraph [ref=e20]: Case Studies
+            - heading "Real results from sustainable digital projects" [level=1] [ref=e21]
+            - paragraph [ref=e22]: Explore how Oasis of Change helps organizations reduce digital waste, improve performance, and create measurable environmental impact through better websites and digital systems.
+          - generic [ref=e23]:
+            - article [ref=e25]:
+              - generic [ref=e26]:
+                - img "Mittler Senior Technology case study preview" [ref=e28]
+                - generic [ref=e30]: Featured Case Study
+              - generic [ref=e31]:
+                - heading "Mittler Senior Technology achieved a 98% reduction in carbon, energy, and water use" [level=3] [ref=e32]
+                - link "Read case study" [ref=e33] [cursor=pointer]:
+                  - /url: mittler-senior-technology.html
+                  - generic [ref=e34]: Read case study
+                  - img [ref=e36]
+            - article [ref=e39]:
+              - generic [ref=e40]:
+                - img "Oasis of Change website case study preview" [ref=e43]
+                - 'link "Read case study: Oasis of Change website, sustainability-first" [ref=e45] [cursor=pointer]':
+                  - /url: oasis-of-change-website.html
+                  - img [ref=e46]
+              - generic [ref=e48]: Case Study
+              - heading "How we built the Oasis of Change website to be sustainability-first" [level=3] [ref=e49]
+            - article [ref=e51]:
+              - generic [ref=e52]:
+                - img "Denman Place Mall case study preview" [ref=e55]
+                - 'link "Read case study: Denman Place Mall" [ref=e57] [cursor=pointer]':
+                  - /url: denman-place-mall.html
+                  - img [ref=e58]
+              - generic [ref=e60]: Case Study
+              - heading "Redesigning Denman Place Mall's website for a faster, clearer visitor experience" [level=3] [ref=e61]
+    - contentinfo [ref=e62]:
+      - generic [ref=e63]:
+        - generic [ref=e64]:
+          - generic [ref=e65]:
+            - img "Oasis of Change" [ref=e67]
+            - paragraph [ref=e68]: Building a more sustainable digital future through energy-efficient websites, transparent impact, and technology that supports communities and the planet.
+          - navigation "Footer" [ref=e69]:
+            - generic [ref=e70]:
+              - paragraph [ref=e71]: General
+              - list [ref=e72]:
+                - listitem [ref=e73]:
+                  - link "Home" [ref=e74] [cursor=pointer]:
+                    - /url: index.html
+                - listitem [ref=e75]:
+                  - link "Get Involved" [ref=e76] [cursor=pointer]:
+                    - /url: get_involved.html
+                - listitem [ref=e77]:
+                  - link "For Nonprofits" [ref=e78] [cursor=pointer]:
+                    - /url: nonprofits.html
+                - listitem [ref=e79]:
+                  - link "Blog" [ref=e80] [cursor=pointer]:
+                    - /url: blog/
+                - listitem [ref=e81]:
+                  - link "Case Studies" [ref=e82] [cursor=pointer]:
+                    - /url: case-studies.html
+                - listitem [ref=e83]:
+                  - link "Contact" [ref=e84] [cursor=pointer]:
+                    - /url: contact.html
+            - generic [ref=e85]:
+              - paragraph [ref=e86]: Initiatives
+              - list [ref=e87]:
+                - listitem [ref=e88]:
+                  - link "Web-Ready" [ref=e89] [cursor=pointer]:
+                    - /url: web-ready.html
+                - listitem [ref=e90]:
+                  - link "Vancouver Centre for AI Safety, Sustainability, and Ethics (VCASSE)" [ref=e91] [cursor=pointer]:
+                    - /url: vcasse.html
+                - listitem [ref=e92]:
+                  - link "Sustainable Technology Week" [ref=e93] [cursor=pointer]:
+                    - /url: sustainable-technology-week.html
+                - listitem [ref=e94]:
+                  - link "WRA Platform" [ref=e95] [cursor=pointer]:
+                    - /url: wra_platform.html
+            - generic [ref=e96]:
+              - paragraph [ref=e97]: Company
+              - list [ref=e98]:
+                - listitem [ref=e99]:
+                  - link "Our Story" [ref=e100] [cursor=pointer]:
+                    - /url: about.html
+                - listitem [ref=e101]:
+                  - link "Our Mission" [ref=e102] [cursor=pointer]:
+                    - /url: about.html#OurMission
+                - listitem [ref=e103]:
+                  - link "Our Founder" [ref=e104] [cursor=pointer]:
+                    - /url: gabriel-dalton.html
+                - listitem [ref=e105]:
+                  - link "Our Board" [ref=e106] [cursor=pointer]:
+                    - /url: about.html#our-board
+                - listitem [ref=e107]:
+                  - link "Annual Reports" [ref=e108] [cursor=pointer]:
+                    - /url: annual_reports.html
+                - listitem [ref=e109]:
+                  - link "News / Press" [ref=e110] [cursor=pointer]:
+                    - /url: news_release.html
+            - generic [ref=e111]:
+              - paragraph [ref=e112]: Accountability
+              - list [ref=e113]:
+                - listitem [ref=e114]:
+                  - link "Impact Dashboard" [ref=e115] [cursor=pointer]:
+                    - /url: https://impact.oasisofchange.com
+                - listitem [ref=e116]:
+                  - link "Sustainability Statement" [ref=e117] [cursor=pointer]:
+                    - /url: sustainability_statement.html
+                - listitem [ref=e118]:
+                  - link "Tree Planting Statement" [ref=e119] [cursor=pointer]:
+                    - /url: tree_planting.html
+                - listitem [ref=e120]:
+                  - link "Accessibility Statement" [ref=e121] [cursor=pointer]:
+                    - /url: accessibility_statement.html
+                - listitem [ref=e122]:
+                  - link "Privacy Policy" [ref=e123] [cursor=pointer]:
+                    - /url: privacy-policy.html
+        - paragraph [ref=e125]: © 2026 Oasis of Change, Inc. All rights reserved.

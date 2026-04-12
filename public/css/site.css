@@ -250,7 +250,167 @@
   }
 }
 
-/* -- 5. Nav overflow (collapse to hamburger when items don't fit) ------ */
+/* -- 5. Language switcher --------------------------------------------- */
+[data-lang-switcher] {
+  position: relative;
+}
+.lang-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
+}
+.lang-btn:hover {
+  background-color: #111;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+.lang-btn:focus-visible {
+  outline: 2px solid rgb(74, 222, 128);
+  outline-offset: 2px;
+}
+.lang-btn svg {
+  flex-shrink: 0;
+}
+
+/* Dropdown */
+.lang-dropdown {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  padding-top: 0.625rem;
+  z-index: 120;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 0.15s ease, visibility 0.15s ease, transform 0.15s ease;
+}
+.lang-dropdown.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.lang-dropdown-panel {
+  background-color: #111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 0.375rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
+  min-width: 10rem;
+}
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 0.625rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.15s ease;
+}
+.lang-option:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.lang-option:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(74, 222, 128, 0.45);
+}
+.lang-option--active {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+.lang-option-check {
+  width: 0.875rem;
+  height: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: rgb(74, 222, 128);
+}
+.lang-option-name {
+  font-weight: 500;
+}
+.lang-option-code {
+  margin-left: auto;
+  font-size: 0.6875rem;
+  color: #6b7280;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+.lang-option--active .lang-option-code {
+  color: #9ca3af;
+}
+
+/* Mobile language pills */
+.lang-switcher-mobile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  padding-bottom: 0.25rem;
+}
+.lang-mobile-icon {
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.lang-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.375rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #6b7280;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+}
+.lang-pill:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+.lang-pill--active {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.lang-pill:focus-visible {
+  outline: 2px solid rgb(74, 222, 128);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lang-btn,
+  .lang-dropdown,
+  .lang-option,
+  .lang-pill {
+    transition: none;
+  }
+}
+
+/* -- 6. Nav overflow (collapse to hamburger when items don't fit) ------ */
 .nav-overflow-active .hidden.lg\:flex {
   display: none !important;
 }
@@ -259,4 +419,12 @@
 }
 .nav-overflow-active .relative.lg\:hidden {
   display: inline-flex !important;
+}
+
+/* -- 7. Case-studies layout helpers -------------------------------------- */
+@media (min-width: 1024px) {
+  .lg\:col-span-6  { grid-column: span 6 / span 6; }
+  .lg\:col-span-12 { grid-column: span 12 / span 12; }
+  .lg\:mb-0        { margin-bottom: 0 !important; }
+  .lg\:shrink-0    { flex-shrink: 0 !important; }
 }
