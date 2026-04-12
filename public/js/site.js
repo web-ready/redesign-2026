@@ -14,6 +14,26 @@
     var flexRow = navEl ? navEl.firstElementChild : null;
     var overflowActive = false;
 
+    // -- Logo compaction: swap to icon-only logo before collapsing to hamburger --
+    var logoFull = navEl ? navEl.querySelector('img[src*="Oasis_of_Change-official"]') : null;
+    var logoIcon = null;
+    if (logoFull) {
+      logoIcon = document.createElement('img');
+      logoIcon.src = logoFull.src.replace('Oasis_of_Change-official.svg', 'oasis-of-change-icon.svg');
+      logoIcon.alt = logoFull.alt;
+      logoIcon.className = logoFull.className;
+      logoIcon.style.display = 'none';
+      logoIcon.width = 56;
+      logoIcon.height = 56;
+      logoFull.parentNode.insertBefore(logoIcon, logoFull.nextSibling);
+    }
+
+    function setLogoCompact(compact) {
+      if (!logoFull || !logoIcon) return;
+      logoFull.style.display = compact ? 'none' : '';
+      logoIcon.style.display = compact ? '' : 'none';
+    }
+
     // One duration + easing for panel + toggle icons so the header doesn't feel "ahead" of the menu.
     var navMotionMs = 240;
     var navEase = 'cubic-bezier(0.2, 0.9, 0.2, 1)';
@@ -208,24 +228,13 @@
       }
     }
 
-    function checkNavOverflow() {
-      if (!navEl || !flexRow) return;
-      if (window.innerWidth < 1024) {
-        navEl.classList.remove('nav-overflow-active');
-        overflowActive = false;
-        return;
-      }
-      // Remove class temporarily so desktop items are visible for measurement
-      navEl.classList.remove('nav-overflow-active');
-      overflowActive = false;
-      // Prevent flex shrinking so children report natural widths
+    function measureNavOverflow() {
       var children = flexRow.children;
       var savedShrink = [];
       for (var i = 0; i < children.length; i++) {
         savedShrink.push(children[i].style.flexShrink);
         children[i].style.flexShrink = '0';
       }
-      // Force layout and measure
       var containerWidth = flexRow.clientWidth;
       var totalWidth = 0;
       var visibleCount = 0;
@@ -233,16 +242,37 @@
         var w = children[i].offsetWidth;
         if (w > 0) { totalWidth += w; visibleCount++; }
       }
-      // Account for gap-4 (16px) between visible flex children
       if (visibleCount > 1) totalWidth += 16 * (visibleCount - 1);
-      // Restore flex-shrink
       for (var i = 0; i < children.length; i++) {
         children[i].style.flexShrink = savedShrink[i];
       }
-      if (totalWidth > containerWidth) {
-        navEl.classList.add('nav-overflow-active');
-        overflowActive = true;
+      return totalWidth > containerWidth;
+    }
+
+    function checkNavOverflow() {
+      if (!navEl || !flexRow) return;
+      if (window.innerWidth < 1024) {
+        navEl.classList.remove('nav-overflow-active');
+        overflowActive = false;
+        setLogoCompact(false);
+        return;
       }
+      // Reset to full state for measurement
+      navEl.classList.remove('nav-overflow-active');
+      overflowActive = false;
+      setLogoCompact(false);
+
+      // Stage 1: measure with full logo — if everything fits, done
+      if (!measureNavOverflow()) return;
+
+      // Stage 2: try compact (icon-only) logo to free up space
+      setLogoCompact(true);
+      if (!measureNavOverflow()) return; // compact logo freed enough space
+
+      // Stage 3: still doesn't fit — collapse to hamburger
+      setLogoCompact(false);
+      navEl.classList.add('nav-overflow-active');
+      overflowActive = true;
     }
 
     function syncNavByViewport() {

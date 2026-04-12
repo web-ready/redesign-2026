@@ -342,6 +342,9 @@
     initDesktopDropdown();
     initMobilePills();
     initClickOutside();
+
+    // Re-trigger nav overflow check now that the switcher has added width
+    window.dispatchEvent(new Event('resize'));
   }
 
   /* ── Desktop dropdown behaviour ────────────────────────────── */
