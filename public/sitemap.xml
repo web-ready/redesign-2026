@@ -6,27 +6,27 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/about.html</loc>
+    <loc>https://oasisofchange.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/initiatives.html</loc>
+    <loc>https://oasisofchange.com/initiatives</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/company.html</loc>
+    <loc>https://oasisofchange.com/company</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/contact.html</loc>
+    <loc>https://oasisofchange.com/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/get_involved.html</loc>
+    <loc>https://oasisofchange.com/get_involved</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -36,132 +36,132 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/case-studies.html</loc>
+    <loc>https://oasisofchange.com/case-studies</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/nonprofits.html</loc>
+    <loc>https://oasisofchange.com/nonprofits</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/news_release.html</loc>
+    <loc>https://oasisofchange.com/news_release</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/web-ready.html</loc>
+    <loc>https://oasisofchange.com/web-ready</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/vcasse.html</loc>
+    <loc>https://oasisofchange.com/vcasse</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/sustainable-technology-week.html</loc>
+    <loc>https://oasisofchange.com/sustainable-technology-week</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/wra_platform.html</loc>
+    <loc>https://oasisofchange.com/wra_platform</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/gabriel-dalton.html</loc>
+    <loc>https://oasisofchange.com/gabriel-dalton</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/annual_reports.html</loc>
+    <loc>https://oasisofchange.com/annual_reports</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/example_annual_report.html</loc>
+    <loc>https://oasisofchange.com/example_annual_report</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/blog/accessible-web-nonprofits.html</loc>
+    <loc>https://oasisofchange.com/blog/accessible-web-nonprofits</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/blog/ai-ethics-environment.html</loc>
+    <loc>https://oasisofchange.com/blog/ai-ethics-environment</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/blog/sustainable-web-design.html</loc>
+    <loc>https://oasisofchange.com/blog/sustainable-web-design</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/blog/tree-planting-update.html</loc>
+    <loc>https://oasisofchange.com/blog/tree-planting-update</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/blog/website-carbon-footprint.html</loc>
+    <loc>https://oasisofchange.com/blog/website-carbon-footprint</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/blog/wra-platform-launch.html</loc>
+    <loc>https://oasisofchange.com/blog/wra-platform-launch</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/blog/example-article.html</loc>
+    <loc>https://oasisofchange.com/blog/example-article</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/news-example-post.html</loc>
+    <loc>https://oasisofchange.com/news-example-post</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/denman-place-mall.html</loc>
+    <loc>https://oasisofchange.com/denman-place-mall</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/mittler-senior-technology.html</loc>
+    <loc>https://oasisofchange.com/mittler-senior-technology</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/oasis-of-change-website.html</loc>
+    <loc>https://oasisofchange.com/oasis-of-change-website</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/ooc-self-case-study.html</loc>
+    <loc>https://oasisofchange.com/ooc-self-case-study</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/tree_planting.html</loc>
+    <loc>https://oasisofchange.com/tree_planting</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/sustainability_statement.html</loc>
+    <loc>https://oasisofchange.com/sustainability_statement</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/accessibility_statement.html</loc>
+    <loc>https://oasisofchange.com/accessibility_statement</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/privacy-policy.html</loc>
+    <loc>https://oasisofchange.com/privacy-policy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
