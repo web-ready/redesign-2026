@@ -670,23 +670,6 @@
     );
   }
 
-  function rewriteLinksForLocalhost() {
-    var host = window.location.hostname;
-    if (host !== 'localhost' && host !== '127.0.0.1' && host !== '') return;
-    var anchors = document.querySelectorAll('a[href]');
-    for (var i = 0; i < anchors.length; i++) {
-      var a = anchors[i];
-      var href = a.getAttribute('href');
-      if (!href || href.charAt(0) === '#' || href.indexOf('://') !== -1 || href.indexOf('mailto:') === 0 || href.indexOf('tel:') === 0) continue;
-      if (/\.\w+/.test(href.split('?')[0].split('#')[0])) continue;
-      var parts = href.match(/^([^?#]*)(.*)/);
-      var path = parts[1];
-      var rest = parts[2];
-      if (path === '' || path === '/' || path.charAt(path.length - 1) === '/') continue;
-      a.setAttribute('href', path + '.html' + rest);
-    }
-  }
-
   document.addEventListener('DOMContentLoaded', function () {
     injectFooterExternalLinkIconStyles();
     injectNavDesktopDropdownStyles();
@@ -696,6 +679,5 @@
     initImageSlider();
     initSmoothScroll();
     logCuriousCoderMessage();
-    rewriteLinksForLocalhost();
   });
 })();
