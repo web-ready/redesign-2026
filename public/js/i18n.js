@@ -103,6 +103,16 @@
     return null;
   }
 
+  function getUrlLang() {
+    try {
+      var params = new URLSearchParams(location.search);
+      var raw = params.get('l') || params.get('L') || params.get('lang') || params.get('language');
+      if (!raw) return null;
+      var code = raw.toLowerCase().trim();
+      return findLang(code) ? code : null;
+    } catch (e) { return null; }
+  }
+
   /* ── Google Translate cookie ───────────────────────────────── */
   function setGTCookie(langCode) {
     var val = langCode === 'en' ? '' : '/en/' + langCode;
@@ -440,7 +450,12 @@
 
   /* ── Init ──────────────────────────────────────────────────── */
   document.addEventListener('DOMContentLoaded', function () {
-    activeLang = loadLang();
+    var urlLang = getUrlLang();
+    activeLang = urlLang || loadLang();
+    if (urlLang) {
+      saveLang(urlLang);
+      setGTCookie(urlLang);
+    }
 
     // 1. Hide Google Translate's default chrome
     injectGTHideCSS();
