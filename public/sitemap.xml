@@ -31,7 +31,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/blog.html</loc>
+    <loc>https://oasisofchange.com/blog/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -86,37 +86,37 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/blog-accessible-web-nonprofits.html</loc>
+    <loc>https://oasisofchange.com/blog/accessible-web-nonprofits.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/blog-ai-ethics-environment.html</loc>
+    <loc>https://oasisofchange.com/blog/ai-ethics-environment.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/blog-sustainable-web-design.html</loc>
+    <loc>https://oasisofchange.com/blog/sustainable-web-design.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/blog-tree-planting-update.html</loc>
+    <loc>https://oasisofchange.com/blog/tree-planting-update.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/blog-website-carbon-footprint.html</loc>
+    <loc>https://oasisofchange.com/blog/website-carbon-footprint.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/blog-wra-platform-launch.html</loc>
+    <loc>https://oasisofchange.com/blog/wra-platform-launch.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/blog-example-article.html</loc>
+    <loc>https://oasisofchange.com/blog/example-article.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
