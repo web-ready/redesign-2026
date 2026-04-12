@@ -1,105 +1,180 @@
 # Graph Report - .  (2026-04-11)
 
 ## Corpus Check
-- 30 files · ~437,818 words
+- 43 files · ~82,346 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 84 nodes · 125 edges · 9 communities detected
-- Extraction: 75% EXTRACTED · 25% INFERRED · 0% AMBIGUOUS · INFERRED: 31 edges (avg confidence: 0.78)
+- 115 nodes · 108 edges · 23 communities detected
+- Extraction: 74% EXTRACTED · 26% INFERRED · 0% AMBIGUOUS · INFERRED: 28 edges (avg confidence: 0.87)
 - Token cost: 0 input · 0 output
 
 ## God Nodes (most connected - your core abstractions)
-1. `Oasis of Change, Inc.` - 9 edges
-2. `Oasis of Change, Inc.` - 8 edges
-3. `Oasis of Change` - 7 edges
-4. `Oasis of Change Icon (SVG)` - 7 edges
-5. `Design Portfolio / Art Book Review Photo` - 6 edges
-6. `Modern Lounge Interior Photo` - 5 edges
-7. `Business Consultation / Financial Review Photo` - 5 edges
-8. `Gabriel Dalton` - 5 edges
-9. `Sustainable Technology Week Proclamation` - 5 edges
-10. `Oasis of Change Brand Identity` - 5 edges
+1. `Oasis of Change Inc.` - 9 edges
+2. `Oasis of Change Icon Logo (SVG)` - 7 edges
+3. `Blog Page` - 6 edges
+4. `Graph Report (2026-04-11)` - 5 edges
+5. `Gabriel Dalton` - 5 edges
+6. `Oasis of Change, Inc.` - 4 edges
+7. `Mittler Senior Technology` - 4 edges
+8. `Gabriel Dalton TEDx Talk Photo` - 4 edges
+9. `About Page` - 4 edges
+10. `initMobileNav()` - 3 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Apple Touch Icon` --represents_brand_of--> `Oasis of Change, Inc.`  [INFERRED]
-  public/images/favicon/apple-touch-icon.png → public/images/favicon/site.webmanifest
-- `Favicon 16x16` --represents_brand_of--> `Oasis of Change, Inc.`  [INFERRED]
-  public/images/favicon/favicon-16x16.png → public/images/favicon/site.webmanifest
-- `Green Leaves Growth Motif` --is_visual_element_of--> `Oasis of Change Brand Identity`  [INFERRED]
-  public/images/favicon/android-chrome-512x512.png → public/images/favicon/site.webmanifest
-- `Blue Water/Oasis Motif` --is_visual_element_of--> `Oasis of Change Brand Identity`  [INFERRED]
-  public/images/favicon/android-chrome-512x512.png → public/images/favicon/site.webmanifest
-- `Etymology of 'Oasis of Change' Diagram` --LIKELY_INTENDED_FOR--> `About Page`  [INFERRED]
-  public/images/etymology-image.png → public/about.html
+- `Gabriel Dalton` --conceptually_related_to--> `AI Literacy (TEDx Talk Topic)`  [INFERRED]
+  graphify-out/GRAPH_REPORT.md → public/images/about/Gabriel_Dalton_TEDx_Talk.webp
+- `Blog - Nonprofit Team Financial Review Photo` --conceptually_related_to--> `Blog Page`  [INFERRED]
+  public/images/blog/blog-ai-network-visualization.webp → graphify-out/GRAPH_REPORT.md
+- `Blog - Young Person Portrait (Assistive Technology)` --conceptually_related_to--> `Blog Page`  [INFERRED]
+  public/images/blog/blog-assistive-technology.webp → graphify-out/GRAPH_REPORT.md
+- `Blog - Design Portfolio / Art Book Review Photo` --conceptually_related_to--> `Blog Page`  [INFERRED]
+  public/images/blog/blog-data-center-hardware.webp → graphify-out/GRAPH_REPORT.md
+- `Blog - Modern Lounge Interior Photo` --conceptually_related_to--> `Blog Page`  [INFERRED]
+  public/images/blog/blog-minimal-website-design.webp → graphify-out/GRAPH_REPORT.md
 
 ## Hyperedges (group relationships)
-- **** — picture4_modern_lounge_interior, picture5_business_consultation, picture6_ecommerce_browsing, picture8_design_portfolio_review, picture9_portrait_young_woman, picture10_strategic_planning_whiteboard [EXTRACTED 1.00]
-- **** — picture4_modern_lounge_interior, picture5_business_consultation, picture6_ecommerce_browsing [EXTRACTED 1.00]
-- **** — picture8_design_portfolio_review, picture9_portrait_young_woman, picture10_strategic_planning_whiteboard [EXTRACTED 1.00]
-- **hyper_mst_before_after_comparison** — mst-website-before_screenshot, mst-website-after_screenshot, entity_mittler_senior_technology, entity_oasis_of_change, page_mst_case_study [EXTRACTED 1.00]
-- **hyper_about_page_hero_section** — about-page-block-1_stock_photo_person_laptop, about-page-block-2_founded_2024, gabriel-dalton_portrait, entity_oasis_of_change, page_about [EXTRACTED 1.00]
-- **hyper_gabriel_dalton_public_presence** — gabriel-dalton_portrait, gabriel-dalton_tedx_talk, entity_gabriel_dalton, entity_tedx [INFERRED 0.80]
-- **** — favicon_android_chrome_192, favicon_android_chrome_512, favicon_apple_touch_icon, favicon_16x16, favicon_32x32 [INFERRED 0.90]
-- **** — logo_oasis_icon_svg, logo_oasis_official_svg, favicon_android_chrome_192, favicon_android_chrome_512, favicon_apple_touch_icon, favicon_16x16, favicon_32x32 [INFERRED 0.85]
-- **** — visual_motif_leaves, visual_motif_water [EXTRACTED 1.00]
+- **About Page Hero Section Visual Assets** — about_page_block_1, about_page_block_2, gabriel_dalton_portrait, entity_oasis_of_change, page_about [EXTRACTED 1.00]
+- **Gabriel Dalton Public Presence** — gabriel_dalton_portrait, gabriel_dalton_tedx_talk, entity_gabriel_dalton, entity_tedx, concept_ai_literacy [INFERRED 0.80]
+- **MST Website Before/After Case Study Comparison** — mst_before_redesign, mst_after_redesign, entity_mittler_senior_technology, entity_oasis_of_change, page_mst_case_study [EXTRACTED 1.00]
+- **Favicon Brand Identity Set** — favicon_android_chrome_192, favicon_android_chrome_512, favicon_apple_touch_icon, favicon_16x16, favicon_32x32, oasis_of_change_icon [INFERRED 0.90]
+- **Partner Organizations Network** — org_oasis_of_change, org_stanley_park_ecology, org_sustainable_www, org_wesn, org_tree_nation [INFERRED 0.80]
+- **Tree Planting Initiative Ecosystem** — org_oasis_of_change, org_tree_nation, initiative_tree_planting, impact_dashboard_mockup, mangrove_tree [INFERRED 0.75]
 
 ## Communities
 
-### Community 0 - "Vancouver Partnerships & Sustainability"
-Cohesion: 0.22
-Nodes (15): City of Vancouver, Impact Dashboard Mockup (Tree Transparency Report), Ken Sim (Mayor of Vancouver), Low-Carbon Web Design, Oasis of Change, Inc., Stanley Park Ecology Society, Stanley Park Ecology Society Logo, Sustainable Technology Week (Oct 20-27, 2025) (+7 more)
+### Community 0 - "Brand & Partnerships"
+Cohesion: 0.11
+Nodes (21): City of Vancouver, Favicon 16x16, Favicon 32x32, Android Chrome Favicon 192x192, Android Chrome Favicon 512x512, Apple Touch Icon, Impact Dashboard Mockup - Tree Transparency Report, Tree Planting Initiative (17,001 Trees) (+13 more)
 
-### Community 1 - "Oasis of Change Identity"
-Cohesion: 0.22
-Nodes (14): About Page Hero - Person Working on Laptop, About Page - Founded in 2024 Image, Gabriel Dalton, Oasis of Change, TEDx, Tree-Nation, Etymology of 'Oasis of Change' Diagram, Gabriel Dalton Portrait Photo (+6 more)
-
-### Community 2 - "Site UI Components"
+### Community 1 - "Founder & Case Studies"
 Cohesion: 0.18
+Nodes (16): About Page Hero - Person Working on Laptop, About Page - Founded in 2024 Image, AI Literacy (TEDx Talk Topic), Oasis of Change Founded in 2024, Gabriel Dalton, Mittler Senior Technology, Oasis of Change, Inc., TEDx (+8 more)
+
+### Community 2 - "Site JS Components"
+Cohesion: 0.22
 Nodes (3): initMobileNav(), injectMobileNavFocusStyles(), injectMobileNavScrollbarStyles()
 
-### Community 3 - "Brand Assets & Logo"
+### Community 3 - "CSS Supplement Generator"
+Cohesion: 0.2
+Nodes (5): fv(), mq(), Generates CSS supplement for missing Tailwind classes and writes it to tailwind., focus-visible variant., Responsive breakpoint variant.
+
+### Community 4 - "CSS Audit Tool"
+Cohesion: 0.29
+Nodes (7): extract_css_classes(), extract_html_classes(), Audit Tailwind CSS classes: compare what's defined in CSS vs what's used in HTML, Extract all class names used in HTML files., Convert CSS-escaped identifier to plain text., Extract all Tailwind utility class names from a minified CSS file., unescape_css_ident()
+
+### Community 5 - "Dead CSS Cleanup"
 Cohesion: 0.33
-Nodes (12): Oasis of Change Brand Identity, Favicon 16x16, Favicon 32x32, Android Chrome Icon 192x192, Android Chrome Icon 512x512, Apple Touch Icon, Oasis of Change Icon (SVG), Oasis of Change Official Logo (SVG) (+4 more)
+Nodes (5): delete_dead_from_css(), Phase 0 — ADD:    Append the 3 classes that were always missing (found in HTML,, For each dead class:       - If it appears as the sole selector in a rule → remo, Tailwind class name → escaped CSS identifier (after the dot)., tw_to_css_ident()
 
-### Community 4 - "Graphify Configuration"
-Cohesion: 0.27
-Nodes (10): GRAPH_REPORT.md, Graphify Configuration, Graphify Knowledge Graph, graphify.watch._rebuild_code, Rationale: Navigate Wiki Instead of Raw Files, Rationale: Read GRAPH_REPORT.md Before Answering Architecture Questions, Rationale: Rebuild Graph After Code Modifications, Graphify Rebuild Code Command (+2 more)
+### Community 6 - "Blog Content"
+Cohesion: 0.29
+Nodes (7): Blog - Nonprofit Team Financial Review Photo, Blog - Young Person Portrait (Assistive Technology), Blog - Design Portfolio / Art Book Review Photo, Blog - Modern Lounge Interior Photo, Blog - E-Commerce Browsing Photo, Blog - Strategic Planning Whiteboard Photo, Blog Page
 
-### Community 5 - "Blog Content"
-Cohesion: 0.49
-Nodes (10): Blog Assets Directory, Latest Blog Posts Section, Blog Page, Blog Resources Section, Strategic Planning Whiteboard Photo, Modern Lounge Interior Photo, Business Consultation / Financial Review Photo, E-Commerce Browsing Photo (+2 more)
+### Community 7 - "Graphify Config"
+Cohesion: 0.4
+Nodes (5): CLAUDE.md Project Configuration, Graphify Knowledge Graph, Graphify Rebuild Code Command, Rationale: Navigate Wiki Instead of Raw Files, Rationale: Rebuild Graph After Code Modifications
 
-### Community 6 - "Comparison Slider"
+### Community 8 - "Image Comparison Widget"
 Cohesion: 0.67
 Nodes (2): updateActiveLabels(), updateCompare()
 
-### Community 7 - "MST Case Study"
-Cohesion: 0.83
-Nodes (4): Mittler Senior Technology, Mittler Senior Technology Website - After Redesign Screenshot, Mittler Senior Technology Website - Before Redesign Screenshot, Mittler Senior Technology Case Study Page
+### Community 9 - "Shadow Fix Script"
+Cohesion: 0.5
+Nodes (3): escape_selector(), Append the 3 corrected shadow rules with proper CSS comma escaping (\2c space)., Convert a Tailwind class name to a CSS-escaped selector class string.
 
-### Community 8 - "Panel Component"
+### Community 10 - "Page-Specific Optimizer"
+Cohesion: 0.5
+Nodes (3): edit(), Page-specific Tailwind class inheritance optimizations. Targets: metric stat car, Replace old with new in file, return True if changed.
+
+### Community 11 - "Class Optimizer"
+Cohesion: 0.67
+Nodes (1): Bulk Tailwind CSS class optimization across all 34 HTML files.  Optimizations:
+
+### Community 12 - "Accordion Panel JS"
 Cohesion: 1.0
 Nodes (0): 
 
+### Community 13 - "Skip Link CSS"
+Cohesion: 1.0
+Nodes (1): Add the missing focus: CSS rules for the skip-to-content accessibility link.
+
+### Community 14 - "CSS Cleaner"
+Cohesion: 1.0
+Nodes (1): Cleans tailwind.min.css: 1. Removes the 3 incorrectly-encoded shadow rules (used
+
+### Community 15 - "Class Verifier"
+Cohesion: 1.0
+Nodes (1): Precisely verify which 'unused' CSS classes actually appear in HTML class attrib
+
+### Community 16 - "Nav Scanner"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 17 - "Nav Report Generator"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 18 - "Nav Pattern Extractor"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 19 - "Vancouver Partnerships"
+Cohesion: 1.0
+Nodes (1): Community: Vancouver Partnerships & Sustainability
+
+### Community 20 - "Oasis Identity"
+Cohesion: 1.0
+Nodes (1): Community: Oasis of Change Identity
+
+### Community 21 - "Blog Content Hub"
+Cohesion: 1.0
+Nodes (1): Community: Blog Content
+
+### Community 22 - "MST Case Study"
+Cohesion: 1.0
+Nodes (1): Community: MST Case Study
+
 ## Knowledge Gaps
-- **10 isolated node(s):** `Rationale: Read GRAPH_REPORT.md Before Answering Architecture Questions`, `Rationale: Navigate Wiki Instead of Raw Files`, `Rationale: Rebuild Graph After Code Modifications`, `Tree Planting Page`, `Homepage` (+5 more)
+- **42 isolated node(s):** `Add the missing focus: CSS rules for the skip-to-content accessibility link.`, `Audit Tailwind CSS classes: compare what's defined in CSS vs what's used in HTML`, `Convert CSS-escaped identifier to plain text.`, `Extract all Tailwind utility class names from a minified CSS file.`, `Extract all class names used in HTML files.` (+37 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Panel Component`** (2 nodes): `832338.js`, `showPanel()`
+- **Thin community `Accordion Panel JS`** (2 nodes): `832338.js`, `showPanel()`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Skip Link CSS`** (2 nodes): `add_skip_link_css.py`, `Add the missing focus: CSS rules for the skip-to-content accessibility link.`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `CSS Cleaner`** (2 nodes): `clean_css.py`, `Cleans tailwind.min.css: 1. Removes the 3 incorrectly-encoded shadow rules (used`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Class Verifier`** (2 nodes): `verify_classes.py`, `Precisely verify which 'unused' CSS classes actually appear in HTML class attrib`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Nav Scanner`** (1 nodes): `comprehensive_nav_scan.py`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Nav Report Generator`** (1 nodes): `detailed_nav_report.py`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Nav Pattern Extractor`** (1 nodes): `get_nav_patterns.py`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Vancouver Partnerships`** (1 nodes): `Community: Vancouver Partnerships & Sustainability`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Oasis Identity`** (1 nodes): `Community: Oasis of Change Identity`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Blog Content Hub`** (1 nodes): `Community: Blog Content`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `MST Case Study`** (1 nodes): `Community: MST Case Study`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Oasis of Change` connect `Oasis of Change Identity` to `MST Case Study`?**
-  _High betweenness centrality (0.025) - this node is a cross-community bridge._
-- **Are the 4 inferred relationships involving `Oasis of Change, Inc.` (e.g. with `Apple Touch Icon` and `Favicon 16x16`) actually correct?**
-  _`Oasis of Change, Inc.` has 4 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 3 inferred relationships involving `Oasis of Change, Inc.` (e.g. with `Stanley Park Ecology Society` and `West End Seniors' Network (WESN)`) actually correct?**
-  _`Oasis of Change, Inc.` has 3 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 4 inferred relationships involving `Oasis of Change Icon (SVG)` (e.g. with `Android Chrome Icon 512x512` and `Favicon 32x32`) actually correct?**
-  _`Oasis of Change Icon (SVG)` has 4 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 2 inferred relationships involving `Design Portfolio / Art Book Review Photo` (e.g. with `Business Consultation / Financial Review Photo` and `Modern Lounge Interior Photo`) actually correct?**
-  _`Design Portfolio / Art Book Review Photo` has 2 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Rationale: Read GRAPH_REPORT.md Before Answering Architecture Questions`, `Rationale: Navigate Wiki Instead of Raw Files`, `Rationale: Rebuild Graph After Code Modifications` to the rest of the system?**
-  _10 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `Graph Report (2026-04-11)` connect `Founder & Case Studies` to `Graphify Config`?**
+  _High betweenness centrality (0.016) - this node is a cross-community bridge._
+- **Are the 4 inferred relationships involving `Oasis of Change Inc.` (e.g. with `Tree-Nation Partnership Banner` and `Stanley Park Ecology Society`) actually correct?**
+  _`Oasis of Change Inc.` has 4 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 5 inferred relationships involving `Oasis of Change Icon Logo (SVG)` (e.g. with `Android Chrome Favicon 192x192` and `Android Chrome Favicon 512x512`) actually correct?**
+  _`Oasis of Change Icon Logo (SVG)` has 5 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 6 inferred relationships involving `Blog Page` (e.g. with `Blog - Nonprofit Team Financial Review Photo` and `Blog - Young Person Portrait (Assistive Technology)`) actually correct?**
+  _`Blog Page` has 6 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 2 inferred relationships involving `Gabriel Dalton` (e.g. with `Oasis of Change, Inc.` and `AI Literacy (TEDx Talk Topic)`) actually correct?**
+  _`Gabriel Dalton` has 2 INFERRED edges - model-reasoned connections that need verification._
+- **What connects `Add the missing focus: CSS rules for the skip-to-content accessibility link.`, `Audit Tailwind CSS classes: compare what's defined in CSS vs what's used in HTML`, `Convert CSS-escaped identifier to plain text.` to the rest of the system?**
+  _42 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `Brand & Partnerships` be split into smaller, more focused modules?**
+  _Cohesion score 0.11 - nodes in this community are weakly interconnected._
