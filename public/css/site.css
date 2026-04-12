@@ -282,6 +282,14 @@
 .lang-btn svg {
   flex-shrink: 0;
 }
+.lang-switcher-hamburger {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.lang-switcher-hamburger .lang-btn {
+  height: 3rem;
+}
 
 /* Dropdown */
 .lang-dropdown {

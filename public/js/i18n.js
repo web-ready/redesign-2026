@@ -86,9 +86,7 @@
 
   /* ── State ─────────────────────────────────────────────────── */
   var activeLang = 'en';
-  var desktopBtnLabel = null;
-  var desktopDropdownEl = null;
-  var isDropdownOpen = false;
+  var activeDropdownEl = null;
 
   /* ── Persistence ───────────────────────────────────────────── */
   function loadLang() {
@@ -283,8 +281,6 @@
     dd.appendChild(panel);
     wrap.appendChild(dd);
 
-    desktopBtnLabel = btn.querySelector('[data-lang-label]');
-    desktopDropdownEl = dd;
     return wrap;
   }
 
@@ -331,6 +327,13 @@
       supportContainer.insertBefore(buildDesktopSwitcher(), supportLink);
     }
 
+    var mobileToggle = document.querySelector('[data-mobile-toggle]');
+    if (mobileToggle && mobileToggle.parentNode) {
+      var mobileSwitcher = buildDesktopSwitcher();
+      mobileSwitcher.classList.add('lang-switcher-hamburger', 'relative', 'lg:hidden');
+      mobileToggle.parentNode.insertBefore(mobileSwitcher, mobileToggle);
+    }
+
     var mobilePanel = document.querySelector('[data-mobile-panel]');
     if (mobilePanel) {
       var mobileSupport = mobilePanel.querySelector('a[href*="get_involved"]');
@@ -345,42 +348,57 @@
   }
 
   /* ── Desktop dropdown behaviour ────────────────────────────── */
-  function openDropdown() {
-    if (!desktopDropdownEl) return;
-    isDropdownOpen = true;
-    desktopDropdownEl.classList.add('is-open');
-    var btn = desktopDropdownEl.previousElementSibling;
+  function openDropdown(dropdownEl) {
+    if (!dropdownEl) return;
+    if (activeDropdownEl && activeDropdownEl !== dropdownEl) {
+      closeDropdown(activeDropdownEl);
+    }
+    activeDropdownEl = dropdownEl;
+    dropdownEl.classList.add('is-open');
+    var btn = dropdownEl.previousElementSibling;
     if (btn) btn.setAttribute('aria-expanded', 'true');
   }
 
-  function closeDropdown() {
-    if (!desktopDropdownEl) return;
-    isDropdownOpen = false;
-    desktopDropdownEl.classList.remove('is-open');
-    var btn = desktopDropdownEl.previousElementSibling;
+  function closeDropdown(dropdownEl) {
+    if (!dropdownEl) return;
+    if (activeDropdownEl === dropdownEl) activeDropdownEl = null;
+    dropdownEl.classList.remove('is-open');
+    var btn = dropdownEl.previousElementSibling;
     if (btn) btn.setAttribute('aria-expanded', 'false');
   }
 
   function initDesktopDropdown() {
-    var btn = document.querySelector('[data-lang-btn]');
-    if (!btn) return;
+    var switchers = document.querySelectorAll('[data-lang-switcher]');
+    if (!switchers.length) return;
 
-    btn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      isDropdownOpen ? closeDropdown() : openDropdown();
-    });
+    for (var i = 0; i < switchers.length; i++) {
+      (function (switcher) {
+        var btn = switcher.querySelector('[data-lang-btn]');
+        var dropdown = switcher.querySelector('[data-lang-dropdown]');
+        if (!btn || !dropdown) return;
 
-    var options = document.querySelectorAll('[data-lang-option]');
-    for (var i = 0; i < options.length; i++) {
-      options[i].addEventListener('click', function () {
-        var code = this.getAttribute('data-lang-option');
-        switchTo(code);
-        closeDropdown();
-      });
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          if (dropdown.classList.contains('is-open')) {
+            closeDropdown(dropdown);
+          } else {
+            openDropdown(dropdown);
+          }
+        });
+
+        var options = switcher.querySelectorAll('[data-lang-option]');
+        for (var j = 0; j < options.length; j++) {
+          options[j].addEventListener('click', function () {
+            var code = this.getAttribute('data-lang-option');
+            switchTo(code);
+            closeDropdown(dropdown);
+          });
+        }
+      })(switchers[i]);
     }
 
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && isDropdownOpen) closeDropdown();
+      if (e.key === 'Escape' && activeDropdownEl) closeDropdown(activeDropdownEl);
     });
   }
 
@@ -395,9 +413,9 @@
 
   function initClickOutside() {
     document.addEventListener('click', function (e) {
-      if (!isDropdownOpen) return;
-      var sw = document.querySelector('[data-lang-switcher]');
-      if (sw && !sw.contains(e.target)) closeDropdown();
+      if (!activeDropdownEl) return;
+      var sw = activeDropdownEl.closest('[data-lang-switcher]');
+      if (sw && !sw.contains(e.target)) closeDropdown(activeDropdownEl);
     });
   }
 
@@ -406,22 +424,25 @@
     var info = findLang(activeLang);
     if (!info) return;
 
-    if (desktopBtnLabel) desktopBtnLabel.textContent = info.short;
+    var labels = document.querySelectorAll('[data-lang-label]');
+    for (var i = 0; i < labels.length; i++) {
+      labels[i].textContent = info.short;
+    }
 
     var options = document.querySelectorAll('[data-lang-option]');
-    for (var i = 0; i < options.length; i++) {
-      var code = options[i].getAttribute('data-lang-option');
+    for (var j = 0; j < options.length; j++) {
+      var code = options[j].getAttribute('data-lang-option');
       var active = code === activeLang;
-      options[i].className = 'lang-option notranslate' + (active ? ' lang-option--active' : '');
-      options[i].setAttribute('aria-selected', active ? 'true' : 'false');
-      var cs = options[i].querySelector('.lang-option-check');
+      options[j].className = 'lang-option notranslate' + (active ? ' lang-option--active' : '');
+      options[j].setAttribute('aria-selected', active ? 'true' : 'false');
+      var cs = options[j].querySelector('.lang-option-check');
       if (cs) cs.innerHTML = active ? checkSvg() : '';
     }
 
     var pills = document.querySelectorAll('[data-lang-pill]');
-    for (var i = 0; i < pills.length; i++) {
-      var code = pills[i].getAttribute('data-lang-pill');
-      pills[i].classList.toggle('lang-pill--active', code === activeLang);
+    for (var k = 0; k < pills.length; k++) {
+      var pillCode = pills[k].getAttribute('data-lang-pill');
+      pills[k].classList.toggle('lang-pill--active', pillCode === activeLang);
     }
   }
 
