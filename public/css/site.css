@@ -1,3 +1,28 @@
+/* ── Footer: translated-text overflow fix ─────────────────────────────────── */
+/* Google Translate wraps link text in <font> elements. Those inline children  */
+/* form their own inline boxes and can overflow the parent block even when the */
+/* parent has word-break set. Targeting both the link and all its descendants  */
+/* (with !important) ensures the wrapping rules survive GT's inline styles.    */
+
+.site-global-footer .site-footer-link {
+  display: block;
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
+  white-space: normal !important;
+}
+
+.site-global-footer .site-footer-link * {
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
+  white-space: normal !important;
+}
+
+/* Grid cells: explicit min-width:0 so tracks don't expand to fit overflowing
+   content. No overflow:hidden — text must remain readable, just wrapped.     */
+.site-global-footer .site-footer-nav > div {
+  min-width: 0;
+}
+
 [data-mobile-toggle]:focus-visible,
 [data-nav-dropdown-toggle]:focus-visible,
 [data-mobile-panel] a:focus-visible {
