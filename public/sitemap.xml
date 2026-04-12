@@ -140,11 +140,7 @@
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
-    <loc>https://oasisofchange.com/ooc-self-case-study.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
+
   <url>
     <loc>https://oasisofchange.com/tree_planting.html</loc>
     <changefreq>yearly</changefreq>

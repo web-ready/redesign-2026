@@ -134,6 +134,11 @@
   }
 
   // ── Desktop: globe + language code + chevron dropdown ─────────────────────
+  //
+  // Uses role="menu" + role="menuitemradio" so that:
+  //   1. <button> elements are valid menuitemradio children (no role conflict)
+  //   2. Options are direct children of the menu (no intermediate wrapper)
+  //   3. aria-checked communicates the selected language to screen readers
 
   function buildDesktopSwitcher() {
     var wrap = document.createElement('div');
@@ -141,7 +146,7 @@
     wrap.classList.add('notranslate');
     var btn = document.createElement('button');
     btn.setAttribute('type', 'button');
-    btn.setAttribute('aria-haspopup', 'listbox');
+    btn.setAttribute('aria-haspopup', 'menu');
     btn.setAttribute('aria-expanded', 'false');
     btn.setAttribute('data-lang-btn', '');
     btn.className = 'lang-btn notranslate';
@@ -149,18 +154,20 @@
     wrap.appendChild(btn);
     var dd = document.createElement('div');
     dd.setAttribute('data-lang-dropdown', '');
-    dd.setAttribute('role', 'listbox');
+    dd.setAttribute('role', 'menu');
     dd.setAttribute('aria-label', 'Select language');
     dd.className = 'lang-dropdown notranslate';
+    // Options are direct children of role="menu" — no wrapper div in between,
+    // which satisfies aria-required-children for the menu role.
     var panel = document.createElement('div');
     panel.className = 'lang-dropdown-panel';
     for (var i = 0; i < LANGS.length; i++) {
       var lang = LANGS[i];
       var opt = document.createElement('button');
       opt.setAttribute('type', 'button');
-      opt.setAttribute('role', 'option');
+      opt.setAttribute('role', 'menuitemradio');
       opt.setAttribute('data-lang-option', lang.code);
-      opt.setAttribute('aria-selected', lang.code === activeLang ? 'true' : 'false');
+      opt.setAttribute('aria-checked', lang.code === activeLang ? 'true' : 'false');
       opt.className = 'lang-option notranslate' + (lang.code === activeLang ? ' lang-option--active' : '');
       opt.innerHTML =
         '<span class="lang-option-check">' + (lang.code === activeLang ? checkSvg() : '') + '</span>' +
@@ -381,13 +388,13 @@
     // Desktop dropdown label
     if (desktopBtnLabel) desktopBtnLabel.textContent = info.short;
 
-    // Desktop dropdown options
+    // Desktop dropdown options (role="menuitemradio" uses aria-checked)
     var opts = document.querySelectorAll('[data-lang-option]');
     for (var i = 0; i < opts.length; i++) {
       var code = opts[i].getAttribute('data-lang-option');
       var active = code === activeLang;
       opts[i].classList.toggle('lang-option--active', active);
-      opts[i].setAttribute('aria-selected', active ? 'true' : 'false');
+      opts[i].setAttribute('aria-checked', active ? 'true' : 'false');
       var checkSpan = opts[i].querySelector('.lang-option-check');
       if (checkSpan) checkSpan.innerHTML = active ? checkSvg() : '';
     }
