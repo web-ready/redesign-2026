@@ -415,7 +415,42 @@
   margin-top: auto;
 }
 
-/* -- 7. Footer: allow wrapping when translated (longer text) ---------- */
+/* -- 7. Founder section: compact portrait on mobile, full on desktop -- */
+.founder-section {
+  display: grid;
+  grid-template-columns: 1fr 8rem;
+  gap: 1.25rem;
+  align-items: start;
+}
+.founder-image-wrap {
+  aspect-ratio: 3 / 4;
+}
+@media (min-width: 640px) {
+  .founder-section {
+    grid-template-columns: 1fr 11rem;
+    gap: 1.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .founder-section {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .founder-image-wrap {
+    max-width: 28rem;
+    margin-left: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .founder-section { gap: 4rem; }
+  .founder-image-wrap { max-width: 32rem; }
+}
+@media (min-width: 1280px) {
+  .founder-section { gap: 5rem; }
+}
+
+/* -- 8. Footer: allow wrapping when translated (longer text) ---------- */
 .site-global-footer .site-footer-link {
   white-space: normal !important;
   overflow-wrap: break-word;
