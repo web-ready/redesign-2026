@@ -20,6 +20,7 @@
     <meta name="twitter:description" content="We rebuilt the Denman Place Mall website to load faster, waste less bandwidth, and actually help visitors find what's inside the mall.">
 
     <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/site.css">
     <link rel="stylesheet" href="css/tailwind/tailwind.min.css?v=2">
     <link rel="preload" href="fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
     <script src="js/site.js" defer></script>
@@ -240,7 +241,10 @@
           <!-- HERO -->
           <div class="max-w-6xl mx-auto pt-6 md:pt-8">
             <div class="relative h-[320px] md:h-[420px] lg:h-[505px] overflow-hidden rounded-2xl">
-              <img class="absolute inset-0 w-full h-full object-cover" src="images/case-studies/denman-case-study-preview.webp" alt="Denman Place Mall case study hero image" loading="eager" fetchpriority="high" decoding="async">
+              <picture>
+                <source type="image/avif" srcset="images/case-studies/denman-case-study-preview-400w.avif 400w, images/case-studies/denman-case-study-preview-800w.avif 800w, images/case-studies/denman-case-study-preview-1200w.avif 1200w, images/case-studies/denman-case-study-preview.avif 1600w" sizes="100vw">
+                <img class="absolute inset-0 w-full h-full object-cover" src="images/case-studies/denman-case-study-preview.webp" srcset="images/case-studies/denman-case-study-preview-400w.webp 400w, images/case-studies/denman-case-study-preview-800w.webp 800w, images/case-studies/denman-case-study-preview-1200w.webp 1200w, images/case-studies/denman-case-study-preview.webp 1600w" sizes="100vw" alt="Denman Place Mall case study hero image" width="1600" height="2258" loading="eager" fetchpriority="high" decoding="async">
+              </picture>
               <div class="absolute inset-0 bg-black/70"></div>
               <div class="absolute left-6 bottom-6 md:left-10 md:bottom-10 lg:left-14 lg:bottom-14 z-10">
                 <p class="text-white/80 text-sm md:text-base font-medium tracking-[0.18em] uppercase mb-4">Case Study</p>
@@ -601,7 +605,7 @@
       <div class="site-footer-layout">
         <div class="site-footer-brand">
           <div class="mb-4">
-            <img class="h-14 sm:h-16 w-auto" style="margin-top:-1.05rem" src="images/logo/Oasis_of_Change-official.svg" alt="Oasis of Change" width="64" height="64">
+            <img class="h-14 sm:h-16 w-auto" style="margin-top:-1.05rem" src="images/logo/Oasis_of_Change-official.svg" alt="Oasis of Change" width="64" height="64" loading="lazy">
           </div>
           <p class="tracking-tight text-gray-200 leading-relaxed text-sm">
             Building a more sustainable digital future through energy-efficient websites, transparent impact, and technology that supports communities and the planet.
@@ -658,8 +662,8 @@
       </footer>
 
     </div>
-    <script type="text/javascript" src="js/832338.js?v=1774336321" data-custom-component-id="832338"></script>
-    <script type="text/javascript" src="js/854172.js?v=1774336321" data-custom-component-id="854172"></script>
+    <script type="text/javascript" src="js/832338.js?v=1774336321" data-custom-component-id="832338" defer></script>
+    <script type="text/javascript" src="js/854172.js?v=1774336321" data-custom-component-id="854172" defer></script>
 </body>
 </html>
 
