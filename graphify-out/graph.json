@@ -1,101 +1,7 @@
 {
   "directed": false,
   "multigraph": false,
-  "graph": {
-    "hyperedges": [
-      {
-        "id": "hyper_about_page_hero_section",
-        "label": "About Page Hero Section Visual Assets",
-        "nodes": [
-          "about_page_block_1",
-          "about_page_block_2",
-          "gabriel_dalton_portrait",
-          "entity_oasis_of_change",
-          "page_about"
-        ],
-        "relation": "participate_in",
-        "confidence": "EXTRACTED",
-        "confidence_score": 1.0,
-        "source_file": "graphify-out/GRAPH_REPORT.md"
-      },
-      {
-        "id": "hyper_gabriel_dalton_public_presence",
-        "label": "Gabriel Dalton Public Presence",
-        "nodes": [
-          "gabriel_dalton_portrait",
-          "gabriel_dalton_tedx_talk",
-          "entity_gabriel_dalton",
-          "entity_tedx",
-          "concept_ai_literacy"
-        ],
-        "relation": "participate_in",
-        "confidence": "INFERRED",
-        "confidence_score": 0.8,
-        "source_file": "public/images/about/Gabriel_Dalton_TEDx_Talk.webp"
-      },
-      {
-        "id": "hyper_mst_before_after_comparison",
-        "label": "MST Website Before/After Case Study Comparison",
-        "nodes": [
-          "mst_before_redesign",
-          "mst_after_redesign",
-          "entity_mittler_senior_technology",
-          "entity_oasis_of_change",
-          "page_mst_case_study"
-        ],
-        "relation": "participate_in",
-        "confidence": "EXTRACTED",
-        "confidence_score": 1.0,
-        "source_file": "graphify-out/GRAPH_REPORT.md"
-      },
-      {
-        "id": "favicon_brand_identity_set",
-        "label": "Favicon Brand Identity Set",
-        "nodes": [
-          "favicon_android_chrome_192",
-          "favicon_android_chrome_512",
-          "favicon_apple_touch_icon",
-          "favicon_16x16",
-          "favicon_32x32",
-          "oasis_of_change_icon"
-        ],
-        "relation": "implement",
-        "confidence": "INFERRED",
-        "confidence_score": 0.9,
-        "source_file": "public/images/favicon/"
-      },
-      {
-        "id": "partner_organizations_network",
-        "label": "Partner Organizations Network",
-        "nodes": [
-          "org_oasis_of_change",
-          "org_stanley_park_ecology",
-          "org_sustainable_www",
-          "org_wesn",
-          "org_tree_nation"
-        ],
-        "relation": "participate_in",
-        "confidence": "INFERRED",
-        "confidence_score": 0.8,
-        "source_file": "public/images/partners/"
-      },
-      {
-        "id": "tree_planting_initiative_ecosystem",
-        "label": "Tree Planting Initiative Ecosystem",
-        "nodes": [
-          "org_oasis_of_change",
-          "org_tree_nation",
-          "initiative_tree_planting",
-          "impact_dashboard_mockup",
-          "mangrove_tree"
-        ],
-        "relation": "participate_in",
-        "confidence": "INFERRED",
-        "confidence_score": 0.75,
-        "source_file": "public/images/initiatives/"
-      }
-    ]
-  },
+  "graph": {},
   "nodes": [
     {
       "label": "comprehensive_nav_scan.py",
@@ -103,7 +9,7 @@
       "source_file": "comprehensive_nav_scan.py",
       "source_location": "L1",
       "id": "comprehensive_nav_scan",
-      "community": 16
+      "community": 19
     },
     {
       "label": "detailed_nav_report.py",
@@ -111,7 +17,7 @@
       "source_file": "detailed_nav_report.py",
       "source_location": "L1",
       "id": "detailed_nav_report",
-      "community": 17
+      "community": 20
     },
     {
       "label": "get_nav_patterns.py",
@@ -119,7 +25,7 @@
       "source_file": "get_nav_patterns.py",
       "source_location": "L1",
       "id": "get_nav_patterns",
-      "community": 18
+      "community": 21
     },
     {
       "label": "832338.js",
@@ -127,7 +33,7 @@
       "source_file": "public\\js\\832338.js",
       "source_location": "L1",
       "id": "832338",
-      "community": 12
+      "community": 15
     },
     {
       "label": "showPanel()",
@@ -135,7 +41,7 @@
       "source_file": "public\\js\\832338.js",
       "source_location": "L9",
       "id": "832338_showpanel",
-      "community": 12
+      "community": 15
     },
     {
       "label": "854172.js",
@@ -143,7 +49,7 @@
       "source_file": "public\\js\\854172.js",
       "source_location": "L1",
       "id": "854172",
-      "community": 8
+      "community": 10
     },
     {
       "label": "getPercentFromClientX()",
@@ -151,7 +57,7 @@
       "source_file": "public\\js\\854172.js",
       "source_location": "L13",
       "id": "854172_getpercentfromclientx",
-      "community": 8
+      "community": 10
     },
     {
       "label": "updateActiveLabels()",
@@ -159,7 +65,7 @@
       "source_file": "public\\js\\854172.js",
       "source_location": "L19",
       "id": "854172_updateactivelabels",
-      "community": 8
+      "community": 10
     },
     {
       "label": "updateCompare()",
@@ -167,7 +73,199 @@
       "source_file": "public\\js\\854172.js",
       "source_location": "L29",
       "id": "854172_updatecompare",
-      "community": 8
+      "community": 10
+    },
+    {
+      "label": "i18n.js",
+      "file_type": "code",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L1",
+      "id": "i18n",
+      "community": 0
+    },
+    {
+      "label": "loadLang()",
+      "file_type": "code",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L94",
+      "id": "i18n_loadlang",
+      "community": 0
+    },
+    {
+      "label": "saveLang()",
+      "file_type": "code",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L98",
+      "id": "i18n_savelang",
+      "community": 0
+    },
+    {
+      "label": "findLang()",
+      "file_type": "code",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L101",
+      "id": "i18n_findlang",
+      "community": 0
+    },
+    {
+      "label": "getUrlLang()",
+      "file_type": "code",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L106",
+      "id": "i18n_geturllang",
+      "community": 0
+    },
+    {
+      "label": "setGTCookie()",
+      "file_type": "code",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L117",
+      "id": "i18n_setgtcookie",
+      "community": 0
+    },
+    {
+      "label": "loadGoogleTranslate()",
+      "file_type": "code",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L132",
+      "id": "i18n_loadgoogletranslate",
+      "community": 0
+    },
+    {
+      "label": "waitForGTCombo()",
+      "file_type": "code",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L162",
+      "id": "i18n_waitforgtcombo",
+      "community": 0
+    },
+    {
+      "label": "injectGTHideCSS()",
+      "file_type": "code",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L172",
+      "id": "i18n_injectgthidecss",
+      "community": 0
+    },
+    {
+      "label": "norm()",
+      "file_type": "code",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L188",
+      "id": "i18n_norm",
+      "community": 0
+    },
+    {
+      "label": "applyDictionary()",
+      "file_type": "code",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L190",
+      "id": "i18n_applydictionary",
+      "community": 0
+    },
+    {
+      "label": "globeSvg()",
+      "file_type": "code",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L238",
+      "id": "i18n_globesvg",
+      "community": 0
+    },
+    {
+      "label": "chevronSvg()",
+      "file_type": "code",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L244",
+      "id": "i18n_chevronsvg",
+      "community": 0
+    },
+    {
+      "label": "checkSvg()",
+      "file_type": "code",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L250",
+      "id": "i18n_checksvg",
+      "community": 0
+    },
+    {
+      "label": "buildDesktopSwitcher()",
+      "file_type": "code",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L256",
+      "id": "i18n_builddesktopswitcher",
+      "community": 0
+    },
+    {
+      "label": "buildMobileSwitcher()",
+      "file_type": "code",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L302",
+      "id": "i18n_buildmobileswitcher",
+      "community": 0
+    },
+    {
+      "label": "inject()",
+      "file_type": "code",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L325",
+      "id": "i18n_inject",
+      "community": 0
+    },
+    {
+      "label": "openDropdown()",
+      "file_type": "code",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L361",
+      "id": "i18n_opendropdown",
+      "community": 0
+    },
+    {
+      "label": "closeDropdown()",
+      "file_type": "code",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L369",
+      "id": "i18n_closedropdown",
+      "community": 0
+    },
+    {
+      "label": "initDesktopDropdown()",
+      "file_type": "code",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L377",
+      "id": "i18n_initdesktopdropdown",
+      "community": 0
+    },
+    {
+      "label": "initMobilePills()",
+      "file_type": "code",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L400",
+      "id": "i18n_initmobilepills",
+      "community": 0
+    },
+    {
+      "label": "initClickOutside()",
+      "file_type": "code",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L409",
+      "id": "i18n_initclickoutside",
+      "community": 0
+    },
+    {
+      "label": "updateSwitcherUI()",
+      "file_type": "code",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L418",
+      "id": "i18n_updateswitcherui",
+      "community": 0
+    },
+    {
+      "label": "switchTo()",
+      "file_type": "code",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L442",
+      "id": "i18n_switchto",
+      "community": 0
     },
     {
       "label": "site.js",
@@ -175,87 +273,55 @@
       "source_file": "public\\js\\site.js",
       "source_location": "L1",
       "id": "site",
-      "community": 2
-    },
-    {
-      "label": "injectMobileNavFocusStyles()",
-      "file_type": "code",
-      "source_file": "public\\js\\site.js",
-      "source_location": "L4",
-      "id": "site_injectmobilenavfocusstyles",
-      "community": 2
-    },
-    {
-      "label": "injectMobileNavScrollbarStyles()",
-      "file_type": "code",
-      "source_file": "public\\js\\site.js",
-      "source_location": "L16",
-      "id": "site_injectmobilenavscrollbarstyles",
-      "community": 2
-    },
-    {
-      "label": "injectFooterExternalLinkIconStyles()",
-      "file_type": "code",
-      "source_file": "public\\js\\site.js",
-      "source_location": "L27",
-      "id": "site_injectfooterexternallinkiconstyles",
-      "community": 2
-    },
-    {
-      "label": "injectNavDesktopDropdownStyles()",
-      "file_type": "code",
-      "source_file": "public\\js\\site.js",
-      "source_location": "L63",
-      "id": "site_injectnavdesktopdropdownstyles",
-      "community": 2
+      "community": 8
     },
     {
       "label": "initMobileNav()",
       "file_type": "code",
       "source_file": "public\\js\\site.js",
-      "source_location": "L201",
+      "source_location": "L4",
       "id": "site_initmobilenav",
-      "community": 2
+      "community": 8
     },
     {
       "label": "initAccordion()",
       "file_type": "code",
       "source_file": "public\\js\\site.js",
-      "source_location": "L516",
+      "source_location": "L337",
       "id": "site_initaccordion",
-      "community": 2
+      "community": 8
     },
     {
       "label": "initBlogToggle()",
       "file_type": "code",
       "source_file": "public\\js\\site.js",
-      "source_location": "L578",
+      "source_location": "L399",
       "id": "site_initblogtoggle",
-      "community": 2
+      "community": 8
     },
     {
       "label": "initImageSlider()",
       "file_type": "code",
       "source_file": "public\\js\\site.js",
-      "source_location": "L590",
+      "source_location": "L411",
       "id": "site_initimageslider",
-      "community": 2
+      "community": 8
     },
     {
       "label": "initSmoothScroll()",
       "file_type": "code",
       "source_file": "public\\js\\site.js",
-      "source_location": "L630",
+      "source_location": "L451",
       "id": "site_initsmoothscroll",
-      "community": 2
+      "community": 8
     },
     {
       "label": "logCuriousCoderMessage()",
       "file_type": "code",
       "source_file": "public\\js\\site.js",
-      "source_location": "L649",
+      "source_location": "L470",
       "id": "site_logcuriouscodermessage",
-      "community": 2
+      "community": 8
     },
     {
       "label": "add_skip_link_css.py",
@@ -263,7 +329,7 @@
       "source_file": "scripts\\add_skip_link_css.py",
       "source_location": "L1",
       "id": "add_skip_link_css",
-      "community": 13
+      "community": 16
     },
     {
       "label": "Add the missing focus: CSS rules for the skip-to-content accessibility link.",
@@ -271,7 +337,7 @@
       "source_file": "scripts\\add_skip_link_css.py",
       "source_location": "L1",
       "id": "add_skip_link_css_rationale_1",
-      "community": 13
+      "community": 16
     },
     {
       "label": "audit_css.py",
@@ -279,7 +345,7 @@
       "source_file": "scripts\\audit_css.py",
       "source_location": "L1",
       "id": "audit_css",
-      "community": 4
+      "community": 7
     },
     {
       "label": "unescape_css_ident()",
@@ -287,7 +353,7 @@
       "source_file": "scripts\\audit_css.py",
       "source_location": "L37",
       "id": "audit_css_unescape_css_ident",
-      "community": 4
+      "community": 7
     },
     {
       "label": "extract_css_classes()",
@@ -295,7 +361,7 @@
       "source_file": "scripts\\audit_css.py",
       "source_location": "L63",
       "id": "audit_css_extract_css_classes",
-      "community": 4
+      "community": 7
     },
     {
       "label": "extract_html_classes()",
@@ -303,7 +369,7 @@
       "source_file": "scripts\\audit_css.py",
       "source_location": "L117",
       "id": "audit_css_extract_html_classes",
-      "community": 4
+      "community": 7
     },
     {
       "label": "Audit Tailwind CSS classes: compare what's defined in CSS vs what's used in HTML",
@@ -311,7 +377,7 @@
       "source_file": "scripts\\audit_css.py",
       "source_location": "L1",
       "id": "audit_css_rationale_1",
-      "community": 4
+      "community": 7
     },
     {
       "label": "Convert CSS-escaped identifier to plain text.",
@@ -319,7 +385,7 @@
       "source_file": "scripts\\audit_css.py",
       "source_location": "L38",
       "id": "audit_css_rationale_38",
-      "community": 4
+      "community": 7
     },
     {
       "label": "Extract all Tailwind utility class names from a minified CSS file.",
@@ -327,7 +393,7 @@
       "source_file": "scripts\\audit_css.py",
       "source_location": "L64",
       "id": "audit_css_rationale_64",
-      "community": 4
+      "community": 7
     },
     {
       "label": "Extract all class names used in HTML files.",
@@ -335,7 +401,7 @@
       "source_file": "scripts\\audit_css.py",
       "source_location": "L118",
       "id": "audit_css_rationale_118",
-      "community": 4
+      "community": 7
     },
     {
       "label": "clean_css.py",
@@ -343,7 +409,7 @@
       "source_file": "scripts\\clean_css.py",
       "source_location": "L1",
       "id": "clean_css",
-      "community": 14
+      "community": 17
     },
     {
       "label": "Cleans tailwind.min.css: 1. Removes the 3 incorrectly-encoded shadow rules (used",
@@ -351,7 +417,7 @@
       "source_file": "scripts\\clean_css.py",
       "source_location": "L1",
       "id": "clean_css_rationale_1",
-      "community": 14
+      "community": 17
     },
     {
       "label": "fix_shadows.py",
@@ -359,7 +425,7 @@
       "source_file": "scripts\\fix_shadows.py",
       "source_location": "L1",
       "id": "fix_shadows",
-      "community": 9
+      "community": 11
     },
     {
       "label": "escape_selector()",
@@ -367,7 +433,7 @@
       "source_file": "scripts\\fix_shadows.py",
       "source_location": "L6",
       "id": "fix_shadows_escape_selector",
-      "community": 9
+      "community": 11
     },
     {
       "label": "Append the 3 corrected shadow rules with proper CSS comma escaping (\\2c space).",
@@ -375,7 +441,7 @@
       "source_file": "scripts\\fix_shadows.py",
       "source_location": "L1",
       "id": "fix_shadows_rationale_1",
-      "community": 9
+      "community": 11
     },
     {
       "label": "Convert a Tailwind class name to a CSS-escaped selector class string.",
@@ -383,7 +449,7 @@
       "source_file": "scripts\\fix_shadows.py",
       "source_location": "L7",
       "id": "fix_shadows_rationale_7",
-      "community": 9
+      "community": 11
     },
     {
       "label": "generate_css_supplement.py",
@@ -391,7 +457,7 @@
       "source_file": "scripts\\generate_css_supplement.py",
       "source_location": "L1",
       "id": "generate_css_supplement",
-      "community": 3
+      "community": 6
     },
     {
       "label": "r()",
@@ -399,7 +465,7 @@
       "source_file": "scripts\\generate_css_supplement.py",
       "source_location": "L37",
       "id": "generate_css_supplement_r",
-      "community": 3
+      "community": 6
     },
     {
       "label": "hover()",
@@ -407,7 +473,7 @@
       "source_file": "scripts\\generate_css_supplement.py",
       "source_location": "L42",
       "id": "generate_css_supplement_hover",
-      "community": 3
+      "community": 6
     },
     {
       "label": "focus()",
@@ -415,7 +481,7 @@
       "source_file": "scripts\\generate_css_supplement.py",
       "source_location": "L46",
       "id": "generate_css_supplement_focus",
-      "community": 3
+      "community": 6
     },
     {
       "label": "fv()",
@@ -423,7 +489,7 @@
       "source_file": "scripts\\generate_css_supplement.py",
       "source_location": "L50",
       "id": "generate_css_supplement_fv",
-      "community": 3
+      "community": 6
     },
     {
       "label": "gh()",
@@ -431,7 +497,7 @@
       "source_file": "scripts\\generate_css_supplement.py",
       "source_location": "L55",
       "id": "generate_css_supplement_gh",
-      "community": 3
+      "community": 6
     },
     {
       "label": "mq()",
@@ -439,7 +505,7 @@
       "source_file": "scripts\\generate_css_supplement.py",
       "source_location": "L60",
       "id": "generate_css_supplement_mq",
-      "community": 3
+      "community": 6
     },
     {
       "label": "Generates CSS supplement for missing Tailwind classes and writes it to tailwind.",
@@ -447,7 +513,7 @@
       "source_file": "scripts\\generate_css_supplement.py",
       "source_location": "L1",
       "id": "generate_css_supplement_rationale_1",
-      "community": 3
+      "community": 6
     },
     {
       "label": "focus-visible variant.",
@@ -455,7 +521,7 @@
       "source_file": "scripts\\generate_css_supplement.py",
       "source_location": "L51",
       "id": "generate_css_supplement_rationale_51",
-      "community": 3
+      "community": 6
     },
     {
       "label": "Responsive breakpoint variant.",
@@ -463,7 +529,7 @@
       "source_file": "scripts\\generate_css_supplement.py",
       "source_location": "L61",
       "id": "generate_css_supplement_rationale_61",
-      "community": 3
+      "community": 6
     },
     {
       "label": "optimize_classes.py",
@@ -471,7 +537,7 @@
       "source_file": "scripts\\optimize_classes.py",
       "source_location": "L1",
       "id": "optimize_classes",
-      "community": 11
+      "community": 14
     },
     {
       "label": "optimize_file()",
@@ -479,7 +545,7 @@
       "source_file": "scripts\\optimize_classes.py",
       "source_location": "L52",
       "id": "optimize_classes_optimize_file",
-      "community": 11
+      "community": 14
     },
     {
       "label": "Bulk Tailwind CSS class optimization across all 34 HTML files.  Optimizations:",
@@ -487,7 +553,7 @@
       "source_file": "scripts\\optimize_classes.py",
       "source_location": "L1",
       "id": "optimize_classes_rationale_1",
-      "community": 11
+      "community": 14
     },
     {
       "label": "optimize_page_specific.py",
@@ -495,7 +561,7 @@
       "source_file": "scripts\\optimize_page_specific.py",
       "source_location": "L1",
       "id": "optimize_page_specific",
-      "community": 10
+      "community": 12
     },
     {
       "label": "edit()",
@@ -503,7 +569,7 @@
       "source_file": "scripts\\optimize_page_specific.py",
       "source_location": "L9",
       "id": "optimize_page_specific_edit",
-      "community": 10
+      "community": 12
     },
     {
       "label": "Page-specific Tailwind class inheritance optimizations. Targets: metric stat car",
@@ -511,7 +577,7 @@
       "source_file": "scripts\\optimize_page_specific.py",
       "source_location": "L1",
       "id": "optimize_page_specific_rationale_1",
-      "community": 10
+      "community": 12
     },
     {
       "label": "Replace old with new in file, return True if changed.",
@@ -519,7 +585,7 @@
       "source_file": "scripts\\optimize_page_specific.py",
       "source_location": "L10",
       "id": "optimize_page_specific_rationale_10",
-      "community": 10
+      "community": 12
     },
     {
       "label": "test_and_delete.py",
@@ -527,7 +593,7 @@
       "source_file": "scripts\\test_and_delete.py",
       "source_location": "L1",
       "id": "test_and_delete",
-      "community": 5
+      "community": 9
     },
     {
       "label": "test()",
@@ -535,7 +601,7 @@
       "source_file": "scripts\\test_and_delete.py",
       "source_location": "L52",
       "id": "test_and_delete_test",
-      "community": 5
+      "community": 9
     },
     {
       "label": "tw_to_css_ident()",
@@ -543,7 +609,7 @@
       "source_file": "scripts\\test_and_delete.py",
       "source_location": "L98",
       "id": "test_and_delete_tw_to_css_ident",
-      "community": 5
+      "community": 9
     },
     {
       "label": "delete_dead_from_css()",
@@ -551,7 +617,7 @@
       "source_file": "scripts\\test_and_delete.py",
       "source_location": "L111",
       "id": "test_and_delete_delete_dead_from_css",
-      "community": 5
+      "community": 9
     },
     {
       "label": "Phase 0 \u2014 ADD:    Append the 3 classes that were always missing (found in HTML,",
@@ -559,7 +625,7 @@
       "source_file": "scripts\\test_and_delete.py",
       "source_location": "L1",
       "id": "test_and_delete_rationale_1",
-      "community": 5
+      "community": 9
     },
     {
       "label": "Tailwind class name \u2192 escaped CSS identifier (after the dot).",
@@ -567,7 +633,7 @@
       "source_file": "scripts\\test_and_delete.py",
       "source_location": "L99",
       "id": "test_and_delete_rationale_99",
-      "community": 5
+      "community": 9
     },
     {
       "label": "For each dead class:       - If it appears as the sole selector in a rule \u2192 remo",
@@ -575,7 +641,7 @@
       "source_file": "scripts\\test_and_delete.py",
       "source_location": "L112",
       "id": "test_and_delete_rationale_112",
-      "community": 5
+      "community": 9
     },
     {
       "label": "verify_classes.py",
@@ -583,7 +649,7 @@
       "source_file": "scripts\\verify_classes.py",
       "source_location": "L1",
       "id": "verify_classes",
-      "community": 15
+      "community": 18
     },
     {
       "label": "Precisely verify which 'unused' CSS classes actually appear in HTML class attrib",
@@ -591,454 +657,597 @@
       "source_file": "scripts\\verify_classes.py",
       "source_location": "L1",
       "id": "verify_classes_rationale_1",
-      "community": 15
+      "community": 18
+    },
+    {
+      "label": "i18n Language Switcher Module",
+      "type": "module",
+      "file": "public/js/i18n.js",
+      "description": "Self-contained IIFE providing multilingual support (EN/FR/ES) via curated dictionary + Google Translate fallback",
+      "id": "i18n_module",
+      "community": 1
+    },
+    {
+      "label": "Site JS Module",
+      "type": "module",
+      "file": "public/js/site.js",
+      "description": "Self-contained IIFE providing mobile nav, accordion, blog toggle, image comparison slider, smooth scroll, and console easter egg",
+      "id": "site_js_module",
+      "community": 1
+    },
+    {
+      "label": "CSS Audit Script",
+      "type": "script",
+      "file": "scripts/audit_css.py",
+      "description": "Compares Tailwind CSS classes defined in CSS vs used in HTML to find missing and unused classes",
+      "id": "audit_css_script",
+      "community": 1
     },
     {
       "label": "CLAUDE.md Project Configuration",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": "2026-04-11",
-      "author": "Gabriel Dalton",
-      "contributor": null,
-      "id": "claude_md_project_config",
-      "community": 7
+      "type": "config",
+      "file": "CLAUDE.md",
+      "description": "Project-level Claude Code instructions including graphify integration rules",
+      "id": "claude_md_config",
+      "community": 1
     },
     {
       "label": "Graph Report (2026-04-11)",
-      "file_type": "document",
-      "source_file": "graphify-out/GRAPH_REPORT.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": "2026-04-11",
-      "author": null,
-      "contributor": null,
-      "id": "graph_report_md",
+      "type": "document",
+      "file": "graphify-out/GRAPH_REPORT.md",
+      "description": "Knowledge graph report with 115 nodes, 108 edges, 23 communities for the redesign-2026 project",
+      "id": "graph_report",
       "community": 1
     },
     {
-      "label": "Graphify Knowledge Graph",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "line 3",
-      "source_url": null,
-      "captured_at": "2026-04-11",
-      "author": null,
-      "contributor": null,
-      "id": "entity_graphify_knowledge_graph",
-      "community": 7
-    },
-    {
-      "label": "Rationale: Read GRAPH_REPORT.md Before Architecture Questions",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "line 6",
-      "source_url": null,
-      "captured_at": "2026-04-11",
-      "author": null,
-      "contributor": null,
-      "id": "rationale_read_graph_report_first",
+      "label": "robots.txt",
+      "type": "config",
+      "file": "public/robots.txt",
+      "description": "Search engine crawler configuration allowing all agents and pointing to sitemap",
+      "id": "robots_txt",
       "community": 1
     },
     {
-      "label": "Rationale: Navigate Wiki Instead of Raw Files",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "line 7",
-      "source_url": null,
-      "captured_at": "2026-04-11",
-      "author": null,
-      "contributor": null,
-      "id": "rationale_navigate_wiki_index",
-      "community": 7
-    },
-    {
-      "label": "Rationale: Rebuild Graph After Code Modifications",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "line 8",
-      "source_url": null,
-      "captured_at": "2026-04-11",
-      "author": null,
-      "contributor": null,
-      "id": "rationale_rebuild_graph_after_code_changes",
-      "community": 7
-    },
-    {
-      "label": "Graphify Rebuild Code Command",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "line 8",
-      "source_url": null,
-      "captured_at": "2026-04-11",
-      "author": null,
-      "contributor": null,
-      "id": "entity_graphify_rebuild_command",
-      "community": 7
-    },
-    {
-      "label": "Oasis of Change, Inc.",
-      "file_type": "document",
-      "source_file": "graphify-out/GRAPH_REPORT.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": "2026-04-11",
-      "author": null,
-      "contributor": null,
-      "id": "entity_oasis_of_change",
+      "label": "Google Translate Integration",
+      "type": "concept",
+      "file": "public/js/i18n.js",
+      "description": "External dependency on Google Translate API for full-page translation of content not covered by curated dictionary",
+      "id": "google_translate_integration",
       "community": 1
     },
     {
-      "label": "Gabriel Dalton",
-      "file_type": "document",
-      "source_file": "graphify-out/GRAPH_REPORT.md",
-      "source_location": "God Nodes",
-      "source_url": null,
-      "captured_at": "2026-04-11",
-      "author": null,
-      "contributor": null,
-      "id": "entity_gabriel_dalton",
+      "label": "Curated Translation Dictionary",
+      "type": "data_structure",
+      "file": "public/js/i18n.js",
+      "description": "Hand-written FR/ES translations for ~40 key UI strings (nav, footer, CTAs) providing instant high-quality translations",
+      "id": "curated_dictionary",
       "community": 1
     },
     {
-      "label": "Mittler Senior Technology",
-      "file_type": "document",
-      "source_file": "graphify-out/GRAPH_REPORT.md",
-      "source_location": "Community 7",
-      "source_url": null,
-      "captured_at": "2026-04-11",
-      "author": null,
-      "contributor": null,
-      "id": "entity_mittler_senior_technology",
+      "label": "Language Persistence (localStorage)",
+      "type": "concept",
+      "file": "public/js/i18n.js",
+      "description": "Language preference persisted via localStorage key ooc-lang and Google Translate cookie googtrans",
+      "id": "lang_persistence",
       "community": 1
     },
     {
-      "label": "TEDx",
-      "file_type": "document",
-      "source_file": "graphify-out/GRAPH_REPORT.md",
-      "source_location": "Community 1",
-      "source_url": null,
-      "captured_at": "2026-04-11",
-      "author": null,
-      "contributor": null,
-      "id": "entity_tedx",
+      "label": "Nav Overflow Guard",
+      "type": "pattern",
+      "file": "public/js/site.js",
+      "description": "Three-stage responsive nav: full logo -> compact icon logo -> hamburger menu, triggered by content overflow measurement",
+      "id": "nav_overflow_guard",
       "community": 1
     },
     {
-      "label": "Community: Vancouver Partnerships & Sustainability",
-      "file_type": "document",
-      "source_file": "graphify-out/GRAPH_REPORT.md",
-      "source_location": "Community 0",
-      "source_url": null,
-      "captured_at": "2026-04-11",
-      "author": null,
-      "contributor": null,
-      "id": "community_vancouver_partnerships",
-      "community": 19
+      "label": "Image Comparison Slider Widget",
+      "type": "component",
+      "file": "public/js/site.js",
+      "description": "Before/after image comparison with pointer drag, dark/light pill label switching",
+      "id": "image_compare_widget",
+      "community": 1
     },
     {
-      "label": "Community: Oasis of Change Identity",
-      "file_type": "document",
-      "source_file": "graphify-out/GRAPH_REPORT.md",
-      "source_location": "Community 1",
-      "source_url": null,
-      "captured_at": "2026-04-11",
-      "author": null,
-      "contributor": null,
-      "id": "community_oasis_identity",
-      "community": 20
+      "label": "Console Easter Egg (Curious Coder)",
+      "type": "component",
+      "file": "public/js/site.js",
+      "description": "ASCII art logo and sustainability message logged to browser console for developers inspecting the site",
+      "id": "console_easter_egg",
+      "community": 1
     },
     {
-      "label": "Community: Blog Content",
-      "file_type": "document",
-      "source_file": "graphify-out/GRAPH_REPORT.md",
-      "source_location": "Community 5",
-      "source_url": null,
-      "captured_at": "2026-04-11",
-      "author": null,
-      "contributor": null,
-      "id": "community_blog_content",
-      "community": 21
+      "label": "Tailwind Minified CSS",
+      "type": "asset",
+      "file": "public/css/tailwind/tailwind.min.css",
+      "description": "Compiled Tailwind CSS file audited by the CSS audit script",
+      "id": "tailwind_min_css",
+      "community": 1
     },
     {
-      "label": "Community: MST Case Study",
-      "file_type": "document",
-      "source_file": "graphify-out/GRAPH_REPORT.md",
-      "source_location": "Community 7",
-      "source_url": null,
-      "captured_at": "2026-04-11",
-      "author": null,
-      "contributor": null,
-      "id": "community_mst_case_study",
-      "community": 22
+      "label": "Custom/JS-Injected Classes Allowlist",
+      "type": "data_structure",
+      "file": "scripts/audit_css.py",
+      "description": "Set of ~35 class names injected by JS (nav dropdowns, impact stats, ticker, footer) excluded from missing-class reports",
+      "id": "custom_classes_allowlist",
+      "community": 1
     },
     {
-      "label": "About Page Hero - Person Working on Laptop",
+      "label": "Oasis of Change Website",
+      "type": "entity",
+      "description": "The oasisofchange.com website, the product of this redesign-2026 project",
+      "id": "oasis_of_change_website",
+      "community": 1
+    },
+    {
+      "label": "Sitemap XML",
+      "type": "asset",
+      "file": "public/sitemap.xml",
+      "description": "XML sitemap referenced by robots.txt at https://oasisofchange.com/sitemap.xml",
+      "id": "sitemap_xml",
+      "community": 1
+    },
+    {
+      "label": "Rationale: Dictionary-First Translation Strategy",
+      "type": "rationale",
+      "file": "public/js/i18n.js",
+      "description": "Curated dictionary applied first for instant, high-quality nav/footer translations without flash of untranslated content, with Google Translate as fallback for remaining page content",
+      "id": "rationale_dictionary_before_gt",
+      "community": 1
+    },
+    {
+      "label": "Rationale: Three-Stage Nav Collapse",
+      "type": "rationale",
+      "file": "public/js/site.js",
+      "description": "Nav uses three progressive stages (full logo, icon-only logo, hamburger) to maximize horizontal space before collapsing, avoiding premature hamburger on medium viewports",
+      "id": "rationale_nav_overflow_stages",
+      "community": 1
+    },
+    {
+      "label": "Rationale: Hide Google Translate Chrome",
+      "type": "rationale",
+      "file": "public/js/i18n.js",
+      "description": "Google Translate default banner, tooltip, and highlight UI is hidden via injected CSS to maintain the site clean design while still using GT for translation",
+      "id": "rationale_gt_hide_css",
+      "community": 1
+    },
+    {
+      "label": "Rationale: Custom Class Exclusion in Audit",
+      "type": "rationale",
+      "file": "scripts/audit_css.py",
+      "description": "JS-injected classes are excluded from the missing-class report because they are styled in site.css or inline, not in the Tailwind build - prevents false positives in the audit",
+      "id": "rationale_custom_class_exclusion",
+      "community": 1
+    },
+    {
+      "label": "Prefers Reduced Motion Support",
+      "type": "pattern",
+      "file": "public/js/site.js",
+      "description": "Mobile nav respects prefers-reduced-motion media query, skipping slide/fade animations for accessibility",
+      "id": "prefers_reduced_motion",
+      "community": 1
+    },
+    {
+      "label": "About Page Block 1 - Professional with Laptop",
       "file_type": "image",
       "source_file": "public/images/about/about-page-block-1.webp",
       "source_location": null,
       "source_url": null,
-      "captured_at": "2026-04-11",
+      "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "about_page_block_1",
-      "community": 1
+      "id": "img:about-page-block-1",
+      "community": 4
     },
     {
-      "label": "About Page - Founded in 2024 Image",
+      "label": "About Page Block 2 - Founded in 2024 with Person Browsing Website",
       "file_type": "image",
       "source_file": "public/images/about/about-page-block-2.webp",
       "source_location": null,
       "source_url": null,
-      "captured_at": "2026-04-11",
+      "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "about_page_block_2",
-      "community": 1
+      "id": "img:about-page-block-2",
+      "community": 4
     },
     {
-      "label": "Gabriel Dalton Portrait Photo",
+      "label": "Gabriel Dalton Black-and-White Headshot Portrait",
       "file_type": "image",
       "source_file": "public/images/about/Gabriel-Dalton.webp",
       "source_location": null,
       "source_url": null,
-      "captured_at": "2026-04-11",
+      "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "gabriel_dalton_portrait",
-      "community": 1
+      "id": "img:gabriel-dalton-headshot",
+      "community": 4
     },
     {
-      "label": "Gabriel Dalton TEDx Talk Photo",
+      "label": "Gabriel Dalton TEDx Talk on AI Literacy",
       "file_type": "image",
       "source_file": "public/images/about/Gabriel_Dalton_TEDx_Talk.webp",
       "source_location": null,
       "source_url": null,
-      "captured_at": "2026-04-11",
+      "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "gabriel_dalton_tedx_talk",
-      "community": 1
+      "id": "img:gabriel-dalton-tedx",
+      "community": 4
     },
     {
-      "label": "Blog - Nonprofit Team Financial Review Photo",
+      "label": "Blog Image - Two People Reviewing Documents at Desk",
       "file_type": "image",
       "source_file": "public/images/blog/blog-ai-network-visualization.webp",
       "source_location": null,
       "source_url": null,
-      "captured_at": "2026-04-11",
+      "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "blog_ai_network_visualization",
-      "community": 6
+      "id": "img:blog-ai-network-visualization",
+      "community": 4
     },
     {
-      "label": "Blog - Young Person Portrait (Assistive Technology)",
+      "label": "Blog Image - Young Woman in Neutral Setting for Assistive Technology Topic",
       "file_type": "image",
       "source_file": "public/images/blog/blog-assistive-technology.webp",
       "source_location": null,
       "source_url": null,
-      "captured_at": "2026-04-11",
+      "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "blog_assistive_technology",
-      "community": 6
+      "id": "img:blog-assistive-technology",
+      "community": 4
     },
     {
-      "label": "Blog - Design Portfolio / Art Book Review Photo",
+      "label": "Blog Image - Person Browsing Design Book on Side Table",
       "file_type": "image",
       "source_file": "public/images/blog/blog-data-center-hardware.webp",
       "source_location": null,
       "source_url": null,
-      "captured_at": "2026-04-11",
+      "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "blog_data_center_hardware",
-      "community": 6
+      "id": "img:blog-data-center-hardware",
+      "community": 4
     },
     {
-      "label": "Blog - Modern Lounge Interior Photo",
+      "label": "Blog Image - Modern Minimalist Lobby with Black Lounge Chairs",
       "file_type": "image",
       "source_file": "public/images/blog/blog-minimal-website-design.webp",
       "source_location": null,
       "source_url": null,
-      "captured_at": "2026-04-11",
+      "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "blog_minimal_website_design",
-      "community": 6
+      "id": "img:blog-minimal-website-design",
+      "community": 4
     },
     {
-      "label": "Blog - E-Commerce Browsing Photo",
+      "label": "Gabriel Dalton",
       "file_type": "image",
-      "source_file": "public/images/blog/blog-nonprofit-team-review.webp",
+      "source_file": "public/images/about/Gabriel-Dalton.webp",
       "source_location": null,
       "source_url": null,
-      "captured_at": "2026-04-11",
+      "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "blog_nonprofit_team_review",
-      "community": 6
+      "id": "person:gabriel-dalton",
+      "community": 4
     },
     {
-      "label": "Blog - Strategic Planning Whiteboard Photo",
-      "file_type": "image",
-      "source_file": "public/images/blog/blog-reforestation-saplings.webp",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": "2026-04-11",
-      "author": null,
-      "contributor": null,
-      "id": "blog_reforestation_saplings",
-      "community": 6
-    },
-    {
-      "label": "Mittler Senior Technology Website - After Redesign Screenshot",
-      "file_type": "image",
-      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign.webp",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": "2026-04-11",
-      "author": null,
-      "contributor": null,
-      "id": "mst_after_redesign",
-      "community": 1
-    },
-    {
-      "label": "Mittler Senior Technology Website - Before Redesign Screenshot",
-      "file_type": "image",
-      "source_file": "public/images/case-studies/mittler-senior-tech-before-redesign.webp",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": "2026-04-11",
-      "author": null,
-      "contributor": null,
-      "id": "mst_before_redesign",
-      "community": 1
-    },
-    {
-      "label": "About Page",
-      "file_type": "document",
-      "source_file": "graphify-out/GRAPH_REPORT.md",
-      "source_location": "Community 1",
-      "source_url": null,
-      "captured_at": "2026-04-11",
-      "author": null,
-      "contributor": null,
-      "id": "page_about",
-      "community": 1
-    },
-    {
-      "label": "Blog Page",
-      "file_type": "document",
-      "source_file": "graphify-out/GRAPH_REPORT.md",
-      "source_location": "Community 5",
-      "source_url": null,
-      "captured_at": "2026-04-11",
-      "author": null,
-      "contributor": null,
-      "id": "page_blog",
-      "community": 6
-    },
-    {
-      "label": "Mittler Senior Technology Case Study Page",
-      "file_type": "document",
-      "source_file": "graphify-out/GRAPH_REPORT.md",
-      "source_location": "Community 7",
-      "source_url": null,
-      "captured_at": "2026-04-11",
-      "author": null,
-      "contributor": null,
-      "id": "page_mst_case_study",
-      "community": 1
-    },
-    {
-      "label": "AI Literacy (TEDx Talk Topic)",
+      "label": "TEDx Talk on AI Literacy",
       "file_type": "image",
       "source_file": "public/images/about/Gabriel_Dalton_TEDx_Talk.webp",
       "source_location": null,
       "source_url": null,
-      "captured_at": "2026-04-11",
+      "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_ai_literacy",
-      "community": 1
+      "id": "event:tedx-talk",
+      "community": 4
     },
     {
-      "label": "Oasis of Change Founded in 2024",
+      "label": "Oasis of Change - Founded 2024",
       "file_type": "image",
       "source_file": "public/images/about/about-page-block-2.webp",
       "source_location": null,
       "source_url": null,
-      "captured_at": "2026-04-11",
+      "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_founded_2024",
-      "community": 1
+      "id": "org:oasis-of-change",
+      "community": 2
     },
     {
-      "label": "Android Chrome Favicon 192x192",
+      "label": "About Page",
       "file_type": "image",
-      "source_file": "public/images/favicon/android-chrome-192x192.png",
+      "source_file": "public/images/about/about-page-block-1.webp",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "favicon_android_chrome_192",
-      "community": 0
+      "id": "page:about",
+      "community": 4
     },
     {
-      "label": "Android Chrome Favicon 512x512",
+      "label": "Blog Page",
       "file_type": "image",
-      "source_file": "public/images/favicon/android-chrome-512x512.png",
+      "source_file": "public/images/blog/blog-ai-network-visualization.webp",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "favicon_android_chrome_512",
-      "community": 0
+      "id": "page:blog",
+      "community": 4
     },
     {
-      "label": "Apple Touch Icon",
+      "label": "AI Literacy",
       "file_type": "image",
-      "source_file": "public/images/favicon/apple-touch-icon.png",
+      "source_file": "public/images/about/Gabriel_Dalton_TEDx_Talk.webp",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "favicon_apple_touch_icon",
-      "community": 0
+      "id": "topic:ai-literacy",
+      "community": 4
     },
     {
-      "label": "Favicon 16x16",
+      "label": "Assistive Technology",
       "file_type": "image",
-      "source_file": "public/images/favicon/favicon-16x16.png",
+      "source_file": "public/images/blog/blog-assistive-technology.webp",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "favicon_16x16",
-      "community": 0
+      "id": "topic:assistive-technology",
+      "community": 4
     },
     {
-      "label": "Favicon 32x32",
+      "label": "Minimal Website Design",
       "file_type": "image",
-      "source_file": "public/images/favicon/favicon-32x32.png",
+      "source_file": "public/images/blog/blog-minimal-website-design.webp",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "favicon_32x32",
-      "community": 0
+      "id": "topic:minimal-design",
+      "community": 4
     },
     {
-      "label": "Impact Dashboard Mockup - Tree Transparency Report",
+      "label": "Warm Neutral Color Palette Photography Style",
+      "file_type": "image",
+      "source_file": "public/images/about/about-page-block-1.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "style:warm-neutral-palette",
+      "community": 4
+    },
+    {
+      "label": "Blog image: person browsing e-commerce site on laptop while holding coffee",
+      "file_type": "image",
+      "source_file": "public/images/blog/blog-nonprofit-team-review.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img_blog_nonprofit_team_review",
+      "community": 13
+    },
+    {
+      "label": "Blog image: hand placing sticky note labeled FORECAST on whiteboard with planning annotations",
+      "file_type": "image",
+      "source_file": "public/images/blog/blog-reforestation-saplings.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img_blog_reforestation_saplings",
+      "community": 13
+    },
+    {
+      "label": "Blog image: group of people collaborating at table with laptops in warm rustic workspace",
+      "file_type": "image",
+      "source_file": "public/images/blog/team-collaboration.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img_team_collaboration",
+      "community": 13
+    },
+    {
+      "label": "Case study preview: abstract pastel watercolor texture with teal and orange ink swirls and splatters",
+      "file_type": "image",
+      "source_file": "public/images/case-studies/denman-case-study-preview.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img_denman_case_study_preview",
+      "community": 5
+    },
+    {
+      "label": "Portrait photo of Jordan Mittler smiling outdoors by the sea wearing blue checkered shirt",
+      "file_type": "image",
+      "source_file": "public/images/case-studies/jordan-mittler.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img_jordan_mittler",
+      "community": 5
+    },
+    {
+      "label": "Case study preview: elderly couple sitting together outdoors overlooking green vineyard landscape",
+      "file_type": "image",
+      "source_file": "public/images/case-studies/mittler-case-study-preview.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img_mittler_case_study_preview",
+      "community": 5
+    },
+    {
+      "label": "Hero background: young man giving thumbs up during Zoom video call with multiple participants on iMac",
+      "file_type": "image",
+      "source_file": "public/images/case-studies/mittler-hero-bg.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img_mittler_hero_bg",
+      "community": 5
+    },
+    {
+      "label": "UI screenshot: Mittler Senior Technology redesigned website with dark green header, hero section reading Technology Education for Senior Citizens, stats (3500+ seniors, 450+ classes, 150+ teens, 10+ countries), and Classes & Services section",
+      "file_type": "image",
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img_mittler_after_redesign",
+      "community": 5
+    },
+    {
+      "label": "UI screenshot: Mittler Senior Technology original website with left sidebar navigation, Tech Tip Tuesday banner, Private Technology Assistance and Group Classes sections, simpler layout",
+      "file_type": "image",
+      "source_file": "public/images/case-studies/mittler-senior-tech-before-redesign.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img_mittler_before_redesign",
+      "community": 5
+    },
+    {
+      "label": "Hero image: rows of solar panels in a field under expansive blue sky with wispy clouds, sustainability theme",
+      "file_type": "image",
+      "source_file": "public/images/case-studies/nature-sustainability-hero.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img_nature_sustainability_hero",
+      "community": 5
+    },
+    {
+      "label": "Mittler Senior Technology",
+      "file_type": "image",
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "entity_mittler_senior_technology",
+      "community": 5
+    },
+    {
+      "label": "Jordan Mittler",
+      "file_type": "image",
+      "source_file": "public/images/case-studies/jordan-mittler.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "entity_jordan_mittler",
+      "community": 5
+    },
+    {
+      "label": "Denman Place Mall case study",
+      "file_type": "image",
+      "source_file": "public/images/case-studies/denman-case-study-preview.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "entity_denman_place_mall",
+      "community": 5
+    },
+    {
+      "label": "Technology education for senior citizens",
+      "file_type": "image",
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_senior_tech_education",
+      "community": 5
+    },
+    {
+      "label": "Website redesign (before/after comparison)",
+      "file_type": "image",
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_website_redesign",
+      "community": 5
+    },
+    {
+      "label": "Sustainability and renewable energy",
+      "file_type": "image",
+      "source_file": "public/images/case-studies/nature-sustainability-hero.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_sustainability",
+      "community": 5
+    },
+    {
+      "label": "Blog images directory",
+      "file_type": "image",
+      "source_file": "public/images/blog/",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "dir_blog_images",
+      "community": 13
+    },
+    {
+      "label": "Case studies images directory",
+      "file_type": "image",
+      "source_file": "public/images/case-studies/",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "dir_case_study_images",
+      "community": 5
+    },
+    {
+      "label": "Impact Dashboard Mockup - Tree Transparency Report showing 17,001 trees planted with partner stats and climate outcomes",
       "file_type": "image",
       "source_file": "public/images/initiatives/Impact_Dashboard_Mockup.webp",
       "source_location": null,
@@ -1046,11 +1255,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "impact_dashboard_mockup",
-      "community": 0
+      "id": "img:impact-dashboard-mockup",
+      "community": 2
     },
     {
-      "label": "Mangrove Tree Photograph",
+      "label": "Photograph of mangrove trees with visible aerial root systems in a tropical coastal environment",
       "file_type": "image",
       "source_file": "public/images/initiatives/mangrove-tree.webp",
       "source_location": null,
@@ -1058,23 +1267,23 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "mangrove_tree",
-      "community": 0
+      "id": "img:mangrove-tree",
+      "community": 2
     },
     {
-      "label": "Sustainable Technology Week Proclamation",
+      "label": "Official City of Vancouver Proclamation declaring October 20-25, 2025 as Sustainable Technology Week, signed by Mayor Ken Sim",
       "file_type": "image",
       "source_file": "public/images/initiatives/Sustainable-Technology-Week.webp",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
-      "author": "Ken Sim, Mayor of Vancouver",
+      "author": null,
       "contributor": null,
-      "id": "sustainable_technology_week",
-      "community": 0
+      "id": "img:sustainable-technology-week-proclamation",
+      "community": 2
     },
     {
-      "label": "Tree-Nation Partnership Banner",
+      "label": "Tree-Nation collaboration banner showing Tree-Nation logo with text 'In Collaboration With tree-nation'",
       "file_type": "image",
       "source_file": "public/images/initiatives/tree-nation-partnership.webp",
       "source_location": null,
@@ -1082,11 +1291,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "tree_nation_partnership",
-      "community": 0
+      "id": "img:tree-nation-partnership",
+      "community": 2
     },
     {
-      "label": "Oasis of Change Icon Logo (SVG)",
+      "label": "Oasis of Change icon-only SVG logo (860x900 vector mark without wordmark)",
       "file_type": "image",
       "source_file": "public/images/logo/oasis-of-change-icon.svg",
       "source_location": null,
@@ -1094,11 +1303,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "oasis_of_change_icon",
-      "community": 0
+      "id": "img:oasis-of-change-icon",
+      "community": 2
     },
     {
-      "label": "Oasis of Change Official Logo (SVG)",
+      "label": "Oasis of Change official full SVG logo with wordmark (6000x1194 wide-format vector)",
       "file_type": "image",
       "source_file": "public/images/logo/Oasis_of_Change-official.svg",
       "source_location": null,
@@ -1106,11 +1315,23 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "oasis_of_change_official_logo",
-      "community": 0
+      "id": "img:oasis-of-change-official-logo",
+      "community": 2
     },
     {
-      "label": "Stanley Park Ecology Society Logo",
+      "label": "Web Ready logo - white bold text on green background with a small plant sprout growing from the letter 'y'",
+      "file_type": "image",
+      "source_file": "public/images/logo/web-ready-logo.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img:web-ready-logo",
+      "community": 2
+    },
+    {
+      "label": "Stanley Park Ecology Society logo with green sphere and black text",
       "file_type": "image",
       "source_file": "public/images/partners/stanley-park-ecology-society-logo.webp",
       "source_location": null,
@@ -1118,11 +1339,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "stanley_park_ecology_society_logo",
-      "community": 0
+      "id": "img:stanley-park-ecology-society-logo",
+      "community": 2
     },
     {
-      "label": "Sustainable WWW Logo",
+      "label": "Sustainable WWW logo with leaf icon in circle and bold black text",
       "file_type": "image",
       "source_file": "public/images/partners/sustainable-www-logo.webp",
       "source_location": null,
@@ -1130,11 +1351,11 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "sustainable_www_logo",
-      "community": 0
+      "id": "img:sustainable-www-logo",
+      "community": 2
     },
     {
-      "label": "West End Seniors' Network (WESN) Logo",
+      "label": "West End Seniors' Network (WESN) colour logo with teal and gold abstract figures",
       "file_type": "image",
       "source_file": "public/images/partners/WESN-Colour-Logo-scaled.webp",
       "source_location": null,
@@ -1142,92 +1363,332 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "wesn_logo",
-      "community": 0
-    },
-    {
-      "label": "Oasis of Change Inc.",
-      "file_type": "document",
-      "source_file": "public/images/initiatives/Sustainable-Technology-Week.webp",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "org_oasis_of_change",
-      "community": 0
+      "id": "img:wesn-logo",
+      "community": 2
     },
     {
       "label": "Tree-Nation",
-      "file_type": "document",
+      "file_type": "image",
       "source_file": "public/images/initiatives/tree-nation-partnership.webp",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "org_tree_nation",
-      "community": 0
-    },
-    {
-      "label": "Stanley Park Ecology Society",
-      "file_type": "document",
-      "source_file": "public/images/partners/stanley-park-ecology-society-logo.webp",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "org_stanley_park_ecology",
-      "community": 0
-    },
-    {
-      "label": "Sustainable WWW",
-      "file_type": "document",
-      "source_file": "public/images/partners/sustainable-www-logo.webp",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "org_sustainable_www",
-      "community": 0
-    },
-    {
-      "label": "West End Seniors' Network",
-      "file_type": "document",
-      "source_file": "public/images/partners/WESN-Colour-Logo-scaled.webp",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "org_wesn",
-      "community": 0
+      "id": "org:tree-nation",
+      "community": 2
     },
     {
       "label": "City of Vancouver",
-      "file_type": "document",
+      "file_type": "image",
       "source_file": "public/images/initiatives/Sustainable-Technology-Week.webp",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "city_of_vancouver",
-      "community": 0
+      "id": "org:city-of-vancouver",
+      "community": 2
     },
     {
-      "label": "Tree Planting Initiative (17,001 Trees)",
-      "file_type": "document",
+      "label": "Ken Sim, Mayor of Vancouver",
+      "file_type": "image",
+      "source_file": "public/images/initiatives/Sustainable-Technology-Week.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "person:ken-sim",
+      "community": 2
+    },
+    {
+      "label": "Sustainable Technology Week (October 20-25, 2025)",
+      "file_type": "image",
+      "source_file": "public/images/initiatives/Sustainable-Technology-Week.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "initiative:sustainable-technology-week",
+      "community": 2
+    },
+    {
+      "label": "Tree Planting Initiative - 17,001 trees planted across 90+ countries",
+      "file_type": "image",
       "source_file": "public/images/initiatives/Impact_Dashboard_Mockup.webp",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "initiative_tree_planting",
-      "community": 0
+      "id": "initiative:tree-planting",
+      "community": 2
+    },
+    {
+      "label": "Stanley Park Ecology Society",
+      "file_type": "image",
+      "source_file": "public/images/partners/stanley-park-ecology-society-logo.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "org:stanley-park-ecology-society",
+      "community": 2
+    },
+    {
+      "label": "Sustainable WWW",
+      "file_type": "image",
+      "source_file": "public/images/partners/sustainable-www-logo.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "org:sustainable-www",
+      "community": 2
+    },
+    {
+      "label": "West End Seniors' Network (WESN)",
+      "file_type": "image",
+      "source_file": "public/images/partners/WESN-Colour-Logo-scaled.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "org:wesn",
+      "community": 2
+    },
+    {
+      "label": "Web Ready (sustainable web design brand/tool)",
+      "file_type": "image",
+      "source_file": "public/images/logo/web-ready-logo.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "brand:web-ready",
+      "community": 2
+    },
+    {
+      "label": "Case Studies Page - Desktop V2 (Polished Grid Layout)",
+      "file_type": "image",
+      "source_file": "case-studies-desktop-v2.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img:case-studies-desktop-v2",
+      "community": 3
+    },
+    {
+      "label": "Case Studies Page - Desktop V3 (Final Card Layout with Dark Theme)",
+      "file_type": "image",
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img:case-studies-desktop-v3",
+      "community": 3
+    },
+    {
+      "label": "Case Studies Page - Desktop V1 (Initial Layout with Overlapping Text)",
+      "file_type": "image",
+      "source_file": "case-studies-desktop.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img:case-studies-desktop",
+      "community": 3
+    },
+    {
+      "label": "Case Studies Page - Full Mobile/Narrow Layout (Single Column Stack)",
+      "file_type": "image",
+      "source_file": "case-studies-full.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img:case-studies-full",
+      "community": 3
+    },
+    {
+      "label": "Case Studies Landing Page",
+      "file_type": "image",
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "page:case-studies",
+      "community": 3
+    },
+    {
+      "label": "Dark Background Theme (Black/Near-Black)",
+      "file_type": "image",
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "ui:dark-theme",
+      "community": 3
+    },
+    {
+      "label": "Hero Section - 'Real results from sustainable digital projects'",
+      "file_type": "image",
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "ui:hero-section-case-studies",
+      "community": 3
+    },
+    {
+      "label": "Featured Case Study Card (Large, Horizontal with Image and Stats)",
+      "file_type": "image",
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "ui:featured-case-study-card",
+      "community": 3
+    },
+    {
+      "label": "Secondary Case Study Cards (Two-Column Grid Below Featured)",
+      "file_type": "image",
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "ui:secondary-case-study-cards",
+      "community": 3
+    },
+    {
+      "label": "Top Navigation Bar with Logo and Menu Items",
+      "file_type": "image",
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "ui:navigation-bar",
+      "community": 3
+    },
+    {
+      "label": "Footer with Multi-Column Links (General, Initiatives, Company, Accountability)",
+      "file_type": "image",
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "ui:footer-section",
+      "community": 3
+    },
+    {
+      "label": "'Support Our Mission' CTA Button in Navigation",
+      "file_type": "image",
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "ui:support-mission-cta",
+      "community": 3
+    },
+    {
+      "label": "Mittler Senior Technology Case Study - 98% Reduction in Carbon, Energy, and Water",
+      "file_type": "image",
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "casestudy:mittler-senior-tech",
+      "community": 3
+    },
+    {
+      "label": "Oasis of Change Website Rebuild - Sustainability-First",
+      "file_type": "image",
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "casestudy:oasis-website",
+      "community": 3
+    },
+    {
+      "label": "Denman Place Mall Website Redesign - Faster, Clearer Visitor Experience",
+      "file_type": "image",
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "casestudy:denman-place-mall",
+      "community": 3
+    },
+    {
+      "label": "Breadcrumb Navigation (Home > Case Studies)",
+      "file_type": "image",
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "ui:breadcrumb-nav",
+      "community": 3
+    },
+    {
+      "label": "'Featured Case Study' Badge/Label",
+      "file_type": "image",
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "ui:featured-badge",
+      "community": 3
+    },
+    {
+      "label": "Card Navigation Arrow Icon (Right Arrow on Hover)",
+      "file_type": "image",
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "design:card-hover-arrow",
+      "community": 3
     }
   ],
   "links": [
@@ -1294,56 +1755,560 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L94",
+      "weight": 1.0,
+      "_src": "i18n",
+      "_tgt": "i18n_loadlang",
+      "source": "i18n",
+      "target": "i18n_loadlang",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L98",
+      "weight": 1.0,
+      "_src": "i18n",
+      "_tgt": "i18n_savelang",
+      "source": "i18n",
+      "target": "i18n_savelang",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L101",
+      "weight": 1.0,
+      "_src": "i18n",
+      "_tgt": "i18n_findlang",
+      "source": "i18n",
+      "target": "i18n_findlang",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L106",
+      "weight": 1.0,
+      "_src": "i18n",
+      "_tgt": "i18n_geturllang",
+      "source": "i18n",
+      "target": "i18n_geturllang",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L117",
+      "weight": 1.0,
+      "_src": "i18n",
+      "_tgt": "i18n_setgtcookie",
+      "source": "i18n",
+      "target": "i18n_setgtcookie",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L132",
+      "weight": 1.0,
+      "_src": "i18n",
+      "_tgt": "i18n_loadgoogletranslate",
+      "source": "i18n",
+      "target": "i18n_loadgoogletranslate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L162",
+      "weight": 1.0,
+      "_src": "i18n",
+      "_tgt": "i18n_waitforgtcombo",
+      "source": "i18n",
+      "target": "i18n_waitforgtcombo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L172",
+      "weight": 1.0,
+      "_src": "i18n",
+      "_tgt": "i18n_injectgthidecss",
+      "source": "i18n",
+      "target": "i18n_injectgthidecss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L188",
+      "weight": 1.0,
+      "_src": "i18n",
+      "_tgt": "i18n_norm",
+      "source": "i18n",
+      "target": "i18n_norm",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L190",
+      "weight": 1.0,
+      "_src": "i18n",
+      "_tgt": "i18n_applydictionary",
+      "source": "i18n",
+      "target": "i18n_applydictionary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L238",
+      "weight": 1.0,
+      "_src": "i18n",
+      "_tgt": "i18n_globesvg",
+      "source": "i18n",
+      "target": "i18n_globesvg",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L244",
+      "weight": 1.0,
+      "_src": "i18n",
+      "_tgt": "i18n_chevronsvg",
+      "source": "i18n",
+      "target": "i18n_chevronsvg",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L250",
+      "weight": 1.0,
+      "_src": "i18n",
+      "_tgt": "i18n_checksvg",
+      "source": "i18n",
+      "target": "i18n_checksvg",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L256",
+      "weight": 1.0,
+      "_src": "i18n",
+      "_tgt": "i18n_builddesktopswitcher",
+      "source": "i18n",
+      "target": "i18n_builddesktopswitcher",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L302",
+      "weight": 1.0,
+      "_src": "i18n",
+      "_tgt": "i18n_buildmobileswitcher",
+      "source": "i18n",
+      "target": "i18n_buildmobileswitcher",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L325",
+      "weight": 1.0,
+      "_src": "i18n",
+      "_tgt": "i18n_inject",
+      "source": "i18n",
+      "target": "i18n_inject",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L361",
+      "weight": 1.0,
+      "_src": "i18n",
+      "_tgt": "i18n_opendropdown",
+      "source": "i18n",
+      "target": "i18n_opendropdown",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L369",
+      "weight": 1.0,
+      "_src": "i18n",
+      "_tgt": "i18n_closedropdown",
+      "source": "i18n",
+      "target": "i18n_closedropdown",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L377",
+      "weight": 1.0,
+      "_src": "i18n",
+      "_tgt": "i18n_initdesktopdropdown",
+      "source": "i18n",
+      "target": "i18n_initdesktopdropdown",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L400",
+      "weight": 1.0,
+      "_src": "i18n",
+      "_tgt": "i18n_initmobilepills",
+      "source": "i18n",
+      "target": "i18n_initmobilepills",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L409",
+      "weight": 1.0,
+      "_src": "i18n",
+      "_tgt": "i18n_initclickoutside",
+      "source": "i18n",
+      "target": "i18n_initclickoutside",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L418",
+      "weight": 1.0,
+      "_src": "i18n",
+      "_tgt": "i18n_updateswitcherui",
+      "source": "i18n",
+      "target": "i18n_updateswitcherui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L442",
+      "weight": 1.0,
+      "_src": "i18n",
+      "_tgt": "i18n_switchto",
+      "source": "i18n",
+      "target": "i18n_switchto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L95",
+      "weight": 1.0,
+      "_src": "i18n_loadlang",
+      "_tgt": "i18n_findlang",
+      "source": "i18n_loadlang",
+      "target": "i18n_findlang",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L444",
+      "weight": 1.0,
+      "_src": "i18n_switchto",
+      "_tgt": "i18n_savelang",
+      "source": "i18n_savelang",
+      "target": "i18n_switchto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L112",
+      "weight": 1.0,
+      "_src": "i18n_geturllang",
+      "_tgt": "i18n_findlang",
+      "source": "i18n_findlang",
+      "target": "i18n_geturllang",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L267",
+      "weight": 1.0,
+      "_src": "i18n_builddesktopswitcher",
+      "_tgt": "i18n_findlang",
+      "source": "i18n_findlang",
+      "target": "i18n_builddesktopswitcher",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L419",
+      "weight": 1.0,
+      "_src": "i18n_updateswitcherui",
+      "_tgt": "i18n_findlang",
+      "source": "i18n_findlang",
+      "target": "i18n_updateswitcherui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L445",
+      "weight": 1.0,
+      "_src": "i18n_switchto",
+      "_tgt": "i18n_setgtcookie",
+      "source": "i18n_setgtcookie",
+      "target": "i18n_switchto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L147",
+      "weight": 1.0,
+      "_src": "i18n_loadgoogletranslate",
+      "_tgt": "i18n_waitforgtcombo",
+      "source": "i18n_loadgoogletranslate",
+      "target": "i18n_waitforgtcombo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L212",
+      "weight": 1.0,
+      "_src": "i18n_applydictionary",
+      "_tgt": "i18n_norm",
+      "source": "i18n_norm",
+      "target": "i18n_applydictionary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L267",
+      "weight": 1.0,
+      "_src": "i18n_builddesktopswitcher",
+      "_tgt": "i18n_globesvg",
+      "source": "i18n_globesvg",
+      "target": "i18n_builddesktopswitcher",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L308",
+      "weight": 1.0,
+      "_src": "i18n_buildmobileswitcher",
+      "_tgt": "i18n_globesvg",
+      "source": "i18n_globesvg",
+      "target": "i18n_buildmobileswitcher",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L267",
+      "weight": 1.0,
+      "_src": "i18n_builddesktopswitcher",
+      "_tgt": "i18n_chevronsvg",
+      "source": "i18n_chevronsvg",
+      "target": "i18n_builddesktopswitcher",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L288",
+      "weight": 1.0,
+      "_src": "i18n_builddesktopswitcher",
+      "_tgt": "i18n_checksvg",
+      "source": "i18n_checksvg",
+      "target": "i18n_builddesktopswitcher",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L431",
+      "weight": 1.0,
+      "_src": "i18n_updateswitcherui",
+      "_tgt": "i18n_checksvg",
+      "source": "i18n_checksvg",
+      "target": "i18n_updateswitcherui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L341",
+      "weight": 1.0,
+      "_src": "i18n_inject",
+      "_tgt": "i18n_builddesktopswitcher",
+      "source": "i18n_builddesktopswitcher",
+      "target": "i18n_inject",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L348",
+      "weight": 1.0,
+      "_src": "i18n_inject",
+      "_tgt": "i18n_buildmobileswitcher",
+      "source": "i18n_buildmobileswitcher",
+      "target": "i18n_inject",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L352",
+      "weight": 1.0,
+      "_src": "i18n_inject",
+      "_tgt": "i18n_initdesktopdropdown",
+      "source": "i18n_inject",
+      "target": "i18n_initdesktopdropdown",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L353",
+      "weight": 1.0,
+      "_src": "i18n_inject",
+      "_tgt": "i18n_initmobilepills",
+      "source": "i18n_inject",
+      "target": "i18n_initmobilepills",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L354",
+      "weight": 1.0,
+      "_src": "i18n_inject",
+      "_tgt": "i18n_initclickoutside",
+      "source": "i18n_inject",
+      "target": "i18n_initclickoutside",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L383",
+      "weight": 1.0,
+      "_src": "i18n_initdesktopdropdown",
+      "_tgt": "i18n_opendropdown",
+      "source": "i18n_opendropdown",
+      "target": "i18n_initdesktopdropdown",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L383",
+      "weight": 1.0,
+      "_src": "i18n_initdesktopdropdown",
+      "_tgt": "i18n_closedropdown",
+      "source": "i18n_closedropdown",
+      "target": "i18n_initdesktopdropdown",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L413",
+      "weight": 1.0,
+      "_src": "i18n_initclickoutside",
+      "_tgt": "i18n_closedropdown",
+      "source": "i18n_closedropdown",
+      "target": "i18n_initclickoutside",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L390",
+      "weight": 1.0,
+      "_src": "i18n_initdesktopdropdown",
+      "_tgt": "i18n_switchto",
+      "source": "i18n_initdesktopdropdown",
+      "target": "i18n_switchto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "public\\js\\i18n.js",
+      "source_location": "L404",
+      "weight": 1.0,
+      "_src": "i18n_initmobilepills",
+      "_tgt": "i18n_switchto",
+      "source": "i18n_initmobilepills",
+      "target": "i18n_switchto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "public\\js\\site.js",
       "source_location": "L4",
-      "weight": 1.0,
-      "_src": "site",
-      "_tgt": "site_injectmobilenavfocusstyles",
-      "source": "site",
-      "target": "site_injectmobilenavfocusstyles",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "public\\js\\site.js",
-      "source_location": "L16",
-      "weight": 1.0,
-      "_src": "site",
-      "_tgt": "site_injectmobilenavscrollbarstyles",
-      "source": "site",
-      "target": "site_injectmobilenavscrollbarstyles",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "public\\js\\site.js",
-      "source_location": "L27",
-      "weight": 1.0,
-      "_src": "site",
-      "_tgt": "site_injectfooterexternallinkiconstyles",
-      "source": "site",
-      "target": "site_injectfooterexternallinkiconstyles",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "public\\js\\site.js",
-      "source_location": "L63",
-      "weight": 1.0,
-      "_src": "site",
-      "_tgt": "site_injectnavdesktopdropdownstyles",
-      "source": "site",
-      "target": "site_injectnavdesktopdropdownstyles",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "public\\js\\site.js",
-      "source_location": "L201",
       "weight": 1.0,
       "_src": "site",
       "_tgt": "site_initmobilenav",
@@ -1355,7 +2320,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "public\\js\\site.js",
-      "source_location": "L516",
+      "source_location": "L337",
       "weight": 1.0,
       "_src": "site",
       "_tgt": "site_initaccordion",
@@ -1367,7 +2332,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "public\\js\\site.js",
-      "source_location": "L578",
+      "source_location": "L399",
       "weight": 1.0,
       "_src": "site",
       "_tgt": "site_initblogtoggle",
@@ -1379,7 +2344,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "public\\js\\site.js",
-      "source_location": "L590",
+      "source_location": "L411",
       "weight": 1.0,
       "_src": "site",
       "_tgt": "site_initimageslider",
@@ -1391,7 +2356,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "public\\js\\site.js",
-      "source_location": "L630",
+      "source_location": "L451",
       "weight": 1.0,
       "_src": "site",
       "_tgt": "site_initsmoothscroll",
@@ -1403,36 +2368,12 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "public\\js\\site.js",
-      "source_location": "L649",
+      "source_location": "L470",
       "weight": 1.0,
       "_src": "site",
       "_tgt": "site_logcuriouscodermessage",
       "source": "site",
       "target": "site_logcuriouscodermessage",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "source_file": "public\\js\\site.js",
-      "source_location": "L202",
-      "weight": 1.0,
-      "_src": "site_initmobilenav",
-      "_tgt": "site_injectmobilenavfocusstyles",
-      "source": "site_injectmobilenavfocusstyles",
-      "target": "site_initmobilenav",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "source_file": "public\\js\\site.js",
-      "source_location": "L203",
-      "weight": 1.0,
-      "_src": "site_initmobilenav",
-      "_tgt": "site_injectmobilenavscrollbarstyles",
-      "source": "site_injectmobilenavscrollbarstyles",
-      "target": "site_initmobilenav",
       "confidence_score": 1.0
     },
     {
@@ -1856,769 +2797,1371 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "references",
-      "confidence": "EXTRACTED",
+      "relationship": "depends_on",
+      "type": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "line 3",
-      "weight": 1.0,
-      "_src": "claude_md_project_config",
-      "_tgt": "entity_graphify_knowledge_graph",
-      "source": "claude_md_project_config",
-      "target": "entity_graphify_knowledge_graph"
+      "detail": "Loads Google Translate script and uses google.translate.TranslateElement API",
+      "_src": "i18n_module",
+      "_tgt": "google_translate_integration",
+      "source": "i18n_module",
+      "target": "google_translate_integration"
     },
     {
-      "relation": "references",
-      "confidence": "EXTRACTED",
+      "relationship": "uses_notranslate_marker",
+      "type": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "line 6",
-      "weight": 1.0,
-      "_src": "claude_md_project_config",
-      "_tgt": "graph_report_md",
-      "source": "claude_md_project_config",
-      "target": "graph_report_md"
+      "detail": "After applying dictionary translations, elements are marked with notranslate class to prevent GT from double-translating",
+      "_src": "i18n_module",
+      "_tgt": "curated_dictionary",
+      "source": "i18n_module",
+      "target": "curated_dictionary"
     },
     {
-      "relation": "references",
-      "confidence": "EXTRACTED",
+      "relationship": "implements",
+      "type": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "line 8",
-      "weight": 1.0,
-      "_src": "claude_md_project_config",
-      "_tgt": "entity_graphify_rebuild_command",
-      "source": "claude_md_project_config",
-      "target": "entity_graphify_rebuild_command"
+      "detail": "Uses localStorage (ooc-lang) and googtrans cookie for language persistence across page loads",
+      "_src": "i18n_module",
+      "_tgt": "lang_persistence",
+      "source": "i18n_module",
+      "target": "lang_persistence"
     },
     {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "line 6",
-      "weight": 1.0,
-      "_src": "rationale_read_graph_report_first",
-      "_tgt": "graph_report_md",
-      "source": "graph_report_md",
-      "target": "rationale_read_graph_report_first"
+      "relationship": "coordinates_with",
+      "type": "INFERRED",
+      "confidence_score": 0.8,
+      "detail": "i18n injects switcher into nav structure built by site.js, dispatches resize event to trigger nav overflow recheck",
+      "_src": "i18n_module",
+      "_tgt": "site_js_module",
+      "source": "i18n_module",
+      "target": "site_js_module"
     },
     {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/GRAPH_REPORT.md",
-      "source_location": "God Nodes",
-      "weight": 1.0,
-      "_src": "graph_report_md",
-      "_tgt": "entity_oasis_of_change",
-      "source": "graph_report_md",
-      "target": "entity_oasis_of_change"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/GRAPH_REPORT.md",
-      "source_location": "God Nodes",
-      "weight": 1.0,
-      "_src": "graph_report_md",
-      "_tgt": "entity_gabriel_dalton",
-      "source": "graph_report_md",
-      "target": "entity_gabriel_dalton"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/GRAPH_REPORT.md",
-      "source_location": "Community 7",
-      "weight": 1.0,
-      "_src": "graph_report_md",
-      "_tgt": "entity_mittler_senior_technology",
-      "source": "graph_report_md",
-      "target": "entity_mittler_senior_technology"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "line 7",
-      "weight": 1.0,
-      "_src": "rationale_navigate_wiki_index",
-      "_tgt": "entity_graphify_knowledge_graph",
-      "source": "entity_graphify_knowledge_graph",
-      "target": "rationale_navigate_wiki_index"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "line 8",
-      "weight": 1.0,
-      "_src": "rationale_rebuild_graph_after_code_changes",
-      "_tgt": "entity_graphify_rebuild_command",
-      "source": "rationale_rebuild_graph_after_code_changes",
-      "target": "entity_graphify_rebuild_command"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
+      "relationship": "enhances",
+      "type": "INFERRED",
       "confidence_score": 0.85,
-      "source_file": "public/images/about/about-page-block-2.webp",
-      "source_location": null,
-      "weight": 0.8,
-      "_src": "concept_founded_2024",
-      "_tgt": "entity_oasis_of_change",
-      "source": "entity_oasis_of_change",
-      "target": "concept_founded_2024"
+      "detail": "Provides trilingual support (EN/FR/ES) for the Oasis of Change website",
+      "_src": "i18n_module",
+      "_tgt": "oasis_of_change_website",
+      "source": "i18n_module",
+      "target": "oasis_of_change_website"
     },
     {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "graphify-out/GRAPH_REPORT.md",
-      "source_location": "Community 1",
-      "weight": 0.9,
-      "_src": "entity_gabriel_dalton",
-      "_tgt": "entity_oasis_of_change",
-      "source": "entity_oasis_of_change",
-      "target": "entity_gabriel_dalton"
+      "relationship": "implements",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "initMobileNav() contains the three-stage overflow measurement and collapse logic",
+      "_src": "site_js_module",
+      "_tgt": "nav_overflow_guard",
+      "source": "site_js_module",
+      "target": "nav_overflow_guard"
     },
     {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
+      "relationship": "implements",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "initImageSlider() creates pointer-drag before/after comparison widgets",
+      "_src": "site_js_module",
+      "_tgt": "image_compare_widget",
+      "source": "site_js_module",
+      "target": "image_compare_widget"
+    },
+    {
+      "relationship": "implements",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "logCuriousCoderMessage() prints ASCII logo and sustainability message to console",
+      "_src": "site_js_module",
+      "_tgt": "console_easter_egg",
+      "source": "site_js_module",
+      "target": "console_easter_egg"
+    },
+    {
+      "relationship": "implements",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "prefersReducedMotion() check gates all nav panel animations",
+      "_src": "site_js_module",
+      "_tgt": "prefers_reduced_motion",
+      "source": "site_js_module",
+      "target": "prefers_reduced_motion"
+    },
+    {
+      "relationship": "references",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "Allowlist comments explicitly state classes are injected via site.js (nav dropdown, impact stats, ticker, footer)",
+      "_src": "custom_classes_allowlist",
+      "_tgt": "site_js_module",
+      "source": "site_js_module",
+      "target": "custom_classes_allowlist"
+    },
+    {
+      "relationship": "enhances",
+      "type": "INFERRED",
+      "confidence_score": 0.85,
+      "detail": "Provides core interactive behaviors (nav, accordion, slider) for the website",
+      "_src": "site_js_module",
+      "_tgt": "oasis_of_change_website",
+      "source": "site_js_module",
+      "target": "oasis_of_change_website"
+    },
+    {
+      "relationship": "reads",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "extract_css_classes() parses public/css/tailwind/tailwind.min.css",
+      "_src": "audit_css_script",
+      "_tgt": "tailwind_min_css",
+      "source": "audit_css_script",
+      "target": "tailwind_min_css"
+    },
+    {
+      "relationship": "contains",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "CUSTOM_CLASSES set defines ~35 JS-injected class names excluded from missing-class reports",
+      "_src": "audit_css_script",
+      "_tgt": "custom_classes_allowlist",
+      "source": "audit_css_script",
+      "target": "custom_classes_allowlist"
+    },
+    {
+      "relationship": "validates",
+      "type": "INFERRED",
       "confidence_score": 0.8,
-      "source_file": "graphify-out/GRAPH_REPORT.md",
-      "source_location": "hyper_mst_before_after_comparison",
-      "weight": 0.7,
-      "_src": "entity_mittler_senior_technology",
-      "_tgt": "entity_oasis_of_change",
-      "source": "entity_oasis_of_change",
-      "target": "entity_mittler_senior_technology"
+      "detail": "Audits the website CSS to detect visually broken classes and unused CSS bloat",
+      "_src": "audit_css_script",
+      "_tgt": "oasis_of_change_website",
+      "source": "audit_css_script",
+      "target": "oasis_of_change_website"
     },
     {
-      "relation": "references",
-      "confidence": "EXTRACTED",
+      "relationship": "references",
+      "type": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "public/images/about/Gabriel-Dalton.webp",
-      "source_location": null,
-      "weight": 1.0,
-      "_src": "gabriel_dalton_portrait",
-      "_tgt": "entity_gabriel_dalton",
-      "source": "entity_gabriel_dalton",
-      "target": "gabriel_dalton_portrait"
+      "detail": "Instructs to read graphify-out/GRAPH_REPORT.md before answering architecture questions",
+      "_src": "claude_md_config",
+      "_tgt": "graph_report",
+      "source": "claude_md_config",
+      "target": "graph_report"
     },
     {
-      "relation": "references",
-      "confidence": "EXTRACTED",
+      "relationship": "related_to",
+      "type": "INFERRED",
+      "confidence_score": 0.7,
+      "detail": "Graph report documents MST Website Before/After Case Study Comparison hyperedge; image compare widget provides the UI for such comparisons",
+      "_src": "image_compare_widget",
+      "_tgt": "graph_report",
+      "source": "graph_report",
+      "target": "image_compare_widget"
+    },
+    {
+      "relationship": "references",
+      "type": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "public/images/about/Gabriel_Dalton_TEDx_Talk.webp",
-      "source_location": null,
-      "weight": 1.0,
-      "_src": "gabriel_dalton_tedx_talk",
-      "_tgt": "entity_gabriel_dalton",
-      "source": "entity_gabriel_dalton",
-      "target": "gabriel_dalton_tedx_talk"
+      "detail": "Sitemap directive points to https://oasisofchange.com/sitemap.xml",
+      "_src": "robots_txt",
+      "_tgt": "sitemap_xml",
+      "source": "robots_txt",
+      "target": "sitemap_xml"
     },
     {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "public/images/about/Gabriel_Dalton_TEDx_Talk.webp",
-      "source_location": "slide background",
-      "weight": 0.7,
-      "_src": "entity_gabriel_dalton",
-      "_tgt": "concept_ai_literacy",
-      "source": "entity_gabriel_dalton",
-      "target": "concept_ai_literacy"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
+      "relationship": "configures",
+      "type": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign.webp",
-      "source_location": "header text",
-      "weight": 1.0,
-      "_src": "mst_after_redesign",
-      "_tgt": "entity_mittler_senior_technology",
-      "source": "entity_mittler_senior_technology",
-      "target": "mst_after_redesign"
+      "detail": "Allows all user-agents to crawl all paths of the website",
+      "_src": "robots_txt",
+      "_tgt": "oasis_of_change_website",
+      "source": "robots_txt",
+      "target": "oasis_of_change_website"
     },
     {
-      "relation": "references",
-      "confidence": "EXTRACTED",
+      "relationship": "rationale_for",
+      "type": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "public/images/case-studies/mittler-senior-tech-before-redesign.webp",
-      "source_location": "header text",
-      "weight": 1.0,
-      "_src": "mst_before_redesign",
-      "_tgt": "entity_mittler_senior_technology",
-      "source": "entity_mittler_senior_technology",
-      "target": "mst_before_redesign"
+      "detail": "Explains GT role as fallback: handles ALL remaining page content that the dictionary does not cover",
+      "_src": "rationale_dictionary_before_gt",
+      "_tgt": "google_translate_integration",
+      "source": "google_translate_integration",
+      "target": "rationale_dictionary_before_gt"
     },
     {
-      "relation": "references",
-      "confidence": "EXTRACTED",
+      "relationship": "rationale_for",
+      "type": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "public/images/about/Gabriel_Dalton_TEDx_Talk.webp",
-      "source_location": null,
-      "weight": 1.0,
-      "_src": "gabriel_dalton_tedx_talk",
-      "_tgt": "entity_tedx",
-      "source": "entity_tedx",
-      "target": "gabriel_dalton_tedx_talk"
+      "detail": "injectGTHideCSS() hides GT default chrome to maintain clean design while leveraging GT translation",
+      "_src": "rationale_gt_hide_css",
+      "_tgt": "google_translate_integration",
+      "source": "google_translate_integration",
+      "target": "rationale_gt_hide_css"
     },
     {
-      "relation": "conceptually_related_to",
+      "relationship": "complements",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "Dictionary handles high-visibility nav/footer strings instantly; GT handles the long tail of page content",
+      "_src": "curated_dictionary",
+      "_tgt": "google_translate_integration",
+      "source": "google_translate_integration",
+      "target": "curated_dictionary"
+    },
+    {
+      "relationship": "rationale_for",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "Explains why curated dictionary is applied before Google Translate: instant rendering, no flash of untranslated content",
+      "_src": "rationale_dictionary_before_gt",
+      "_tgt": "curated_dictionary",
+      "source": "curated_dictionary",
+      "target": "rationale_dictionary_before_gt"
+    },
+    {
+      "relationship": "rationale_for",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "Code comments explain the three-stage approach: Stage 1 full logo, Stage 2 compact logo to free space, Stage 3 hamburger collapse",
+      "_src": "rationale_nav_overflow_stages",
+      "_tgt": "nav_overflow_guard",
+      "source": "nav_overflow_guard",
+      "target": "rationale_nav_overflow_stages"
+    },
+    {
+      "relationship": "brand_expression_of",
+      "type": "INFERRED",
+      "confidence_score": 0.75,
+      "detail": "ASCII logo and conscious coder messaging reinforces Oasis of Change sustainability brand identity to developers",
+      "_src": "console_easter_egg",
+      "_tgt": "oasis_of_change_website",
+      "source": "console_easter_egg",
+      "target": "oasis_of_change_website"
+    },
+    {
+      "relationship": "rationale_for",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "Comments explain these are expected - styled elsewhere, preventing false positives in the audit",
+      "_src": "rationale_custom_class_exclusion",
+      "_tgt": "custom_classes_allowlist",
+      "source": "custom_classes_allowlist",
+      "target": "rationale_custom_class_exclusion"
+    },
+    {
+      "relation": "USED_IN",
       "confidence": "INFERRED",
       "confidence_score": 0.9,
       "source_file": "public/images/about/about-page-block-1.webp",
       "source_location": null,
-      "weight": 0.9,
-      "_src": "about_page_block_1",
-      "_tgt": "page_about",
-      "source": "about_page_block_1",
-      "target": "page_about"
+      "weight": 1.0,
+      "_src": "img:about-page-block-1",
+      "_tgt": "page:about",
+      "source": "img:about-page-block-1",
+      "target": "page:about"
     },
     {
-      "relation": "conceptually_related_to",
+      "relation": "EXHIBITS_STYLE",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/about/about-page-block-1.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img:about-page-block-1",
+      "_tgt": "style:warm-neutral-palette",
+      "source": "img:about-page-block-1",
+      "target": "style:warm-neutral-palette"
+    },
+    {
+      "relation": "USED_IN",
       "confidence": "INFERRED",
       "confidence_score": 0.9,
       "source_file": "public/images/about/about-page-block-2.webp",
       "source_location": null,
-      "weight": 0.9,
-      "_src": "about_page_block_2",
-      "_tgt": "page_about",
-      "source": "about_page_block_2",
-      "target": "page_about"
+      "weight": 1.0,
+      "_src": "img:about-page-block-2",
+      "_tgt": "page:about",
+      "source": "img:about-page-block-2",
+      "target": "page:about"
     },
     {
-      "relation": "references",
+      "relation": "REFERENCES",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "public/images/about/about-page-block-2.webp",
-      "source_location": "text overlay",
+      "source_location": null,
       "weight": 1.0,
-      "_src": "about_page_block_2",
-      "_tgt": "concept_founded_2024",
-      "source": "about_page_block_2",
-      "target": "concept_founded_2024"
+      "_src": "img:about-page-block-2",
+      "_tgt": "org:oasis-of-change",
+      "source": "img:about-page-block-2",
+      "target": "org:oasis-of-change"
     },
     {
-      "relation": "conceptually_related_to",
+      "relation": "EXHIBITS_STYLE",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/about/about-page-block-2.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img:about-page-block-2",
+      "_tgt": "style:warm-neutral-palette",
+      "source": "img:about-page-block-2",
+      "target": "style:warm-neutral-palette"
+    },
+    {
+      "relation": "USED_IN",
       "confidence": "INFERRED",
       "confidence_score": 0.9,
       "source_file": "public/images/about/Gabriel-Dalton.webp",
       "source_location": null,
-      "weight": 0.9,
-      "_src": "gabriel_dalton_portrait",
-      "_tgt": "page_about",
-      "source": "gabriel_dalton_portrait",
-      "target": "page_about"
+      "weight": 1.0,
+      "_src": "img:gabriel-dalton-headshot",
+      "_tgt": "page:about",
+      "source": "img:gabriel-dalton-headshot",
+      "target": "page:about"
     },
     {
-      "relation": "references",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "public/images/about/Gabriel_Dalton_TEDx_Talk.webp",
-      "source_location": "slide visible in background",
-      "weight": 0.8,
-      "_src": "gabriel_dalton_tedx_talk",
-      "_tgt": "concept_ai_literacy",
-      "source": "gabriel_dalton_tedx_talk",
-      "target": "concept_ai_literacy"
+      "relation": "DEPICTS",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/about/Gabriel-Dalton.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img:gabriel-dalton-headshot",
+      "_tgt": "person:gabriel-dalton",
+      "source": "img:gabriel-dalton-headshot",
+      "target": "person:gabriel-dalton"
     },
     {
-      "relation": "conceptually_related_to",
+      "relation": "USED_IN",
       "confidence": "INFERRED",
-      "confidence_score": 0.85,
+      "confidence_score": 0.9,
       "source_file": "public/images/about/Gabriel_Dalton_TEDx_Talk.webp",
       "source_location": null,
-      "weight": 0.8,
-      "_src": "gabriel_dalton_tedx_talk",
-      "_tgt": "page_about",
-      "source": "gabriel_dalton_tedx_talk",
-      "target": "page_about"
+      "weight": 1.0,
+      "_src": "img:gabriel-dalton-tedx",
+      "_tgt": "page:about",
+      "source": "img:gabriel-dalton-tedx",
+      "target": "page:about"
     },
     {
-      "relation": "conceptually_related_to",
+      "relation": "DEPICTS",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/about/Gabriel_Dalton_TEDx_Talk.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img:gabriel-dalton-tedx",
+      "_tgt": "person:gabriel-dalton",
+      "source": "img:gabriel-dalton-tedx",
+      "target": "person:gabriel-dalton"
+    },
+    {
+      "relation": "DEPICTS",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/about/Gabriel_Dalton_TEDx_Talk.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img:gabriel-dalton-tedx",
+      "_tgt": "event:tedx-talk",
+      "source": "img:gabriel-dalton-tedx",
+      "target": "event:tedx-talk"
+    },
+    {
+      "relation": "USED_IN",
       "confidence": "INFERRED",
       "confidence_score": 0.9,
       "source_file": "public/images/blog/blog-ai-network-visualization.webp",
       "source_location": null,
-      "weight": 0.8,
-      "_src": "blog_ai_network_visualization",
-      "_tgt": "page_blog",
-      "source": "blog_ai_network_visualization",
-      "target": "page_blog"
+      "weight": 1.0,
+      "_src": "img:blog-ai-network-visualization",
+      "_tgt": "page:blog",
+      "source": "img:blog-ai-network-visualization",
+      "target": "page:blog"
     },
     {
-      "relation": "conceptually_related_to",
+      "relation": "USED_IN",
       "confidence": "INFERRED",
       "confidence_score": 0.9,
       "source_file": "public/images/blog/blog-assistive-technology.webp",
       "source_location": null,
-      "weight": 0.8,
-      "_src": "blog_assistive_technology",
-      "_tgt": "page_blog",
-      "source": "blog_assistive_technology",
-      "target": "page_blog"
+      "weight": 1.0,
+      "_src": "img:blog-assistive-technology",
+      "_tgt": "page:blog",
+      "source": "img:blog-assistive-technology",
+      "target": "page:blog"
     },
     {
-      "relation": "conceptually_related_to",
+      "relation": "ILLUSTRATES",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "public/images/blog/blog-assistive-technology.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img:blog-assistive-technology",
+      "_tgt": "topic:assistive-technology",
+      "source": "img:blog-assistive-technology",
+      "target": "topic:assistive-technology"
+    },
+    {
+      "relation": "EXHIBITS_STYLE",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/blog/blog-assistive-technology.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img:blog-assistive-technology",
+      "_tgt": "style:warm-neutral-palette",
+      "source": "img:blog-assistive-technology",
+      "target": "style:warm-neutral-palette"
+    },
+    {
+      "relation": "USED_IN",
       "confidence": "INFERRED",
       "confidence_score": 0.9,
       "source_file": "public/images/blog/blog-data-center-hardware.webp",
       "source_location": null,
-      "weight": 0.8,
-      "_src": "blog_data_center_hardware",
-      "_tgt": "page_blog",
-      "source": "blog_data_center_hardware",
-      "target": "page_blog"
+      "weight": 1.0,
+      "_src": "img:blog-data-center-hardware",
+      "_tgt": "page:blog",
+      "source": "img:blog-data-center-hardware",
+      "target": "page:blog"
     },
     {
-      "relation": "conceptually_related_to",
+      "relation": "EXHIBITS_STYLE",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "public/images/blog/blog-data-center-hardware.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img:blog-data-center-hardware",
+      "_tgt": "style:warm-neutral-palette",
+      "source": "img:blog-data-center-hardware",
+      "target": "style:warm-neutral-palette"
+    },
+    {
+      "relation": "USED_IN",
       "confidence": "INFERRED",
       "confidence_score": 0.9,
       "source_file": "public/images/blog/blog-minimal-website-design.webp",
       "source_location": null,
-      "weight": 0.8,
-      "_src": "blog_minimal_website_design",
-      "_tgt": "page_blog",
-      "source": "blog_minimal_website_design",
-      "target": "page_blog"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "public/images/blog/blog-nonprofit-team-review.webp",
-      "source_location": null,
-      "weight": 0.8,
-      "_src": "blog_nonprofit_team_review",
-      "_tgt": "page_blog",
-      "source": "blog_nonprofit_team_review",
-      "target": "page_blog"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "public/images/blog/blog-reforestation-saplings.webp",
-      "source_location": null,
-      "weight": 0.8,
-      "_src": "blog_reforestation_saplings",
-      "_tgt": "page_blog",
-      "source": "blog_reforestation_saplings",
-      "target": "page_blog"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign.webp",
-      "source_location": null,
-      "weight": 0.9,
-      "_src": "mst_after_redesign",
-      "_tgt": "page_mst_case_study",
-      "source": "mst_after_redesign",
-      "target": "page_mst_case_study"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/GRAPH_REPORT.md",
-      "source_location": "hyper_mst_before_after_comparison",
       "weight": 1.0,
-      "_src": "mst_after_redesign",
-      "_tgt": "mst_before_redesign",
-      "source": "mst_after_redesign",
-      "target": "mst_before_redesign"
+      "_src": "img:blog-minimal-website-design",
+      "_tgt": "page:blog",
+      "source": "img:blog-minimal-website-design",
+      "target": "page:blog"
     },
     {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "public/images/case-studies/mittler-senior-tech-before-redesign.webp",
-      "source_location": null,
-      "weight": 0.9,
-      "_src": "mst_before_redesign",
-      "_tgt": "page_mst_case_study",
-      "source": "mst_before_redesign",
-      "target": "page_mst_case_study"
-    },
-    {
-      "relation": "references",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "public/images/favicon/android-chrome-192x192.png",
-      "source_location": null,
-      "weight": 0.8,
-      "_src": "favicon_android_chrome_192",
-      "_tgt": "oasis_of_change_icon",
-      "source": "favicon_android_chrome_192",
-      "target": "oasis_of_change_icon"
-    },
-    {
-      "relation": "references",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "public/images/favicon/android-chrome-512x512.png",
-      "source_location": null,
-      "weight": 0.8,
-      "_src": "favicon_android_chrome_512",
-      "_tgt": "oasis_of_change_icon",
-      "source": "favicon_android_chrome_512",
-      "target": "oasis_of_change_icon"
-    },
-    {
-      "relation": "references",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "public/images/favicon/apple-touch-icon.png",
-      "source_location": null,
-      "weight": 0.8,
-      "_src": "favicon_apple_touch_icon",
-      "_tgt": "oasis_of_change_icon",
-      "source": "favicon_apple_touch_icon",
-      "target": "oasis_of_change_icon"
-    },
-    {
-      "relation": "references",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "public/images/favicon/favicon-16x16.png",
-      "source_location": null,
-      "weight": 0.8,
-      "_src": "favicon_16x16",
-      "_tgt": "oasis_of_change_icon",
-      "source": "favicon_16x16",
-      "target": "oasis_of_change_icon"
-    },
-    {
-      "relation": "references",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "public/images/favicon/favicon-32x32.png",
-      "source_location": null,
-      "weight": 0.8,
-      "_src": "favicon_32x32",
-      "_tgt": "oasis_of_change_icon",
-      "source": "favicon_32x32",
-      "target": "oasis_of_change_icon"
-    },
-    {
-      "relation": "references",
+      "relation": "EXEMPLIFIES",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
+      "source_file": "public/images/blog/blog-minimal-website-design.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img:blog-minimal-website-design",
+      "_tgt": "topic:minimal-design",
+      "source": "img:blog-minimal-website-design",
+      "target": "topic:minimal-design"
+    },
+    {
+      "relation": "SPEAKER_AT",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/about/Gabriel_Dalton_TEDx_Talk.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "person:gabriel-dalton",
+      "_tgt": "event:tedx-talk",
+      "source": "person:gabriel-dalton",
+      "target": "event:tedx-talk"
+    },
+    {
+      "relation": "FOUNDER_OF",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "public/images/about/Gabriel-Dalton.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "person:gabriel-dalton",
+      "_tgt": "org:oasis-of-change",
+      "source": "person:gabriel-dalton",
+      "target": "org:oasis-of-change"
+    },
+    {
+      "relation": "COVERS_TOPIC",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/about/Gabriel_Dalton_TEDx_Talk.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "event:tedx-talk",
+      "_tgt": "topic:ai-literacy",
+      "source": "event:tedx-talk",
+      "target": "topic:ai-literacy"
+    },
+    {
+      "relation": "BELONGS_TO",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
       "source_file": "public/images/initiatives/Impact_Dashboard_Mockup.webp",
       "source_location": null,
       "weight": 1.0,
-      "_src": "impact_dashboard_mockup",
-      "_tgt": "initiative_tree_planting",
-      "source": "impact_dashboard_mockup",
-      "target": "initiative_tree_planting"
+      "_src": "img:impact-dashboard-mockup",
+      "_tgt": "org:oasis-of-change",
+      "source": "org:oasis-of-change",
+      "target": "img:impact-dashboard-mockup"
     },
     {
-      "relation": "references",
+      "relation": "SUBJECT_OF",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "public/images/initiatives/Impact_Dashboard_Mockup.webp",
-      "source_location": null,
-      "weight": 1.0,
-      "_src": "impact_dashboard_mockup",
-      "_tgt": "org_oasis_of_change",
-      "source": "impact_dashboard_mockup",
-      "target": "org_oasis_of_change"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.7,
-      "source_file": "public/images/initiatives/mangrove-tree.webp",
-      "source_location": null,
-      "weight": 0.7,
-      "_src": "mangrove_tree",
-      "_tgt": "initiative_tree_planting",
-      "source": "mangrove_tree",
-      "target": "initiative_tree_planting"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
+      "confidence_score": 0.95,
       "source_file": "public/images/initiatives/Sustainable-Technology-Week.webp",
       "source_location": null,
       "weight": 1.0,
-      "_src": "sustainable_technology_week",
-      "_tgt": "org_oasis_of_change",
-      "source": "sustainable_technology_week",
-      "target": "org_oasis_of_change"
+      "_src": "org:oasis-of-change",
+      "_tgt": "initiative:sustainable-technology-week",
+      "source": "org:oasis-of-change",
+      "target": "initiative:sustainable-technology-week"
     },
     {
-      "relation": "references",
+      "relation": "COLLABORATES_WITH",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "public/images/initiatives/Sustainable-Technology-Week.webp",
-      "source_location": null,
-      "weight": 1.0,
-      "_src": "sustainable_technology_week",
-      "_tgt": "city_of_vancouver",
-      "source": "sustainable_technology_week",
-      "target": "city_of_vancouver"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
+      "confidence_score": 0.95,
       "source_file": "public/images/initiatives/tree-nation-partnership.webp",
       "source_location": null,
       "weight": 1.0,
-      "_src": "tree_nation_partnership",
-      "_tgt": "org_tree_nation",
-      "source": "tree_nation_partnership",
-      "target": "org_tree_nation"
+      "_src": "org:oasis-of-change",
+      "_tgt": "org:tree-nation",
+      "source": "org:oasis-of-change",
+      "target": "org:tree-nation"
     },
     {
-      "relation": "references",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "public/images/initiatives/tree-nation-partnership.webp",
-      "source_location": null,
-      "weight": 0.9,
-      "_src": "tree_nation_partnership",
-      "_tgt": "org_oasis_of_change",
-      "source": "tree_nation_partnership",
-      "target": "org_oasis_of_change"
-    },
-    {
-      "relation": "semantically_similar_to",
+      "relation": "LOGO_OF",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
+      "confidence_score": 0.98,
       "source_file": "public/images/logo/oasis-of-change-icon.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "oasis_of_change_icon",
-      "_tgt": "oasis_of_change_official_logo",
-      "source": "oasis_of_change_icon",
-      "target": "oasis_of_change_official_logo"
+      "_src": "img:oasis-of-change-icon",
+      "_tgt": "org:oasis-of-change",
+      "source": "org:oasis-of-change",
+      "target": "img:oasis-of-change-icon"
     },
     {
-      "relation": "references",
+      "relation": "LOGO_OF",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "public/images/logo/oasis-of-change-icon.svg",
-      "source_location": null,
-      "weight": 1.0,
-      "_src": "oasis_of_change_icon",
-      "_tgt": "org_oasis_of_change",
-      "source": "oasis_of_change_icon",
-      "target": "org_oasis_of_change"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
+      "confidence_score": 0.99,
       "source_file": "public/images/logo/Oasis_of_Change-official.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "oasis_of_change_official_logo",
-      "_tgt": "org_oasis_of_change",
-      "source": "oasis_of_change_official_logo",
-      "target": "org_oasis_of_change"
+      "_src": "img:oasis-of-change-official-logo",
+      "_tgt": "org:oasis-of-change",
+      "source": "org:oasis-of-change",
+      "target": "img:oasis-of-change-official-logo"
     },
     {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
+      "relation": "BRAND_OF",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "public/images/logo/web-ready-logo.webp",
+      "source_location": null,
+      "weight": 0.8,
+      "_src": "brand:web-ready",
+      "_tgt": "org:oasis-of-change",
+      "source": "org:oasis-of-change",
+      "target": "brand:web-ready"
+    },
+    {
+      "relation": "PARTNERS_WITH",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
       "source_file": "public/images/partners/stanley-park-ecology-society-logo.webp",
       "source_location": null,
-      "weight": 1.0,
-      "_src": "stanley_park_ecology_society_logo",
-      "_tgt": "org_stanley_park_ecology",
-      "source": "stanley_park_ecology_society_logo",
-      "target": "org_stanley_park_ecology"
+      "weight": 0.9,
+      "_src": "org:oasis-of-change",
+      "_tgt": "org:stanley-park-ecology-society",
+      "source": "org:oasis-of-change",
+      "target": "org:stanley-park-ecology-society"
     },
     {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
+      "relation": "PARTNERS_WITH",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
       "source_file": "public/images/partners/sustainable-www-logo.webp",
       "source_location": null,
-      "weight": 1.0,
-      "_src": "sustainable_www_logo",
-      "_tgt": "org_sustainable_www",
-      "source": "sustainable_www_logo",
-      "target": "org_sustainable_www"
+      "weight": 0.9,
+      "_src": "org:oasis-of-change",
+      "_tgt": "org:sustainable-www",
+      "source": "org:oasis-of-change",
+      "target": "org:sustainable-www"
     },
     {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
+      "relation": "PARTNERS_WITH",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
       "source_file": "public/images/partners/WESN-Colour-Logo-scaled.webp",
       "source_location": null,
-      "weight": 1.0,
-      "_src": "wesn_logo",
-      "_tgt": "org_wesn",
-      "source": "wesn_logo",
-      "target": "org_wesn"
+      "weight": 0.9,
+      "_src": "org:oasis-of-change",
+      "_tgt": "org:wesn",
+      "source": "org:oasis-of-change",
+      "target": "org:wesn"
     },
     {
-      "relation": "references",
+      "relation": "INITIATIVE_OF",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
+      "confidence_score": 0.95,
+      "source_file": "public/images/initiatives/Impact_Dashboard_Mockup.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "initiative:tree-planting",
+      "_tgt": "org:oasis-of-change",
+      "source": "org:oasis-of-change",
+      "target": "initiative:tree-planting"
+    },
+    {
+      "relation": "RECOGNIZED_BY",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
       "source_file": "public/images/initiatives/Sustainable-Technology-Week.webp",
       "source_location": null,
       "weight": 1.0,
-      "_src": "city_of_vancouver",
-      "_tgt": "org_oasis_of_change",
-      "source": "org_oasis_of_change",
-      "target": "city_of_vancouver"
+      "_src": "org:oasis-of-change",
+      "_tgt": "org:city-of-vancouver",
+      "source": "org:oasis-of-change",
+      "target": "org:city-of-vancouver"
     },
     {
-      "relation": "conceptually_related_to",
+      "relation": "BELONGS_TO",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.98,
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "page:case-studies",
+      "_tgt": "org:oasis-of-change",
+      "source": "org:oasis-of-change",
+      "target": "page:case-studies"
+    },
+    {
+      "relation": "REFERENCES",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "casestudy:oasis-website",
+      "_tgt": "org:oasis-of-change",
+      "source": "org:oasis-of-change",
+      "target": "casestudy:oasis-website"
+    },
+    {
+      "relation": "BELONGS_TO",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/blog/blog-nonprofit-team-review.webp",
+      "source_location": null,
+      "weight": 0.5,
+      "_src": "img_blog_nonprofit_team_review",
+      "_tgt": "dir_blog_images",
+      "source": "img_blog_nonprofit_team_review",
+      "target": "dir_blog_images"
+    },
+    {
+      "relation": "BELONGS_TO",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/blog/blog-reforestation-saplings.webp",
+      "source_location": null,
+      "weight": 0.5,
+      "_src": "img_blog_reforestation_saplings",
+      "_tgt": "dir_blog_images",
+      "source": "img_blog_reforestation_saplings",
+      "target": "dir_blog_images"
+    },
+    {
+      "relation": "BELONGS_TO",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/blog/team-collaboration.webp",
+      "source_location": null,
+      "weight": 0.5,
+      "_src": "img_team_collaboration",
+      "_tgt": "dir_blog_images",
+      "source": "img_team_collaboration",
+      "target": "dir_blog_images"
+    },
+    {
+      "relation": "PREVIEW_FOR",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "public/images/case-studies/denman-case-study-preview.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img_denman_case_study_preview",
+      "_tgt": "entity_denman_place_mall",
+      "source": "img_denman_case_study_preview",
+      "target": "entity_denman_place_mall"
+    },
+    {
+      "relation": "BELONGS_TO",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/case-studies/denman-case-study-preview.webp",
+      "source_location": null,
+      "weight": 0.5,
+      "_src": "img_denman_case_study_preview",
+      "_tgt": "dir_case_study_images",
+      "source": "img_denman_case_study_preview",
+      "target": "dir_case_study_images"
+    },
+    {
+      "relation": "DEPICTS",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "public/images/case-studies/jordan-mittler.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img_jordan_mittler",
+      "_tgt": "entity_jordan_mittler",
+      "source": "img_jordan_mittler",
+      "target": "entity_jordan_mittler"
+    },
+    {
+      "relation": "BELONGS_TO",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/case-studies/jordan-mittler.webp",
+      "source_location": null,
+      "weight": 0.5,
+      "_src": "img_jordan_mittler",
+      "_tgt": "dir_case_study_images",
+      "source": "img_jordan_mittler",
+      "target": "dir_case_study_images"
+    },
+    {
+      "relation": "PREVIEW_FOR",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "public/images/case-studies/mittler-case-study-preview.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img_mittler_case_study_preview",
+      "_tgt": "entity_mittler_senior_technology",
+      "source": "img_mittler_case_study_preview",
+      "target": "entity_mittler_senior_technology"
+    },
+    {
+      "relation": "THEMATICALLY_RELATED",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
-      "source_file": "public/images/partners/stanley-park-ecology-society-logo.webp",
+      "source_file": "public/images/case-studies/mittler-case-study-preview.webp",
       "source_location": null,
       "weight": 0.8,
-      "_src": "org_stanley_park_ecology",
-      "_tgt": "org_oasis_of_change",
-      "source": "org_oasis_of_change",
-      "target": "org_stanley_park_ecology"
+      "_src": "img_mittler_case_study_preview",
+      "_tgt": "concept_senior_tech_education",
+      "source": "img_mittler_case_study_preview",
+      "target": "concept_senior_tech_education"
     },
     {
-      "relation": "conceptually_related_to",
+      "relation": "BELONGS_TO",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/case-studies/mittler-case-study-preview.webp",
+      "source_location": null,
+      "weight": 0.5,
+      "_src": "img_mittler_case_study_preview",
+      "_tgt": "dir_case_study_images",
+      "source": "img_mittler_case_study_preview",
+      "target": "dir_case_study_images"
+    },
+    {
+      "relation": "USED_BY",
       "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "public/images/partners/sustainable-www-logo.webp",
+      "confidence_score": 0.9,
+      "source_file": "public/images/case-studies/mittler-hero-bg.webp",
       "source_location": null,
-      "weight": 0.8,
-      "_src": "org_sustainable_www",
-      "_tgt": "org_oasis_of_change",
-      "source": "org_oasis_of_change",
-      "target": "org_sustainable_www"
+      "weight": 1.0,
+      "_src": "img_mittler_hero_bg",
+      "_tgt": "entity_mittler_senior_technology",
+      "source": "img_mittler_hero_bg",
+      "target": "entity_mittler_senior_technology"
     },
     {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "public/images/partners/WESN-Colour-Logo-scaled.webp",
-      "source_location": null,
-      "weight": 0.8,
-      "_src": "org_wesn",
-      "_tgt": "org_oasis_of_change",
-      "source": "org_oasis_of_change",
-      "target": "org_wesn"
-    },
-    {
-      "relation": "implements",
+      "relation": "ILLUSTRATES",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
+      "source_file": "public/images/case-studies/mittler-hero-bg.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img_mittler_hero_bg",
+      "_tgt": "concept_senior_tech_education",
+      "source": "img_mittler_hero_bg",
+      "target": "concept_senior_tech_education"
+    },
+    {
+      "relation": "BELONGS_TO",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/case-studies/mittler-hero-bg.webp",
+      "source_location": null,
+      "weight": 0.5,
+      "_src": "img_mittler_hero_bg",
+      "_tgt": "dir_case_study_images",
+      "source": "img_mittler_hero_bg",
+      "target": "dir_case_study_images"
+    },
+    {
+      "relation": "DEPICTS_WEBSITE",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.98,
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img_mittler_after_redesign",
+      "_tgt": "entity_mittler_senior_technology",
+      "source": "img_mittler_after_redesign",
+      "target": "entity_mittler_senior_technology"
+    },
+    {
+      "relation": "ILLUSTRATES",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img_mittler_after_redesign",
+      "_tgt": "concept_website_redesign",
+      "source": "img_mittler_after_redesign",
+      "target": "concept_website_redesign"
+    },
+    {
+      "relation": "BEFORE_AFTER_COMPARISON",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "public/images/case-studies/mittler-senior-tech-before-redesign.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img_mittler_before_redesign",
+      "_tgt": "img_mittler_after_redesign",
+      "source": "img_mittler_after_redesign",
+      "target": "img_mittler_before_redesign"
+    },
+    {
+      "relation": "BELONGS_TO",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign.webp",
+      "source_location": null,
+      "weight": 0.5,
+      "_src": "img_mittler_after_redesign",
+      "_tgt": "dir_case_study_images",
+      "source": "img_mittler_after_redesign",
+      "target": "dir_case_study_images"
+    },
+    {
+      "relation": "DEPICTS_WEBSITE",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.98,
+      "source_file": "public/images/case-studies/mittler-senior-tech-before-redesign.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img_mittler_before_redesign",
+      "_tgt": "entity_mittler_senior_technology",
+      "source": "img_mittler_before_redesign",
+      "target": "entity_mittler_senior_technology"
+    },
+    {
+      "relation": "ILLUSTRATES",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "public/images/case-studies/mittler-senior-tech-before-redesign.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img_mittler_before_redesign",
+      "_tgt": "concept_website_redesign",
+      "source": "img_mittler_before_redesign",
+      "target": "concept_website_redesign"
+    },
+    {
+      "relation": "BELONGS_TO",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/case-studies/mittler-senior-tech-before-redesign.webp",
+      "source_location": null,
+      "weight": 0.5,
+      "_src": "img_mittler_before_redesign",
+      "_tgt": "dir_case_study_images",
+      "source": "img_mittler_before_redesign",
+      "target": "dir_case_study_images"
+    },
+    {
+      "relation": "ILLUSTRATES",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "public/images/case-studies/nature-sustainability-hero.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img_nature_sustainability_hero",
+      "_tgt": "concept_sustainability",
+      "source": "img_nature_sustainability_hero",
+      "target": "concept_sustainability"
+    },
+    {
+      "relation": "BELONGS_TO",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/case-studies/nature-sustainability-hero.webp",
+      "source_location": null,
+      "weight": 0.5,
+      "_src": "img_nature_sustainability_hero",
+      "_tgt": "dir_case_study_images",
+      "source": "img_nature_sustainability_hero",
+      "target": "dir_case_study_images"
+    },
+    {
+      "relation": "FOUNDER_OF",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "public/images/case-studies/jordan-mittler.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "entity_jordan_mittler",
+      "_tgt": "entity_mittler_senior_technology",
+      "source": "entity_mittler_senior_technology",
+      "target": "entity_jordan_mittler"
+    },
+    {
+      "relation": "PROVIDES",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "entity_mittler_senior_technology",
+      "_tgt": "concept_senior_tech_education",
+      "source": "entity_mittler_senior_technology",
+      "target": "concept_senior_tech_education"
+    },
+    {
+      "relation": "DEPICTS",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.98,
+      "source_file": "public/images/initiatives/Impact_Dashboard_Mockup.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img:impact-dashboard-mockup",
+      "_tgt": "initiative:tree-planting",
+      "source": "img:impact-dashboard-mockup",
+      "target": "initiative:tree-planting"
+    },
+    {
+      "relation": "ILLUSTRATES",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "public/images/initiatives/mangrove-tree.webp",
+      "source_location": null,
+      "weight": 0.8,
+      "_src": "img:mangrove-tree",
+      "_tgt": "initiative:tree-planting",
+      "source": "img:mangrove-tree",
+      "target": "initiative:tree-planting"
+    },
+    {
+      "relation": "DEPICTS",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.99,
+      "source_file": "public/images/initiatives/Sustainable-Technology-Week.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img:sustainable-technology-week-proclamation",
+      "_tgt": "initiative:sustainable-technology-week",
+      "source": "img:sustainable-technology-week-proclamation",
+      "target": "initiative:sustainable-technology-week"
+    },
+    {
+      "relation": "DEPICTS",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.99,
+      "source_file": "public/images/initiatives/tree-nation-partnership.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img:tree-nation-partnership",
+      "_tgt": "org:tree-nation",
+      "source": "img:tree-nation-partnership",
+      "target": "org:tree-nation"
+    },
+    {
+      "relation": "LOGO_OF",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.99,
+      "source_file": "public/images/logo/web-ready-logo.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img:web-ready-logo",
+      "_tgt": "brand:web-ready",
+      "source": "img:web-ready-logo",
+      "target": "brand:web-ready"
+    },
+    {
+      "relation": "LOGO_OF",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.99,
+      "source_file": "public/images/partners/stanley-park-ecology-society-logo.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img:stanley-park-ecology-society-logo",
+      "_tgt": "org:stanley-park-ecology-society",
+      "source": "img:stanley-park-ecology-society-logo",
+      "target": "org:stanley-park-ecology-society"
+    },
+    {
+      "relation": "LOGO_OF",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.99,
+      "source_file": "public/images/partners/sustainable-www-logo.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img:sustainable-www-logo",
+      "_tgt": "org:sustainable-www",
+      "source": "img:sustainable-www-logo",
+      "target": "org:sustainable-www"
+    },
+    {
+      "relation": "LOGO_OF",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.99,
+      "source_file": "public/images/partners/WESN-Colour-Logo-scaled.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img:wesn-logo",
+      "_tgt": "org:wesn",
+      "source": "img:wesn-logo",
+      "target": "org:wesn"
+    },
+    {
+      "relation": "PARTNER_IN",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
       "source_file": "public/images/initiatives/tree-nation-partnership.webp",
       "source_location": null,
       "weight": 0.9,
-      "_src": "org_tree_nation",
-      "_tgt": "initiative_tree_planting",
-      "source": "org_tree_nation",
-      "target": "initiative_tree_planting"
-    }
-  ],
-  "hyperedges": [
-    {
-      "id": "hyper_about_page_hero_section",
-      "label": "About Page Hero Section Visual Assets",
-      "nodes": [
-        "about_page_block_1",
-        "about_page_block_2",
-        "gabriel_dalton_portrait",
-        "entity_oasis_of_change",
-        "page_about"
-      ],
-      "relation": "participate_in",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/GRAPH_REPORT.md"
+      "_src": "org:tree-nation",
+      "_tgt": "initiative:tree-planting",
+      "source": "org:tree-nation",
+      "target": "initiative:tree-planting"
     },
     {
-      "id": "hyper_gabriel_dalton_public_presence",
-      "label": "Gabriel Dalton Public Presence",
-      "nodes": [
-        "gabriel_dalton_portrait",
-        "gabriel_dalton_tedx_talk",
-        "entity_gabriel_dalton",
-        "entity_tedx",
-        "concept_ai_literacy"
-      ],
-      "relation": "participate_in",
+      "relation": "PROCLAIMED",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.99,
+      "source_file": "public/images/initiatives/Sustainable-Technology-Week.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "org:city-of-vancouver",
+      "_tgt": "initiative:sustainable-technology-week",
+      "source": "org:city-of-vancouver",
+      "target": "initiative:sustainable-technology-week"
+    },
+    {
+      "relation": "MAYOR_OF",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.99,
+      "source_file": "public/images/initiatives/Sustainable-Technology-Week.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "person:ken-sim",
+      "_tgt": "org:city-of-vancouver",
+      "source": "org:city-of-vancouver",
+      "target": "person:ken-sim"
+    },
+    {
+      "relation": "SIGNED",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.98,
+      "source_file": "public/images/initiatives/Sustainable-Technology-Week.webp",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "person:ken-sim",
+      "_tgt": "initiative:sustainable-technology-week",
+      "source": "person:ken-sim",
+      "target": "initiative:sustainable-technology-week"
+    },
+    {
+      "relation": "EVOLVED_INTO",
       "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "public/images/about/Gabriel_Dalton_TEDx_Talk.webp"
+      "confidence_score": 0.85,
+      "source_file": "case-studies-desktop.png",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img:case-studies-desktop",
+      "_tgt": "img:case-studies-desktop-v2",
+      "source": "img:case-studies-desktop-v2",
+      "target": "img:case-studies-desktop"
     },
     {
-      "id": "hyper_mst_before_after_comparison",
-      "label": "MST Website Before/After Case Study Comparison",
-      "nodes": [
-        "mst_before_redesign",
-        "mst_after_redesign",
-        "entity_mittler_senior_technology",
-        "entity_oasis_of_change",
-        "page_mst_case_study"
-      ],
-      "relation": "participate_in",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "graphify-out/GRAPH_REPORT.md"
-    },
-    {
-      "id": "favicon_brand_identity_set",
-      "label": "Favicon Brand Identity Set",
-      "nodes": [
-        "favicon_android_chrome_192",
-        "favicon_android_chrome_512",
-        "favicon_apple_touch_icon",
-        "favicon_16x16",
-        "favicon_32x32",
-        "oasis_of_change_icon"
-      ],
-      "relation": "implement",
+      "relation": "EVOLVED_INTO",
       "confidence": "INFERRED",
       "confidence_score": 0.9,
-      "source_file": "public/images/favicon/"
+      "source_file": "case-studies-desktop-v2.png",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img:case-studies-desktop-v2",
+      "_tgt": "img:case-studies-desktop-v3",
+      "source": "img:case-studies-desktop-v2",
+      "target": "img:case-studies-desktop-v3"
     },
     {
-      "id": "partner_organizations_network",
-      "label": "Partner Organizations Network",
-      "nodes": [
-        "org_oasis_of_change",
-        "org_stanley_park_ecology",
-        "org_sustainable_www",
-        "org_wesn",
-        "org_tree_nation"
-      ],
-      "relation": "participate_in",
+      "relation": "DEPICTS",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "case-studies-desktop-v2.png",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img:case-studies-desktop-v2",
+      "_tgt": "page:case-studies",
+      "source": "img:case-studies-desktop-v2",
+      "target": "page:case-studies"
+    },
+    {
+      "relation": "DEPICTS",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img:case-studies-desktop-v3",
+      "_tgt": "page:case-studies",
+      "source": "img:case-studies-desktop-v3",
+      "target": "page:case-studies"
+    },
+    {
+      "relation": "RESPONSIVE_VARIANT_OF",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "case-studies-full.png",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img:case-studies-full",
+      "_tgt": "img:case-studies-desktop-v3",
+      "source": "img:case-studies-desktop-v3",
+      "target": "img:case-studies-full"
+    },
+    {
+      "relation": "LAYOUT_BUG_FIXED_IN",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
-      "source_file": "public/images/partners/"
+      "source_file": "case-studies-desktop.png",
+      "source_location": null,
+      "weight": 0.8,
+      "_src": "img:case-studies-desktop",
+      "_tgt": "img:case-studies-desktop-v3",
+      "source": "img:case-studies-desktop-v3",
+      "target": "img:case-studies-desktop"
     },
     {
-      "id": "tree_planting_initiative_ecosystem",
-      "label": "Tree Planting Initiative Ecosystem",
-      "nodes": [
-        "org_oasis_of_change",
-        "org_tree_nation",
-        "initiative_tree_planting",
-        "impact_dashboard_mockup",
-        "mangrove_tree"
-      ],
-      "relation": "participate_in",
-      "confidence": "INFERRED",
-      "confidence_score": 0.75,
-      "source_file": "public/images/initiatives/"
+      "relation": "SHOWS_PATTERN",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.92,
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img:case-studies-desktop-v3",
+      "_tgt": "ui:secondary-case-study-cards",
+      "source": "img:case-studies-desktop-v3",
+      "target": "ui:secondary-case-study-cards"
+    },
+    {
+      "relation": "DEPICTS",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "case-studies-desktop.png",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img:case-studies-desktop",
+      "_tgt": "page:case-studies",
+      "source": "img:case-studies-desktop",
+      "target": "page:case-studies"
+    },
+    {
+      "relation": "DEPICTS",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "case-studies-full.png",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img:case-studies-full",
+      "_tgt": "page:case-studies",
+      "source": "img:case-studies-full",
+      "target": "page:case-studies"
+    },
+    {
+      "relation": "SHOWS_PATTERN",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "case-studies-full.png",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "img:case-studies-full",
+      "_tgt": "ui:featured-case-study-card",
+      "source": "img:case-studies-full",
+      "target": "ui:featured-case-study-card"
+    },
+    {
+      "relation": "USES_DESIGN_PATTERN",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "page:case-studies",
+      "_tgt": "ui:dark-theme",
+      "source": "page:case-studies",
+      "target": "ui:dark-theme"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.98,
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "page:case-studies",
+      "_tgt": "ui:hero-section-case-studies",
+      "source": "page:case-studies",
+      "target": "ui:hero-section-case-studies"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.98,
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "page:case-studies",
+      "_tgt": "ui:featured-case-study-card",
+      "source": "page:case-studies",
+      "target": "ui:featured-case-study-card"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.98,
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "page:case-studies",
+      "_tgt": "ui:secondary-case-study-cards",
+      "source": "page:case-studies",
+      "target": "ui:secondary-case-study-cards"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.98,
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "page:case-studies",
+      "_tgt": "ui:navigation-bar",
+      "source": "page:case-studies",
+      "target": "ui:navigation-bar"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.98,
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "page:case-studies",
+      "_tgt": "ui:footer-section",
+      "source": "page:case-studies",
+      "target": "ui:footer-section"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "page:case-studies",
+      "_tgt": "ui:breadcrumb-nav",
+      "source": "page:case-studies",
+      "target": "ui:breadcrumb-nav"
+    },
+    {
+      "relation": "DISPLAYS",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.98,
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "ui:featured-case-study-card",
+      "_tgt": "casestudy:mittler-senior-tech",
+      "source": "ui:featured-case-study-card",
+      "target": "casestudy:mittler-senior-tech"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "ui:featured-case-study-card",
+      "_tgt": "ui:featured-badge",
+      "source": "ui:featured-case-study-card",
+      "target": "ui:featured-badge"
+    },
+    {
+      "relation": "DISPLAYS",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "ui:secondary-case-study-cards",
+      "_tgt": "casestudy:oasis-website",
+      "source": "ui:secondary-case-study-cards",
+      "target": "casestudy:oasis-website"
+    },
+    {
+      "relation": "DISPLAYS",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "ui:secondary-case-study-cards",
+      "_tgt": "casestudy:denman-place-mall",
+      "source": "ui:secondary-case-study-cards",
+      "target": "casestudy:denman-place-mall"
+    },
+    {
+      "relation": "USES_DESIGN_PATTERN",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "ui:secondary-case-study-cards",
+      "_tgt": "design:card-hover-arrow",
+      "source": "ui:secondary-case-study-cards",
+      "target": "design:card-hover-arrow"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "case-studies-desktop-v3.png",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "ui:navigation-bar",
+      "_tgt": "ui:support-mission-cta",
+      "source": "ui:navigation-bar",
+      "target": "ui:support-mission-cta"
     }
-  ]
+  ],
+  "hyperedges": []
 }

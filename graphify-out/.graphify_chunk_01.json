@@ -1,1 +1,373 @@
-{"nodes":[{"id":"claude_md_project_config","label":"CLAUDE.md Project Configuration","file_type":"document","source_file":"CLAUDE.md","source_location":null,"source_url":null,"captured_at":"2026-04-11","author":"Gabriel Dalton","contributor":null},{"id":"graph_report_md","label":"Graph Report (2026-04-11)","file_type":"document","source_file":"graphify-out/GRAPH_REPORT.md","source_location":null,"source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"entity_graphify_knowledge_graph","label":"Graphify Knowledge Graph","file_type":"document","source_file":"CLAUDE.md","source_location":"line 3","source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"rationale_read_graph_report_first","label":"Rationale: Read GRAPH_REPORT.md Before Architecture Questions","file_type":"document","source_file":"CLAUDE.md","source_location":"line 6","source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"rationale_navigate_wiki_index","label":"Rationale: Navigate Wiki Instead of Raw Files","file_type":"document","source_file":"CLAUDE.md","source_location":"line 7","source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"rationale_rebuild_graph_after_code_changes","label":"Rationale: Rebuild Graph After Code Modifications","file_type":"document","source_file":"CLAUDE.md","source_location":"line 8","source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"entity_graphify_rebuild_command","label":"Graphify Rebuild Code Command","file_type":"document","source_file":"CLAUDE.md","source_location":"line 8","source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"entity_oasis_of_change","label":"Oasis of Change, Inc.","file_type":"document","source_file":"graphify-out/GRAPH_REPORT.md","source_location":null,"source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"entity_gabriel_dalton","label":"Gabriel Dalton","file_type":"document","source_file":"graphify-out/GRAPH_REPORT.md","source_location":"God Nodes","source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"entity_mittler_senior_technology","label":"Mittler Senior Technology","file_type":"document","source_file":"graphify-out/GRAPH_REPORT.md","source_location":"Community 7","source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"entity_tedx","label":"TEDx","file_type":"document","source_file":"graphify-out/GRAPH_REPORT.md","source_location":"Community 1","source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"community_vancouver_partnerships","label":"Community: Vancouver Partnerships & Sustainability","file_type":"document","source_file":"graphify-out/GRAPH_REPORT.md","source_location":"Community 0","source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"community_oasis_identity","label":"Community: Oasis of Change Identity","file_type":"document","source_file":"graphify-out/GRAPH_REPORT.md","source_location":"Community 1","source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"community_blog_content","label":"Community: Blog Content","file_type":"document","source_file":"graphify-out/GRAPH_REPORT.md","source_location":"Community 5","source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"community_mst_case_study","label":"Community: MST Case Study","file_type":"document","source_file":"graphify-out/GRAPH_REPORT.md","source_location":"Community 7","source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"about_page_block_1","label":"About Page Hero - Person Working on Laptop","file_type":"image","source_file":"public/images/about/about-page-block-1.webp","source_location":null,"source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"about_page_block_2","label":"About Page - Founded in 2024 Image","file_type":"image","source_file":"public/images/about/about-page-block-2.webp","source_location":null,"source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"gabriel_dalton_portrait","label":"Gabriel Dalton Portrait Photo","file_type":"image","source_file":"public/images/about/Gabriel-Dalton.webp","source_location":null,"source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"gabriel_dalton_tedx_talk","label":"Gabriel Dalton TEDx Talk Photo","file_type":"image","source_file":"public/images/about/Gabriel_Dalton_TEDx_Talk.webp","source_location":null,"source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"blog_ai_network_visualization","label":"Blog - Nonprofit Team Financial Review Photo","file_type":"image","source_file":"public/images/blog/blog-ai-network-visualization.webp","source_location":null,"source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"blog_assistive_technology","label":"Blog - Young Person Portrait (Assistive Technology)","file_type":"image","source_file":"public/images/blog/blog-assistive-technology.webp","source_location":null,"source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"blog_data_center_hardware","label":"Blog - Design Portfolio / Art Book Review Photo","file_type":"image","source_file":"public/images/blog/blog-data-center-hardware.webp","source_location":null,"source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"blog_minimal_website_design","label":"Blog - Modern Lounge Interior Photo","file_type":"image","source_file":"public/images/blog/blog-minimal-website-design.webp","source_location":null,"source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"blog_nonprofit_team_review","label":"Blog - E-Commerce Browsing Photo","file_type":"image","source_file":"public/images/blog/blog-nonprofit-team-review.webp","source_location":null,"source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"blog_reforestation_saplings","label":"Blog - Strategic Planning Whiteboard Photo","file_type":"image","source_file":"public/images/blog/blog-reforestation-saplings.webp","source_location":null,"source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"mst_after_redesign","label":"Mittler Senior Technology Website - After Redesign Screenshot","file_type":"image","source_file":"public/images/case-studies/mittler-senior-tech-after-redesign.webp","source_location":null,"source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"mst_before_redesign","label":"Mittler Senior Technology Website - Before Redesign Screenshot","file_type":"image","source_file":"public/images/case-studies/mittler-senior-tech-before-redesign.webp","source_location":null,"source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"page_about","label":"About Page","file_type":"document","source_file":"graphify-out/GRAPH_REPORT.md","source_location":"Community 1","source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"page_blog","label":"Blog Page","file_type":"document","source_file":"graphify-out/GRAPH_REPORT.md","source_location":"Community 5","source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"page_mst_case_study","label":"Mittler Senior Technology Case Study Page","file_type":"document","source_file":"graphify-out/GRAPH_REPORT.md","source_location":"Community 7","source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"concept_ai_literacy","label":"AI Literacy (TEDx Talk Topic)","file_type":"image","source_file":"public/images/about/Gabriel_Dalton_TEDx_Talk.webp","source_location":null,"source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null},{"id":"concept_founded_2024","label":"Oasis of Change Founded in 2024","file_type":"image","source_file":"public/images/about/about-page-block-2.webp","source_location":null,"source_url":null,"captured_at":"2026-04-11","author":null,"contributor":null}],"edges":[{"source":"claude_md_project_config","target":"entity_graphify_knowledge_graph","relation":"references","confidence":"EXTRACTED","confidence_score":1.0,"source_file":"CLAUDE.md","source_location":"line 3","weight":1.0},{"source":"claude_md_project_config","target":"graph_report_md","relation":"references","confidence":"EXTRACTED","confidence_score":1.0,"source_file":"CLAUDE.md","source_location":"line 6","weight":1.0},{"source":"claude_md_project_config","target":"entity_graphify_rebuild_command","relation":"references","confidence":"EXTRACTED","confidence_score":1.0,"source_file":"CLAUDE.md","source_location":"line 8","weight":1.0},{"source":"rationale_read_graph_report_first","target":"graph_report_md","relation":"rationale_for","confidence":"EXTRACTED","confidence_score":1.0,"source_file":"CLAUDE.md","source_location":"line 6","weight":1.0},{"source":"rationale_navigate_wiki_index","target":"entity_graphify_knowledge_graph","relation":"rationale_for","confidence":"EXTRACTED","confidence_score":1.0,"source_file":"CLAUDE.md","source_location":"line 7","weight":1.0},{"source":"rationale_rebuild_graph_after_code_changes","target":"entity_graphify_rebuild_command","relation":"rationale_for","confidence":"EXTRACTED","confidence_score":1.0,"source_file":"CLAUDE.md","source_location":"line 8","weight":1.0},{"source":"graph_report_md","target":"entity_oasis_of_change","relation":"references","confidence":"EXTRACTED","confidence_score":1.0,"source_file":"graphify-out/GRAPH_REPORT.md","source_location":"God Nodes","weight":1.0},{"source":"graph_report_md","target":"entity_gabriel_dalton","relation":"references","confidence":"EXTRACTED","confidence_score":1.0,"source_file":"graphify-out/GRAPH_REPORT.md","source_location":"God Nodes","weight":1.0},{"source":"graph_report_md","target":"entity_mittler_senior_technology","relation":"references","confidence":"EXTRACTED","confidence_score":1.0,"source_file":"graphify-out/GRAPH_REPORT.md","source_location":"Community 7","weight":1.0},{"source":"gabriel_dalton_portrait","target":"entity_gabriel_dalton","relation":"references","confidence":"EXTRACTED","confidence_score":1.0,"source_file":"public/images/about/Gabriel-Dalton.webp","source_location":null,"weight":1.0},{"source":"gabriel_dalton_tedx_talk","target":"entity_gabriel_dalton","relation":"references","confidence":"EXTRACTED","confidence_score":1.0,"source_file":"public/images/about/Gabriel_Dalton_TEDx_Talk.webp","source_location":null,"weight":1.0},{"source":"gabriel_dalton_tedx_talk","target":"entity_tedx","relation":"references","confidence":"EXTRACTED","confidence_score":1.0,"source_file":"public/images/about/Gabriel_Dalton_TEDx_Talk.webp","source_location":null,"weight":1.0},{"source":"gabriel_dalton_tedx_talk","target":"concept_ai_literacy","relation":"references","confidence":"INFERRED","confidence_score":0.85,"source_file":"public/images/about/Gabriel_Dalton_TEDx_Talk.webp","source_location":"slide visible in background","weight":0.8},{"source":"about_page_block_1","target":"page_about","relation":"conceptually_related_to","confidence":"INFERRED","confidence_score":0.9,"source_file":"public/images/about/about-page-block-1.webp","source_location":null,"weight":0.9},{"source":"about_page_block_2","target":"page_about","relation":"conceptually_related_to","confidence":"INFERRED","confidence_score":0.9,"source_file":"public/images/about/about-page-block-2.webp","source_location":null,"weight":0.9},{"source":"about_page_block_2","target":"concept_founded_2024","relation":"references","confidence":"EXTRACTED","confidence_score":1.0,"source_file":"public/images/about/about-page-block-2.webp","source_location":"text overlay","weight":1.0},{"source":"concept_founded_2024","target":"entity_oasis_of_change","relation":"conceptually_related_to","confidence":"INFERRED","confidence_score":0.85,"source_file":"public/images/about/about-page-block-2.webp","source_location":null,"weight":0.8},{"source":"gabriel_dalton_portrait","target":"page_about","relation":"conceptually_related_to","confidence":"INFERRED","confidence_score":0.9,"source_file":"public/images/about/Gabriel-Dalton.webp","source_location":null,"weight":0.9},{"source":"gabriel_dalton_tedx_talk","target":"page_about","relation":"conceptually_related_to","confidence":"INFERRED","confidence_score":0.85,"source_file":"public/images/about/Gabriel_Dalton_TEDx_Talk.webp","source_location":null,"weight":0.8},{"source":"entity_gabriel_dalton","target":"entity_oasis_of_change","relation":"conceptually_related_to","confidence":"INFERRED","confidence_score":0.9,"source_file":"graphify-out/GRAPH_REPORT.md","source_location":"Community 1","weight":0.9},{"source":"blog_ai_network_visualization","target":"page_blog","relation":"conceptually_related_to","confidence":"INFERRED","confidence_score":0.9,"source_file":"public/images/blog/blog-ai-network-visualization.webp","source_location":null,"weight":0.8},{"source":"blog_assistive_technology","target":"page_blog","relation":"conceptually_related_to","confidence":"INFERRED","confidence_score":0.9,"source_file":"public/images/blog/blog-assistive-technology.webp","source_location":null,"weight":0.8},{"source":"blog_data_center_hardware","target":"page_blog","relation":"conceptually_related_to","confidence":"INFERRED","confidence_score":0.9,"source_file":"public/images/blog/blog-data-center-hardware.webp","source_location":null,"weight":0.8},{"source":"blog_minimal_website_design","target":"page_blog","relation":"conceptually_related_to","confidence":"INFERRED","confidence_score":0.9,"source_file":"public/images/blog/blog-minimal-website-design.webp","source_location":null,"weight":0.8},{"source":"blog_nonprofit_team_review","target":"page_blog","relation":"conceptually_related_to","confidence":"INFERRED","confidence_score":0.9,"source_file":"public/images/blog/blog-nonprofit-team-review.webp","source_location":null,"weight":0.8},{"source":"blog_reforestation_saplings","target":"page_blog","relation":"conceptually_related_to","confidence":"INFERRED","confidence_score":0.9,"source_file":"public/images/blog/blog-reforestation-saplings.webp","source_location":null,"weight":0.8},{"source":"mst_after_redesign","target":"entity_mittler_senior_technology","relation":"references","confidence":"EXTRACTED","confidence_score":1.0,"source_file":"public/images/case-studies/mittler-senior-tech-after-redesign.webp","source_location":"header text","weight":1.0},{"source":"mst_before_redesign","target":"entity_mittler_senior_technology","relation":"references","confidence":"EXTRACTED","confidence_score":1.0,"source_file":"public/images/case-studies/mittler-senior-tech-before-redesign.webp","source_location":"header text","weight":1.0},{"source":"mst_after_redesign","target":"page_mst_case_study","relation":"conceptually_related_to","confidence":"INFERRED","confidence_score":0.9,"source_file":"public/images/case-studies/mittler-senior-tech-after-redesign.webp","source_location":null,"weight":0.9},{"source":"mst_before_redesign","target":"page_mst_case_study","relation":"conceptually_related_to","confidence":"INFERRED","confidence_score":0.9,"source_file":"public/images/case-studies/mittler-senior-tech-before-redesign.webp","source_location":null,"weight":0.9},{"source":"mst_after_redesign","target":"mst_before_redesign","relation":"conceptually_related_to","confidence":"EXTRACTED","confidence_score":1.0,"source_file":"graphify-out/GRAPH_REPORT.md","source_location":"hyper_mst_before_after_comparison","weight":1.0},{"source":"entity_mittler_senior_technology","target":"entity_oasis_of_change","relation":"conceptually_related_to","confidence":"INFERRED","confidence_score":0.8,"source_file":"graphify-out/GRAPH_REPORT.md","source_location":"hyper_mst_before_after_comparison","weight":0.7},{"source":"entity_gabriel_dalton","target":"concept_ai_literacy","relation":"conceptually_related_to","confidence":"INFERRED","confidence_score":0.8,"source_file":"public/images/about/Gabriel_Dalton_TEDx_Talk.webp","source_location":"slide background","weight":0.7}],"hyperedges":[{"id":"hyper_about_page_hero_section","label":"About Page Hero Section Visual Assets","nodes":["about_page_block_1","about_page_block_2","gabriel_dalton_portrait","entity_oasis_of_change","page_about"],"relation":"participate_in","confidence":"EXTRACTED","confidence_score":1.0,"source_file":"graphify-out/GRAPH_REPORT.md"},{"id":"hyper_gabriel_dalton_public_presence","label":"Gabriel Dalton Public Presence","nodes":["gabriel_dalton_portrait","gabriel_dalton_tedx_talk","entity_gabriel_dalton","entity_tedx","concept_ai_literacy"],"relation":"participate_in","confidence":"INFERRED","confidence_score":0.8,"source_file":"public/images/about/Gabriel_Dalton_TEDx_Talk.webp"},{"id":"hyper_mst_before_after_comparison","label":"MST Website Before/After Case Study Comparison","nodes":["mst_before_redesign","mst_after_redesign","entity_mittler_senior_technology","entity_oasis_of_change","page_mst_case_study"],"relation":"participate_in","confidence":"EXTRACTED","confidence_score":1.0,"source_file":"graphify-out/GRAPH_REPORT.md"}],"input_tokens":0,"output_tokens":0}
+{
+  "nodes": [
+    {
+      "id": "i18n_module",
+      "label": "i18n Language Switcher Module",
+      "type": "module",
+      "file": "public/js/i18n.js",
+      "description": "Self-contained IIFE providing multilingual support (EN/FR/ES) via curated dictionary + Google Translate fallback"
+    },
+    {
+      "id": "site_js_module",
+      "label": "Site JS Module",
+      "type": "module",
+      "file": "public/js/site.js",
+      "description": "Self-contained IIFE providing mobile nav, accordion, blog toggle, image comparison slider, smooth scroll, and console easter egg"
+    },
+    {
+      "id": "audit_css_script",
+      "label": "CSS Audit Script",
+      "type": "script",
+      "file": "scripts/audit_css.py",
+      "description": "Compares Tailwind CSS classes defined in CSS vs used in HTML to find missing and unused classes"
+    },
+    {
+      "id": "claude_md_config",
+      "label": "CLAUDE.md Project Configuration",
+      "type": "config",
+      "file": "CLAUDE.md",
+      "description": "Project-level Claude Code instructions including graphify integration rules"
+    },
+    {
+      "id": "graph_report",
+      "label": "Graph Report (2026-04-11)",
+      "type": "document",
+      "file": "graphify-out/GRAPH_REPORT.md",
+      "description": "Knowledge graph report with 115 nodes, 108 edges, 23 communities for the redesign-2026 project"
+    },
+    {
+      "id": "robots_txt",
+      "label": "robots.txt",
+      "type": "config",
+      "file": "public/robots.txt",
+      "description": "Search engine crawler configuration allowing all agents and pointing to sitemap"
+    },
+    {
+      "id": "google_translate_integration",
+      "label": "Google Translate Integration",
+      "type": "concept",
+      "file": "public/js/i18n.js",
+      "description": "External dependency on Google Translate API for full-page translation of content not covered by curated dictionary"
+    },
+    {
+      "id": "curated_dictionary",
+      "label": "Curated Translation Dictionary",
+      "type": "data_structure",
+      "file": "public/js/i18n.js",
+      "description": "Hand-written FR/ES translations for ~40 key UI strings (nav, footer, CTAs) providing instant high-quality translations"
+    },
+    {
+      "id": "lang_persistence",
+      "label": "Language Persistence (localStorage)",
+      "type": "concept",
+      "file": "public/js/i18n.js",
+      "description": "Language preference persisted via localStorage key ooc-lang and Google Translate cookie googtrans"
+    },
+    {
+      "id": "nav_overflow_guard",
+      "label": "Nav Overflow Guard",
+      "type": "pattern",
+      "file": "public/js/site.js",
+      "description": "Three-stage responsive nav: full logo -> compact icon logo -> hamburger menu, triggered by content overflow measurement"
+    },
+    {
+      "id": "image_compare_widget",
+      "label": "Image Comparison Slider Widget",
+      "type": "component",
+      "file": "public/js/site.js",
+      "description": "Before/after image comparison with pointer drag, dark/light pill label switching"
+    },
+    {
+      "id": "console_easter_egg",
+      "label": "Console Easter Egg (Curious Coder)",
+      "type": "component",
+      "file": "public/js/site.js",
+      "description": "ASCII art logo and sustainability message logged to browser console for developers inspecting the site"
+    },
+    {
+      "id": "tailwind_min_css",
+      "label": "Tailwind Minified CSS",
+      "type": "asset",
+      "file": "public/css/tailwind/tailwind.min.css",
+      "description": "Compiled Tailwind CSS file audited by the CSS audit script"
+    },
+    {
+      "id": "custom_classes_allowlist",
+      "label": "Custom/JS-Injected Classes Allowlist",
+      "type": "data_structure",
+      "file": "scripts/audit_css.py",
+      "description": "Set of ~35 class names injected by JS (nav dropdowns, impact stats, ticker, footer) excluded from missing-class reports"
+    },
+    {
+      "id": "oasis_of_change_website",
+      "label": "Oasis of Change Website",
+      "type": "entity",
+      "description": "The oasisofchange.com website, the product of this redesign-2026 project"
+    },
+    {
+      "id": "sitemap_xml",
+      "label": "Sitemap XML",
+      "type": "asset",
+      "file": "public/sitemap.xml",
+      "description": "XML sitemap referenced by robots.txt at https://oasisofchange.com/sitemap.xml"
+    },
+    {
+      "id": "rationale_dictionary_before_gt",
+      "label": "Rationale: Dictionary-First Translation Strategy",
+      "type": "rationale",
+      "file": "public/js/i18n.js",
+      "description": "Curated dictionary applied first for instant, high-quality nav/footer translations without flash of untranslated content, with Google Translate as fallback for remaining page content"
+    },
+    {
+      "id": "rationale_nav_overflow_stages",
+      "label": "Rationale: Three-Stage Nav Collapse",
+      "type": "rationale",
+      "file": "public/js/site.js",
+      "description": "Nav uses three progressive stages (full logo, icon-only logo, hamburger) to maximize horizontal space before collapsing, avoiding premature hamburger on medium viewports"
+    },
+    {
+      "id": "rationale_gt_hide_css",
+      "label": "Rationale: Hide Google Translate Chrome",
+      "type": "rationale",
+      "file": "public/js/i18n.js",
+      "description": "Google Translate default banner, tooltip, and highlight UI is hidden via injected CSS to maintain the site clean design while still using GT for translation"
+    },
+    {
+      "id": "rationale_custom_class_exclusion",
+      "label": "Rationale: Custom Class Exclusion in Audit",
+      "type": "rationale",
+      "file": "scripts/audit_css.py",
+      "description": "JS-injected classes are excluded from the missing-class report because they are styled in site.css or inline, not in the Tailwind build - prevents false positives in the audit"
+    },
+    {
+      "id": "prefers_reduced_motion",
+      "label": "Prefers Reduced Motion Support",
+      "type": "pattern",
+      "file": "public/js/site.js",
+      "description": "Mobile nav respects prefers-reduced-motion media query, skipping slide/fade animations for accessibility"
+    }
+  ],
+  "edges": [
+    {
+      "source": "i18n_module",
+      "target": "google_translate_integration",
+      "relationship": "depends_on",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "Loads Google Translate script and uses google.translate.TranslateElement API"
+    },
+    {
+      "source": "i18n_module",
+      "target": "curated_dictionary",
+      "relationship": "contains",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "Module defines the T dictionary object with ~40 curated EN to FR/ES translation pairs"
+    },
+    {
+      "source": "i18n_module",
+      "target": "lang_persistence",
+      "relationship": "implements",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "Uses localStorage (ooc-lang) and googtrans cookie for language persistence across page loads"
+    },
+    {
+      "source": "i18n_module",
+      "target": "site_js_module",
+      "relationship": "coordinates_with",
+      "type": "INFERRED",
+      "confidence_score": 0.8,
+      "detail": "i18n injects switcher into nav structure built by site.js, dispatches resize event to trigger nav overflow recheck"
+    },
+    {
+      "source": "site_js_module",
+      "target": "nav_overflow_guard",
+      "relationship": "implements",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "initMobileNav() contains the three-stage overflow measurement and collapse logic"
+    },
+    {
+      "source": "site_js_module",
+      "target": "image_compare_widget",
+      "relationship": "implements",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "initImageSlider() creates pointer-drag before/after comparison widgets"
+    },
+    {
+      "source": "site_js_module",
+      "target": "console_easter_egg",
+      "relationship": "implements",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "logCuriousCoderMessage() prints ASCII logo and sustainability message to console"
+    },
+    {
+      "source": "site_js_module",
+      "target": "prefers_reduced_motion",
+      "relationship": "implements",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "prefersReducedMotion() check gates all nav panel animations"
+    },
+    {
+      "source": "audit_css_script",
+      "target": "tailwind_min_css",
+      "relationship": "reads",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "extract_css_classes() parses public/css/tailwind/tailwind.min.css"
+    },
+    {
+      "source": "audit_css_script",
+      "target": "custom_classes_allowlist",
+      "relationship": "contains",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "CUSTOM_CLASSES set defines ~35 JS-injected class names excluded from missing-class reports"
+    },
+    {
+      "source": "custom_classes_allowlist",
+      "target": "site_js_module",
+      "relationship": "references",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "Allowlist comments explicitly state classes are injected via site.js (nav dropdown, impact stats, ticker, footer)"
+    },
+    {
+      "source": "claude_md_config",
+      "target": "graph_report",
+      "relationship": "references",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "Instructs to read graphify-out/GRAPH_REPORT.md before answering architecture questions"
+    },
+    {
+      "source": "robots_txt",
+      "target": "sitemap_xml",
+      "relationship": "references",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "Sitemap directive points to https://oasisofchange.com/sitemap.xml"
+    },
+    {
+      "source": "robots_txt",
+      "target": "oasis_of_change_website",
+      "relationship": "configures",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "Allows all user-agents to crawl all paths of the website"
+    },
+    {
+      "source": "i18n_module",
+      "target": "oasis_of_change_website",
+      "relationship": "enhances",
+      "type": "INFERRED",
+      "confidence_score": 0.85,
+      "detail": "Provides trilingual support (EN/FR/ES) for the Oasis of Change website"
+    },
+    {
+      "source": "site_js_module",
+      "target": "oasis_of_change_website",
+      "relationship": "enhances",
+      "type": "INFERRED",
+      "confidence_score": 0.85,
+      "detail": "Provides core interactive behaviors (nav, accordion, slider) for the website"
+    },
+    {
+      "source": "audit_css_script",
+      "target": "oasis_of_change_website",
+      "relationship": "validates",
+      "type": "INFERRED",
+      "confidence_score": 0.8,
+      "detail": "Audits the website CSS to detect visually broken classes and unused CSS bloat"
+    },
+    {
+      "source": "rationale_dictionary_before_gt",
+      "target": "curated_dictionary",
+      "relationship": "rationale_for",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "Explains why curated dictionary is applied before Google Translate: instant rendering, no flash of untranslated content"
+    },
+    {
+      "source": "rationale_dictionary_before_gt",
+      "target": "google_translate_integration",
+      "relationship": "rationale_for",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "Explains GT role as fallback: handles ALL remaining page content that the dictionary does not cover"
+    },
+    {
+      "source": "rationale_nav_overflow_stages",
+      "target": "nav_overflow_guard",
+      "relationship": "rationale_for",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "Code comments explain the three-stage approach: Stage 1 full logo, Stage 2 compact logo to free space, Stage 3 hamburger collapse"
+    },
+    {
+      "source": "rationale_gt_hide_css",
+      "target": "google_translate_integration",
+      "relationship": "rationale_for",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "injectGTHideCSS() hides GT default chrome to maintain clean design while leveraging GT translation"
+    },
+    {
+      "source": "rationale_custom_class_exclusion",
+      "target": "custom_classes_allowlist",
+      "relationship": "rationale_for",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "Comments explain these are expected - styled elsewhere, preventing false positives in the audit"
+    },
+    {
+      "source": "image_compare_widget",
+      "target": "graph_report",
+      "relationship": "related_to",
+      "type": "INFERRED",
+      "confidence_score": 0.7,
+      "detail": "Graph report documents MST Website Before/After Case Study Comparison hyperedge; image compare widget provides the UI for such comparisons"
+    },
+    {
+      "source": "console_easter_egg",
+      "target": "oasis_of_change_website",
+      "relationship": "brand_expression_of",
+      "type": "INFERRED",
+      "confidence_score": 0.75,
+      "detail": "ASCII logo and conscious coder messaging reinforces Oasis of Change sustainability brand identity to developers"
+    },
+    {
+      "source": "curated_dictionary",
+      "target": "google_translate_integration",
+      "relationship": "complements",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "Dictionary handles high-visibility nav/footer strings instantly; GT handles the long tail of page content"
+    },
+    {
+      "source": "i18n_module",
+      "target": "curated_dictionary",
+      "relationship": "uses_notranslate_marker",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "detail": "After applying dictionary translations, elements are marked with notranslate class to prevent GT from double-translating"
+    }
+  ],
+  "metadata": {
+    "chunk": "01",
+    "total_chunks": 5,
+    "files_processed": [
+      "public/js/i18n.js",
+      "public/js/site.js",
+      "scripts/audit_css.py",
+      "CLAUDE.md",
+      "graphify-out/GRAPH_REPORT.md",
+      "public/robots.txt"
+    ],
+    "extraction_timestamp": "2026-04-12"
+  }
+}
