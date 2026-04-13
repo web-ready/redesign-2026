@@ -30,7 +30,9 @@ const FIELD_LABELS = {
   organization: 'Organization',
   organization_type: 'Org type',
   website: 'Website',
+  linkedin: 'LinkedIn',
   role: 'Role',
+  employees: 'Team size',
   volunteer_interest: 'Areas of interest',
   volunteer_availability: 'Availability',
   volunteer_skills: 'Skills / experience',
@@ -41,6 +43,7 @@ const FIELD_LABELS = {
   media_request_type: 'Request type',
   media_deadline: 'Deadline',
   media_angle: 'Story angle',
+  media_file_url: 'Attached file',
   speaking_event: 'Event name',
   speaking_date: 'Event date',
   speaking_format: 'Format',
@@ -65,7 +68,7 @@ const FIELD_LABELS = {
 const SECTION_FIELDS = {
   'volunteer':     ['volunteer_interest', 'volunteer_availability', 'volunteer_skills'],
   'partnership':   ['partnership_type', 'partnership_mission', 'partnership_goals'],
-  'media':         ['media_outlet', 'media_request_type', 'media_deadline', 'media_angle'],
+  'media':         ['media_outlet', 'media_request_type', 'media_deadline', 'media_angle', 'media_file_url'],
   'speaking':      ['speaking_event', 'speaking_date', 'speaking_format', 'speaking_audience_size', 'speaking_topic', 'speaking_details'],
   'web-ready':     ['webready_service', 'webready_url', 'webready_goals'],
   'wra-platform':  ['wra_budget', 'wra_referral', 'wra_support'],
@@ -73,6 +76,9 @@ const SECTION_FIELDS = {
   'vcasse':        ['vcasse_interest', 'vcasse_description'],
   'tree-planting': ['tree_interest'],
 };
+
+// Fields whose values should be rendered as hyperlinks in Slack.
+const URL_FIELDS = new Set(['website', 'linkedin', 'media_file_url', 'webready_url']);
 
 // Escape characters that have special meaning in Slack mrkdwn.
 function esc(s) {
@@ -105,6 +111,10 @@ function displayValue(data, key) {
     }).map(esc).join(', ');
   }
   if (v === 'other' && hasOther) return esc('Other — ' + other);
+  if (URL_FIELDS.has(key) && isFilled(v)) {
+    const safe = esc(String(v));
+    return `<${safe}|${safe}>`;
+  }
   return esc(v);
 }
 
@@ -141,7 +151,7 @@ function buildBlocks(data, submissionId) {
   });
 
   // ── Organization ───────────────────────────────────────────────────────
-  const orgKeys = ['organization', 'organization_type', 'website', 'role'];
+  const orgKeys = ['organization', 'organization_type', 'website', 'linkedin', 'role', 'employees'];
   const orgFilled = orgKeys.filter(k => isFilled(data[k]));
   if (orgFilled.length) {
     blocks.push({ type: 'divider' });

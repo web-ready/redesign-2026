@@ -930,6 +930,259 @@ textarea.cf-input {
   }
 }
 
+/* ── Contact form: valid state ────────────────────────────────────────────── */
+.cf-input-valid {
+  border-color: #16a34a;
+  background-color: #f0fdf4;
+}
+.cf-input-valid:focus {
+  border-color: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+
+/* ── Contact form: char counter ───────────────────────────────────────────── */
+.cf-char-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.cf-char-count {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  text-align: right;
+  margin-top: 0.25rem;
+  transition: color 0.15s ease;
+  user-select: none;
+}
+.cf-char-count.cf-char-warn  { color: #d97706; }
+.cf-char-count.cf-char-alert { color: #ef4444; }
+
+/* ── Contact form: draft banner ───────────────────────────────────────────── */
+.cf-draft-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 1rem;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.8125rem;
+  color: #1d4ed8;
+  line-height: 1.4;
+}
+.cf-draft-banner svg {
+  flex-shrink: 0;
+  color: #3b82f6;
+}
+.cf-draft-banner p {
+  flex: 1;
+  margin: 0;
+}
+.cf-draft-discard {
+  flex-shrink: 0;
+  background: none;
+  border: 1px solid #93c5fd;
+  border-radius: 0.375rem;
+  color: #1d4ed8;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.625rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+.cf-draft-discard:hover {
+  background-color: #dbeafe;
+  border-color: #60a5fa;
+}
+
+/* ── Contact form: file input ─────────────────────────────────────────────── */
+.cf-label-hint {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: 400;
+  margin-left: 0.25rem;
+}
+.cf-file-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+.cf-file-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #f9fafb;
+  border: 1px dashed #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  color: #374151;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  width: 100%;
+  justify-content: center;
+}
+.cf-file-btn:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+.cf-file-input {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.cf-file-name {
+  font-size: 0.8125rem;
+  color: #4b5563;
+  padding: 0.375rem 0.625rem;
+  background: #f3f4f6;
+  border-radius: 0.375rem;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.cf-file-name.has-file {
+  display: flex;
+}
+.cf-file-clear {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.cf-file-clear:hover { color: #ef4444; }
+.cf-file-hint {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+/* ── Custom select (cs-*) ─────────────────────────────────────────────────── */
+/* Desktop: replaces native <select> with a keyboard+mouse accessible combobox */
+/* Mobile (≤639px): hides the custom widget and shows native <select>          */
+.cs-wrap {
+  position: relative;
+}
+.cs-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 0.9375rem;
+  color: #374151;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  min-height: 2.625rem;
+}
+.cs-trigger:hover {
+  border-color: #9ca3af;
+}
+.cs-trigger:focus-visible,
+.cs-trigger[aria-expanded="true"] {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.18);
+  outline: none;
+}
+.cs-trigger[aria-expanded="true"] .cs-chevron {
+  transform: rotate(180deg);
+}
+.cs-label-text {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.cs-label-text.cs-placeholder {
+  color: #9ca3af;
+}
+.cs-chevron {
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  color: #6b7280;
+  transition: transform 0.18s ease;
+  pointer-events: none;
+}
+.cs-listbox {
+  position: absolute;
+  z-index: 50;
+  top: calc(100% + 0.25rem);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 24px -4px rgba(0,0,0,0.12), 0 2px 8px -2px rgba(0,0,0,0.06);
+  max-height: 14rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
+}
+.cs-listbox.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.cs-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9375rem;
+  color: #374151;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+  user-select: none;
+}
+.cs-option:hover,
+.cs-option.is-highlighted {
+  background-color: #f3f4f6;
+}
+.cs-option[aria-selected="true"] {
+  color: #4f46e5;
+  font-weight: 500;
+  background-color: #eef2ff;
+}
+.cs-option[aria-selected="true"]::after {
+  content: '';
+  display: block;
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+  background: currentColor;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+/* Hide custom widget; show native select on small screens */
+@media (max-width: 639px) {
+  .cs-wrap { display: none !important; }
+  select.cf-input { display: block !important; }
+}
+/* Show custom widget; hide native select on large screens */
+@media (min-width: 640px) {
+  select.cf-input { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cs-listbox { transition: none; }
+  .cs-chevron { transition: none; }
+}
+
 /* ── Nonprofits page ──────────────────────────────────────────────────────── */
 
 @media (min-width: 1024px) {

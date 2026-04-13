@@ -803,10 +803,13 @@
       }
       clearFormError();
 
-      fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
+      uploadFileIfNeeded().then(function (fileUrl) {
+        if (fileUrl) payload.media_file_url = fileUrl;
+        return fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
       }).then(function (r) {
         return r.json().then(function (j) { return { ok: r.ok, body: j }; }, function () { return { ok: r.ok, body: {} }; });
       }).then(function (result) {
@@ -817,6 +820,7 @@
           showFormError(msg);
           return;
         }
+        if (typeof window.__cfClearDraft === 'function') window.__cfClearDraft();
         form.style.display = 'none';
         if (successEl) successEl.style.display = '';
       }).catch(function () {
@@ -842,6 +846,375 @@
       var submitField = submitBtnEl ? submitBtnEl.closest('.cf-field') : null;
       if (submitField) submitField.appendChild(el);
     }
+
+    // ── Draft auto-save ──────────────────────────────────────────────────────
+    // Saves form data to localStorage every 30 s and on beforeunload.
+    // Restored automatically on next visit; banner appears with a discard option.
+    (function initDraftSave() {
+      var DRAFT_KEY = 'cf_draft';
+      var DRAFT_TTL = 7 * 24 * 60 * 60 * 1000; // 7 days in ms
+      var banner = document.getElementById('cf-draft-banner');
+      var discardBtn = banner ? banner.querySelector('.cf-draft-discard') : null;
+
+      function saveDraft() {
+        var payload = {};
+        var fd = new FormData(form);
+        fd.forEach(function (val, key) {
+          if (key === 'website_url') return; // honeypot — never persist
+          if (Object.prototype.hasOwnProperty.call(payload, key)) {
+            if (!Array.isArray(payload[key])) payload[key] = [payload[key]];
+            payload[key].push(val);
+          } else {
+            payload[key] = val;
+          }
+        });
+        // Store checked booleans for checkboxes that FormData omits when unchecked
+        var consent = form.querySelector('[name="privacy_consent"]');
+        var newsletter = form.querySelector('[name="newsletter"]');
+        if (consent)    payload.privacy_consent = consent.checked;
+        if (newsletter) payload.newsletter = newsletter.checked;
+
+        try {
+          localStorage.setItem(DRAFT_KEY, JSON.stringify({ ts: Date.now(), data: payload }));
+        } catch (e) { /* storage full or private mode */ }
+      }
+
+      function loadDraft() {
+        try {
+          var raw = localStorage.getItem(DRAFT_KEY);
+          if (!raw) return;
+          var parsed = JSON.parse(raw);
+          if (!parsed || !parsed.data) return;
+          if (Date.now() - parsed.ts > DRAFT_TTL) { localStorage.removeItem(DRAFT_KEY); return; }
+          var d = parsed.data;
+
+          // Restore each field
+          Object.keys(d).forEach(function (key) {
+            var val = d[key];
+            var els = form.querySelectorAll('[name="' + key + '"]');
+            if (!els.length) return;
+            if (els[0].type === 'checkbox') {
+              // boolean (single checkbox like consent / newsletter)
+              if (typeof val === 'boolean') {
+                els[0].checked = val;
+              } else {
+                // checkbox group — val is an array
+                var vals = Array.isArray(val) ? val : [val];
+                els.forEach(function (cb) { cb.checked = vals.indexOf(cb.value) !== -1; });
+              }
+            } else if (els[0].tagName === 'SELECT') {
+              els[0].value = val;
+              els[0].dispatchEvent(new Event('change', { bubbles: true }));
+            } else {
+              els[0].value = val;
+            }
+          });
+
+          if (banner) banner.style.display = '';
+        } catch (e) { /* corrupt storage */ }
+      }
+
+      function clearDraft() {
+        try { localStorage.removeItem(DRAFT_KEY); } catch (e) {}
+        if (banner) banner.style.display = 'none';
+      }
+
+      // Expose so submit handler can clear on success
+      window.__cfClearDraft = clearDraft;
+
+      // Restore draft on page load (banner hidden by default via CSS/HTML)
+      loadDraft();
+
+      // Auto-save on input/change and on tab close
+      var saveTimer;
+      form.addEventListener('input', function () {
+        clearTimeout(saveTimer);
+        saveTimer = setTimeout(saveDraft, 1500);
+      });
+      form.addEventListener('change', function () {
+        clearTimeout(saveTimer);
+        saveTimer = setTimeout(saveDraft, 1500);
+      });
+      window.addEventListener('beforeunload', saveDraft);
+
+      if (discardBtn) {
+        discardBtn.addEventListener('click', function () {
+          clearDraft();
+          form.reset();
+          // Re-sync conditional sections after reset
+          var typeEl = document.getElementById('cf-type');
+          if (typeEl) typeEl.dispatchEvent(new Event('change', { bubbles: true }));
+        });
+      }
+    }());
+
+    // ── Character counter ────────────────────────────────────────────────────
+    (function initCharCounter() {
+      var textarea = document.getElementById('cf-message');
+      var counter  = document.getElementById('cf-char-count');
+      if (!textarea || !counter) return;
+      var MAX = 5000;
+
+      function update() {
+        var len = textarea.value.length;
+        counter.textContent = len.toLocaleString() + ' / ' + MAX.toLocaleString();
+        counter.classList.remove('cf-char-warn', 'cf-char-alert');
+        if (len >= MAX)  counter.classList.add('cf-char-alert');
+        else if (len >= 4750) counter.classList.add('cf-char-alert');
+        else if (len >= 4000) counter.classList.add('cf-char-warn');
+      }
+
+      textarea.addEventListener('input', update);
+      update();
+    }());
+
+    // ── Inline email validation (on blur) ────────────────────────────────────
+    (function initInlineValidation() {
+      var emailInput = document.getElementById('cf-email');
+      if (!emailInput) return;
+
+      emailInput.addEventListener('blur', function () {
+        var v = emailInput.value.trim();
+        if (!v) return; // empty — leave required validation to submit
+        var parent = emailInput.closest('.cf-field') || emailInput.parentElement;
+        var existing = parent ? parent.querySelector('.cf-error-text') : null;
+        if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) {
+          emailInput.classList.remove('cf-input-error');
+          emailInput.classList.add('cf-input-valid');
+          if (existing) existing.remove();
+        } else {
+          emailInput.classList.remove('cf-input-valid');
+          emailInput.classList.add('cf-input-error');
+          if (!existing && parent) {
+            var err = document.createElement('p');
+            err.className = 'cf-error-text';
+            err.setAttribute('role', 'alert');
+            err.textContent = 'Please enter a valid email address';
+            parent.appendChild(err);
+          }
+        }
+      });
+
+      emailInput.addEventListener('input', function () {
+        emailInput.classList.remove('cf-input-valid');
+      });
+    }());
+
+    // ── File attachment ──────────────────────────────────────────────────────
+    var _attachedFile = null;
+
+    (function initFileUpload() {
+      var btn      = document.getElementById('cf-file-btn');
+      var input    = document.getElementById('cf-file-input');
+      var nameEl   = document.getElementById('cf-file-name');
+      var clearBtn = document.getElementById('cf-file-clear');
+      if (!btn || !input) return;
+
+      btn.addEventListener('click', function () { input.click(); });
+
+      input.addEventListener('change', function () {
+        var file = input.files && input.files[0];
+        if (!file) { _attachedFile = null; return; }
+        _attachedFile = file;
+        if (nameEl) {
+          nameEl.querySelector('.cf-file-name-text').textContent = file.name + ' (' + (file.size / 1024).toFixed(0) + ' KB)';
+          nameEl.classList.add('has-file');
+        }
+        btn.style.display = 'none';
+      });
+
+      if (clearBtn) {
+        clearBtn.addEventListener('click', function () {
+          _attachedFile = null;
+          input.value = '';
+          if (nameEl) nameEl.classList.remove('has-file');
+          btn.style.display = '';
+        });
+      }
+    }());
+
+    function uploadFileIfNeeded() {
+      if (!_attachedFile) return Promise.resolve(null);
+      var file = _attachedFile;
+
+      return new Promise(function (resolve) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          // Strip the data-URL prefix to get raw base64
+          var base64 = e.target.result.split(',')[1];
+          fetch('/api/upload', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ filename: file.name, contentType: file.type, data: base64 })
+          }).then(function (r) {
+            return r.json();
+          }).then(function (j) {
+            resolve((j && j.ok && j.url) ? j.url : null);
+          }).catch(function () { resolve(null); });
+        };
+        reader.onerror = function () { resolve(null); };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    // ── Custom select dropdowns (cs-*) ───────────────────────────────────────
+    // Replaces every select.cf-input with an accessible combobox on desktop.
+    // On mobile (≤639px) the native widget is shown instead (CSS handles swap).
+    (function initCustomSelects() {
+      // Skip on mobile — CSS already hides .cs-wrap there
+      if (window.matchMedia && window.matchMedia('(max-width: 639px)').matches) return;
+
+      form.querySelectorAll('select.cf-input').forEach(function (sel) {
+        // Build wrapper
+        var wrap = document.createElement('div');
+        wrap.className = 'cs-wrap';
+
+        // Trigger button
+        var trigger = document.createElement('button');
+        trigger.type = 'button';
+        trigger.className = 'cs-trigger';
+        trigger.setAttribute('aria-haspopup', 'listbox');
+        trigger.setAttribute('aria-expanded', 'false');
+        var listboxId = 'cs-lb-' + (sel.id || sel.name || Math.random().toString(36).slice(2));
+        trigger.setAttribute('aria-controls', listboxId);
+
+        var labelText = document.createElement('span');
+        labelText.className = 'cs-label-text cs-placeholder';
+        var chevron = document.createElement('span');
+        chevron.className = 'cs-chevron';
+        chevron.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
+        trigger.appendChild(labelText);
+        trigger.appendChild(chevron);
+
+        // Listbox
+        var listbox = document.createElement('ul');
+        listbox.id = listboxId;
+        listbox.className = 'cs-listbox';
+        listbox.setAttribute('role', 'listbox');
+        listbox.setAttribute('aria-label', sel.getAttribute('aria-label') || '');
+        listbox.tabIndex = -1;
+
+        // Populate options from the native select
+        var optionEls = [];
+        var placeholder = '';
+        for (var i = 0; i < sel.options.length; i++) {
+          var opt = sel.options[i];
+          if (opt.value === '') { placeholder = opt.text; continue; }
+          (function (opt) {
+            var li = document.createElement('li');
+            li.className = 'cs-option';
+            li.setAttribute('role', 'option');
+            li.setAttribute('aria-selected', 'false');
+            li.dataset.value = opt.value;
+            li.textContent = opt.text;
+            listbox.appendChild(li);
+            optionEls.push(li);
+          }(opt));
+        }
+
+        if (placeholder) labelText.textContent = placeholder;
+
+        wrap.appendChild(trigger);
+        wrap.appendChild(listbox);
+
+        // Insert the custom widget right before the native select
+        sel.parentNode.insertBefore(wrap, sel);
+
+        var highlighted = -1;
+        var isOpen = false;
+
+        function open() {
+          isOpen = true;
+          listbox.classList.add('is-open');
+          trigger.setAttribute('aria-expanded', 'true');
+          // Scroll highlighted item into view
+          if (highlighted >= 0) optionEls[highlighted].scrollIntoView({ block: 'nearest' });
+        }
+
+        function close() {
+          isOpen = false;
+          listbox.classList.remove('is-open');
+          trigger.setAttribute('aria-expanded', 'false');
+          highlighted = -1;
+          optionEls.forEach(function (li) { li.classList.remove('is-highlighted'); });
+        }
+
+        function selectOption(idx) {
+          if (idx < 0 || idx >= optionEls.length) return;
+          var li = optionEls[idx];
+          optionEls.forEach(function (o) { o.setAttribute('aria-selected', 'false'); });
+          li.setAttribute('aria-selected', 'true');
+          labelText.textContent = li.textContent;
+          labelText.classList.remove('cs-placeholder');
+          // Sync native select so FormData picks it up
+          sel.value = li.dataset.value;
+          sel.dispatchEvent(new Event('change', { bubbles: true }));
+          close();
+          trigger.focus();
+        }
+
+        function highlight(idx) {
+          if (idx < 0) idx = optionEls.length - 1;
+          if (idx >= optionEls.length) idx = 0;
+          optionEls.forEach(function (o) { o.classList.remove('is-highlighted'); });
+          if (optionEls[idx]) optionEls[idx].classList.add('is-highlighted');
+          if (optionEls[idx]) optionEls[idx].scrollIntoView({ block: 'nearest' });
+          highlighted = idx;
+        }
+
+        trigger.addEventListener('click', function () {
+          if (isOpen) close(); else open();
+        });
+
+        trigger.addEventListener('keydown', function (e) {
+          if (e.key === 'ArrowDown') { e.preventDefault(); if (!isOpen) open(); highlight(highlighted + 1); }
+          else if (e.key === 'ArrowUp') { e.preventDefault(); if (!isOpen) open(); highlight(highlighted - 1); }
+          else if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (isOpen) { if (highlighted >= 0) selectOption(highlighted); } else open(); }
+          else if (e.key === 'Escape') { close(); }
+          else if (e.key === 'Tab') { close(); }
+        });
+
+        listbox.addEventListener('keydown', function (e) {
+          if (e.key === 'ArrowDown') { e.preventDefault(); highlight(highlighted + 1); }
+          else if (e.key === 'ArrowUp') { e.preventDefault(); highlight(highlighted - 1); }
+          else if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (highlighted >= 0) selectOption(highlighted); }
+          else if (e.key === 'Escape') { close(); trigger.focus(); }
+        });
+
+        optionEls.forEach(function (li, idx) {
+          li.addEventListener('mouseenter', function () { highlight(idx); });
+          li.addEventListener('click', function () { selectOption(idx); });
+        });
+
+        // Close on outside click
+        document.addEventListener('click', function (e) {
+          if (!wrap.contains(e.target)) close();
+        });
+
+        // If the native select already has a value (e.g. from URL param), sync it
+        if (sel.value) {
+          var preIdx = optionEls.findIndex(function (li) { return li.dataset.value === sel.value; });
+          if (preIdx >= 0) {
+            optionEls[preIdx].setAttribute('aria-selected', 'true');
+            labelText.textContent = optionEls[preIdx].textContent;
+            labelText.classList.remove('cs-placeholder');
+            highlighted = preIdx;
+          }
+        }
+
+        // Also listen for native select changes (e.g. from URL pre-select) so
+        // the custom widget stays in sync.
+        sel.addEventListener('change', function () {
+          var idx = optionEls.findIndex(function (li) { return li.dataset.value === sel.value; });
+          if (idx >= 0) {
+            optionEls.forEach(function (o) { o.setAttribute('aria-selected', 'false'); });
+            optionEls[idx].setAttribute('aria-selected', 'true');
+            labelText.textContent = optionEls[idx].textContent;
+            labelText.classList.remove('cs-placeholder');
+          }
+        });
+      });
+    }());
   }
 
   function initLightbox() {
