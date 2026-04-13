@@ -804,7 +804,7 @@
       clearFormError();
 
       uploadFileIfNeeded().then(function (fileUrl) {
-        if (fileUrl) payload.media_file_url = fileUrl;
+        if (fileUrl) payload.attachment_url = fileUrl;
         return fetch('/api/contact', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

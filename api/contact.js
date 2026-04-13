@@ -43,7 +43,7 @@ const FIELD_LABELS = {
   media_request_type: 'Request type',
   media_deadline: 'Deadline',
   media_angle: 'Story angle',
-  media_file_url: 'Attached file',
+  attachment_url: 'Attached file',
   speaking_event: 'Event name',
   speaking_date: 'Event date',
   speaking_format: 'Format',
@@ -68,7 +68,7 @@ const FIELD_LABELS = {
 const SECTION_FIELDS = {
   'volunteer':     ['volunteer_interest', 'volunteer_availability', 'volunteer_skills'],
   'partnership':   ['partnership_type', 'partnership_mission', 'partnership_goals'],
-  'media':         ['media_outlet', 'media_request_type', 'media_deadline', 'media_angle', 'media_file_url'],
+  'media':         ['media_outlet', 'media_request_type', 'media_deadline', 'media_angle'],
   'speaking':      ['speaking_event', 'speaking_date', 'speaking_format', 'speaking_audience_size', 'speaking_topic', 'speaking_details'],
   'web-ready':     ['webready_service', 'webready_url', 'webready_goals'],
   'wra-platform':  ['wra_budget', 'wra_referral', 'wra_support'],
@@ -78,7 +78,7 @@ const SECTION_FIELDS = {
 };
 
 // Fields whose values should be rendered as hyperlinks in Slack.
-const URL_FIELDS = new Set(['website', 'linkedin', 'media_file_url', 'webready_url']);
+const URL_FIELDS = new Set(['website', 'linkedin', 'attachment_url', 'webready_url']);
 
 // Escape characters that have special meaning in Slack mrkdwn.
 function esc(s) {
@@ -213,6 +213,15 @@ function buildBlocks(data, submissionId) {
     blocks.push({
       type: 'section',
       text: { type: 'mrkdwn', text: `*✉️ Message*\n>${esc(truncate(data.message, 2800)).replace(/\n/g, '\n>')}` },
+    });
+  }
+
+  // ── Attachment ─────────────────────────────────────────────────────────
+  if (isFilled(data.attachment_url)) {
+    const url = esc(String(data.attachment_url));
+    blocks.push({
+      type: 'section',
+      text: { type: 'mrkdwn', text: `*📎 Attachment*\n<${url}|Download file>` },
     });
   }
 
