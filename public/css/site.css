@@ -1168,21 +1168,30 @@ textarea.cf-input {
 }
 
 .np-svc-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 9999px;
+  background-color: #dcfce7; /* green-100 — soft pill fill */
+  color: #047857;            /* green-700 — numeric ink */
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-  font-size: 2.5rem;
-  font-weight: 500;
-  letter-spacing: -0.03em;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0;
   line-height: 1;
 }
-.np-svc-num--green  { color: #047857; }
-.np-svc-num--amber  { color: #b45309; }
-.np-svc-num--violet { color: #6d28d9; }
+/* Colour variants unified — every step shares the same green pill now.      */
+.np-svc-num--green,
+.np-svc-num--amber,
+.np-svc-num--violet {
+  background-color: #dcfce7;
+  color: #047857;
+}
 
 .np-svc-num-rule {
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(to right, currentColor 0%, transparent 100%);
-  opacity: 0.18;
+  display: none;
 }
 
 .np-svc-kicker {
