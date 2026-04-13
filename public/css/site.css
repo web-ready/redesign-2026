@@ -235,15 +235,17 @@
   }
 }
 
-[data-lang-switcher] {
-  position: relative;
-  display: none; /* hidden on mobile — shown at lg+ below */
+/* Spacing between the language switcher and the Get Involved CTA in the
+   right-side nav group (CSS fallback — i18n.js also sets these inline).      */
+@media (min-width: 1024px) {
+  nav[aria-label="Main"] > div > .justify-end {
+    gap: 0.75rem;
+    align-items: center;
+  }
 }
 
-@media (min-width: 1024px) {
-  [data-lang-switcher] {
-    display: block;
-  }
+[data-lang-switcher] {
+  position: relative;
 }
 .lang-btn {
   display: inline-flex;
@@ -503,12 +505,14 @@
   flex-shrink: 0;
 }
 
-/* Hide both the wrap AND the btnGroup at lg+ — wrapping display:none on the  */
-/* container ensures offsetWidth === 0 even if inner element has width.       */
+/* Hide both the wrap AND the btnGroup at lg+ — !important is required here
+   because i18n.js sets display:flex as an inline style on the btnGroup.
+   Without it the group remains a visible flex child in the nav, pushing the
+   Get Involved button away from the right edge.                              */
 @media (min-width: 1024px) {
   .lang-mobile-globe-wrap,
   [data-lang-btn-group] {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -675,4 +679,446 @@
 /* ── Document pages: section spacing ────────────────────────────────────── */
 .report-section + .report-section {
   padding-top: 2.5rem;
+}
+
+/* ── Contact form ────────────────────────────────────────────────────────── */
+.cf-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.cf-fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.cf-legend {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.01em;
+}
+.cf-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+.cf-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  letter-spacing: -0.005em;
+  margin: 0;
+}
+.cf-req {
+  color: #dc2626;
+}
+.cf-input {
+  display: block;
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: #111827;
+  background-color: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 0.625rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  font-family: inherit;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.cf-input:focus {
+  outline: none;
+  border-color: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+.cf-input::placeholder {
+  color: #9ca3af;
+}
+.cf-input-error {
+  border-color: #dc2626 !important;
+}
+.cf-input-error:focus {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15) !important;
+}
+select.cf-input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none'%3E%3Cpath d='M4 6l4 4 4-4' stroke='%236b7280' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+textarea.cf-input {
+  resize: vertical;
+  min-height: 4.5rem;
+}
+.cf-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 640px) {
+  .cf-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.cf-divider {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 0.5rem 0;
+}
+.cf-check-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+@media (min-width: 640px) {
+  .cf-check-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.cf-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #374151;
+  cursor: pointer;
+  line-height: 1.45;
+}
+.cf-check input[type="checkbox"] {
+  width: 1.125rem;
+  height: 1.125rem;
+  margin-top: 0.1rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 0.25rem;
+  background: #fff;
+  cursor: pointer;
+  flex-shrink: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+.cf-check input[type="checkbox"]:checked {
+  background-color: #16a34a;
+  border-color: #16a34a;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2.5 6l2.5 2.5 4.5-5' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 0.75rem;
+}
+.cf-check input[type="checkbox"]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+.cf-link {
+  color: #16a34a;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.cf-link:hover {
+  color: #15803d;
+}
+.cf-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #111827;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  letter-spacing: -0.01em;
+  transition: background-color 0.15s ease;
+  font-family: inherit;
+}
+.cf-submit:hover {
+  background-color: #1f2937;
+}
+.cf-submit:focus-visible {
+  outline: 2px solid #16a34a;
+  outline-offset: 2px;
+}
+.cf-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.cf-conditional {
+  display: none;
+}
+.cf-conditional.is-visible {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.cf-error-text {
+  font-size: 0.8125rem;
+  color: #dc2626;
+  margin-top: 0.125rem;
+}
+.cf-success {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+.cf-success-icon {
+  color: #16a34a;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+.cf-success-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+.cf-success-text {
+  font-size: 0.9375rem;
+  color: #4b5563;
+  max-width: 28rem;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cf-input,
+  .cf-check input[type="checkbox"],
+  .cf-submit,
+  .cf-link {
+    transition: none;
+  }
+}
+
+/* ── Nonprofits page ──────────────────────────────────────────────────────── */
+
+@media (min-width: 1024px) {
+  .lg\:col-span-4  { grid-column: span 4 / span 4; }
+  .lg\:col-span-8  { grid-column: span 8 / span 8; }
+}
+
+/* Hero: warm gradient with organic green glow */
+.np-hero {
+  background: linear-gradient(145deg, #f8faf6 0%, #f0f7ed 45%, #eef6ec 100%);
+  position: relative;
+  overflow: hidden;
+}
+.np-hero::after {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -60px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74, 222, 128, 0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* Quick-start card: elevated with soft shadow */
+.np-quick-start {
+  background: #fff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.03);
+}
+
+/* Green partnership badge */
+.np-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+  background: rgba(236, 253, 245, 0.7);
+}
+
+/* Service card hover lift */
+.np-card {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.np-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 44px -12px rgba(0, 0, 0, 0.1),
+              0 0 0 1px rgba(0, 0, 0, 0.02);
+}
+
+/* Colored icon containers */
+.np-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 1rem;
+  flex-shrink: 0;
+  border: 1px solid;
+}
+.np-icon--green  { background: #ecfdf5; border-color: #a7f3d0; color: #065f46; }
+.np-icon--amber  { background: #fffbeb; border-color: #fde68a; color: #92400e; }
+.np-icon--violet { background: #f5f3ff; border-color: #ddd6fe; color: #5b21b6; }
+
+/* Process section grid */
+.np-process-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .np-process-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+.np-step-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.np-process-card {
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.np-process-card:hover {
+  border-color: #bbf7d0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+/* Dark CTA section */
+.np-cta-dark {
+  background: #0a0a0a;
+  position: relative;
+  overflow: hidden;
+}
+.np-cta-dark::before {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  right: -40px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74, 222, 128, 0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Green CTA button */
+.np-btn-green {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  background: #4ade80;
+  color: #000;
+  border: none;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+.np-btn-green:hover {
+  background: #22c55e;
+}
+.np-btn-green:focus-visible {
+  outline: 2px solid rgb(74, 222, 128);
+  outline-offset: 2px;
+}
+
+/* Ghost button for dark backgrounds */
+.np-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.np-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+.np-btn-ghost:focus-visible {
+  outline: 2px solid rgb(74, 222, 128);
+  outline-offset: 2px;
+}
+
+/* Animated arrow links in dark CTA */
+.np-cta-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #d1d5db;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  transition: color 0.2s ease;
+}
+.np-cta-link:last-child {
+  border-bottom: none;
+}
+.np-cta-link svg {
+  flex-shrink: 0;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.np-cta-link:hover {
+  color: #fff;
+}
+.np-cta-link:hover svg {
+  opacity: 1;
+  transform: translateX(0);
+}
+.np-cta-link:focus-visible {
+  outline: none;
+  color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .np-card,
+  .np-process-card,
+  .np-cta-link,
+  .np-cta-link svg,
+  .np-btn-green,
+  .np-btn-ghost {
+    transition: none;
+  }
 }

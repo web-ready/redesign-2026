@@ -518,12 +518,135 @@
     );
   }
 
+  function initContactForm() {
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+
+    var typeSelect = document.getElementById('cf-type');
+    var successEl = document.getElementById('cf-success');
+    var conditionals = form.querySelectorAll('.cf-conditional');
+
+    function showSections(type) {
+      conditionals.forEach(function (el) {
+        var showFor = el.getAttribute('data-cf-show');
+        var showUnless = el.getAttribute('data-cf-show-unless');
+        var visible = false;
+
+        if (showFor) {
+          visible = type === showFor;
+        } else if (showUnless) {
+          visible = type !== '' && type !== showUnless;
+        }
+
+        if (visible) {
+          el.classList.add('is-visible');
+        } else {
+          el.classList.remove('is-visible');
+        }
+      });
+    }
+
+    // Pre-select inquiry type from URL parameter (?type=volunteer, etc.)
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var preselect = params.get('type') || '';
+      if (preselect && typeSelect) {
+        for (var i = 0; i < typeSelect.options.length; i++) {
+          if (typeSelect.options[i].value === preselect) {
+            typeSelect.value = preselect;
+            showSections(preselect);
+            break;
+          }
+        }
+      }
+    } catch (e) {
+      // URLSearchParams not supported — ignore
+    }
+
+    if (typeSelect) {
+      typeSelect.addEventListener('change', function () {
+        showSections(this.value);
+      });
+    }
+
+    // Clear field errors on interaction
+    function clearFieldError(field) {
+      var parent = field.closest('.cf-field');
+      if (!parent) parent = field.parentElement;
+      field.classList.remove('cf-input-error');
+      var err = parent ? parent.querySelector('.cf-error-text') : null;
+      if (err) err.remove();
+    }
+
+    form.addEventListener('input', function (e) { clearFieldError(e.target); });
+    form.addEventListener('change', function (e) { clearFieldError(e.target); });
+
+    function addError(field, message) {
+      var parent = field.closest('.cf-field');
+      if (!parent) parent = field.parentElement;
+      if (parent && parent.querySelector('.cf-error-text')) return;
+
+      var err = document.createElement('p');
+      err.className = 'cf-error-text';
+      err.setAttribute('role', 'alert');
+      err.textContent = message;
+      if (parent) parent.appendChild(err);
+
+      // Only add red border to text/select inputs, not checkboxes
+      if (field.tagName !== 'INPUT' || field.type !== 'checkbox') {
+        field.classList.add('cf-input-error');
+      }
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Clear previous errors
+      form.querySelectorAll('.cf-error-text').forEach(function (el) { el.remove(); });
+      form.querySelectorAll('.cf-input-error').forEach(function (el) { el.classList.remove('cf-input-error'); });
+
+      var required = form.querySelectorAll('[required]');
+      var valid = true;
+
+      required.forEach(function (field) {
+        // Skip fields inside hidden conditional sections
+        var section = field.closest('.cf-conditional');
+        if (section && !section.classList.contains('is-visible')) return;
+
+        if (field.type === 'checkbox' && !field.checked) {
+          valid = false;
+          addError(field, 'This field is required');
+        } else if (!field.value || !field.value.trim()) {
+          valid = false;
+          addError(field, 'This field is required');
+        } else if (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value)) {
+          valid = false;
+          addError(field, 'Please enter a valid email address');
+        }
+      });
+
+      if (!valid) {
+        var firstError = form.querySelector('.cf-error-text');
+        if (firstError && firstError.parentElement) {
+          firstError.parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        return;
+      }
+
+      // TODO: Replace with actual form submission endpoint
+      // Example: fetch('/api/contact', { method: 'POST', body: new FormData(form) })
+      form.style.display = 'none';
+      if (successEl) successEl.style.display = '';
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     initMobileNav();
     initAccordion();
     initBlogToggle();
     initImageSlider();
     initSmoothScroll();
+    initContactForm();
     logCuriousCoderMessage();
   });
 })();

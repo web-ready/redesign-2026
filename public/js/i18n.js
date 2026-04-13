@@ -235,20 +235,26 @@
     var flexRow = navEl ? navEl.firstElementChild : null;
 
     if (flexRow) {
-      // 1. Desktop dropdown — inserted as a direct flexRow child between the
-      //    <ul> nav links and the support container. The parent flexRow has
-      //    gap-4 between every sibling, so the switcher gets equal spacing
-      //    from Blog (left) and the support container (right).
-      //    It is hidden on mobile via CSS (display:none below lg).
-      var supportEl = null;
-      for (var i = 0; i < flexRow.children.length; i++) {
-        if (flexRow.children[i].classList.contains('justify-end')) {
-          supportEl = flexRow.children[i];
+      // 1. Desktop dropdown — placed inside the support container (the
+      //    hidden lg:flex div with justify-end) before the CTA link. This
+      //    groups the lang switcher and CTA together at the right edge of
+      //    the nav bar. The support container is already hidden on mobile
+      //    via Tailwind's `hidden lg:flex`, so no extra display:none needed.
+      var supportContainer = null;
+      var supportLink = null;
+      var candidates = flexRow.querySelectorAll('.justify-end');
+      for (var i = 0; i < candidates.length; i++) {
+        var link = candidates[i].querySelector('a');
+        if (link) {
+          supportContainer = candidates[i];
+          supportLink = link;
           break;
         }
       }
-      if (supportEl) {
-        flexRow.insertBefore(buildDesktopSwitcher(), supportEl);
+      if (supportContainer && supportLink) {
+        supportContainer.style.alignItems = 'center';
+        supportContainer.style.gap = '0.75rem';
+        supportContainer.insertBefore(buildDesktopSwitcher(), supportLink);
       }
 
       // 2. Mobile nav-bar globe button — wrap globe+hamburger in a btnGroup so

@@ -245,24 +245,409 @@
                 </p>
               </div>
 
-              <!-- Form embed -->
-              <div class="rounded-2xl border border-gray-200 bg-white p-4 md:p-6 min-h-[520px] flex items-center justify-center">
-                <div class="text-center max-w-xl py-10">
-                  <p class="text-gray-900 text-2xl md:text-3xl font-heading tracking-tight mb-4">
-                    Contact form embed goes here
-                  </p>
-                  <p class="text-gray-600 leading-8">
-                    Replace this area with your Formaloo or other embedded contact form.
-                  </p>
+              <!-- Contact form -->
+              <div class="rounded-2xl border border-gray-200 bg-white p-6 md:p-8 lg:p-10">
+
+                <form id="contact-form" action="#" method="POST" novalidate class="cf-form">
+
+                  <!-- Inquiry Type -->
+                  <div class="cf-field">
+                    <label for="cf-type" class="cf-label">What can we help you with? <span class="cf-req" aria-hidden="true">*</span></label>
+                    <select id="cf-type" name="inquiry_type" class="cf-input" required aria-required="true">
+                      <option value="">Select an inquiry type</option>
+                      <option value="general">General Inquiry</option>
+                      <option value="volunteer">Volunteer</option>
+                      <option value="partnership">Partnership / Collaboration</option>
+                      <option value="media">Press &amp; Media</option>
+                      <option value="speaking">Speaking Engagement</option>
+                      <option value="web-ready">Web-Ready Services</option>
+                      <option value="wra-platform">WRA Platform Access</option>
+                      <option value="stw">Sustainable Technology Week</option>
+                      <option value="vcasse">VCASSE</option>
+                      <option value="tree-planting">Tree Planting / Environmental Programs</option>
+                    </select>
+                  </div>
+
+                  <hr class="cf-divider">
+
+                  <!-- Contact Information -->
+                  <fieldset class="cf-fieldset">
+                    <legend class="cf-legend">Contact Information</legend>
+                    <div class="cf-row">
+                      <div class="cf-field">
+                        <label for="cf-fname" class="cf-label">First Name <span class="cf-req" aria-hidden="true">*</span></label>
+                        <input type="text" id="cf-fname" name="first_name" class="cf-input" required aria-required="true" autocomplete="given-name">
+                      </div>
+                      <div class="cf-field">
+                        <label for="cf-lname" class="cf-label">Last Name <span class="cf-req" aria-hidden="true">*</span></label>
+                        <input type="text" id="cf-lname" name="last_name" class="cf-input" required aria-required="true" autocomplete="family-name">
+                      </div>
+                    </div>
+                    <div class="cf-row">
+                      <div class="cf-field">
+                        <label for="cf-email" class="cf-label">Email Address <span class="cf-req" aria-hidden="true">*</span></label>
+                        <input type="email" id="cf-email" name="email" class="cf-input" required aria-required="true" autocomplete="email">
+                      </div>
+                      <div class="cf-field">
+                        <label for="cf-phone" class="cf-label">Phone Number</label>
+                        <input type="tel" id="cf-phone" name="phone" class="cf-input" autocomplete="tel">
+                      </div>
+                    </div>
+                  </fieldset>
+
+                  <!-- Organization Details (hidden for General Inquiry) -->
+                  <fieldset class="cf-fieldset cf-conditional" data-cf-show-unless="general">
+                    <legend class="cf-legend">Organization Details</legend>
+                    <div class="cf-row">
+                      <div class="cf-field">
+                        <label for="cf-org" class="cf-label">Organization / Company Name</label>
+                        <input type="text" id="cf-org" name="organization" class="cf-input" autocomplete="organization">
+                      </div>
+                      <div class="cf-field">
+                        <label for="cf-orgtype" class="cf-label">Organization Type</label>
+                        <select id="cf-orgtype" name="organization_type" class="cf-input">
+                          <option value="">Select</option>
+                          <option value="nonprofit">Nonprofit</option>
+                          <option value="community-group">Community Group</option>
+                          <option value="school">School / Educational Institution</option>
+                          <option value="business">Business</option>
+                          <option value="government">Government</option>
+                          <option value="individual">Individual</option>
+                          <option value="other">Other</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="cf-row">
+                      <div class="cf-field">
+                        <label for="cf-website" class="cf-label">Website URL</label>
+                        <input type="url" id="cf-website" name="website" class="cf-input" placeholder="https://">
+                      </div>
+                      <div class="cf-field">
+                        <label for="cf-role" class="cf-label">Your Role / Title</label>
+                        <input type="text" id="cf-role" name="role" class="cf-input" autocomplete="organization-title">
+                      </div>
+                    </div>
+                  </fieldset>
+
+                  <!-- ═══ Conditional Sections ═══ -->
+
+                  <!-- Volunteer -->
+                  <fieldset class="cf-fieldset cf-conditional" data-cf-show="volunteer">
+                    <legend class="cf-legend">Volunteer Details</legend>
+                    <div class="cf-field">
+                      <p class="cf-label" id="cf-vol-interest-label">Areas of Interest</p>
+                      <div class="cf-check-grid" role="group" aria-labelledby="cf-vol-interest-label">
+                        <label class="cf-check"><input type="checkbox" name="volunteer_interest" value="web-development"><span>Web Development</span></label>
+                        <label class="cf-check"><input type="checkbox" name="volunteer_interest" value="design"><span>Design</span></label>
+                        <label class="cf-check"><input type="checkbox" name="volunteer_interest" value="content-writing"><span>Content Writing</span></label>
+                        <label class="cf-check"><input type="checkbox" name="volunteer_interest" value="event-support"><span>Event Support</span></label>
+                        <label class="cf-check"><input type="checkbox" name="volunteer_interest" value="research"><span>Research</span></label>
+                        <label class="cf-check"><input type="checkbox" name="volunteer_interest" value="outreach"><span>Outreach</span></label>
+                        <label class="cf-check"><input type="checkbox" name="volunteer_interest" value="translation"><span>Translation</span></label>
+                        <label class="cf-check"><input type="checkbox" name="volunteer_interest" value="other"><span>Other</span></label>
+                      </div>
+                    </div>
+                    <div class="cf-field">
+                      <label for="cf-vol-avail" class="cf-label">Availability</label>
+                      <select id="cf-vol-avail" name="volunteer_availability" class="cf-input">
+                        <option value="">Select</option>
+                        <option value="full-time">Full-time</option>
+                        <option value="part-time">Part-time</option>
+                        <option value="one-time">One-time / Event-based</option>
+                        <option value="flexible">Flexible</option>
+                      </select>
+                    </div>
+                    <div class="cf-field">
+                      <label for="cf-vol-skills" class="cf-label">Relevant skills or experience</label>
+                      <textarea id="cf-vol-skills" name="volunteer_skills" class="cf-input" rows="3"></textarea>
+                    </div>
+                  </fieldset>
+
+                  <!-- Partnership -->
+                  <fieldset class="cf-fieldset cf-conditional" data-cf-show="partnership">
+                    <legend class="cf-legend">Partnership Details</legend>
+                    <div class="cf-field">
+                      <label for="cf-partner-type" class="cf-label">Partnership Type</label>
+                      <select id="cf-partner-type" name="partnership_type" class="cf-input">
+                        <option value="">Select</option>
+                        <option value="program-collaboration">Program Collaboration</option>
+                        <option value="sponsorship">Sponsorship</option>
+                        <option value="in-kind">In-Kind Support</option>
+                        <option value="joint-initiative">Joint Initiative</option>
+                        <option value="technology">Technology Partnership</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                    <div class="cf-field">
+                      <label for="cf-partner-mission" class="cf-label">Brief description of your organization's mission</label>
+                      <textarea id="cf-partner-mission" name="partnership_mission" class="cf-input" rows="3"></textarea>
+                    </div>
+                    <div class="cf-field">
+                      <label for="cf-partner-goals" class="cf-label">What you hope to achieve together</label>
+                      <textarea id="cf-partner-goals" name="partnership_goals" class="cf-input" rows="3"></textarea>
+                    </div>
+                  </fieldset>
+
+                  <!-- Press & Media -->
+                  <fieldset class="cf-fieldset cf-conditional" data-cf-show="media">
+                    <legend class="cf-legend">Press &amp; Media Details</legend>
+                    <div class="cf-row">
+                      <div class="cf-field">
+                        <label for="cf-media-outlet" class="cf-label">Media Outlet / Publication</label>
+                        <input type="text" id="cf-media-outlet" name="media_outlet" class="cf-input">
+                      </div>
+                      <div class="cf-field">
+                        <label for="cf-media-type" class="cf-label">Type of Request</label>
+                        <select id="cf-media-type" name="media_request_type" class="cf-input">
+                          <option value="">Select</option>
+                          <option value="interview">Interview</option>
+                          <option value="feature">Feature Story</option>
+                          <option value="press-release">Press Release / Statement</option>
+                          <option value="data">Data or Statistics</option>
+                          <option value="commentary">Expert Commentary</option>
+                          <option value="other">Other</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="cf-field">
+                      <label for="cf-media-deadline" class="cf-label">Deadline</label>
+                      <input type="date" id="cf-media-deadline" name="media_deadline" class="cf-input">
+                    </div>
+                    <div class="cf-field">
+                      <label for="cf-media-angle" class="cf-label">Story angle or topic</label>
+                      <textarea id="cf-media-angle" name="media_angle" class="cf-input" rows="3"></textarea>
+                    </div>
+                  </fieldset>
+
+                  <!-- Speaking Engagement -->
+                  <fieldset class="cf-fieldset cf-conditional" data-cf-show="speaking">
+                    <legend class="cf-legend">Speaking Engagement Details</legend>
+                    <div class="cf-row">
+                      <div class="cf-field">
+                        <label for="cf-speak-event" class="cf-label">Event Name</label>
+                        <input type="text" id="cf-speak-event" name="speaking_event" class="cf-input">
+                      </div>
+                      <div class="cf-field">
+                        <label for="cf-speak-date" class="cf-label">Event Date</label>
+                        <input type="date" id="cf-speak-date" name="speaking_date" class="cf-input">
+                      </div>
+                    </div>
+                    <div class="cf-row">
+                      <div class="cf-field">
+                        <label for="cf-speak-format" class="cf-label">Event Format</label>
+                        <select id="cf-speak-format" name="speaking_format" class="cf-input">
+                          <option value="">Select</option>
+                          <option value="in-person">In-Person</option>
+                          <option value="virtual">Virtual</option>
+                          <option value="hybrid">Hybrid</option>
+                        </select>
+                      </div>
+                      <div class="cf-field">
+                        <label for="cf-speak-size" class="cf-label">Audience Size</label>
+                        <select id="cf-speak-size" name="speaking_audience_size" class="cf-input">
+                          <option value="">Select</option>
+                          <option value="under-50">Under 50</option>
+                          <option value="50-200">50 - 200</option>
+                          <option value="200-500">200 - 500</option>
+                          <option value="500+">500+</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="cf-field">
+                      <p class="cf-label" id="cf-speak-topics-label">Topics of Interest</p>
+                      <div class="cf-check-grid" role="group" aria-labelledby="cf-speak-topics-label">
+                        <label class="cf-check"><input type="checkbox" name="speaking_topic" value="sustainable-web"><span>Sustainable Web Design</span></label>
+                        <label class="cf-check"><input type="checkbox" name="speaking_topic" value="accessibility"><span>Digital Accessibility</span></label>
+                        <label class="cf-check"><input type="checkbox" name="speaking_topic" value="youth-tech"><span>Youth in Tech</span></label>
+                        <label class="cf-check"><input type="checkbox" name="speaking_topic" value="nonprofit-tech"><span>Nonprofit Technology</span></label>
+                        <label class="cf-check"><input type="checkbox" name="speaking_topic" value="ai-ethics"><span>AI Ethics &amp; Sustainability</span></label>
+                        <label class="cf-check"><input type="checkbox" name="speaking_topic" value="environmental-web"><span>Environmental Impact of the Web</span></label>
+                        <label class="cf-check"><input type="checkbox" name="speaking_topic" value="other"><span>Other</span></label>
+                      </div>
+                    </div>
+                    <div class="cf-field">
+                      <label for="cf-speak-details" class="cf-label">Additional details</label>
+                      <textarea id="cf-speak-details" name="speaking_details" class="cf-input" rows="3"></textarea>
+                    </div>
+                  </fieldset>
+
+                  <!-- Web-Ready Services -->
+                  <fieldset class="cf-fieldset cf-conditional" data-cf-show="web-ready">
+                    <legend class="cf-legend">Web-Ready Services</legend>
+                    <div class="cf-field">
+                      <p class="cf-label" id="cf-wr-services-label">What do you need?</p>
+                      <div class="cf-check-grid" role="group" aria-labelledby="cf-wr-services-label">
+                        <label class="cf-check"><input type="checkbox" name="webready_service" value="redesign"><span>Website Redesign</span></label>
+                        <label class="cf-check"><input type="checkbox" name="webready_service" value="new-site"><span>New Website</span></label>
+                        <label class="cf-check"><input type="checkbox" name="webready_service" value="sustainability-audit"><span>Sustainability Audit</span></label>
+                        <label class="cf-check"><input type="checkbox" name="webready_service" value="accessibility-audit"><span>Accessibility Audit</span></label>
+                        <label class="cf-check"><input type="checkbox" name="webready_service" value="carbon-reduction"><span>Carbon Footprint Reduction</span></label>
+                        <label class="cf-check"><input type="checkbox" name="webready_service" value="digital-strategy"><span>Digital Strategy</span></label>
+                        <label class="cf-check"><input type="checkbox" name="webready_service" value="other"><span>Other</span></label>
+                      </div>
+                    </div>
+                    <div class="cf-field">
+                      <label for="cf-wr-url" class="cf-label">Current website URL</label>
+                      <input type="url" id="cf-wr-url" name="webready_url" class="cf-input" placeholder="https://">
+                    </div>
+                    <div class="cf-field">
+                      <label for="cf-wr-goals" class="cf-label">Brief description of your goals</label>
+                      <textarea id="cf-wr-goals" name="webready_goals" class="cf-input" rows="3"></textarea>
+                    </div>
+                  </fieldset>
+
+                  <!-- WRA Platform Access -->
+                  <fieldset class="cf-fieldset cf-conditional" data-cf-show="wra-platform">
+                    <legend class="cf-legend">WRA Platform Access</legend>
+                    <div class="cf-row">
+                      <div class="cf-field">
+                        <label for="cf-wra-budget" class="cf-label">Annual budget range</label>
+                        <select id="cf-wra-budget" name="wra_budget" class="cf-input">
+                          <option value="">Select</option>
+                          <option value="under-50k">Under $50K</option>
+                          <option value="50k-250k">$50K - $250K</option>
+                          <option value="250k-1m">$250K - $1M</option>
+                          <option value="1m+">$1M+</option>
+                          <option value="prefer-not">Prefer not to say</option>
+                        </select>
+                      </div>
+                      <div class="cf-field">
+                        <label for="cf-wra-hear" class="cf-label">How did you hear about the WRA Platform?</label>
+                        <select id="cf-wra-hear" name="wra_referral" class="cf-input">
+                          <option value="">Select</option>
+                          <option value="website">Website</option>
+                          <option value="referral">Referral</option>
+                          <option value="social-media">Social Media</option>
+                          <option value="event">Event</option>
+                          <option value="other">Other</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="cf-field">
+                      <p class="cf-label" id="cf-wra-support-label">What support are you looking for?</p>
+                      <div class="cf-check-grid" role="group" aria-labelledby="cf-wra-support-label">
+                        <label class="cf-check"><input type="checkbox" name="wra_support" value="website-dev"><span>Website Development</span></label>
+                        <label class="cf-check"><input type="checkbox" name="wra_support" value="digital-tools"><span>Digital Tools &amp; Resources</span></label>
+                        <label class="cf-check"><input type="checkbox" name="wra_support" value="capacity"><span>Capacity Building</span></label>
+                        <label class="cf-check"><input type="checkbox" name="wra_support" value="grants"><span>Digital Grants</span></label>
+                        <label class="cf-check"><input type="checkbox" name="wra_support" value="consulting"><span>Technical Consulting</span></label>
+                        <label class="cf-check"><input type="checkbox" name="wra_support" value="other"><span>Other</span></label>
+                      </div>
+                    </div>
+                  </fieldset>
+
+                  <!-- Sustainable Technology Week -->
+                  <fieldset class="cf-fieldset cf-conditional" data-cf-show="stw">
+                    <legend class="cf-legend">Sustainable Technology Week</legend>
+                    <div class="cf-row">
+                      <div class="cf-field">
+                        <label for="cf-stw-interest" class="cf-label">How would you like to participate?</label>
+                        <select id="cf-stw-interest" name="stw_interest" class="cf-input">
+                          <option value="">Select</option>
+                          <option value="attend">Attend</option>
+                          <option value="speak">Speak / Present</option>
+                          <option value="sponsor">Sponsor</option>
+                          <option value="volunteer">Volunteer</option>
+                          <option value="exhibit">Exhibit</option>
+                          <option value="other">Other</option>
+                        </select>
+                      </div>
+                      <div class="cf-field">
+                        <label for="cf-stw-topic" class="cf-label">Proposed topic (if speaking)</label>
+                        <input type="text" id="cf-stw-topic" name="stw_topic" class="cf-input">
+                      </div>
+                    </div>
+                  </fieldset>
+
+                  <!-- VCASSE -->
+                  <fieldset class="cf-fieldset cf-conditional" data-cf-show="vcasse">
+                    <legend class="cf-legend">VCASSE</legend>
+                    <div class="cf-field">
+                      <p class="cf-label" id="cf-vcasse-interest-label">Areas of Interest</p>
+                      <div class="cf-check-grid" role="group" aria-labelledby="cf-vcasse-interest-label">
+                        <label class="cf-check"><input type="checkbox" name="vcasse_interest" value="ai-safety"><span>AI Safety</span></label>
+                        <label class="cf-check"><input type="checkbox" name="vcasse_interest" value="sustainability-ai"><span>Sustainability &amp; AI</span></label>
+                        <label class="cf-check"><input type="checkbox" name="vcasse_interest" value="ethics"><span>Ethics in Technology</span></label>
+                        <label class="cf-check"><input type="checkbox" name="vcasse_interest" value="research"><span>Research Collaboration</span></label>
+                        <label class="cf-check"><input type="checkbox" name="vcasse_interest" value="other"><span>Other</span></label>
+                      </div>
+                    </div>
+                    <div class="cf-field">
+                      <label for="cf-vcasse-desc" class="cf-label">Brief description of your interest or proposal</label>
+                      <textarea id="cf-vcasse-desc" name="vcasse_description" class="cf-input" rows="3"></textarea>
+                    </div>
+                  </fieldset>
+
+                  <!-- Tree Planting / Environmental Programs -->
+                  <fieldset class="cf-fieldset cf-conditional" data-cf-show="tree-planting">
+                    <legend class="cf-legend">Tree Planting / Environmental Programs</legend>
+                    <div class="cf-field">
+                      <label for="cf-tree-type" class="cf-label">What are you interested in?</label>
+                      <select id="cf-tree-type" name="tree_interest" class="cf-input">
+                        <option value="">Select</option>
+                        <option value="learn-more">Learn More</option>
+                        <option value="corporate">Corporate Partnership</option>
+                        <option value="community">Community Planting Event</option>
+                        <option value="data">Data / Reporting</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                  </fieldset>
+
+                  <hr class="cf-divider">
+
+                  <!-- Message -->
+                  <div class="cf-field">
+                    <label for="cf-message" class="cf-label">Your Message <span class="cf-req" aria-hidden="true">*</span></label>
+                    <textarea id="cf-message" name="message" class="cf-input" rows="5" required aria-required="true"></textarea>
+                  </div>
+
+                  <!-- How did you hear about us -->
+                  <div class="cf-field">
+                    <label for="cf-referral" class="cf-label">How did you hear about us?</label>
+                    <select id="cf-referral" name="referral_source" class="cf-input">
+                      <option value="">Select</option>
+                      <option value="web-search">Web Search</option>
+                      <option value="social-media">Social Media</option>
+                      <option value="referral">Referral</option>
+                      <option value="news-media">News / Media</option>
+                      <option value="event">Event</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+
+                  <hr class="cf-divider">
+
+                  <!-- Consent -->
+                  <div class="cf-field">
+                    <label class="cf-check">
+                      <input type="checkbox" name="privacy_consent" required aria-required="true">
+                      <span>I agree to the <a href="privacy-policy.html" class="cf-link">Privacy Policy</a> <span class="cf-req" aria-hidden="true">*</span></span>
+                    </label>
+                  </div>
+                  <div class="cf-field">
+                    <label class="cf-check">
+                      <input type="checkbox" name="newsletter">
+                      <span>I would like to receive updates from Oasis of Change</span>
+                    </label>
+                  </div>
+
+                  <!-- Submit -->
+                  <div class="cf-field" style="margin-top:0.75rem">
+                    <button type="submit" class="cf-submit">Send Message</button>
+                  </div>
+
+                </form>
+
+                <!-- Success message -->
+                <div id="cf-success" class="cf-success" style="display:none">
+                  <div class="cf-success-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  </div>
+                  <h2 class="cf-success-title">Thank you for reaching out</h2>
+                  <p class="cf-success-text">We have received your message and will review it shortly. If your inquiry requires a response, we will get back to you as soon as possible.</p>
                 </div>
 
-                <!--
-                <iframe
-                  src="YOUR_FORM_EMBED_URL"
-                  class="w-full min-h-[520px] rounded-xl"
-                  frameborder="0"
-                ></iframe>
-                -->
               </div>
             </div>
           </section>
