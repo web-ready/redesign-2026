@@ -527,7 +527,7 @@
               <div class="absolute top-4 left-4 z-10">
                 <span class="inline-flex items-center px-3 py-1 rounded-full bg-black text-white text-xs font-semibold uppercase tracking-[0.18em]">Before</span>
               </div>
-              <button type="button" data-lightbox-trigger data-lightbox-src="images/case-studies/mittler-senior-tech-before-redesign.webp" data-lightbox-alt="Mittler Senior Technology website before the sustainability redesign" aria-label="View before image full screen" class="absolute top-3 right-3 z-10 inline-flex items-center justify-center w-10 h-10 rounded-full bg-black hover:bg-gray-700 text-white transition duration-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2">
+              <button type="button" data-lightbox-trigger data-lightbox-src="images/case-studies/mittler-senior-tech-before-redesign.webp" data-lightbox-alt="Mittler Senior Technology website before the sustainability redesign" aria-label="View before image full screen" class="lightbox-fs-trigger">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M15 3h6v6M14 10l6-6M9 21H3v-6M10 14l-6 6"/>
                 </svg>
@@ -541,7 +541,7 @@
               <div class="absolute top-4 left-4 z-10">
                 <span class="inline-flex items-center px-3 py-1 rounded-full bg-black text-white text-xs font-semibold uppercase tracking-[0.18em]">After</span>
               </div>
-              <button type="button" data-lightbox-trigger data-lightbox-src="images/case-studies/mittler-senior-tech-after-redesign.webp" data-lightbox-alt="Mittler Senior Technology website after the sustainability redesign" aria-label="View after image full screen" class="absolute top-3 right-3 z-10 inline-flex items-center justify-center w-10 h-10 rounded-full bg-black hover:bg-gray-700 text-white transition duration-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2">
+              <button type="button" data-lightbox-trigger data-lightbox-src="images/case-studies/mittler-senior-tech-after-redesign.webp" data-lightbox-alt="Mittler Senior Technology website after the sustainability redesign" aria-label="View after image full screen" class="lightbox-fs-trigger">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M15 3h6v6M14 10l6-6M9 21H3v-6M10 14l-6 6"/>
                 </svg>
@@ -554,21 +554,21 @@
           </div>
 
           <!-- Stats grid — always three on one row, compact on mobile -->
-          <div class="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 mb-8 md:mb-10">
-            <div class="rounded-xl sm:rounded-2xl bg-gray-50 border border-gray-200 px-2 py-3 sm:p-4 md:p-5 flex flex-col items-center text-center">
-              <p class="text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2 leading-tight">Energy per visit</p>
-              <p class="text-base sm:text-2xl md:text-3xl font-semibold tracking-tight text-black mb-1 whitespace-nowrap">&darr;98.2%</p>
-              <p class="text-[10px] sm:text-xs md:text-sm text-gray-600 leading-tight">0.0139&rarr;0.0002 kWh</p>
+          <div class="mittler-stats-grid">
+            <div class="mittler-stat-card">
+              <p class="mittler-stat-card__label">Energy per visit</p>
+              <p class="mittler-stat-card__value">&darr;98.2%</p>
+              <p class="mittler-stat-card__unit">0.0139&rarr;0.0002 kWh</p>
             </div>
-            <div class="rounded-xl sm:rounded-2xl bg-gray-50 border border-gray-200 px-2 py-3 sm:p-4 md:p-5 flex flex-col items-center text-center">
-              <p class="text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2 leading-tight">Carbon per visit</p>
-              <p class="text-base sm:text-2xl md:text-3xl font-semibold tracking-tight text-black mb-1 whitespace-nowrap">&darr;98.1%</p>
-              <p class="text-[10px] sm:text-xs md:text-sm text-gray-600 leading-tight">5.31g&rarr;0.10g CO&#8322;</p>
+            <div class="mittler-stat-card">
+              <p class="mittler-stat-card__label">Carbon per visit</p>
+              <p class="mittler-stat-card__value">&darr;98.1%</p>
+              <p class="mittler-stat-card__unit">5.31g&rarr;0.10g CO&#8322;</p>
             </div>
-            <div class="rounded-xl sm:rounded-2xl bg-gray-50 border border-gray-200 px-2 py-3 sm:p-4 md:p-5 flex flex-col items-center text-center">
-              <p class="text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2 leading-tight">Water per visit</p>
-              <p class="text-base sm:text-2xl md:text-3xl font-semibold tracking-tight text-black mb-1 whitespace-nowrap">&darr;98.1%</p>
-              <p class="text-[10px] sm:text-xs md:text-sm text-gray-600 leading-tight">2.95L&rarr;0.06L</p>
+            <div class="mittler-stat-card">
+              <p class="mittler-stat-card__label">Water per visit</p>
+              <p class="mittler-stat-card__value">&darr;98.1%</p>
+              <p class="mittler-stat-card__unit">2.95L&rarr;0.06L</p>
             </div>
           </div>
 
