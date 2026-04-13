@@ -1279,6 +1279,111 @@ textarea.cf-input {
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 
+/* ── For Nonprofits CTA card ──────────────────────────────────────────────── */
+/* Black promo card with text on the left and a partnership image on the      */
+/* right (md+).  The accent colour for the kicker is rendered as a small dot  */
+/* rather than tinting the text, so colour never carries semantic weight      */
+/* alone — the text itself stays white for maximum contrast.                  */
+
+.nonprofit-cta-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-radius: 1.5rem;
+  background-color: #000;
+  color: #fff;
+  overflow: hidden;
+}
+.nonprofit-cta-content {
+  order: 2;
+  padding: 2rem 1.5rem;
+}
+.nonprofit-cta-image {
+  order: 1;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  position: relative;
+}
+.nonprofit-cta-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+@media (min-width: 640px) {
+  .nonprofit-cta-content {
+    padding: 2.5rem 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .nonprofit-cta-card {
+    grid-template-columns: 1.4fr 1fr;
+    align-items: stretch;
+  }
+  .nonprofit-cta-content {
+    order: 1;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .nonprofit-cta-image {
+    order: 2;
+    aspect-ratio: auto;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .nonprofit-cta-card {
+    grid-template-columns: 1.3fr 1fr;
+  }
+  .nonprofit-cta-content {
+    padding: 3.5rem;
+  }
+}
+
+.nonprofit-cta-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+.nonprofit-cta-kicker::before {
+  content: '';
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 9999px;
+  background-color: rgb(74, 222, 128); /* green-400 — decorative accent only */
+  flex-shrink: 0;
+}
+@media (min-width: 640px) {
+  .nonprofit-cta-kicker {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.nonprofit-cta-body {
+  color: rgb(229, 231, 235); /* gray-200 — 14.7:1 on black, WCAG AAA */
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.75rem;
+  max-width: 34rem;
+}
+@media (min-width: 640px) {
+  .nonprofit-cta-body {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+}
+
 /* ── Mittler before/after case study ─────────────────────────────────────── */
 /* The compiled Tailwind in this project doesn't include many small-number    */
 /* utilities (top-3, right-3, w-10, sm:gap-3, md:p-5, sm:text-2xl, etc.), so  */
