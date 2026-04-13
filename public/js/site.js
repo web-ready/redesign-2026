@@ -717,6 +717,8 @@
       var parent = field.closest('.cf-field');
       if (!parent) parent = field.parentElement;
       field.classList.remove('cf-input-error');
+      field.removeAttribute('aria-invalid');
+      field.removeAttribute('aria-describedby');
       var err = parent ? parent.querySelector('.cf-error-text') : null;
       if (err) err.remove();
     }
@@ -729,11 +731,17 @@
       if (!parent) parent = field.parentElement;
       if (parent && parent.querySelector('.cf-error-text')) return;
 
+      // Give the error message an id so we can point aria-describedby at it
+      var errId = 'cf-err-' + (field.id || field.name || Math.random().toString(36).slice(2));
       var err = document.createElement('p');
+      err.id = errId;
       err.className = 'cf-error-text';
       err.setAttribute('role', 'alert');
       err.textContent = message;
       if (parent) parent.appendChild(err);
+
+      field.setAttribute('aria-invalid', 'true');
+      field.setAttribute('aria-describedby', errId);
 
       // Only add red border to text/select inputs, not checkboxes
       if (field.tagName !== 'INPUT' || field.type !== 'checkbox') {
@@ -769,10 +777,27 @@
       });
 
       if (!valid) {
-        var firstError = form.querySelector('.cf-error-text');
-        if (firstError && firstError.parentElement) {
-          firstError.parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Focus the first invalid field so keyboard/screen-reader users land on it
+        var firstInvalid = form.querySelector('.cf-input-error, [required][aria-invalid="true"]');
+        if (!firstInvalid) {
+          // Fallback: first required field with empty value
+          firstInvalid = form.querySelector('[required]');
         }
+        if (firstInvalid) {
+          // If the invalid field is a native <select> replaced by a custom one,
+          // focus the paired cs-trigger instead.
+          if (firstInvalid.tagName === 'SELECT' && firstInvalid.previousElementSibling && firstInvalid.previousElementSibling.classList.contains('cs-wrap')) {
+            var t = firstInvalid.previousElementSibling.querySelector('.cs-trigger');
+            if (t) t.focus();
+          } else {
+            firstInvalid.focus();
+          }
+        }
+        var firstErrorEl = form.querySelector('.cf-error-text');
+        if (firstErrorEl && firstErrorEl.parentElement) {
+          firstErrorEl.parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        announceToScreenReader('Form has errors. Please review the highlighted fields.');
         return;
       }
 
@@ -799,9 +824,11 @@
       var originalLabel = submitBtn ? submitBtn.textContent : '';
       if (submitBtn) {
         submitBtn.disabled = true;
+        submitBtn.setAttribute('aria-busy', 'true');
         submitBtn.textContent = 'Sending\u2026';
       }
       clearFormError();
+      announceToScreenReader('Sending your message…');
 
       uploadFileIfNeeded().then(function (fileUrl) {
         if (fileUrl) payload.attachment_url = fileUrl;
@@ -814,7 +841,7 @@
         return r.json().then(function (j) { return { ok: r.ok, body: j }; }, function () { return { ok: r.ok, body: {} }; });
       }).then(function (result) {
         if (!result.ok) {
-          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.removeAttribute('aria-busy'); submitBtn.textContent = originalLabel; }
           var msg = (result.body && result.body.error)
             || 'Something went wrong. Please try again, or email us directly.';
           showFormError(msg);
@@ -822,9 +849,17 @@
         }
         if (typeof window.__cfClearDraft === 'function') window.__cfClearDraft();
         form.style.display = 'none';
-        if (successEl) successEl.style.display = '';
+        if (successEl) {
+          successEl.style.display = '';
+          // Move focus to the success message so screen readers announce it
+          // and keyboard focus lands in a sensible place.
+          if (typeof successEl.focus === 'function') {
+            successEl.setAttribute('tabindex', '-1');
+            successEl.focus();
+          }
+        }
       }).catch(function () {
-        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.removeAttribute('aria-busy'); submitBtn.textContent = originalLabel; }
         showFormError('Network error. Please check your connection and try again.');
       });
     });
@@ -1003,6 +1038,14 @@
     // ── File attachment ──────────────────────────────────────────────────────
     var _attachedFile = null;
 
+    function announceToScreenReader(msg) {
+      var region = document.getElementById('cf-sr-status');
+      if (!region) return;
+      // Clear first so repeated messages re-announce
+      region.textContent = '';
+      setTimeout(function () { region.textContent = msg; }, 60);
+    }
+
     (function initFileUpload() {
       var btn      = document.getElementById('cf-file-btn');
       var input    = document.getElementById('cf-file-input');
@@ -1021,6 +1064,9 @@
           nameEl.classList.add('has-file');
         }
         btn.style.display = 'none';
+        announceToScreenReader('File attached: ' + file.name);
+        // Move focus to the clear button so keyboard users can undo the action
+        if (clearBtn) clearBtn.focus();
       });
 
       if (clearBtn) {
@@ -1029,6 +1075,8 @@
           input.value = '';
           if (nameEl) nameEl.classList.remove('has-file');
           btn.style.display = '';
+          announceToScreenReader('Attachment removed');
+          btn.focus();
         });
       }
     }());
@@ -1069,14 +1117,25 @@
         var wrap = document.createElement('div');
         wrap.className = 'cs-wrap';
 
+        var uid = (sel.id || sel.name || Math.random().toString(36).slice(2));
+
         // Trigger button
         var trigger = document.createElement('button');
         trigger.type = 'button';
         trigger.className = 'cs-trigger';
         trigger.setAttribute('aria-haspopup', 'listbox');
         trigger.setAttribute('aria-expanded', 'false');
-        var listboxId = 'cs-lb-' + (sel.id || sel.name || Math.random().toString(36).slice(2));
+        var listboxId = 'cs-lb-' + uid;
         trigger.setAttribute('aria-controls', listboxId);
+        // Link trigger to the field's <label for=…> so screen readers announce the label
+        var labelEl = sel.id ? document.querySelector('label[for="' + sel.id + '"]') : null;
+        if (labelEl) {
+          if (!labelEl.id) labelEl.id = 'cs-lbl-' + uid;
+          trigger.setAttribute('aria-labelledby', labelEl.id);
+        } else if (sel.getAttribute('aria-label')) {
+          trigger.setAttribute('aria-label', sel.getAttribute('aria-label'));
+        }
+        if (sel.required) trigger.setAttribute('aria-required', 'true');
 
         var labelText = document.createElement('span');
         labelText.className = 'cs-label-text cs-placeholder';
@@ -1091,7 +1150,8 @@
         listbox.id = listboxId;
         listbox.className = 'cs-listbox';
         listbox.setAttribute('role', 'listbox');
-        listbox.setAttribute('aria-label', sel.getAttribute('aria-label') || '');
+        if (labelEl) listbox.setAttribute('aria-labelledby', labelEl.id);
+        else if (sel.getAttribute('aria-label')) listbox.setAttribute('aria-label', sel.getAttribute('aria-label'));
         listbox.tabIndex = -1;
 
         // Populate options from the native select
@@ -1100,8 +1160,9 @@
         for (var i = 0; i < sel.options.length; i++) {
           var opt = sel.options[i];
           if (opt.value === '') { placeholder = opt.text; continue; }
-          (function (opt) {
+          (function (opt, optIdx) {
             var li = document.createElement('li');
+            li.id = 'cs-opt-' + uid + '-' + optIdx;
             li.className = 'cs-option';
             li.setAttribute('role', 'option');
             li.setAttribute('aria-selected', 'false');
@@ -1109,7 +1170,7 @@
             li.textContent = opt.text;
             listbox.appendChild(li);
             optionEls.push(li);
-          }(opt));
+          }(opt, i));
         }
 
         if (placeholder) labelText.textContent = placeholder;
@@ -1127,7 +1188,11 @@
           isOpen = true;
           listbox.classList.add('is-open');
           trigger.setAttribute('aria-expanded', 'true');
-          // Scroll highlighted item into view
+          // If nothing is highlighted yet, start at the selected option (if any) or 0
+          if (highlighted < 0) {
+            var selIdx = optionEls.findIndex(function (o) { return o.getAttribute('aria-selected') === 'true'; });
+            highlight(selIdx >= 0 ? selIdx : 0);
+          }
           if (highlighted >= 0) optionEls[highlighted].scrollIntoView({ block: 'nearest' });
         }
 
@@ -1135,6 +1200,7 @@
           isOpen = false;
           listbox.classList.remove('is-open');
           trigger.setAttribute('aria-expanded', 'false');
+          trigger.removeAttribute('aria-activedescendant');
           highlighted = -1;
           optionEls.forEach(function (li) { li.classList.remove('is-highlighted'); });
         }
@@ -1157,8 +1223,13 @@
           if (idx < 0) idx = optionEls.length - 1;
           if (idx >= optionEls.length) idx = 0;
           optionEls.forEach(function (o) { o.classList.remove('is-highlighted'); });
-          if (optionEls[idx]) optionEls[idx].classList.add('is-highlighted');
-          if (optionEls[idx]) optionEls[idx].scrollIntoView({ block: 'nearest' });
+          if (optionEls[idx]) {
+            optionEls[idx].classList.add('is-highlighted');
+            optionEls[idx].scrollIntoView({ block: 'nearest' });
+            // aria-activedescendant points to the visually-highlighted option
+            // so screen readers read it even though focus stays on the trigger.
+            trigger.setAttribute('aria-activedescendant', optionEls[idx].id);
+          }
           highlighted = idx;
         }
 
@@ -1166,19 +1237,31 @@
           if (isOpen) close(); else open();
         });
 
-        trigger.addEventListener('keydown', function (e) {
-          if (e.key === 'ArrowDown') { e.preventDefault(); if (!isOpen) open(); highlight(highlighted + 1); }
-          else if (e.key === 'ArrowUp') { e.preventDefault(); if (!isOpen) open(); highlight(highlighted - 1); }
-          else if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (isOpen) { if (highlighted >= 0) selectOption(highlighted); } else open(); }
-          else if (e.key === 'Escape') { close(); }
-          else if (e.key === 'Tab') { close(); }
-        });
+        // Typeahead: jump to first option starting with typed characters.
+        var typeaheadBuf = '';
+        var typeaheadTimer = null;
+        function typeahead(ch) {
+          clearTimeout(typeaheadTimer);
+          typeaheadBuf += ch.toLowerCase();
+          typeaheadTimer = setTimeout(function () { typeaheadBuf = ''; }, 600);
+          var match = optionEls.findIndex(function (o) {
+            return o.textContent.toLowerCase().indexOf(typeaheadBuf) === 0;
+          });
+          if (match >= 0) {
+            if (!isOpen) open();
+            highlight(match);
+          }
+        }
 
-        listbox.addEventListener('keydown', function (e) {
-          if (e.key === 'ArrowDown') { e.preventDefault(); highlight(highlighted + 1); }
-          else if (e.key === 'ArrowUp') { e.preventDefault(); highlight(highlighted - 1); }
-          else if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (highlighted >= 0) selectOption(highlighted); }
-          else if (e.key === 'Escape') { close(); trigger.focus(); }
+        trigger.addEventListener('keydown', function (e) {
+          if (e.key === 'ArrowDown') { e.preventDefault(); if (!isOpen) open(); else highlight(highlighted + 1); }
+          else if (e.key === 'ArrowUp') { e.preventDefault(); if (!isOpen) open(); else highlight(highlighted - 1); }
+          else if (e.key === 'Home') { e.preventDefault(); if (!isOpen) open(); highlight(0); }
+          else if (e.key === 'End') { e.preventDefault(); if (!isOpen) open(); highlight(optionEls.length - 1); }
+          else if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (isOpen) { if (highlighted >= 0) selectOption(highlighted); } else open(); }
+          else if (e.key === 'Escape') { if (isOpen) { e.preventDefault(); close(); } }
+          else if (e.key === 'Tab') { close(); /* let tab proceed */ }
+          else if (e.key.length === 1 && /\S/.test(e.key)) { typeahead(e.key); }
         });
 
         optionEls.forEach(function (li, idx) {
