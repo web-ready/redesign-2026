@@ -696,12 +696,22 @@
   function initFooterLocale() {
     var brand = document.querySelector('.site-footer-brand');
     if (!brand || brand.querySelector('.footer-locale')) return;
+    // Derive base path from the brand logo img — its src already has the correct
+    // depth prefix ('../' on blog pages, '' on root). This keeps the flag working
+    // regardless of how deep the page is in the directory tree.
+    var logo = brand.querySelector('img');
+    var base = '';
+    if (logo) {
+      var src = logo.getAttribute('src') || '';
+      var idx = src.indexOf('images/');
+      if (idx !== -1) base = src.slice(0, idx);
+    }
     var locale = document.createElement('div');
     locale.className = 'footer-locale';
     locale.setAttribute('aria-label', 'Based in Vancouver, Canada');
     locale.innerHTML =
       '<span>Based in Vancouver, Canada</span>' +
-      '<img class="footer-locale-flag" src="images/flag-canada.svg" alt="" width="22" height="11" loading="lazy" aria-hidden="true">';
+      '<img class="footer-locale-flag" src="' + base + 'images/flag-canada.svg" alt="" width="22" height="11" loading="lazy" aria-hidden="true">';
     brand.appendChild(locale);
   }
 
