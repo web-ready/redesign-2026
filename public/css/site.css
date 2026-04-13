@@ -1262,7 +1262,7 @@ textarea.cf-input {
   align-items: center;
   gap: 0.55rem;
   margin-top: 1.1rem;
-  padding: 0.4rem 0.7rem 0.4rem 0.45rem;
+  padding: 0.4rem 0.5rem 0.4rem 0.85rem;
   border-radius: 9999px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.03);
@@ -1277,4 +1277,64 @@ textarea.cf-input {
   border-radius: 2px;
   flex-shrink: 0;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+/* ── Lightbox ─────────────────────────────────────────────────────────────── */
+/* Lightweight image viewer: one shared overlay is appended to <body> by JS    */
+/* and reused for every [data-lightbox-trigger]. No external libraries, no     */
+/* per-image DOM — keeps the carbon footprint tiny.                            */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+.lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+.lightbox-image {
+  max-width: 100%;
+  max-height: calc(100vh - 3rem);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0.75rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+}
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+.lightbox-close:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+.lightbox-close:focus-visible {
+  outline: 2px solid rgb(74, 222, 128);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .lightbox {
+    transition: none;
+  }
 }

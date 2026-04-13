@@ -640,6 +640,71 @@
     });
   }
 
+  function initLightbox() {
+    var triggers = document.querySelectorAll('[data-lightbox-trigger]');
+    if (!triggers.length) return;
+
+    // Build the overlay once and reuse it.
+    var overlay = document.createElement('div');
+    overlay.className = 'lightbox';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-label', 'Image viewer');
+    overlay.innerHTML =
+      '<button type="button" class="lightbox-close" aria-label="Close image viewer">' +
+      '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>' +
+      '</button>' +
+      '<img class="lightbox-image" alt="" />';
+    document.body.appendChild(overlay);
+
+    var overlayImg = overlay.querySelector('.lightbox-image');
+    var closeBtn = overlay.querySelector('.lightbox-close');
+    var lastTrigger = null;
+
+    function openLightbox(trigger) {
+      lastTrigger = trigger;
+      overlayImg.src = trigger.getAttribute('data-lightbox-src');
+      overlayImg.alt = trigger.getAttribute('data-lightbox-alt') || '';
+      overlay.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    }
+
+    function closeLightbox() {
+      overlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+      if (lastTrigger) lastTrigger.focus();
+    }
+
+    triggers.forEach(function (trigger) {
+      trigger.addEventListener('click', function () {
+        openLightbox(trigger);
+      });
+    });
+
+    closeBtn.addEventListener('click', closeLightbox);
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closeLightbox();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
+        closeLightbox();
+      }
+    });
+  }
+
+  function initFooterLocale() {
+    var brand = document.querySelector('.site-footer-brand');
+    if (!brand || brand.querySelector('.footer-locale')) return;
+    var locale = document.createElement('div');
+    locale.className = 'footer-locale';
+    locale.setAttribute('aria-label', 'Based in Vancouver, Canada');
+    locale.innerHTML =
+      '<span>Based in Vancouver, Canada</span>' +
+      '<img class="footer-locale-flag" src="images/flag-canada.svg" alt="" width="22" height="11" loading="lazy" aria-hidden="true">';
+    brand.appendChild(locale);
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     initMobileNav();
     initAccordion();
@@ -647,6 +712,8 @@
     initImageSlider();
     initSmoothScroll();
     initContactForm();
+    initLightbox();
+    initFooterLocale();
     logCuriousCoderMessage();
   });
 })();
