@@ -1099,6 +1099,10 @@ textarea.cf-input {
   height: 1.25rem;
 }
 .cf-file-clear svg { display: block; }
+
+/* Nonprofits flow rail: vertical line connecting step dots */
+.np-flow-rail { display: flex; flex-direction: column; align-items: center; align-self: stretch; width: 1rem; flex-shrink: 0; }
+.np-flow-line { flex: 1 1 auto; width: 4px; min-height: 1.5rem; background: #15803d; }
 .cf-file-clear:hover { color: #ef4444; }
 .cf-file-hint {
   font-size: 0.75rem;
