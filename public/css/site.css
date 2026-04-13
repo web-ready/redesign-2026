@@ -1090,7 +1090,6 @@ textarea.cf-input {
   color: #9ca3af;
   cursor: pointer;
   padding: 0;
-  font-size: 1.25rem;
   line-height: 1;
   flex-shrink: 0;
   display: inline-flex;
@@ -1099,6 +1098,7 @@ textarea.cf-input {
   width: 1.25rem;
   height: 1.25rem;
 }
+.cf-file-clear svg { display: block; }
 .cf-file-clear:hover { color: #ef4444; }
 .cf-file-hint {
   font-size: 0.75rem;

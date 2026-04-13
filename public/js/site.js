@@ -551,6 +551,10 @@
     }
 
     // Pre-select inquiry type from URL parameter (?type=volunteer, etc.)
+    // Record the value in a module-level flag so the draft-restore pass can
+    // skip overwriting it — a shared ?type=… link should always beat an
+    // older locally-saved draft.
+    var urlPreselect = '';
     try {
       var params = new URLSearchParams(window.location.search);
       var preselect = params.get('type') || '';
@@ -558,6 +562,7 @@
         for (var i = 0; i < typeSelect.options.length; i++) {
           if (typeSelect.options[i].value === preselect) {
             typeSelect.value = preselect;
+            urlPreselect = preselect;
             showSections(preselect);
             break;
           }
@@ -752,6 +757,18 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
+      // Defensive sync: make every native <select> match its custom widget's
+      // currently-selected option. Prevents visual/value drift if anything
+      // ever desyncs them (e.g. the draft-restore race that motivated this).
+      form.querySelectorAll('.cs-wrap').forEach(function (wrap) {
+        var nativeSel = wrap.nextElementSibling;
+        if (!nativeSel || nativeSel.tagName !== 'SELECT') return;
+        var chosen = wrap.querySelector('.cs-option[aria-selected="true"]');
+        if (chosen && chosen.dataset.value && nativeSel.value !== chosen.dataset.value) {
+          nativeSel.value = chosen.dataset.value;
+        }
+      });
+
       // Clear previous errors
       form.querySelectorAll('.cf-error-text').forEach(function (el) { el.remove(); });
       form.querySelectorAll('.cf-input-error').forEach(function (el) { el.classList.remove('cf-input-error'); });
@@ -925,6 +942,9 @@
 
           // Restore each field
           Object.keys(d).forEach(function (key) {
+            // If the URL pre-selected an inquiry type, don't let an older
+            // saved draft overwrite it. Shared ?type=… links always win.
+            if (key === 'inquiry_type' && urlPreselect) return;
             var val = d[key];
             var els = form.querySelectorAll('[name="' + key + '"]');
             if (!els.length) return;
