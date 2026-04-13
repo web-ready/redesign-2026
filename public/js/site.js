@@ -548,6 +548,29 @@
           el.classList.remove('is-visible');
         }
       });
+      updateFileSuggestion(type);
+    }
+
+    // Context-aware hint for the "Attach a file" field — suggests what kind
+    // of document makes sense for each inquiry type. Rendered inside the
+    // #cf-file-suggest span right after the "Attach a file" label.
+    var FILE_SUGGESTIONS = {
+      'general':       'e.g. any supporting document',
+      'volunteer':     'e.g. CV / resume',
+      'partnership':   'e.g. partnership proposal or org one-pager',
+      'media':         'e.g. press credentials, journalist CV, or story brief',
+      'speaking':      'e.g. speaker bio, headshot, or sample deck',
+      'web-ready':     'e.g. current site brief or brand assets',
+      'wra-platform':  'e.g. organization overview or impact report',
+      'stw':           'e.g. talk proposal, bio, or session outline',
+      'vcasse':        'e.g. related research, bio, or proposal',
+      'tree-planting': 'e.g. site map or planting project proposal',
+    };
+    function updateFileSuggestion(type) {
+      var el = document.getElementById('cf-file-suggest');
+      if (!el) return;
+      var s = FILE_SUGGESTIONS[type];
+      el.textContent = s ? '— ' + s + ' ' : '';
     }
 
     // Pre-select inquiry type from URL parameter (?type=volunteer, etc.)
