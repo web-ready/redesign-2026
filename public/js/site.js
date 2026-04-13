@@ -573,6 +573,145 @@
       });
     }
 
+    // ── "Other → please specify" auto-reveal ─────────────────────────────
+    // Any <select> that has an <option value="other">, or any checkbox group
+    // that contains <input value="other">, gets an accompanying "Please
+    // specify" text input injected right after it. Revealed on selection,
+    // hidden (and cleared) otherwise. This keeps the HTML DRY — we don't
+    // hand-author an "other" field next to every dropdown.
+    initOtherFields();
+
+    function initOtherFields() {
+      // Selects with an "other" option
+      form.querySelectorAll('select').forEach(function (sel) {
+        if (!sel.name) return;
+        var hasOther = false;
+        for (var i = 0; i < sel.options.length; i++) {
+          if (sel.options[i].value === 'other') { hasOther = true; break; }
+        }
+        if (!hasOther) return;
+
+        var otherDiv = makeOtherField(sel.name);
+        // Insert after the .cf-field wrapper holding the select.
+        var wrap = sel.closest('.cf-field') || sel.parentElement;
+        wrap.insertAdjacentElement('afterend', otherDiv);
+
+        sel.addEventListener('change', function () {
+          if (sel.value === 'other') revealOther(otherDiv);
+          else hideOther(otherDiv);
+        });
+        // Handle pre-selected value (e.g. from URL param or browser autofill)
+        if (sel.value === 'other') revealOther(otherDiv, true);
+      });
+
+      // Checkbox groups with an "other" value
+      var seenGroups = {};
+      form.querySelectorAll('input[type="checkbox"][value="other"]').forEach(function (box) {
+        var name = box.name;
+        if (!name || seenGroups[name]) return;
+        if (name === 'privacy_consent' || name === 'newsletter') return;
+        seenGroups[name] = true;
+
+        var fieldWrap = box.closest('.cf-field');
+        if (!fieldWrap) return;
+
+        var otherDiv = makeOtherField(name);
+        fieldWrap.insertAdjacentElement('afterend', otherDiv);
+
+        box.addEventListener('change', function () {
+          if (box.checked) revealOther(otherDiv);
+          else hideOther(otherDiv);
+        });
+      });
+    }
+
+    function makeOtherField(name) {
+      var wrap = document.createElement('div');
+      wrap.className = 'cf-other-field';
+      wrap.setAttribute('data-cf-other-for', name);
+      wrap.hidden = true;
+
+      var label = document.createElement('label');
+      label.className = 'cf-label';
+      label.setAttribute('for', 'cf-other-' + name);
+      label.textContent = 'Please specify';
+
+      var input = document.createElement('input');
+      input.type = 'text';
+      input.id = 'cf-other-' + name;
+      input.name = name + '_other';
+      input.className = 'cf-input';
+      input.placeholder = 'Tell us more';
+      input.autocomplete = 'off';
+
+      wrap.appendChild(label);
+      wrap.appendChild(input);
+      return wrap;
+    }
+
+    function revealOther(el, instant) {
+      if (!el.hidden) return;
+      el.hidden = false;
+      if (instant) { el.classList.add('is-visible'); return; }
+      // Force reflow so the transition animates from the initial state.
+      void el.offsetHeight;
+      el.classList.add('is-visible');
+    }
+    function hideOther(el) {
+      if (el.hidden) return;
+      el.classList.remove('is-visible');
+      var input = el.querySelector('input');
+      if (input) input.value = '';
+      setTimeout(function () {
+        if (!el.classList.contains('is-visible')) el.hidden = true;
+      }, 220);
+    }
+
+    // ── Enter-to-next navigation ─────────────────────────────────────────
+    // Pressing Enter on a text/email/tel/url/date input moves focus to the
+    // next visible form field (skipping hidden conditional sections, hidden
+    // "other" fields, and the honeypot). Cmd/Ctrl+Enter from anywhere submits
+    // the form. Textareas keep native Enter-for-newline behavior.
+    form.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter') return;
+
+      // Submit shortcut from anywhere
+      if (e.metaKey || e.ctrlKey) {
+        e.preventDefault();
+        if (typeof form.requestSubmit === 'function') form.requestSubmit();
+        else {
+          var sb = form.querySelector('.cf-submit');
+          if (sb) sb.click();
+        }
+        return;
+      }
+
+      var t = e.target;
+      if (!t || t.tagName !== 'INPUT') return;
+      var hijackTypes = ['text', 'email', 'tel', 'url', 'date'];
+      if (hijackTypes.indexOf(t.type) === -1) return;
+
+      e.preventDefault();
+      var focusables = Array.prototype.slice.call(form.querySelectorAll('input, select, textarea'));
+      var visible = focusables.filter(function (el) {
+        if (el.disabled || el.type === 'hidden') return false;
+        if (el.closest('.cf-honeypot')) return false;
+        var section = el.closest('.cf-conditional');
+        if (section && !section.classList.contains('is-visible')) return false;
+        var other = el.closest('.cf-other-field');
+        if (other && other.hidden) return false;
+        return el.offsetParent !== null;
+      });
+      var idx = visible.indexOf(t);
+      if (idx >= 0 && idx < visible.length - 1) {
+        var next = visible[idx + 1];
+        next.focus();
+        if (next.tagName === 'INPUT' && hijackTypes.indexOf(next.type) !== -1 && typeof next.select === 'function') {
+          try { next.select(); } catch (err) {}
+        }
+      }
+    });
+
     // Clear field errors on interaction
     function clearFieldError(field) {
       var parent = field.closest('.cf-field');
@@ -780,6 +919,26 @@
     brand.appendChild(locale);
   }
 
+  function initScrollReveal() {
+    if (!('IntersectionObserver' in window)) return;
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var targets = document.querySelectorAll('[data-reveal]');
+    if (!targets.length) return;
+    if (reduced) {
+      targets.forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    targets.forEach(function (el) { observer.observe(el); });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     initMobileNav();
     initAccordion();
@@ -789,6 +948,7 @@
     initContactForm();
     initLightbox();
     initFooterLocale();
+    initScrollReveal();
     logCuriousCoderMessage();
   });
 })();

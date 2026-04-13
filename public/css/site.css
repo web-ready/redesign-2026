@@ -867,6 +867,30 @@ textarea.cf-input {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  animation: cfReveal 0.28s cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+@keyframes cfReveal {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* "Other → please specify" auto-revealed text field */
+.cf-other-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  margin-top: 0.75rem;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.cf-other-field.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .cf-conditional.is-visible { animation: none; }
+  .cf-other-field { transition: none; }
 }
 .cf-error-text {
   font-size: 0.8125rem;
@@ -980,6 +1004,64 @@ textarea.cf-input {
 .np-icon--violet { background: #f5f3ff; border-color: #ddd6fe; color: #5b21b6; }
 
 /* Process section grid */
+/* ── Scroll reveal ────────────────────────────────────────────────────────── */
+/* Lightweight, CSS-driven entrance animations.  Tagged elements start hidden */
+/* and fade/slide in when an IntersectionObserver toggles `.is-visible`.      */
+/* Honours prefers-reduced-motion automatically.                              */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition:
+    opacity 0.7s cubic-bezier(0.25, 0.4, 0.25, 1),
+    transform 0.7s cubic-bezier(0.25, 0.4, 0.25, 1);
+  will-change: opacity, transform;
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+[data-reveal-delay="1"] { transition-delay: 0.08s; }
+[data-reveal-delay="2"] { transition-delay: 0.18s; }
+[data-reveal-delay="3"] { transition-delay: 0.28s; }
+[data-reveal-delay="4"] { transition-delay: 0.38s; }
+
+/* Variant: slide in from the right (nice for hero images) */
+[data-reveal="slide-left"] { transform: translateX(2rem); }
+[data-reveal="slide-left"].is-visible { transform: translateX(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Timeline node — gentle ambient pulse draws the eye to the process.         */
+/* Only animates on the first node so it's a subtle beacon, not distracting.  */
+.np-timeline-step:first-child .np-timeline-node::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #047857;
+  opacity: 0.35;
+  animation: np-node-pulse 2.4s ease-in-out infinite;
+}
+.np-timeline-node {
+  overflow: visible;
+}
+@keyframes np-node-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.35; }
+  50%      { transform: scale(2.1); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .np-timeline-step:first-child .np-timeline-node::after {
+    animation: none;
+    display: none;
+  }
+}
+
 /* Nonprofits workflow timeline — dots connected by lines, no numbers.       */
 /* Vertical on mobile, horizontal on md+.                                    */
 .np-timeline {
