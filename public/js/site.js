@@ -522,6 +522,10 @@
     var form = document.getElementById('contact-form');
     if (!form) return;
 
+    // Record when the form became available; used as a min-fill-time check
+    // against bots that submit instantly.
+    window.__cfLoadedAt = Date.now();
+
     var typeSelect = document.getElementById('cf-type');
     var successEl = document.getElementById('cf-success');
     var conditionals = form.querySelectorAll('.cf-conditional');
@@ -633,11 +637,72 @@
         return;
       }
 
-      // TODO: Replace with actual form submission endpoint
-      // Example: fetch('/api/contact', { method: 'POST', body: new FormData(form) })
-      form.style.display = 'none';
-      if (successEl) successEl.style.display = '';
+      // Serialize form into a plain object (grouping multi-value checkboxes
+      // into arrays) so the server receives clean JSON.
+      var payload = {};
+      var fd = new FormData(form);
+      fd.forEach(function (val, key) {
+        if (Object.prototype.hasOwnProperty.call(payload, key)) {
+          if (!Array.isArray(payload[key])) payload[key] = [payload[key]];
+          payload[key].push(val);
+        } else {
+          payload[key] = val;
+        }
+      });
+      // FormData omits unchecked checkboxes; coerce consent explicitly.
+      var consentEl = form.querySelector('[name="privacy_consent"]');
+      payload.privacy_consent = !!(consentEl && consentEl.checked);
+      var newsletterEl = form.querySelector('[name="newsletter"]');
+      payload.newsletter = !!(newsletterEl && newsletterEl.checked);
+      payload.form_loaded_at = window.__cfLoadedAt || 0;
+
+      var submitBtn = form.querySelector('.cf-submit');
+      var originalLabel = submitBtn ? submitBtn.textContent : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending\u2026';
+      }
+      clearFormError();
+
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(function (r) {
+        return r.json().then(function (j) { return { ok: r.ok, body: j }; }, function () { return { ok: r.ok, body: {} }; });
+      }).then(function (result) {
+        if (!result.ok) {
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
+          var msg = (result.body && result.body.error)
+            || 'Something went wrong. Please try again, or email us directly.';
+          showFormError(msg);
+          return;
+        }
+        form.style.display = 'none';
+        if (successEl) successEl.style.display = '';
+      }).catch(function () {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
+        showFormError('Network error. Please check your connection and try again.');
+      });
     });
+
+    function clearFormError() {
+      var existing = form.querySelector('[data-cf-form-error]');
+      if (existing) existing.remove();
+    }
+
+    function showFormError(msg) {
+      clearFormError();
+      var el = document.createElement('p');
+      el.setAttribute('data-cf-form-error', '');
+      el.className = 'cf-error-text';
+      el.setAttribute('role', 'alert');
+      el.style.marginTop = '0.75rem';
+      el.textContent = msg;
+      var submitBtnEl = form.querySelector('.cf-submit');
+      var submitField = submitBtnEl ? submitBtnEl.closest('.cf-field') : null;
+      if (submitField) submitField.appendChild(el);
+    }
   }
 
   function initLightbox() {

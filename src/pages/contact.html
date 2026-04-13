@@ -632,6 +632,12 @@
                     </label>
                   </div>
 
+                  <!-- Honeypot: hidden from users; bots fill it -->
+                  <div class="cf-honeypot" aria-hidden="true">
+                    <label for="cf-website-url">Leave this field empty</label>
+                    <input type="text" id="cf-website-url" name="website_url" tabindex="-1" autocomplete="off">
+                  </div>
+
                   <!-- Submit -->
                   <div class="cf-field" style="margin-top:0.75rem">
                     <button type="submit" class="cf-submit">Send Message</button>

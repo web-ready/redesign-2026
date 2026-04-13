@@ -853,6 +853,13 @@ textarea.cf-input {
   opacity: 0.5;
   cursor: not-allowed;
 }
+.cf-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 .cf-conditional {
   display: none;
 }
@@ -973,42 +980,79 @@ textarea.cf-input {
 .np-icon--violet { background: #f5f3ff; border-color: #ddd6fe; color: #5b21b6; }
 
 /* Process section grid */
-.np-process-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-@media (min-width: 768px) {
-  .np-process-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-  }
-}
-
-.np-step-num {
+/* Nonprofits workflow timeline — dots connected by lines, no numbers.       */
+/* Vertical on mobile, horizontal on md+.                                    */
+.np-timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.75rem;
-  height: 2.75rem;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+.np-timeline-step {
+  position: relative;
+  padding-left: 1.75rem;
+}
+/* Vertical connector line — hidden on the last step */
+.np-timeline-step::before {
+  content: '';
+  position: absolute;
+  left: 0.4375rem;
+  top: 0.875rem;
+  bottom: -1.75rem;
+  width: 1px;
+  background: #d1d5db;
+}
+.np-timeline-step:last-child::before {
+  display: none;
+}
+.np-timeline-node {
+  position: absolute;
+  left: 0;
+  top: 0.375rem;
+  width: 0.875rem;
+  height: 0.875rem;
   border-radius: 50%;
-  background: #000;
-  color: #fff;
-  font-weight: 600;
-  font-size: 0.95rem;
-  flex-shrink: 0;
+  background: #047857; /* green-700 */
+  box-shadow: 0 0 0 4px #dcfce7; /* green-100 halo */
+}
+.np-timeline-title {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #000;
+  letter-spacing: -0.015em;
+  margin: 0 0 0.5rem 0;
+}
+.np-timeline-body {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: #4b5563;
+  margin: 0;
 }
 
-.np-process-card {
-  padding: 1.5rem;
-  border-radius: 1.25rem;
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-.np-process-card:hover {
-  border-color: #bbf7d0;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+@media (min-width: 768px) {
+  .np-timeline {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+  .np-timeline-step {
+    flex: 1;
+    padding: 1.75rem 0 0 0;
+  }
+  /* Horizontal connector from node rightward through the gap to next node */
+  .np-timeline-step::before {
+    left: 0.875rem;
+    top: 0.4375rem;
+    width: calc(100% - 0.875rem + 1.5rem);
+    height: 1px;
+    bottom: auto;
+  }
+  .np-timeline-node {
+    top: 0;
+    left: 0;
+  }
 }
 
 /* Dark CTA section */
@@ -1114,7 +1158,6 @@ textarea.cf-input {
 
 @media (prefers-reduced-motion: reduce) {
   .np-card,
-  .np-process-card,
   .np-cta-link,
   .np-cta-link svg,
   .np-btn-green,
@@ -1213,30 +1256,12 @@ textarea.cf-input {
   margin: 0 0 1.5rem 0;
 }
 
-.np-svc-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 1.75rem 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-  flex: 1;
-}
-.np-svc-list li {
-  position: relative;
-  padding-left: 1.5rem;
-  font-size: 0.875rem;
-  line-height: 1.6;
+.np-svc-body {
+  font-size: 0.9375rem;
+  line-height: 1.65;
   color: #4b5563;
-}
-.np-svc-list li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.7rem;
-  width: 0.85rem;
-  height: 1px;
-  background: #9ca3af;
+  margin: 0 0 1.75rem 0;
+  flex: 1;
 }
 
 .np-svc-link {
