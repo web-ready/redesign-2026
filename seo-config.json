@@ -1,0 +1,189 @@
+{
+  "site_url": "https://www.oasisofchange.com",
+  "site_name": "Oasis of Change, Inc.",
+  "site_logo": "https://www.oasisofchange.com/images/logo/Oasis_of_Change-official.svg",
+  "default_og_type": "website",
+  "pages": {
+    "index.html": {
+      "title": "Home | Oasis of Change, Inc.",
+      "description": "Oasis of Change is a nonprofit making the internet more sustainable through low-carbon digital practices, transparent impact reporting, and environmental programs including tree planting.",
+      "og_type": "website"
+    },
+    "about.html": {
+      "title": "About | Oasis of Change, Inc.",
+      "description": "Discover Oasis of Change's mission to build a more sustainable digital future\u2014our story, founder Gabriel Dalton, and board of directors.",
+      "og_type": "website"
+    },
+    "company.html": {
+      "title": "Company | Oasis of Change, Inc.",
+      "description": "Explore Oasis of Change\u2014our story, mission, leadership, annual reports, and news.",
+      "og_type": "website"
+    },
+    "contact.html": {
+      "title": "Contact | Oasis of Change, Inc.",
+      "description": "Contact Oasis of Change for partnerships, media requests, or questions about digital sustainability, accessibility, and impact programs.",
+      "og_type": "website"
+    },
+    "initiatives.html": {
+      "title": "Initiatives | Oasis of Change, Inc.",
+      "description": "Explore Oasis of Change initiatives including Web-Ready, VCASSE, Sustainable Technology Week, and platforms that turn mission-driven ideas into measurable impact.",
+      "og_type": "website"
+    },
+    "case-studies.html": {
+      "title": "Case Studies | Oasis of Change, Inc.",
+      "description": "See real outcomes from sustainable digital projects\u2014how organizations reduced emissions, energy, and water use with Oasis of Change support.",
+      "og_type": "website"
+    },
+    "nonprofits.html": {
+      "title": "For Nonprofits | Oasis of Change, Inc.",
+      "description": "Oasis of Change partners with nonprofits to secure technology grants, reduce website carbon and energy use, and improve accessibility through our Web-Ready programme.",
+      "og_type": "website"
+    },
+    "get_involved.html": {
+      "title": "Get Involved | Oasis of Change, Inc.",
+      "description": "Volunteer, partner, donate, or collaborate with Oasis of Change to grow digital sustainability and climate-conscious technology worldwide.",
+      "og_type": "website"
+    },
+    "accessibility_statement.html": {
+      "title": "Accessibility Statement | Oasis of Change, Inc.",
+      "description": "Oasis of Change is committed to improving website accessibility for everyone, with ongoing review, testing, and inclusive design practices.",
+      "og_type": "website"
+    },
+    "privacy-policy.html": {
+      "title": "Privacy Policy | Oasis of Change, Inc.",
+      "description": "How Oasis of Change collects, uses, and protects information submitted through this website, including forms, inquiries, analytics, and communications.",
+      "og_type": "website"
+    },
+    "gabriel-dalton.html": {
+      "title": "Gabriel Dalton | Oasis of Change, Inc.",
+      "description": "Meet Gabriel Dalton, founder of Oasis of Change\u2014a nonprofit focused on digital sustainability, climate-conscious technology, and low-carbon web practices.",
+      "og_type": "website"
+    },
+    "news_release.html": {
+      "title": "News & Media | Oasis of Change, Inc.",
+      "description": "News releases, media coverage, and public updates from Oasis of Change\u2014launches, partnerships, Sustainable Technology Week, and transparency tools.",
+      "og_type": "website"
+    },
+    "news-example-post.html": {
+      "title": "Public Impact Dashboard Launch | Oasis of Change, Inc.",
+      "description": "Oasis of Change launches a public impact dashboard for transparent tree-planting metrics, geographic reach, and organizational accountability.",
+      "og_type": "article"
+    },
+    "annual_reports.html": {
+      "title": "Annual Reports | Oasis of Change, Inc.",
+      "description": "Browse Oasis of Change annual reports for transparency and accountability across fiscal years, with new editions added as they are published.",
+      "og_type": "website"
+    },
+    "annual_report_2024_2025.html": {
+      "title": "2024\u20132025 Annual Report | Oasis of Change, Inc.",
+      "description": "The Oasis of Change 2024\u20132025 Annual Report covering organizational activities, milestones, and growth during the fiscal year.",
+      "og_type": "website"
+    },
+    "annual_report_2025_2026.html": {
+      "title": "2025\u20132026 Annual Report | Oasis of Change, Inc.",
+      "description": "The Oasis of Change 2025\u20132026 Annual Report covering organizational progress, key initiatives, impact highlights, and a look ahead.",
+      "og_type": "website"
+    },
+    "example_annual_report.html": {
+      "title": "2025\u20132026 Annual Report | Oasis of Change, Inc.",
+      "description": "Summary of Oasis of Change's progress, initiatives, organizational development, and public-facing impact for the 2025\u20132026 fiscal year.",
+      "og_type": "website"
+    },
+    "sustainability_statement.html": {
+      "title": "Sustainability Statement | Oasis of Change, Inc.",
+      "description": "How Oasis of Change approaches digital sustainability\u2014AWS hosting, renewable energy context, and team operations in British Columbia's clean power grid.",
+      "og_type": "website"
+    },
+    "web-ready.html": {
+      "title": "Web-Ready | Oasis of Change, Inc.",
+      "description": "Web-Ready is Oasis of Change's sustainable website agency\u2014fast, modern, lower-impact sites for nonprofits, communities, and businesses.",
+      "og_type": "website"
+    },
+    "vcasse.html": {
+      "title": "VCASSE | Oasis of Change, Inc.",
+      "description": "VCASSE\u2014the Vancouver Centre for AI Safety, Sustainability, and Ethics\u2014advances responsible AI and environmental stewardship through research and collaboration.",
+      "og_type": "website"
+    },
+    "sustainable-technology-week.html": {
+      "title": "Sustainable Technology Week | Oasis of Change, Inc.",
+      "description": "Sustainable Technology Week brings together education and innovation where technology meets environmental responsibility and climate-conscious design.",
+      "og_type": "website"
+    },
+    "wra_platform.html": {
+      "title": "Web-Ready Access Platform | Oasis of Change, Inc.",
+      "description": "Learn about the Web-Ready Access Platform and how it extends digital access through tools aligned with Oasis of Change's sustainability mission.",
+      "og_type": "website"
+    },
+    "tree_planting.html": {
+      "title": "Tree Planting & Reforestation | Oasis of Change, Inc.",
+      "description": "How Oasis of Change reinvests in reforestation and transparent reporting\u2014connecting digital sustainability work to real-world environmental impact.",
+      "og_type": "website"
+    },
+    "oasis-of-change-website.html": {
+      "title": "Oasis of Change Website Case Study | Oasis of Change, Inc.",
+      "description": "Case study: how Oasis of Change designed its own website to be fast, accessible, and sustainability-first\u2014built for clarity, transparency, and low-impact performance.",
+      "og_type": "website"
+    },
+    "denman-place-mall.html": {
+      "title": "Denman Place Mall Case Study | Oasis of Change, Inc.",
+      "description": "How we rebuilt the Denman Place Mall website to improve performance, reduce digital waste, and better serve visitors on mobile devices.",
+      "og_type": "website"
+    },
+    "mittler-senior-technology.html": {
+      "title": "Mittler Senior Technology Case Study | Oasis of Change, Inc.",
+      "description": "Case study: how Mittler Senior Technology reached roughly 98% lower energy use and moved from an F to a B digital sustainability rating, cutting emissions and water use at scale with Oasis of Change.",
+      "og_type": "website"
+    },
+    "404.html": {
+      "title": "Page Not Found | Oasis of Change, Inc.",
+      "description": "The page you're looking for doesn't exist or has been moved.",
+      "og_type": "website"
+    },
+    "blog/index.html": {
+      "title": "Blog | Oasis of Change, Inc.",
+      "description": "Read the latest from Oasis of Change on digital sustainability, accessibility, transparency, and environmental impact.",
+      "og_type": "website"
+    },
+    "blog/accessible-web-nonprofits.html": {
+      "title": "Building Accessible Websites: A Guide for Nonprofits | Oasis of Change, Inc.",
+      "description": "Web accessibility isn't optional \u2014 it's essential. Learn how nonprofits can build inclusive websites that work for everyone, including people with disabilities.",
+      "og_type": "article",
+      "article_author": "Gabriel Dalton"
+    },
+    "blog/ai-ethics-environment.html": {
+      "title": "AI and the Environment: Balancing Innovation with Responsibility | Oasis of Change, Inc.",
+      "description": "Artificial intelligence holds enormous potential for environmental good \u2014 but its own carbon cost is growing fast. How do we build AI responsibly?",
+      "og_type": "article",
+      "article_author": "Gabriel Dalton"
+    },
+    "blog/sustainable-web-design.html": {
+      "title": "What Is Sustainable Web Design? Principles and Practices | Oasis of Change, Inc.",
+      "description": "Sustainable web design reduces environmental impact while improving performance and user experience. Learn the core principles behind building greener websites.",
+      "og_type": "article",
+      "article_author": "Gabriel Dalton"
+    },
+    "blog/tree-planting-update.html": {
+      "title": "10,000 Trees Planted: Our 2025 Reforestation Update | Oasis of Change, Inc.",
+      "description": "A look back at our 2025 tree planting milestone \u2014 10,000 trees planted across reforestation sites, offsetting carbon and restoring ecosystems.",
+      "og_type": "article",
+      "article_author": "Gabriel Dalton"
+    },
+    "blog/website-carbon-footprint.html": {
+      "title": "Why Your Website's Carbon Footprint Matters | Oasis of Change, Inc.",
+      "description": "Every website generates carbon emissions. Learn how data centres, page weight, and user traffic contribute to digital pollution \u2014 and what you can do about it.",
+      "og_type": "article",
+      "article_author": "Gabriel Dalton"
+    },
+    "blog/wra-platform-launch.html": {
+      "title": "Introducing the WRA Platform: Helping Nonprofits Go Digital Sustainably | Oasis of Change, Inc.",
+      "description": "The WRA Platform helps nonprofits build accessible, lower-carbon websites and access digital grants. Here's what it is, why we built it, and how to get involved.",
+      "og_type": "article",
+      "article_author": "Gabriel Dalton"
+    },
+    "blog/example-article.html": {
+      "title": "New Board Directors | Oasis of Change, Inc.",
+      "description": "Oasis of Change welcomes Nigel and Catherine to the Board of Directors as we expand digital sustainability, accessibility, and environmental impact work.",
+      "og_type": "article"
+    }
+  }
+}

@@ -5,7 +5,8 @@ Workflow:
   - Reads every src/pages/**.html
   - Resolves {{include partial-name.html}} markers by inlining src/partials/...
   - Substitutes {{base}} per page based on the page's directory depth
-    (so a page at src/pages/blog/foo.html gets base="../", root pages get base="")
+  - Loads seo-config.json and injects per-page SEO variables (title, description,
+    canonical URL, OG image, JSON-LD structured data)
   - Writes the result to public/ with the same directory structure
 
 Usage:
@@ -17,18 +18,142 @@ Add new partials by dropping files into src/partials/ and referencing them as
 """
 from pathlib import Path
 import argparse
+import html
+import json
 import re
 import shutil
 import sys
 import tempfile
+import urllib.parse
 
 ROOT = Path(__file__).resolve().parent
 SRC_PAGES = ROOT / 'src' / 'pages'
 SRC_PARTIALS = ROOT / 'src' / 'partials'
 OUT = ROOT / 'public'
+SEO_CONFIG_PATH = ROOT / 'seo-config.json'
 
 INCLUDE_RE = re.compile(r'\{\{\s*include\s+([^\s}]+)\s*\}\}')
 MAX_INCLUDE_DEPTH = 5
+
+
+def load_seo_config():
+    """Load the SEO configuration from seo-config.json."""
+    if not SEO_CONFIG_PATH.exists():
+        print(f'WARNING: {SEO_CONFIG_PATH} not found. SEO variables will be empty.',
+              file=sys.stderr)
+        return None
+    with open(SEO_CONFIG_PATH, encoding='utf-8') as f:
+        return json.load(f)
+
+
+def canonical_url_for(site_url, page_rel):
+    """Derive the canonical URL from a page's relative path."""
+    page_str = str(page_rel).replace('\\', '/')
+    if page_str == 'index.html':
+        return site_url + '/'
+    if page_str.endswith('/index.html'):
+        # e.g. blog/index.html -> /blog/
+        return site_url + '/' + page_str.replace('/index.html', '/')
+    # e.g. about.html -> /about  (Vercel cleanUrls strips .html)
+    return site_url + '/' + page_str.replace('.html', '')
+
+
+def og_image_url_for(site_url, title):
+    """Build the dynamic OG image URL for a page."""
+    encoded_title = urllib.parse.quote(title, safe='')
+    return f'{site_url}/api/og?title={encoded_title}'
+
+
+def build_jsonld(page_meta, canonical, og_image, seo_config):
+    """Generate JSON-LD structured data for a page."""
+    site_name = seo_config['site_name']
+    site_url = seo_config['site_url']
+    site_logo = seo_config['site_logo']
+
+    publisher = {
+        '@type': 'Organization',
+        'name': site_name,
+        'url': site_url,
+        'logo': {
+            '@type': 'ImageObject',
+            'url': site_logo
+        }
+    }
+
+    og_type = page_meta.get('og_type', 'website')
+
+    if og_type == 'article':
+        ld = {
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            'headline': page_meta['title'],
+            'description': page_meta['description'],
+            'url': canonical,
+            'image': og_image,
+            'publisher': publisher
+        }
+        if page_meta.get('article_author'):
+            ld['author'] = {
+                '@type': 'Person',
+                'name': page_meta['article_author']
+            }
+    else:
+        ld = {
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            'name': page_meta['title'],
+            'description': page_meta['description'],
+            'url': canonical,
+            'image': og_image,
+            'publisher': publisher
+        }
+
+    return '    <script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False) + '</script>'
+
+
+def seo_vars_for(page_rel, seo_config):
+    """Build the SEO template variables for a given page."""
+    page_key = str(page_rel).replace('\\', '/')
+    if seo_config is None or page_key not in seo_config.get('pages', {}):
+        # Return empty strings so {{seo_*}} placeholders are cleared
+        return {
+            'seo_title': '',
+            'seo_description': '',
+            'seo_og_type': 'website',
+            'seo_canonical': '',
+            'seo_og_image': '',
+            'seo_extra_meta': '',
+            'seo_jsonld': '',
+        }
+
+    site_url = seo_config['site_url']
+    page_meta = seo_config['pages'][page_key]
+    title = page_meta['title']
+    description = page_meta['description']
+    og_type = page_meta.get('og_type', seo_config.get('default_og_type', 'website'))
+    canonical = canonical_url_for(site_url, page_rel)
+    og_image = og_image_url_for(site_url, title)
+
+    # Extra meta tags (article-specific)
+    extra_meta_lines = []
+    if page_meta.get('article_author'):
+        extra_meta_lines.append(
+            f'    <meta property="article:author" content="{html.escape(page_meta["article_author"])}">')
+    extra_meta = '\n'.join(extra_meta_lines)
+    if extra_meta:
+        extra_meta += '\n'
+
+    jsonld = build_jsonld(page_meta, canonical, og_image, seo_config)
+
+    return {
+        'seo_title': html.escape(title, quote=True),
+        'seo_description': html.escape(description, quote=True),
+        'seo_og_type': og_type,
+        'seo_canonical': canonical,
+        'seo_og_image': og_image,
+        'seo_extra_meta': extra_meta,
+        'seo_jsonld': jsonld,
+    }
 
 
 def base_for(page_rel_path):
@@ -64,6 +189,8 @@ def build(out_dir):
               file=sys.stderr)
         return 1
 
+    seo_config = load_seo_config()
+
     pages = sorted(p for p in SRC_PAGES.rglob('*.html') if p.is_file())
     print(f'Building {len(pages)} pages -> {out_dir}/')
     for page in pages:
@@ -71,6 +198,7 @@ def build(out_dir):
         out_path = out_dir / rel
         out_path.parent.mkdir(parents=True, exist_ok=True)
         page_vars = {'base': base_for(rel)}
+        page_vars.update(seo_vars_for(rel, seo_config))
         try:
             rendered = render(page.read_text(encoding='utf-8'), page_vars)
         except Exception as e:
