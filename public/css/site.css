@@ -1,0 +1,1979 @@
+/* ── Footer: translated-text overflow fix ─────────────────────────────────── */
+/* Google Translate wraps link text in <font> elements. Those inline children  */
+/* form their own inline boxes and can overflow the parent block even when the */
+/* parent has word-break set. Targeting both the link and all its descendants  */
+/* (with !important) ensures the wrapping rules survive GT's inline styles.    */
+
+.site-global-footer .site-footer-link {
+  display: block;
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
+  white-space: normal !important;
+}
+
+.site-global-footer .site-footer-link * {
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
+  white-space: normal !important;
+}
+
+/* Grid cells: explicit min-width:0 so tracks don't expand to fit overflowing
+   content. No overflow:hidden — text must remain readable, just wrapped.     */
+.site-global-footer .site-footer-nav > div {
+  min-width: 0;
+}
+
+[data-mobile-toggle]:focus-visible,
+[data-nav-dropdown-toggle]:focus-visible,
+[data-mobile-panel] a:focus-visible {
+  outline: 2px solid rgb(74, 222, 128);
+  outline-offset: 2px;
+}
+
+[data-mobile-panel] {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+[data-mobile-panel]::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+.nav-dd-panel {
+  width: max-content;
+  max-width: min(22rem, calc(100vw - 2rem));
+  box-sizing: border-box;
+  padding: 0.625rem 0.5rem;
+  background-color: #111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
+}
+.nav-dd-panel--company {
+  max-width: min(15.5rem, calc(100vw - 2rem));
+  padding: 0.65rem 0.55rem;
+}
+.nav-dd-company-popover {
+  padding-top: 1rem;
+}
+.nav-dd-initiatives-popover {
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+}
+.nav-dd-panel--initiatives {
+  max-width: min(42rem, calc(100vw - 2rem));
+  padding: 0.85rem 0.75rem 0.95rem;
+}
+.nav-dd-initiatives-top {
+  margin-bottom: 0.35rem;
+}
+.nav-dd-initiatives-top ul {
+  gap: 0.25rem;
+}
+.nav-dd-initiatives-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+  gap: 0.65rem 1.1rem;
+  margin-top: 0.65rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+@media (max-width: 900px) {
+  .nav-dd-panel--initiatives .nav-dd-initiatives-split {
+    grid-template-columns: 1fr;
+  }
+}
+.nav-dd-initiatives-col ul {
+  gap: 0.35rem;
+}
+.nav-dd-kicker {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #9ca3af;
+  margin: 0 0 0.45rem 0;
+  padding-left: 0.05rem;
+}
+.nav-dd-panel--initiatives .nav-dd-link--init {
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.55rem 0.55rem;
+  border-radius: 0.65rem;
+}
+.nav-dd-panel--initiatives .nav-dd-link--init.font-medium .nav-dd-link-title {
+  font-weight: 600;
+}
+.nav-dd-link-stack {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+.nav-dd-link-title {
+  display: block;
+  font-size: 0.9rem;
+  line-height: 1.25;
+  font-weight: 500;
+  color: #fff;
+}
+.nav-dd-link-desc {
+  display: block;
+  margin-top: 0.22rem;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: #9ca3af;
+}
+.nav-dd-panel--initiatives .nav-dd-link--init .nav-dd-icon {
+  width: 1.35rem;
+  height: 1.35rem;
+  margin-left: auto;
+  flex-shrink: 0;
+  align-self: center;
+  opacity: 0.92;
+}
+.nav-dd-initiatives-foot {
+  margin-top: 0.65rem;
+  padding-top: 0.72rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+[data-site-nav-dropdown] ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+.nav-dd-panel--company ul {
+  gap: 0.35rem;
+}
+[data-site-nav-dropdown] .nav-dd-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 0.375rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.nav-dd-panel--company .nav-dd-link {
+  gap: 0.6rem;
+  padding: 0.5rem 0.55rem;
+  line-height: 1.35;
+}
+[data-site-nav-dropdown] .nav-dd-link.font-medium {
+  font-weight: 500;
+}
+[data-site-nav-dropdown] .nav-dd-link:hover,
+[data-site-nav-dropdown] .nav-dd-link:focus-visible {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+[data-site-nav-dropdown] .nav-dd-link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(74, 222, 128, 0.45);
+}
+[data-site-nav-dropdown] .nav-dd-icon {
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  color: #6b7280;
+  transition: color 0.15s ease;
+}
+.nav-dd-panel--company .nav-dd-icon {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+[data-site-nav-dropdown] .nav-dd-link:hover .nav-dd-icon,
+[data-site-nav-dropdown] .nav-dd-link:focus-visible .nav-dd-icon {
+  color: #d1d5db;
+}
+[data-site-nav-dropdown] div.border-t {
+  border-top-width: 1px !important;
+  border-top-style: solid !important;
+  border-top-color: rgba(255, 255, 255, 0.1) !important;
+}
+[data-site-nav-dropdown] p.text-gray-500 {
+  margin: 0 0 0.5rem 0;
+  padding-left: 0.125rem;
+}
+[data-site-nav-dropdown] a[href*="impact.oasisofchange.com"]::after {
+  content: "";
+  flex-shrink: 0;
+  width: 0.85em;
+  height: 0.85em;
+  margin-left: 0.15em;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  background-color: currentColor;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22black%22%20d%3D%22M19%2019H5V5h7V3H5a2%202%200%200%200-2%202v14a2%202%200%200%200%202%202h14a2%202%200%200%200%202-2v-7h-2v7zM14%203v2h3.59l-9.83%209.83%201.41%201.41L19%206.41V10h2V3h-7z%22%2F%3E%3C%2Fsvg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22black%22%20d%3D%22M19%2019H5V5h7V3H5a2%202%200%200%200-2%202v14a2%202%200%200%200%202%202h14a2%202%200%200%200%202-2v-7h-2v7zM14%203v2h3.59l-9.83%209.83%201.41%201.41L19%206.41V10h2V3h-7z%22%2F%3E%3C%2Fsvg%3E");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+[data-site-nav-dropdown] a[href*="impact.oasisofchange.com"]:hover::after,
+[data-site-nav-dropdown] a[href*="impact.oasisofchange.com"]:focus-visible::after {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-site-nav-dropdown] .nav-dd-link,
+  [data-site-nav-dropdown] .nav-dd-icon,
+  [data-site-nav-dropdown] a[href*="impact.oasisofchange.com"]::after {
+    transition: none;
+  }
+}
+
+/* Spacing between the language switcher and the Get Involved CTA in the
+   right-side nav group (CSS fallback — i18n.js also sets these inline).      */
+@media (min-width: 1024px) {
+  nav[aria-label="Main"] > div > .justify-end {
+    gap: 0.75rem;
+    align-items: center;
+  }
+}
+
+[data-lang-switcher] {
+  position: relative;
+}
+.lang-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
+}
+.lang-btn:hover {
+  background-color: #111;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+.lang-btn:focus-visible {
+  outline: 2px solid rgb(74, 222, 128);
+  outline-offset: 2px;
+}
+.lang-btn svg {
+  flex-shrink: 0;
+}
+
+/* Dropdown */
+.lang-dropdown {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  padding-top: 0.625rem;
+  z-index: 120;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 0.15s ease, visibility 0.15s ease, transform 0.15s ease;
+}
+.lang-dropdown.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.lang-dropdown-panel {
+  background-color: #111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 0.375rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
+  min-width: 10rem;
+}
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 0.625rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.15s ease;
+}
+.lang-option:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.lang-option:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(74, 222, 128, 0.45);
+}
+.lang-option--active {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+.lang-option-check {
+  width: 0.875rem;
+  height: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: rgb(74, 222, 128);
+}
+.lang-option-name {
+  font-weight: 500;
+}
+.lang-option-code {
+  margin-left: auto;
+  font-size: 0.6875rem;
+  color: #6b7280;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+.lang-option--active .lang-option-code {
+  color: #9ca3af;
+}
+
+/* Mobile language pills */
+.lang-switcher-mobile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  padding-bottom: 0.25rem;
+}
+.lang-mobile-icon {
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.lang-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.375rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #6b7280;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+}
+.lang-pill:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+.lang-pill--active {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.lang-pill:focus-visible {
+  outline: 2px solid rgb(74, 222, 128);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lang-btn,
+  .lang-dropdown,
+  .lang-option,
+  .lang-pill {
+    transition: none;
+  }
+}
+
+.founder-section {
+  display: grid;
+  grid-template-columns: 1fr 8rem;
+  gap: 1.25rem;
+  align-items: start;
+}
+.founder-image-wrap {
+  aspect-ratio: 3 / 4;
+}
+@media (min-width: 640px) {
+  .founder-section {
+    grid-template-columns: 1fr 11rem;
+    gap: 1.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .founder-section {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .founder-image-wrap {
+    max-width: 28rem;
+    margin-left: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .founder-section { gap: 4rem; }
+  .founder-image-wrap { max-width: 32rem; }
+}
+@media (min-width: 1280px) {
+  .founder-section { gap: 5rem; }
+}
+
+.site-global-footer a[href*="impact.oasisofchange.com"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28em;
+}
+.site-global-footer a[href*="impact.oasisofchange.com"]::after {
+  content: "";
+  flex-shrink: 0;
+  width: 0.85em;
+  height: 0.85em;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  background-color: currentColor;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22black%22%20d%3D%22M19%2019H5V5h7V3H5a2%202%200%200%200-2%202v14a2%202%200%200%200%202%202h14a2%202%200%200%200%202-2v-7h-2v7zM14%203v2h3.59l-9.83%209.83%201.41%201.41L19%206.41V10h2V3h-7z%22%2F%3E%3C%2Fsvg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22black%22%20d%3D%22M19%2019H5V5h7V3H5a2%202%200%200%200-2%202v14a2%202%200%200%200%202%202h14a2%202%200%200%200%202-2v-7h-2v7zM14%203v2h3.59l-9.83%209.83%201.41%201.41L19%206.41V10h2V3h-7z%22%2F%3E%3C%2Fsvg%3E");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+.site-global-footer a[href*="impact.oasisofchange.com"]:hover::after,
+.site-global-footer a[href*="impact.oasisofchange.com"]:focus-visible::after {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-global-footer a[href*="impact.oasisofchange.com"]::after {
+    transition: none;
+  }
+}
+
+.nav-overflow-active .hidden.lg\:flex {
+  display: none !important;
+}
+.nav-overflow-active .hidden.lg\:inline-flex {
+  display: none !important;
+}
+.nav-overflow-active .relative.lg\:hidden {
+  display: inline-flex !important;
+}
+
+@media (min-width: 1024px) {
+  .lg\:col-span-3  { grid-column: span 3 / span 3; }
+  .lg\:col-span-6  { grid-column: span 6 / span 6; }
+  .lg\:col-span-9  { grid-column: span 9 / span 9; }
+  .lg\:col-span-12 { grid-column: span 12 / span 12; }
+  .lg\:mb-0        { margin-bottom: 0 !important; }
+  .lg\:shrink-0    { flex-shrink: 0 !important; }
+}
+
+@media (min-width: 768px) {
+  .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.items-start { align-items: flex-start; }
+.text-green-800 { color: #166534; }
+.text-gray-400  { color: #9ca3af; }
+.bg-green-700 { background-color: #15803d; }
+.bg-green-800 { background-color: #166534; }
+.hover\:bg-green-800:hover { background-color: #166534; }
+.focus\:ring-green-300:focus { box-shadow: 0 0 0 4px #86efac; }
+
+/* ── Mobile nav-bar globe button ──────────────────────────────────────────── */
+/* Injected before the hamburger in flexRow. Must be display:none at lg+ so   */
+/* measureNavOverflow() in site.js sees offsetWidth:0 and ignores it.         */
+
+.lang-mobile-globe-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Hide both the wrap AND the btnGroup at lg+ — !important is required here
+   because i18n.js sets display:flex as an inline style on the btnGroup.
+   Without it the group remains a visible flex child in the nav, pushing the
+   Get Involved button away from the right edge.                              */
+@media (min-width: 1024px) {
+  .lang-mobile-globe-wrap,
+  [data-lang-btn-group] {
+    display: none !important;
+  }
+}
+
+.lang-mobile-globe-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease;
+}
+.lang-mobile-globe-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.lang-mobile-globe-btn:focus-visible {
+  outline: 2px solid rgb(74, 222, 128);
+  outline-offset: 2px;
+}
+
+/* ── Mobile nav-bar globe dropdown ───────────────────────────────────────── */
+/* Compact EN / FR / ES picker that opens below the globe button.            */
+
+.lang-mobile-globe-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  z-index: 150;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 0.15s ease, visibility 0.15s ease, transform 0.15s ease;
+}
+.lang-mobile-globe-dropdown.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.lang-mobile-globe-dropdown-panel {
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
+  padding: 0.375rem;
+  background-color: #111;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.75rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.55);
+  white-space: nowrap;
+}
+
+.lang-mobile-dd-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.375rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  color: #6b7280;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+}
+.lang-mobile-dd-pill:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.07);
+}
+.lang-mobile-dd-pill--active {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.lang-mobile-dd-pill:focus-visible {
+  outline: 2px solid rgb(74, 222, 128);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lang-mobile-globe-btn,
+  .lang-mobile-globe-dropdown,
+  .lang-mobile-dd-pill {
+    transition: none;
+  }
+}
+
+/* ── WCAG AA: contrast fixes ──────────────────────────────────────────────── */
+/* Issue 1: text-gray-600 fails small-text AA on dark backgrounds (3.88:1).   */
+/* Override to #9ca3af: 8.7:1 on #000000, 8.0:1 on #111111.                  */
+.bg-black .text-gray-600,
+.bg-\[\#111111\] .text-gray-600,
+.bg-\[\#0a0a0a\] .text-gray-600 {
+  color: #9ca3af;
+}
+
+/* Issue 4: text-green-700 compiled value fails small-text AA on light         */
+/* backgrounds (4.1:1 on bg-green-50, 4.2:1 on bg-[#f7f7f5]).                 */
+/* Override to #166534: 5.9:1 on bg-green-50, 6.1:1 on bg-[#f7f7f5].         */
+.bg-green-50.text-green-700,
+.bg-green-50 .text-green-700,
+.bg-\[\#f7f7f5\] .text-green-700 {
+  color: #166534;
+}
+
+/* ── Table of contents sticky sidebar navigation ──────────────────────────── */
+.toc-link {
+  display: block;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: #d1d5db;
+  text-decoration: none;
+  padding: 0.45rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+.toc-link:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.04);
+}
+.toc-link.is-active {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ── Report status badge ──────────────────────────────────────────────────── */
+.report-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+}
+.report-status--published {
+  border: 1px solid rgba(74, 222, 128, 0.35);
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.07);
+}
+.report-status--coming {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #9ca3af;
+  background: rgba(255, 255, 255, 0.03);
+}
+.report-status__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.report-status--published .report-status__dot { background: #4ade80; }
+.report-status--coming .report-status__dot    { background: #6b7280; }
+
+/* ── Document pages: section spacing ────────────────────────────────────── */
+.report-section + .report-section {
+  padding-top: 2.5rem;
+}
+
+/* ── Contact form ────────────────────────────────────────────────────────── */
+.cf-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.cf-fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.cf-legend {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.01em;
+}
+.cf-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+.cf-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  letter-spacing: -0.005em;
+  margin: 0;
+}
+.cf-req {
+  color: #dc2626;
+}
+.cf-input {
+  display: block;
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: #111827;
+  background-color: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 0.625rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  font-family: inherit;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.cf-input:focus {
+  outline: none;
+  border-color: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+.cf-input::placeholder {
+  color: #9ca3af;
+}
+.cf-input-error {
+  border-color: #dc2626 !important;
+}
+.cf-input-error:focus {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15) !important;
+}
+select.cf-input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none'%3E%3Cpath d='M4 6l4 4 4-4' stroke='%236b7280' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+textarea.cf-input {
+  resize: vertical;
+  min-height: 4.5rem;
+}
+.cf-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 640px) {
+  .cf-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.cf-divider {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 0.5rem 0;
+}
+.cf-check-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+@media (min-width: 640px) {
+  .cf-check-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.cf-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #374151;
+  cursor: pointer;
+  line-height: 1.45;
+}
+.cf-check input[type="checkbox"] {
+  width: 1.125rem;
+  height: 1.125rem;
+  margin-top: 0.1rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 0.25rem;
+  background: #fff;
+  cursor: pointer;
+  flex-shrink: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+.cf-check input[type="checkbox"]:checked {
+  background-color: #16a34a;
+  border-color: #16a34a;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2.5 6l2.5 2.5 4.5-5' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 0.75rem;
+}
+.cf-check input[type="checkbox"]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+.cf-link {
+  color: #16a34a;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.cf-link:hover {
+  color: #15803d;
+}
+.cf-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #111827;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  letter-spacing: -0.01em;
+  transition: background-color 0.15s ease;
+  font-family: inherit;
+}
+.cf-submit:hover {
+  background-color: #1f2937;
+}
+.cf-submit:focus-visible {
+  outline: 2px solid #16a34a;
+  outline-offset: 2px;
+}
+.cf-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.cf-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.cf-conditional {
+  display: none;
+}
+.cf-conditional.is-visible {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: cfReveal 0.28s cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+@keyframes cfReveal {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* "Other → please specify" auto-revealed text field */
+.cf-other-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  margin-top: 0.75rem;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.cf-other-field.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .cf-conditional.is-visible { animation: none; }
+  .cf-other-field { transition: none; }
+}
+.cf-error-text {
+  font-size: 0.8125rem;
+  color: #dc2626;
+  margin-top: 0.125rem;
+}
+.cf-success {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+.cf-success-icon {
+  color: #16a34a;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+.cf-success-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+.cf-success-text {
+  font-size: 0.9375rem;
+  color: #4b5563;
+  max-width: 28rem;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cf-input,
+  .cf-check input[type="checkbox"],
+  .cf-submit,
+  .cf-link {
+    transition: none;
+  }
+}
+
+/* ── Contact form: valid state ────────────────────────────────────────────── */
+.cf-input-valid {
+  border-color: #16a34a;
+  background-color: #f0fdf4;
+}
+.cf-input-valid:focus {
+  border-color: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+
+/* ── Contact form: char counter ───────────────────────────────────────────── */
+.cf-char-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.cf-char-count {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  text-align: right;
+  margin-top: 0.25rem;
+  transition: color 0.15s ease;
+  user-select: none;
+}
+.cf-char-count.cf-char-warn  { color: #d97706; }
+.cf-char-count.cf-char-alert { color: #ef4444; }
+
+/* ── Contact form: draft banner ───────────────────────────────────────────── */
+.cf-draft-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 1rem;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.8125rem;
+  color: #166534;
+  line-height: 1.4;
+}
+.cf-draft-banner svg {
+  flex-shrink: 0;
+  color: #16a34a;
+}
+.cf-draft-banner p {
+  flex: 1;
+  margin: 0;
+}
+.cf-draft-discard {
+  flex-shrink: 0;
+  background: none;
+  border: 1px solid #86efac;
+  border-radius: 0.375rem;
+  color: #166534;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.625rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+.cf-draft-discard:hover {
+  background-color: #dcfce7;
+  border-color: #4ade80;
+}
+.cf-draft-discard:focus-visible {
+  outline: 2px solid #16a34a;
+  outline-offset: 2px;
+}
+.cf-link:focus-visible {
+  outline: 2px solid #16a34a;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+.cf-file-btn:focus-visible {
+  outline: 2px solid #16a34a;
+  outline-offset: 2px;
+  border-color: #16a34a;
+}
+.cf-file-clear:focus-visible {
+  outline: 2px solid #16a34a;
+  outline-offset: 2px;
+  border-radius: 50%;
+  color: #166534;
+}
+/* Screen-reader-only live region for announcements */
+.cf-sr-status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Contact form: file input ─────────────────────────────────────────────── */
+.cf-label-hint {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: 400;
+  margin-left: 0.25rem;
+}
+.cf-file-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+.cf-file-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #f9fafb;
+  border: 1px dashed #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  color: #374151;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  width: 100%;
+  justify-content: center;
+}
+.cf-file-btn:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+.cf-file-input {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.cf-file-name {
+  font-size: 0.8125rem;
+  color: #4b5563;
+  padding: 0.375rem 0.625rem;
+  background: #f3f4f6;
+  border-radius: 0.375rem;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.cf-file-name.has-file {
+  display: flex;
+}
+.cf-file-clear {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.cf-file-clear svg { display: block; }
+
+/* Nonprofits flow rail: vertical line connecting step dots */
+.np-flow-rail { display: flex; flex-direction: column; align-items: center; align-self: stretch; width: 1rem; flex-shrink: 0; }
+.np-flow-line { flex: 1 1 auto; width: 4px; min-height: 1.5rem; background: #15803d; }
+.cf-file-clear:hover { color: #ef4444; }
+.cf-file-hint {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+/* ── Custom select (cs-*) ─────────────────────────────────────────────────── */
+/* Desktop: replaces native <select> with a keyboard+mouse accessible combobox */
+/* Mobile (≤639px): hides the custom widget and shows native <select>          */
+.cs-wrap {
+  position: relative;
+}
+.cs-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 0.9375rem;
+  color: #374151;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  min-height: 2.625rem;
+}
+.cs-trigger:hover {
+  border-color: #9ca3af;
+}
+.cs-trigger:focus-visible,
+.cs-trigger[aria-expanded="true"] {
+  border-color: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.18);
+  outline: none;
+}
+.cs-trigger[aria-expanded="true"] .cs-chevron {
+  transform: rotate(180deg);
+}
+.cs-label-text {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.cs-label-text.cs-placeholder {
+  color: #9ca3af;
+}
+.cs-chevron {
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  color: #6b7280;
+  transition: transform 0.18s ease;
+  pointer-events: none;
+}
+.cs-listbox {
+  position: absolute;
+  z-index: 50;
+  top: calc(100% + 0.25rem);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 24px -4px rgba(0,0,0,0.12), 0 2px 8px -2px rgba(0,0,0,0.06);
+  max-height: 14rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
+}
+.cs-listbox.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.cs-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9375rem;
+  color: #374151;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+  user-select: none;
+}
+.cs-option:hover,
+.cs-option.is-highlighted {
+  background-color: #f3f4f6;
+}
+.cs-option[aria-selected="true"] {
+  color: #15803d;
+  font-weight: 500;
+  background-color: #f0fdf4;
+}
+.cs-option[aria-selected="true"]::after {
+  content: '';
+  display: block;
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+  background: currentColor;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+/* Hide custom widget; show native select on small screens */
+@media (max-width: 639px) {
+  .cs-wrap { display: none !important; }
+  select.cf-input { display: block !important; }
+}
+/* Show custom widget; hide native select on large screens */
+@media (min-width: 640px) {
+  select.cf-input { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cs-listbox { transition: none; }
+  .cs-chevron { transition: none; }
+}
+
+/* ── Nonprofits page ──────────────────────────────────────────────────────── */
+
+@media (min-width: 1024px) {
+  .lg\:col-span-4  { grid-column: span 4 / span 4; }
+  .lg\:col-span-8  { grid-column: span 8 / span 8; }
+}
+
+/* Hero: warm gradient with organic green glow */
+.np-hero {
+  background: linear-gradient(145deg, #f8faf6 0%, #f0f7ed 45%, #eef6ec 100%);
+  position: relative;
+  overflow: hidden;
+}
+.np-hero::after {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -60px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74, 222, 128, 0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* Quick-start card: elevated with soft shadow */
+.np-quick-start {
+  background: #fff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.03);
+}
+
+/* Green partnership badge */
+.np-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+  background: rgba(236, 253, 245, 0.7);
+}
+
+/* Service card hover lift */
+.np-card {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.np-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 44px -12px rgba(0, 0, 0, 0.1),
+              0 0 0 1px rgba(0, 0, 0, 0.02);
+}
+
+/* Colored icon containers */
+.np-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 1rem;
+  flex-shrink: 0;
+  border: 1px solid;
+}
+.np-icon--green  { background: #ecfdf5; border-color: #a7f3d0; color: #065f46; }
+.np-icon--amber  { background: #fffbeb; border-color: #fde68a; color: #92400e; }
+.np-icon--violet { background: #f5f3ff; border-color: #ddd6fe; color: #5b21b6; }
+
+/* Process section grid */
+/* ── Scroll reveal ────────────────────────────────────────────────────────── */
+/* Lightweight, CSS-driven entrance animations.  Tagged elements start hidden */
+/* and fade/slide in when an IntersectionObserver toggles `.is-visible`.      */
+/* Honours prefers-reduced-motion automatically.                              */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition:
+    opacity 0.7s cubic-bezier(0.25, 0.4, 0.25, 1),
+    transform 0.7s cubic-bezier(0.25, 0.4, 0.25, 1);
+  will-change: opacity, transform;
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+[data-reveal-delay="1"] { transition-delay: 0.08s; }
+[data-reveal-delay="2"] { transition-delay: 0.18s; }
+[data-reveal-delay="3"] { transition-delay: 0.28s; }
+[data-reveal-delay="4"] { transition-delay: 0.38s; }
+
+/* Variant: slide in from the right (nice for hero images) */
+[data-reveal="slide-left"] { transform: translateX(2rem); }
+[data-reveal="slide-left"].is-visible { transform: translateX(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Timeline node — gentle ambient pulse draws the eye to the process.         */
+/* Only animates on the first node so it's a subtle beacon, not distracting.  */
+.np-timeline-step:first-child .np-timeline-node::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #047857;
+  opacity: 0.35;
+  animation: np-node-pulse 2.4s ease-in-out infinite;
+}
+.np-timeline-node {
+  overflow: visible;
+}
+@keyframes np-node-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.35; }
+  50%      { transform: scale(2.1); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .np-timeline-step:first-child .np-timeline-node::after {
+    animation: none;
+    display: none;
+  }
+}
+
+/* Nonprofits workflow timeline — dots connected by lines, no numbers.       */
+/* Vertical on mobile, horizontal on md+.                                    */
+.np-timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+.np-timeline-step {
+  position: relative;
+  padding-left: 1.75rem;
+}
+/* Vertical connector line — hidden on the last step */
+.np-timeline-step::before {
+  content: '';
+  position: absolute;
+  left: 0.4375rem;
+  top: 0.875rem;
+  bottom: -1.75rem;
+  width: 1px;
+  background: #d1d5db;
+}
+.np-timeline-step:last-child::before {
+  display: none;
+}
+.np-timeline-node {
+  position: absolute;
+  left: 0;
+  top: 0.375rem;
+  width: 0.875rem;
+  height: 0.875rem;
+  border-radius: 50%;
+  background: #047857; /* green-700 */
+  box-shadow: 0 0 0 4px #dcfce7; /* green-100 halo */
+}
+.np-timeline-title {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #000;
+  letter-spacing: -0.015em;
+  margin: 0 0 0.5rem 0;
+}
+.np-timeline-body {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: #4b5563;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .np-timeline {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+  .np-timeline-step {
+    flex: 1;
+    padding: 1.75rem 0 0 0;
+  }
+  /* Horizontal connector from node rightward through the gap to next node */
+  .np-timeline-step::before {
+    left: 0.875rem;
+    top: 0.4375rem;
+    width: calc(100% - 0.875rem + 1.5rem);
+    height: 1px;
+    bottom: auto;
+  }
+  .np-timeline-node {
+    top: 0;
+    left: 0;
+  }
+}
+
+/* Dark CTA section */
+.np-cta-dark {
+  background: #0a0a0a;
+  position: relative;
+  overflow: hidden;
+}
+.np-cta-dark::before {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  right: -40px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74, 222, 128, 0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Green CTA button */
+.np-btn-green {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  background: #4ade80;
+  color: #000;
+  border: none;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+.np-btn-green:hover {
+  background: #22c55e;
+}
+.np-btn-green:focus-visible {
+  outline: 2px solid rgb(74, 222, 128);
+  outline-offset: 2px;
+}
+
+/* Ghost button for dark backgrounds */
+.np-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.np-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+.np-btn-ghost:focus-visible {
+  outline: 2px solid rgb(74, 222, 128);
+  outline-offset: 2px;
+}
+
+/* Animated arrow links in dark CTA */
+.np-cta-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #d1d5db;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  transition: color 0.2s ease;
+}
+.np-cta-link:last-child {
+  border-bottom: none;
+}
+.np-cta-link svg {
+  flex-shrink: 0;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.np-cta-link:hover {
+  color: #fff;
+}
+.np-cta-link:hover svg {
+  opacity: 1;
+  transform: translateX(0);
+}
+.np-cta-link:focus-visible {
+  outline: none;
+  color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .np-card,
+  .np-cta-link,
+  .np-cta-link svg,
+  .np-btn-green,
+  .np-btn-ghost,
+  .np-svc-card,
+  .np-svc-link svg {
+    transition: none;
+  }
+}
+
+/* ── Nonprofits page: editorial service cards ─────────────────────────────── */
+
+.np-svc-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+@media (min-width: 1024px) {
+  .np-svc-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.np-svc-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem 1.5rem 1.5rem;
+  border-radius: 1.5rem;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+@media (min-width: 768px) {
+  .np-svc-card {
+    padding: 2rem 1.75rem 1.75rem;
+  }
+}
+.np-svc-card:hover {
+  border-color: #d1d5db;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px -10px rgba(0, 0, 0, 0.08);
+}
+
+.np-svc-num-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.np-svc-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 9999px;
+  background-color: #dcfce7; /* green-100 — soft pill fill */
+  color: #047857;            /* green-700 — numeric ink */
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1;
+}
+/* Colour variants unified — every step shares the same green pill now.      */
+.np-svc-num--green,
+.np-svc-num--amber,
+.np-svc-num--violet {
+  background-color: #dcfce7;
+  color: #047857;
+}
+
+.np-svc-num-rule {
+  display: none;
+}
+
+.np-svc-kicker {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin: 0 0 0.7rem 0;
+}
+
+.np-svc-title {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.18;
+  color: #000;
+  margin: 0 0 1.5rem 0;
+}
+
+.np-svc-body {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: #4b5563;
+  margin: 0 0 1.75rem 0;
+  flex: 1;
+}
+
+.np-svc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: #000;
+  text-decoration: none;
+  padding-top: 1.25rem;
+  border-top: 1px solid #f3f4f6;
+  transition: color 0.2s ease;
+}
+.np-svc-link svg {
+  flex-shrink: 0;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.np-svc-link:hover svg {
+  transform: translateX(4px);
+}
+.np-svc-link:focus-visible {
+  outline: 2px solid rgb(74, 222, 128);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Footer: locale badge (flag + city) ──────────────────────────────────── */
+.footer-locale {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 1.1rem;
+  padding: 0.4rem 0.5rem 0.4rem 0.85rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+  color: #d1d5db;
+  white-space: nowrap;
+}
+.footer-locale-flag {
+  display: block;
+  border-radius: 2px;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+/* ── For Nonprofits CTA card ──────────────────────────────────────────────── */
+/* Black promo card with text on the left and a partnership image on the      */
+/* right (md+).  The accent colour for the kicker is rendered as a small dot  */
+/* rather than tinting the text, so colour never carries semantic weight      */
+/* alone — the text itself stays white for maximum contrast.                  */
+
+.nonprofit-cta-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-radius: 1.5rem;
+  background-color: #000;
+  color: #fff;
+  overflow: hidden;
+}
+.nonprofit-cta-content {
+  order: 2;
+  padding: 2rem 1.5rem;
+}
+.nonprofit-cta-image {
+  order: 1;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  position: relative;
+}
+.nonprofit-cta-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+@media (min-width: 640px) {
+  .nonprofit-cta-content {
+    padding: 2.5rem 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .nonprofit-cta-card {
+    grid-template-columns: 1.4fr 1fr;
+    align-items: stretch;
+  }
+  .nonprofit-cta-content {
+    order: 1;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .nonprofit-cta-image {
+    order: 2;
+    aspect-ratio: auto;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .nonprofit-cta-card {
+    grid-template-columns: 1.3fr 1fr;
+  }
+  .nonprofit-cta-content {
+    padding: 3.5rem;
+  }
+}
+
+.nonprofit-cta-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+.nonprofit-cta-kicker::before {
+  content: '';
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 9999px;
+  background-color: rgb(74, 222, 128); /* green-400 — decorative accent only */
+  flex-shrink: 0;
+}
+@media (min-width: 640px) {
+  .nonprofit-cta-kicker {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.nonprofit-cta-body {
+  color: rgb(229, 231, 235); /* gray-200 — 14.7:1 on black, WCAG AAA */
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.75rem;
+  max-width: 34rem;
+}
+@media (min-width: 640px) {
+  .nonprofit-cta-body {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+}
+
+/* ── Mittler before/after case study ─────────────────────────────────────── */
+/* The compiled Tailwind in this project doesn't include many small-number    */
+/* utilities (top-3, right-3, w-10, sm:gap-3, md:p-5, sm:text-2xl, etc.), so  */
+/* the button position + stats grid are expressed in plain CSS to guarantee   */
+/* they render correctly on every viewport.                                   */
+
+.lightbox-fs-trigger {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  background-color: #000;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.lightbox-fs-trigger:hover {
+  background-color: rgb(55, 65, 81); /* gray-700 */
+}
+.lightbox-fs-trigger:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgb(74, 222, 128);
+}
+
+.mittler-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+@media (min-width: 640px) {
+  .mittler-stats-grid {
+    gap: 0.75rem;
+  }
+}
+@media (min-width: 768px) {
+  .mittler-stats-grid {
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.mittler-stat-card {
+  border-radius: 0.75rem;
+  background-color: rgb(249, 250, 251); /* gray-50 */
+  border: 1px solid rgb(229, 231, 235); /* gray-200 */
+  padding: 0.75rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+@media (min-width: 640px) {
+  .mittler-stat-card {
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .mittler-stat-card {
+    padding: 1.25rem;
+  }
+}
+.mittler-stat-card__label {
+  font-size: 0.75rem;
+  color: rgb(75, 85, 99); /* gray-600 */
+  margin-bottom: 0.25rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+@media (min-width: 640px) {
+  .mittler-stat-card__label {
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+}
+.mittler-stat-card__value {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: #000;
+  margin-bottom: 0.25rem;
+  white-space: nowrap;
+  line-height: 1.15;
+}
+@media (min-width: 640px) {
+  .mittler-stat-card__value {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .mittler-stat-card__value {
+    font-size: 1.875rem;
+  }
+}
+.mittler-stat-card__unit {
+  font-size: 10px;
+  color: rgb(75, 85, 99);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+@media (min-width: 640px) {
+  .mittler-stat-card__unit {
+    font-size: 0.75rem;
+  }
+}
+@media (min-width: 768px) {
+  .mittler-stat-card__unit {
+    font-size: 0.875rem;
+  }
+}
+
+/* ── Lightbox ─────────────────────────────────────────────────────────────── */
+/* Lightweight image viewer: one shared overlay is appended to <body> by JS    */
+/* and reused for every [data-lightbox-trigger]. No external libraries, no     */
+/* per-image DOM — keeps the carbon footprint tiny.                            */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+.lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+.lightbox-image {
+  max-width: 100%;
+  max-height: calc(100vh - 3rem);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0.75rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+}
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+.lightbox-close:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+.lightbox-close:focus-visible {
+  outline: 2px solid rgb(74, 222, 128);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .lightbox {
+    transition: none;
+  }
+}

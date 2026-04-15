@@ -1,0 +1,127 @@
+{
+  "nodes": [
+    {
+      "id": "stanley-park-ecology-society-logo_StanleyParkEcologySociety",
+      "label": "Stanley Park Ecology Society",
+      "file_type": "image",
+      "source_file": "public/images/partners/stanley-park-ecology-society-logo.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "description": "Logo featuring bold black sans-serif text reading 'STANLEY PARK' above 'ECOLOGY SOCIETY', with a large stylized green sphere (globe/earth motif) overlapping the word 'ECOLOGY'. The sphere has a shiny highlight suggesting a 3D globe. Colors: deep black text, medium green sphere. Organization type: environmental/ecology non-profit focused on urban park ecology, likely based in Vancouver, BC (Stanley Park).",
+      "visual_colors": ["black", "green"],
+      "org_type": "ecology/environmental non-profit",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "sustainable-www-logo_SustainableWWW",
+      "label": "Sustainable WWW",
+      "file_type": "image",
+      "source_file": "public/images/partners/sustainable-www-logo.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "description": "Logo with a circular icon on the left containing two leaf/plant silhouettes arranged to suggest growth or renewal inside a thin circle. To the right, 'SUSTAINABLE' in small caps above 'WWW' in large bold text. Entire logo is in dark charcoal/near-black. Organization type: sustainable web/technology initiative focused on environmental impact of the internet.",
+      "visual_colors": ["dark charcoal", "near-black"],
+      "org_type": "sustainable technology/web initiative",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "WESN-Colour-Logo-scaled_WestEndSeniorsNetwork",
+      "label": "West End Seniors' Network",
+      "file_type": "image",
+      "source_file": "public/images/partners/WESN-Colour-Logo-scaled.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "description": "Logo with a circular icon on the left showing three stylized human figures arranged in a pinwheel/circular pattern suggesting community and connection. Figures are in teal/dark cyan and yellow/gold. To the right, 'WEST END' in yellow/gold bold text, 'SENIORS'' in teal bold text, and 'NETWORK' in dark green bold text. Organization type: community social services network serving seniors in the West End neighbourhood (likely Vancouver, BC).",
+      "visual_colors": ["teal", "cyan", "yellow", "gold", "dark green"],
+      "org_type": "community social services / seniors network",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "partners_OasisOfChangePartnerGroup",
+      "label": "Oasis of Change Partner Organizations",
+      "file_type": "concept",
+      "source_file": "public/images/partners/",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "description": "Collective concept node representing the partner organizations displayed on the Oasis of Change website. Partners span ecology, sustainable technology, and community social services sectors.",
+      "confidence": "INFERRED"
+    }
+  ],
+  "edges": [
+    {
+      "source": "stanley-park-ecology-society-logo_StanleyParkEcologySociety",
+      "target": "partners_OasisOfChangePartnerGroup",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "public/images/partners/stanley-park-ecology-society-logo.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "sustainable-www-logo_SustainableWWW",
+      "target": "partners_OasisOfChangePartnerGroup",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "public/images/partners/sustainable-www-logo.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "WESN-Colour-Logo-scaled_WestEndSeniorsNetwork",
+      "target": "partners_OasisOfChangePartnerGroup",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "public/images/partners/WESN-Colour-Logo-scaled.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "stanley-park-ecology-society-logo_StanleyParkEcologySociety",
+      "target": "sustainable-www-logo_SustainableWWW",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "public/images/partners/",
+      "source_location": null,
+      "weight": 0.7
+    },
+    {
+      "source": "stanley-park-ecology-society-logo_StanleyParkEcologySociety",
+      "target": "WESN-Colour-Logo-scaled_WestEndSeniorsNetwork",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": "public/images/partners/",
+      "source_location": null,
+      "weight": 0.65
+    },
+    {
+      "source": "sustainable-www-logo_SustainableWWW",
+      "target": "WESN-Colour-Logo-scaled_WestEndSeniorsNetwork",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": "public/images/partners/",
+      "source_location": null,
+      "weight": 0.65
+    }
+  ],
+  "hyperedges": [],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

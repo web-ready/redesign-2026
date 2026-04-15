@@ -1,0 +1,219 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - main [ref=e3]:
+      - generic [ref=e4]:
+        - navigation "Main" [ref=e6]:
+          - generic [ref=e7]:
+            - link "Oasis of Change" [ref=e9] [cursor=pointer]:
+              - /url: index.html
+              - img "Oasis of Change" [ref=e294]
+            - button "Select language" [ref=e296] [cursor=pointer]:
+              - img [ref=e297]
+            - button "Open navigation menu" [ref=e299] [cursor=pointer]:
+              - img [ref=e301]
+              - generic:
+                - img
+        - generic [ref=e43]:
+          - generic [ref=e44]:
+            - heading "Making the internet sustainable" [level=1] [ref=e46]
+            - generic [ref=e47]:
+              - paragraph [ref=e48]: Building digital sustainability projects that improve efficiency, accessibility, and responsible technology use.
+              - generic [ref=e49]:
+                - link "What We're Working On" [ref=e50] [cursor=pointer]:
+                  - /url: "#what-we-are-building"
+                - link "View Case Studies" [ref=e51] [cursor=pointer]:
+                  - /url: case-studies.html
+          - region "Impact highlights" [ref=e52]:
+            - generic [ref=e53]:
+              - generic [ref=e54]:
+                - paragraph [ref=e55]: Up to 98% Lower Carbon, Energy, and Water Impact
+                - paragraph [ref=e56]: Award-Winning Team
+                - paragraph [ref=e57]: Not-for-Profit
+                - paragraph [ref=e58]: 17,000+ Trees Planted
+                - paragraph [ref=e59]: 32 Countries Impacted
+                - paragraph [ref=e60]: Youth-Founded
+                - paragraph [ref=e61]: Vancouver-Based
+              - generic [ref=e62]:
+                - paragraph [ref=e63]: Up to 98% Lower Carbon, Energy, and Water Impact
+                - paragraph [ref=e64]: Award-Winning Team
+                - paragraph [ref=e65]: Not-for-Profit
+                - paragraph [ref=e66]: 17,000+ Trees Planted
+                - paragraph [ref=e67]: 32 Countries Impacted
+                - paragraph [ref=e68]: Youth-Founded
+                - paragraph [ref=e69]: Vancouver-Based
+          - img "Solar panels representing sustainable technology" [ref=e72]
+      - generic [ref=e75]:
+        - generic [ref=e76]:
+          - paragraph [ref=e77]: 17,000+
+          - paragraph [ref=e78]: Trees Planted
+        - generic [ref=e79]:
+          - paragraph [ref=e80]: $870,000+
+          - paragraph [ref=e81]: In-Kind Technology Grants Secured
+        - generic [ref=e82]:
+          - paragraph [ref=e83]: "32"
+          - paragraph [ref=e84]: Countries Impacted
+      - generic [ref=e86]:
+        - generic [ref=e87]:
+          - paragraph [ref=e88]: Our ecosystem
+          - heading "Explore what we are building at Oasis of Change" [level=2] [ref=e89]
+          - paragraph [ref=e90]: From sustainable web development to digital access and emerging innovation, these initiatives reflect how Oasis of Change turns ideas into practical, mission-driven platforms with measurable impact.
+        - generic [ref=e91]:
+          - button "01. Web-Ready" [ref=e92] [cursor=pointer]:
+            - generic [ref=e93]:
+              - paragraph [ref=e94]: "01."
+              - paragraph [ref=e96]: Web-Ready
+              - img [ref=e98]
+          - generic [ref=e101]:
+            - paragraph [ref=e102]: Web-Ready is our sustainable web design initiative, helping organizations build faster, lower-carbon, and more accessible websites with measurable environmental impact.
+            - link "Explore Web-Ready" [ref=e103] [cursor=pointer]:
+              - /url: web-ready.html
+              - generic [ref=e104]: Explore Web-Ready
+              - img [ref=e105]
+        - generic [ref=e107]:
+          - button "02. Vancouver Centre for AI Safety, Sustainability, and Ethics (VCASSE)" [ref=e108] [cursor=pointer]:
+            - generic [ref=e109]:
+              - paragraph [ref=e110]: "02."
+              - paragraph [ref=e112]: Vancouver Centre for AI Safety, Sustainability, and Ethics (VCASSE)
+              - img [ref=e114]
+          - generic [ref=e116]:
+            - paragraph [ref=e117]: VCASSE is an upcoming initiative exploring how AI can be applied responsibly to real-world sustainability, safety, and social-impact challenges.
+            - link "Learn more about VCASSE" [ref=e118] [cursor=pointer]:
+              - /url: vcasse.html
+              - generic [ref=e119]: Learn more about VCASSE
+              - img [ref=e120]
+        - generic [ref=e122]:
+          - button "03. Sustainable Technology Week" [ref=e123] [cursor=pointer]:
+            - generic [ref=e124]:
+              - paragraph [ref=e125]: "03."
+              - paragraph [ref=e127]: Sustainable Technology Week
+              - img [ref=e129]
+          - generic [ref=e131]:
+            - paragraph [ref=e132]: Sustainable Technology Week is one of our signature projects, focused on raising awareness around digital sustainability, responsible technology, and the environmental impact of the online world. In 2025, it was officially recognized by the City of Vancouver, and the initiative continues to grow.
+            - link "Learn more about Sustainable Technology Week" [ref=e133] [cursor=pointer]:
+              - /url: sustainable-technology-week.html
+              - generic [ref=e134]: Learn more about Sustainable Technology Week
+              - img [ref=e135]
+        - generic [ref=e137]:
+          - button "04. WRA Platform" [ref=e138] [cursor=pointer]:
+            - generic [ref=e139]:
+              - paragraph [ref=e140]: "04."
+              - paragraph [ref=e142]: WRA Platform
+              - img [ref=e144]
+          - generic [ref=e146]:
+            - paragraph [ref=e147]: The Web-Ready Access Platform helps nonprofits and mission-driven organizations access tools, resources, and in-kind technology support to strengthen their digital presence.
+            - link "Explore the platform" [ref=e148] [cursor=pointer]:
+              - /url: wra_platform.html
+              - generic [ref=e149]: Explore the platform
+              - img [ref=e150]
+      - generic [ref=e154]:
+        - img "Mittler Senior Technology website sustainability case study preview" [ref=e157]
+        - generic [ref=e159]:
+          - paragraph [ref=e160]: Case Study
+          - heading "Mittler Senior Technology cut carbon emissions, energy use, and water use by over 98%." [level=2] [ref=e161]
+          - paragraph [ref=e162]: Between November 2023 and February 2026, the site was transformed from an F-rated website into a far more efficient digital experience.
+          - generic [ref=e163]:
+            - generic [ref=e164]:
+              - paragraph [ref=e165]: Energy per visit
+              - paragraph [ref=e166]: ↓ 98.2%
+              - paragraph [ref=e167]: From 0.0139 to 0.0002 kWh
+            - generic [ref=e168]:
+              - paragraph [ref=e169]: Carbon per visit
+              - paragraph [ref=e170]: ↓ 98.1%
+              - paragraph [ref=e171]: From 5.31g to 0.10g CO₂
+            - generic [ref=e172]:
+              - paragraph [ref=e173]: Water per visit
+              - paragraph [ref=e174]: ↓ 98.1%
+              - paragraph [ref=e175]: From 2.95L to 0.06L
+          - link "Read Full Case Study" [ref=e177] [cursor=pointer]:
+            - /url: mittler-senior-technology.html
+            - generic [ref=e178]: Read Full Case Study
+            - img [ref=e179]
+      - generic [ref=e183]:
+        - generic [ref=e184]:
+          - heading "Founded by a pioneer in digital sustainability" [level=2] [ref=e185]
+          - paragraph [ref=e186]: Gabriel Dalton taught himself to code at 10 years old and founded Oasis of Change to tackle the digital world’s carbon problem.
+          - paragraph [ref=e187]: Now one of the few specialists in Canada focused on sustainable web development, his work earned the 2025 Impact in Innovation Award at the City of Vancouver Awards Ceremony.
+          - link "View Gabriel’s biography" [ref=e188] [cursor=pointer]:
+            - /url: gabriel-dalton.html
+        - img "Gabriel Dalton speaking at TEDx" [ref=e308]
+      - region "Trusted by organizations making a difference" [ref=e189]:
+        - generic [ref=e190]:
+          - heading "Trusted by organizations making a difference" [level=2] [ref=e191]
+          - list [ref=e192]:
+            - listitem [ref=e193]:
+              - generic [ref=e194]:
+                - img "West End Seniors' Network logo"
+            - listitem [ref=e195]:
+              - generic [ref=e196]:
+                - img "Stanley Park Ecology Society logo"
+            - listitem [ref=e197]:
+              - generic [ref=e198]:
+                - img "Sustainable WWW logo"
+            - listitem [ref=e199]:
+              - generic [ref=e200]:
+                - img "Denman Place Mall logo"
+      - generic [ref=e202]:
+        - generic [ref=e203]:
+          - paragraph [ref=e204]: Transparency & Impact
+          - heading "2025–2026 tree planting complete" [level=2] [ref=e205]
+          - paragraph [ref=e206]: Explore Oasis of Change's live transparency platform with verified planting data, project locations, partner contributions, and climate outcomes all in one place. See how every tree is counted across our global impact ecosystem.
+          - generic [ref=e207]:
+            - generic [ref=e208]:
+              - paragraph [ref=e209]: 2025–2026 FY
+              - paragraph [ref=e210]: 7,144
+              - paragraph [ref=e211]: trees planted
+            - generic [ref=e212]:
+              - paragraph [ref=e213]: Total reach
+              - paragraph [ref=e214]: "32"
+              - paragraph [ref=e215]: countries
+            - generic [ref=e216]:
+              - paragraph [ref=e217]: All-time total
+              - paragraph [ref=e218]: 17,000+
+              - paragraph [ref=e219]: trees planted
+          - link "View Impact" [ref=e221] [cursor=pointer]:
+            - /url: https://impact.oasisofchange.com
+        - figure "Mangrove Tree (Rhizophora mucronata) — Eden Reforestation Projects, Madagascar" [ref=e223]:
+          - img "Mangrove tree planting site featured in Oasis of Change's transparency platform" [ref=e224]
+          - generic [ref=e225]: Mangrove Tree (Rhizophora mucronata) — Eden Reforestation Projects, Madagascar
+    - contentinfo [ref=e226]:
+      - generic [ref=e227]:
+        - generic [ref=e228]:
+          - generic [ref=e229]:
+            - img "Oasis of Change" [ref=e231]
+            - paragraph [ref=e232]: Building a more sustainable digital future through energy-efficient websites, transparent impact, and technology that supports communities and the planet.
+          - navigation "Footer" [ref=e233]:
+            - generic [ref=e234]:
+              - paragraph [ref=e235]: General
+              - list [ref=e236]:
+                - listitem [ref=e237]
+                - listitem [ref=e239]
+                - listitem [ref=e241]
+                - listitem [ref=e243]
+                - listitem [ref=e245]
+                - listitem [ref=e247]
+            - generic [ref=e249]:
+              - paragraph [ref=e250]: Initiatives
+              - list [ref=e251]:
+                - listitem [ref=e252]
+                - listitem [ref=e254]
+                - listitem [ref=e256]
+                - listitem [ref=e258]
+            - generic [ref=e260]:
+              - paragraph [ref=e261]: Company
+              - list [ref=e262]:
+                - listitem [ref=e263]
+                - listitem [ref=e265]
+                - listitem [ref=e267]
+                - listitem [ref=e269]
+                - listitem [ref=e271]
+                - listitem [ref=e273]
+            - generic [ref=e275]:
+              - paragraph [ref=e276]: Accountability
+              - list [ref=e277]:
+                - listitem [ref=e278]
+                - listitem [ref=e280]
+                - listitem [ref=e282]
+                - listitem [ref=e284]
+                - listitem [ref=e286]
+        - paragraph [ref=e289]: © 2026 Oasis of Change, Inc. All rights reserved.
+  - img [ref=e292]

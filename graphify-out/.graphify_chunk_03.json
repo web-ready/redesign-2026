@@ -1,0 +1,228 @@
+{
+  "nodes": [
+    {
+      "id": "aboutpageblock1_professional_working",
+      "label": "About Page Block 1 — Thoughtful Professional at Laptop",
+      "file_type": "image",
+      "source_file": "public/images/about/about-page-block-1.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "aboutpageblock2_founded_2024",
+      "label": "About Page Block 2 — Founded in 2024",
+      "file_type": "image",
+      "source_file": "public/images/about/about-page-block-2.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "gabrieldalton_portrait",
+      "label": "Gabriel Dalton — Founder Portrait (B&W Headshot)",
+      "file_type": "image",
+      "source_file": "public/images/about/Gabriel-Dalton.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "gabrieldalton_tedxtalk",
+      "label": "Gabriel Dalton — TEDx Talk on AI Literacy",
+      "file_type": "image",
+      "source_file": "public/images/about/Gabriel_Dalton_TEDx_Talk.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "person_gabriel_dalton",
+      "label": "Gabriel Dalton",
+      "file_type": null,
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "org_oasis_of_change",
+      "label": "Oasis of Change",
+      "file_type": null,
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_ai_literacy",
+      "label": "AI Literacy",
+      "file_type": null,
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "event_tedx_talk",
+      "label": "TEDx Talk",
+      "file_type": null,
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_founded_2024",
+      "label": "Founded in 2024",
+      "file_type": null,
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "gabrieldalton_portrait",
+      "target": "person_gabriel_dalton",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/about/Gabriel-Dalton.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "gabrieldalton_tedxtalk",
+      "target": "person_gabriel_dalton",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/about/Gabriel_Dalton_TEDx_Talk.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "gabrieldalton_tedxtalk",
+      "target": "event_tedx_talk",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/about/Gabriel_Dalton_TEDx_Talk.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "gabrieldalton_tedxtalk",
+      "target": "concept_ai_literacy",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "public/images/about/Gabriel_Dalton_TEDx_Talk.webp",
+      "source_location": null,
+      "weight": 0.95
+    },
+    {
+      "source": "person_gabriel_dalton",
+      "target": "event_tedx_talk",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/about/Gabriel_Dalton_TEDx_Talk.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "person_gabriel_dalton",
+      "target": "concept_ai_literacy",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "public/images/about/Gabriel_Dalton_TEDx_Talk.webp",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "person_gabriel_dalton",
+      "target": "org_oasis_of_change",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "public/images/about/Gabriel-Dalton.webp",
+      "source_location": null,
+      "weight": 0.95
+    },
+    {
+      "source": "aboutpageblock2_founded_2024",
+      "target": "concept_founded_2024",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/about/about-page-block-2.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "aboutpageblock2_founded_2024",
+      "target": "org_oasis_of_change",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "public/images/about/about-page-block-2.webp",
+      "source_location": null,
+      "weight": 0.85
+    },
+    {
+      "source": "concept_founded_2024",
+      "target": "org_oasis_of_change",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "public/images/about/about-page-block-2.webp",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "aboutpageblock1_professional_working",
+      "target": "org_oasis_of_change",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": "public/images/about/about-page-block-1.webp",
+      "source_location": null,
+      "weight": 0.65
+    },
+    {
+      "source": "gabrieldalton_portrait",
+      "target": "gabrieldalton_tedxtalk",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "public/images/about/Gabriel-Dalton.webp",
+      "source_location": null,
+      "weight": 0.9
+    }
+  ],
+  "hyperedges": [],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

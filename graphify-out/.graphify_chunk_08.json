@@ -1,0 +1,551 @@
+{
+  "nodes": [
+    {
+      "id": "nature_sustainability_hero_solar_farm",
+      "label": "Solar Farm — Nature & Sustainability Hero Image",
+      "file_type": "image",
+      "source_file": "public/images/case-studies/nature-sustainability-hero-800w.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "impact_dashboard_mockup_tree_transparency_report",
+      "label": "Tree Transparency Report Dashboard",
+      "file_type": "image",
+      "source_file": "public/images/initiatives/Impact_Dashboard_Mockup-1200w.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "mangrove_tree_ecosystem",
+      "label": "Mangrove Tree Ecosystem — Coastal Reforestation Photo",
+      "file_type": "image",
+      "source_file": "public/images/initiatives/mangrove-tree-800w.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "sustainable_technology_week_proclamation",
+      "label": "Sustainable Technology Week — City of Vancouver Proclamation",
+      "file_type": "image",
+      "source_file": "public/images/initiatives/Sustainable-Technology-Week-1200w.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "tree_nation_partnership_badge",
+      "label": "Tree-Nation Partnership — In Collaboration With Tree-Nation",
+      "file_type": "image",
+      "source_file": "public/images/initiatives/tree-nation-partnership-1200w.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_renewable_energy",
+      "label": "Renewable Energy",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_reforestation",
+      "label": "Reforestation",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_climate_action",
+      "label": "Climate Action",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "org_oasis_of_change",
+      "label": "Oasis of Change, Inc.",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "org_tree_nation",
+      "label": "Tree-Nation",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "org_city_of_vancouver",
+      "label": "City of Vancouver",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "person_ken_sim",
+      "label": "Ken Sim — Mayor of Vancouver",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "metric_trees_planted_17001",
+      "label": "17,001 Trees Planted",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "metric_co2_offset_545811kg",
+      "label": "545,811+ kg Verified CO2 Offset",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "metric_32_countries",
+      "label": "32 Countries",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "metric_goal_1m_trees_2030",
+      "label": "Goal: 1 Million Trees by 2030",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "metric_9663_verified_trees",
+      "label": "9,663 Verified Trees",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "metric_7338_legacy_partner_trees",
+      "label": "7,338 Legacy Partner Trees",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "metric_96_species",
+      "label": "96 Species",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "metric_160_planting_sites",
+      "label": "160 Planting Sites",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "metric_fy2025_2026_7144_trees_14_countries",
+      "label": "2025-2026 FY: 7,144 Trees in 14 Countries",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "event_sustainable_technology_week_oct2025",
+      "label": "Sustainable Technology Week — October 20–27, 2025",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "nature_sustainability_hero_solar_farm",
+      "target": "concept_renewable_energy",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "public/images/case-studies/nature-sustainability-hero-800w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "nature_sustainability_hero_solar_farm",
+      "target": "concept_climate_action",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "public/images/case-studies/nature-sustainability-hero-800w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "impact_dashboard_mockup_tree_transparency_report",
+      "target": "org_oasis_of_change",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/initiatives/Impact_Dashboard_Mockup-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "impact_dashboard_mockup_tree_transparency_report",
+      "target": "metric_trees_planted_17001",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/initiatives/Impact_Dashboard_Mockup-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "impact_dashboard_mockup_tree_transparency_report",
+      "target": "metric_co2_offset_545811kg",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/initiatives/Impact_Dashboard_Mockup-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "impact_dashboard_mockup_tree_transparency_report",
+      "target": "metric_32_countries",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/initiatives/Impact_Dashboard_Mockup-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "impact_dashboard_mockup_tree_transparency_report",
+      "target": "metric_goal_1m_trees_2030",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/initiatives/Impact_Dashboard_Mockup-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "impact_dashboard_mockup_tree_transparency_report",
+      "target": "metric_9663_verified_trees",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/initiatives/Impact_Dashboard_Mockup-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "impact_dashboard_mockup_tree_transparency_report",
+      "target": "metric_7338_legacy_partner_trees",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/initiatives/Impact_Dashboard_Mockup-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "impact_dashboard_mockup_tree_transparency_report",
+      "target": "metric_96_species",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/initiatives/Impact_Dashboard_Mockup-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "impact_dashboard_mockup_tree_transparency_report",
+      "target": "metric_160_planting_sites",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/initiatives/Impact_Dashboard_Mockup-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "impact_dashboard_mockup_tree_transparency_report",
+      "target": "metric_fy2025_2026_7144_trees_14_countries",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/initiatives/Impact_Dashboard_Mockup-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "impact_dashboard_mockup_tree_transparency_report",
+      "target": "concept_reforestation",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "public/images/initiatives/Impact_Dashboard_Mockup-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "mangrove_tree_ecosystem",
+      "target": "concept_reforestation",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "public/images/initiatives/mangrove-tree-800w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "mangrove_tree_ecosystem",
+      "target": "concept_climate_action",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "public/images/initiatives/mangrove-tree-800w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "mangrove_tree_ecosystem",
+      "target": "impact_dashboard_mockup_tree_transparency_report",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "public/images/initiatives/mangrove-tree-800w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "sustainable_technology_week_proclamation",
+      "target": "org_oasis_of_change",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/initiatives/Sustainable-Technology-Week-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "sustainable_technology_week_proclamation",
+      "target": "org_city_of_vancouver",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/initiatives/Sustainable-Technology-Week-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "sustainable_technology_week_proclamation",
+      "target": "person_ken_sim",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/initiatives/Sustainable-Technology-Week-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "sustainable_technology_week_proclamation",
+      "target": "event_sustainable_technology_week_oct2025",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/initiatives/Sustainable-Technology-Week-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "sustainable_technology_week_proclamation",
+      "target": "concept_climate_action",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "public/images/initiatives/Sustainable-Technology-Week-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "org_city_of_vancouver",
+      "target": "org_oasis_of_change",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/initiatives/Sustainable-Technology-Week-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "person_ken_sim",
+      "target": "event_sustainable_technology_week_oct2025",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/initiatives/Sustainable-Technology-Week-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "sustainable_technology_week_proclamation",
+      "target": "impact_dashboard_mockup_tree_transparency_report",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "public/images/initiatives/Sustainable-Technology-Week-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "tree_nation_partnership_badge",
+      "target": "org_tree_nation",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/initiatives/tree-nation-partnership-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "tree_nation_partnership_badge",
+      "target": "org_oasis_of_change",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "public/images/initiatives/tree-nation-partnership-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "org_oasis_of_change",
+      "target": "org_tree_nation",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/initiatives/tree-nation-partnership-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "tree_nation_partnership_badge",
+      "target": "concept_reforestation",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "public/images/initiatives/tree-nation-partnership-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "tree_nation_partnership_badge",
+      "target": "impact_dashboard_mockup_tree_transparency_report",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "public/images/initiatives/tree-nation-partnership-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "nature_sustainability_hero_solar_farm",
+      "target": "impact_dashboard_mockup_tree_transparency_report",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": "public/images/case-studies/nature-sustainability-hero-800w.webp",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

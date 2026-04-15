@@ -1,320 +1,65 @@
 (function () {
   'use strict';
 
-  function injectMobileNavFocusStyles() {
-    if (document.getElementById('site-mobile-nav-focus')) return;
-    var ring = 'rgb(74, 222, 128)';
-    var s = document.createElement('style');
-    s.id = 'site-mobile-nav-focus';
-    s.textContent =
-      '[data-mobile-toggle]:focus-visible{outline:2px solid ' + ring + ';outline-offset:2px}' +
-      '[data-nav-dropdown-toggle]:focus-visible{outline:2px solid ' + ring + ';outline-offset:2px}' +
-      '[data-mobile-panel] a:focus-visible{outline:2px solid ' + ring + ';outline-offset:2px}';
-    document.head.appendChild(s);
-  }
-
-  function injectMobileNavScrollbarStyles() {
-    if (document.getElementById('site-mobile-nav-scrollbar')) return;
-    var s = document.createElement('style');
-    s.id = 'site-mobile-nav-scrollbar';
-    s.textContent =
-      '[data-mobile-panel]{scrollbar-width:none;-ms-overflow-style:none}' +
-      '[data-mobile-panel]::-webkit-scrollbar{width:0;height:0;display:none}';
-    document.head.appendChild(s);
-  }
-
-  /** External-site indicator for Impact Dashboard in the global footer (hover / focus-visible). */
-  function injectFooterExternalLinkIconStyles() {
-    if (document.getElementById('site-footer-external-link-icon')) return;
-    var svg =
-      'data:image/svg+xml,' +
-      encodeURIComponent(
-        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="black" d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>'
-      );
-    var s = document.createElement('style');
-    s.id = 'site-footer-external-link-icon';
-    s.textContent =
-      '.site-global-footer a[href*="impact.oasisofchange.com"]{' +
-      'display:inline-flex;align-items:center;gap:0.28em}' +
-      '.site-global-footer a[href*="impact.oasisofchange.com"]::after{' +
-      'content:"";flex-shrink:0;width:0.85em;height:0.85em;opacity:0;' +
-      'transition:opacity .15s ease;' +
-      'background-color:currentColor;' +
-      '-webkit-mask-image:url("' +
-      svg +
-      '");mask-image:url("' +
-      svg +
-      '");' +
-      '-webkit-mask-size:contain;mask-size:contain;' +
-      '-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;' +
-      '-webkit-mask-position:center;mask-position:center}' +
-      '.site-global-footer a[href*="impact.oasisofchange.com"]:hover::after,' +
-      '.site-global-footer a[href*="impact.oasisofchange.com"]:focus-visible::after{' +
-      'opacity:1}' +
-      '@media (prefers-reduced-motion:reduce){' +
-      '.site-global-footer a[href*="impact.oasisofchange.com"]::after{transition:none}}';
-    document.head.appendChild(s);
-  }
-
-  function injectGlobalFooterStyles() {
-    if (document.getElementById('site-global-footer-layout')) return;
-    var s = document.createElement('style');
-    s.id = 'site-global-footer-layout';
-    s.textContent =
-      '.site-global-footer .site-footer-layout{' +
-      'display:flex;flex-direction:column;gap:2.5rem}' +
-      '.site-global-footer .site-footer-brand{' +
-      'max-width:26rem}' +
-      '.site-global-footer .site-footer-nav{' +
-      'display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2.5rem 1.5rem}' +
-      '.site-global-footer .site-footer-heading{' +
-      'margin:0 0 1rem}' +
-      '.site-global-footer .site-footer-list{' +
-      'margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:.75rem}' +
-      '.site-global-footer .site-footer-link{' +
-      'display:inline-block;max-width:100%;word-break:normal;overflow-wrap:normal;hyphens:none}' +
-      '@media (min-width:640px){' +
-      '.site-global-footer .site-footer-nav{grid-template-columns:repeat(4,minmax(0,1fr));gap:1.25rem}' +
-      '}' +
-      '@media (min-width:768px){' +
-      '.site-global-footer .site-footer-layout{flex-direction:row;align-items:flex-start;gap:2.25rem}' +
-      '.site-global-footer .site-footer-brand{width:220px;min-width:220px;max-width:220px}' +
-      '.site-global-footer .site-footer-nav{flex:1;min-width:0;gap:1rem 1.25rem}' +
-      '}' +
-      '@media (min-width:1024px){' +
-      '.site-global-footer .site-footer-layout{gap:2.5rem}' +
-      '.site-global-footer .site-footer-brand{width:240px;min-width:240px;max-width:240px}' +
-      '.site-global-footer .site-footer-nav{gap:1rem 1.5rem}' +
-      '}' +
-      '@media (min-width:1280px){' +
-      '.site-global-footer .site-footer-layout{gap:3rem}' +
-      '.site-global-footer .site-footer-brand{width:280px;min-width:280px;max-width:280px}' +
-      '.site-global-footer .site-footer-nav{gap:1rem 2rem}' +
-      '}';
-    document.head.appendChild(s);
-  }
-
-  function renderGlobalFooter() {
-    var footer = document.querySelector('.site-global-footer');
-    if (!footer) return;
-
-    footer.innerHTML =
-      '<div class="container mx-auto px-4 sm:px-6">' +
-      '<div class="site-footer-layout">' +
-      '<div class="site-footer-brand">' +
-      '<div class="mb-4">' +
-      '<img class="h-14 sm:h-16 w-auto" src="images/logo/Oasis_of_Change-official.svg" alt="Oasis of Change" width="64" height="64">' +
-      '</div>' +
-      '<p class="tracking-tight text-gray-200 leading-relaxed text-sm">' +
-      'Building a more sustainable digital future through energy-efficient websites, transparent impact, and technology that supports communities and the planet.' +
-      '</p>' +
-      '</div>' +
-      '<nav class="site-footer-nav" aria-label="Footer">' +
-      '<div>' +
-      '<p class="site-footer-heading tracking-tight text-white font-semibold text-sm uppercase">General</p>' +
-      '<ul class="site-footer-list">' +
-      '<li><a href="index.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm">Home</a></li>' +
-      '<li><a href="get_involved.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Get Involved</a></li>' +
-      '<li><a href="nonprofits.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">For Nonprofits</a></li>' +
-      '<li><a href="blog.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm">Blog</a></li>' +
-      '<li><a href="case-studies.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Case Studies</a></li>' +
-      '<li><a href="contact.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm">Contact</a></li>' +
-      '</ul>' +
-      '</div>' +
-      '<div>' +
-      '<p class="site-footer-heading tracking-tight text-white font-semibold text-sm uppercase">Initiatives</p>' +
-      '<ul class="site-footer-list">' +
-      '<li><a href="web-ready.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Web-Ready</a></li>' +
-      '<li><a href="vcasse.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm leading-snug">Vancouver Centre for AI Safety, Sustainability, and Ethics (VCASSE)</a></li>' +
-      '<li><a href="sustainable-technology-week.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm leading-snug">Sustainable Technology Week</a></li>' +
-      '<li><a href="wra_platform.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">WRA Platform</a></li>' +
-      '</ul>' +
-      '</div>' +
-      '<div>' +
-      '<p class="site-footer-heading tracking-tight text-white font-semibold text-sm uppercase">Company</p>' +
-      '<ul class="site-footer-list">' +
-      '<li><a href="about.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Our Story</a></li>' +
-      '<li><a href="about.html#OurMission" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Our Mission</a></li>' +
-      '<li><a href="gabriel-dalton.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Our Founder</a></li>' +
-      '<li><a href="about.html#our-board" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Our Board</a></li>' +
-      '<li><a href="annual_reports.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Annual Reports</a></li>' +
-      '<li><a href="news_release.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">News / Press</a></li>' +
-      '</ul>' +
-      '</div>' +
-      '<div>' +
-      '<p class="site-footer-heading tracking-tight text-white font-semibold text-sm uppercase">Accountability</p>' +
-      '<ul class="site-footer-list">' +
-      '<li><a href="https://impact.oasisofchange.com" target="_blank" rel="noopener noreferrer" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Impact Dashboard</a></li>' +
-      '<li><a href="sustainability_statement.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm leading-snug">Sustainability Statement</a></li>' +
-      '<li><a href="tree_planting.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm leading-snug">Tree Planting Statement</a></li>' +
-      '<li><a href="accessibility_statement.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm leading-snug">Accessibility Statement</a></li>' +
-      '<li><a href="privacy-policy.html" class="site-footer-link tracking-tight text-gray-200 hover:text-green-400 transition duration-200 text-sm whitespace-nowrap">Privacy Policy</a></li>' +
-      '</ul>' +
-      '</div>' +
-      '</nav>' +
-      '</div>' +
-      '<div class="border-t border-gray-800 mt-16 pt-6">' +
-      '<p class="text-center text-gray-300 text-xs sm:text-sm tracking-tight px-2">© 2026 Oasis of Change, Inc. All rights reserved.</p>' +
-      '</div>' +
-      '</div>';
-  }
-
-  /**
-   * Desktop nav mega-menu: layout, hover/focus, dividers. (Prebuilt tailwind.min.css omits w-max,
-   * max-w-[min()], and hover:bg-white/10, so these classes did nothing in browsers.)
-   */
-  function injectNavDesktopDropdownStyles() {
-    if (document.getElementById('site-nav-dd-styles')) return;
-    var svg =
-      'data:image/svg+xml,' +
-      encodeURIComponent(
-        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="black" d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>'
-      );
-    var s = document.createElement('style');
-    s.id = 'site-nav-dd-styles';
-    s.textContent =
-      '.nav-dd-panel{' +
-      'width:max-content;' +
-      'max-width:min(22rem,calc(100vw - 2rem));' +
-      'box-sizing:border-box;' +
-      'padding:0.625rem 0.5rem;' +
-      'background-color:#111;' +
-      'border:1px solid rgba(255,255,255,0.1);' +
-      'border-radius:1rem;' +
-      'box-shadow:0 25px 50px -12px rgba(0,0,0,0.45)}' +
-      '.nav-dd-panel--company{' +
-      'max-width:min(15.5rem,calc(100vw - 2rem));' +
-      'padding:0.65rem 0.55rem}' +
-      '.nav-dd-company-popover{padding-top:1rem}' +
-      '.nav-dd-initiatives-popover{' +
-      'left:50%;' +
-      'right:auto;' +
-      'transform:translateX(-50%)}' +
-      '.nav-dd-panel--initiatives{' +
-      'max-width:min(42rem,calc(100vw - 2rem));' +
-      'padding:0.85rem 0.75rem 0.95rem}' +
-      '.nav-dd-initiatives-top{margin-bottom:0.35rem}' +
-      '.nav-dd-initiatives-top ul{gap:0.25rem}' +
-      '.nav-dd-initiatives-split{' +
-      'display:grid;' +
-      'grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);' +
-      'gap:0.65rem 1.1rem;' +
-      'margin-top:0.65rem;' +
-      'padding-top:0.75rem;' +
-      'border-top:1px solid rgba(255,255,255,0.1)}' +
-      '@media (max-width:900px){' +
-      '.nav-dd-panel--initiatives .nav-dd-initiatives-split{grid-template-columns:1fr}' +
-      '}' +
-      '.nav-dd-initiatives-col ul{gap:0.35rem}' +
-      '.nav-dd-kicker{' +
-      'font-size:0.62rem;' +
-      'text-transform:uppercase;' +
-      'letter-spacing:0.16em;' +
-      'color:#9ca3af;' +
-      'margin:0 0 0.45rem 0;' +
-      'padding-left:0.05rem}' +
-      '.nav-dd-panel--initiatives .nav-dd-link--init{' +
-      'align-items:flex-start;' +
-      'gap:0.65rem;' +
-      'padding:0.55rem 0.55rem;' +
-      'border-radius:0.65rem}' +
-      '.nav-dd-panel--initiatives .nav-dd-link--init.font-medium .nav-dd-link-title{font-weight:600}' +
-      '.nav-dd-link-stack{flex:1;min-width:0;text-align:left}' +
-      '.nav-dd-link-title{' +
-      'display:block;' +
-      'font-size:0.9rem;' +
-      'line-height:1.25;' +
-      'font-weight:500;' +
-      'color:#fff}' +
-      '.nav-dd-link-desc{' +
-      'display:block;' +
-      'margin-top:0.22rem;' +
-      'font-size:0.72rem;' +
-      'line-height:1.45;' +
-      'color:#9ca3af}' +
-      '.nav-dd-panel--initiatives .nav-dd-link--init .nav-dd-icon{' +
-      'width:1.35rem;height:1.35rem;' +
-      'margin-left:auto;' +
-      'flex-shrink:0;' +
-      'align-self:center;' +
-      'opacity:0.92}' +
-      '.nav-dd-initiatives-foot{' +
-      'margin-top:0.65rem;' +
-      'padding-top:0.72rem;' +
-      'border-top:1px solid rgba(255,255,255,0.1)}' +
-      '[data-site-nav-dropdown] ul{' +
-      'list-style:none;margin:0;padding:0;width:100%;' +
-      'display:flex;flex-direction:column;gap:0.125rem}' +
-      '.nav-dd-panel--company ul{gap:0.35rem}' +
-      '[data-site-nav-dropdown] .nav-dd-link{' +
-      'display:flex;align-items:center;gap:0.5rem;' +
-      'width:100%;box-sizing:border-box;' +
-      'min-width:0;' +
-      'padding:0.375rem 0.5rem;border-radius:0.5rem;' +
-      'font-size:0.875rem;line-height:1.25;' +
-      'font-weight:400;' +
-      'color:#fff;text-decoration:none;' +
-      'transition:background-color .15s ease,color .15s ease}' +
-      '.nav-dd-panel--company .nav-dd-link{' +
-      'gap:0.6rem;' +
-      'padding:0.5rem 0.55rem;' +
-      'line-height:1.35}' +
-      '[data-site-nav-dropdown] .nav-dd-link.font-medium{font-weight:500}' +
-      '[data-site-nav-dropdown] .nav-dd-link:hover,' +
-      '[data-site-nav-dropdown] .nav-dd-link:focus-visible{' +
-      'background-color:rgba(255,255,255,0.1)}' +
-      '[data-site-nav-dropdown] .nav-dd-link:focus-visible{' +
-      'outline:none;box-shadow:0 0 0 2px rgba(74,222,128,0.45)}' +
-      '[data-site-nav-dropdown] .nav-dd-icon{' +
-      'flex-shrink:0;width:1rem;height:1rem;' +
-      'color:#6b7280;transition:color .15s ease}' +
-      '.nav-dd-panel--company .nav-dd-icon{' +
-      'width:1.125rem;height:1.125rem}' +
-      '[data-site-nav-dropdown] .nav-dd-link:hover .nav-dd-icon,' +
-      '[data-site-nav-dropdown] .nav-dd-link:focus-visible .nav-dd-icon{' +
-      'color:#d1d5db}' +
-      '[data-site-nav-dropdown] div.border-t{' +
-      'border-top-width:1px!important;border-top-style:solid!important;' +
-      'border-top-color:rgba(255,255,255,0.1)!important}' +
-      '[data-site-nav-dropdown] p.text-gray-500{' +
-      'margin:0 0 0.5rem 0;padding-left:0.125rem}' +
-      '[data-site-nav-dropdown] a[href*="impact.oasisofchange.com"]::after{' +
-      'content:"";flex-shrink:0;width:0.85em;height:0.85em;margin-left:0.15em;opacity:0;' +
-      'transition:opacity .15s ease;' +
-      'background-color:currentColor;' +
-      '-webkit-mask-image:url("' +
-      svg +
-      '");mask-image:url("' +
-      svg +
-      '");' +
-      '-webkit-mask-size:contain;mask-size:contain;' +
-      '-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;' +
-      '-webkit-mask-position:center;mask-position:center}' +
-      '[data-site-nav-dropdown] a[href*="impact.oasisofchange.com"]:hover::after,' +
-      '[data-site-nav-dropdown] a[href*="impact.oasisofchange.com"]:focus-visible::after{' +
-      'opacity:1}' +
-      '@media (prefers-reduced-motion:reduce){' +
-      '[data-site-nav-dropdown] .nav-dd-link,' +
-      '[data-site-nav-dropdown] .nav-dd-icon,' +
-      '[data-site-nav-dropdown] a[href*="impact.oasisofchange.com"]::after{' +
-      'transition:none}}';
-    document.head.appendChild(s);
-  }
-
   function initMobileNav() {
-    injectMobileNavFocusStyles();
-    injectMobileNavScrollbarStyles();
     var toggle = document.querySelector('[data-mobile-toggle]');
     var panel = document.querySelector('[data-mobile-panel]');
     if (!toggle || !panel) return;
     var menuIcon = toggle.querySelector('[data-icon-menu]');
     var closeIcon = toggle.querySelector('[data-icon-close]');
     var isOpen = false;
-    // One duration + easing for panel + toggle icons so the header doesn't feel "ahead" of the menu.
+
+    
+    var navEl = toggle.closest('nav');
+    var flexRow = navEl ? navEl.firstElementChild : null;
+    var overflowActive = false;
+
+    
+    var logoFull = navEl ? navEl.querySelector('img[src*="Oasis_of_Change-official"]') : null;
+    var logoIcon = null;
+    if (logoFull) {
+      logoIcon = document.createElement('img');
+      logoIcon.src = logoFull.src.replace('Oasis_of_Change-official.svg', 'oasis-of-change-icon.svg');
+      logoIcon.alt = logoFull.alt;
+      logoIcon.className = logoFull.className;
+      logoIcon.style.display = 'none';
+      logoIcon.width = 56;
+      logoIcon.height = 56;
+      logoFull.parentNode.insertBefore(logoIcon, logoFull.nextSibling);
+    }
+
+    function setLogoCompact(compact) {
+      if (!logoFull || !logoIcon) return;
+      logoFull.style.display = compact ? 'none' : '';
+      logoIcon.style.display = compact ? '' : 'none';
+    }
+
+    
+    var navUl = flexRow ? flexRow.querySelector('ul') : null;
+    var supportWrap = flexRow ? flexRow.querySelector('.justify-end') : null;
+
+    function setNavCompact(compact) {
+      if (!flexRow) return;
+      flexRow.style.gap = compact ? '0.25rem' : '';
+      if (navUl) {
+        navUl.style.gap = compact ? '0' : '';
+        for (var i = 0; i < navUl.children.length; i++) {
+          var a = navUl.children[i].querySelector('a');
+          if (a) {
+            a.style.paddingLeft = compact ? '0.375rem' : '';
+            a.style.paddingRight = compact ? '0.375rem' : '';
+          }
+        }
+      }
+      if (supportWrap) supportWrap.style.gap = compact ? '0.25rem' : '';
+    }
+
+    
     var navMotionMs = 240;
     var navEase = 'cubic-bezier(0.2, 0.9, 0.2, 1)';
     var navTransitionCss =
-      'height ' + navMotionMs + 'ms ' + navEase + ', opacity ' + navMotionMs + 'ms ' + navEase + ', transform ' + navMotionMs + 'ms ' + navEase;
+      'height ' + navMotionMs + 'ms ' + navEase + ', opacity ' + navMotionMs + 'ms ' + navEase + ', transform ' + navMotionMs + 'ms ' + navEase +
+      ', padding-top ' + navMotionMs + 'ms ' + navEase + ', padding-bottom ' + navMotionMs + 'ms ' + navEase;
 
     function setToggleIcons(open) {
       if (menuIcon && closeIcon) {
@@ -364,9 +109,9 @@
       var cs = window.getComputedStyle(panel);
       var padY =
         (parseFloat(cs.paddingTop) || 0) + (parseFloat(cs.paddingBottom) || 0);
-      // When the panel has a fixed JS height, scrollHeight often stays at that height even after
-      // inner content shrinks (e.g. switching from Initiatives to Company). Measure the inner
-      // block instead so the black shell tracks the current dropdown state.
+      
+      
+      
       return inner.offsetHeight + padY;
     }
 
@@ -401,6 +146,8 @@
     function open() {
       isOpen = true;
       panel.style.display = '';
+      panel.style.paddingTop = '';
+      panel.style.paddingBottom = '';
       panel.style.overflowX = 'hidden';
       panel.style.overflowY = 'auto';
       panel.style.overscrollBehavior = 'contain';
@@ -412,7 +159,7 @@
         panel.style.opacity = '1';
         setPanelHeightPx(getPanelTargetPx(), false);
       } else {
-        // Start closed (in-flow), then animate to measured height.
+        
         panel.style.transform = 'translateY(-6px)';
         panel.style.opacity = '0';
         setPanelHeightPx(0, false);
@@ -447,8 +194,8 @@
 
     function close() {
       isOpen = false;
-      // Reset scroll so height/overflow match the top of the menu (avoids a second layout beat at
-      // the bottom where the Support CTA lives).
+      
+      
       try {
         panel.scrollTop = 0;
       } catch (err) {}
@@ -464,11 +211,13 @@
       if (prefersReducedMotion()) {
         panel.style.opacity = '0';
         panel.style.transform = 'none';
+        panel.style.paddingTop = '0';
+        panel.style.paddingBottom = '0';
         setPanelHeightPx(0, false);
         finalizeMobilePanelHidden();
       } else {
-        // Use the *rendered* height (not scrollHeight math) so it stays in sync with scrollbar /
-        // flex layout — avoids the menu "stopping" while the Support CTA catches up.
+        
+        
         var startPx = panel.offsetHeight;
         if (!startPx || startPx < 1) {
           startPx = getPanelTargetPx();
@@ -477,6 +226,8 @@
         void panel.offsetHeight;
         panel.style.opacity = '0';
         panel.style.transform = 'translateY(-6px)';
+        panel.style.paddingTop = '0';
+        panel.style.paddingBottom = '0';
         setPanelHeightPx(0, true);
         setTimeout(function () {
           if (!isOpen) finalizeMobilePanelHidden();
@@ -489,11 +240,66 @@
     }
 
     function desktopNavActive() {
+      if (overflowActive) return false;
       try {
         return window.matchMedia && window.matchMedia('(min-width: 1024px)').matches;
       } catch (e) {
         return window.innerWidth >= 1024;
       }
+    }
+
+    function measureNavOverflow() {
+      var children = flexRow.children;
+      var savedShrink = [];
+      for (var i = 0; i < children.length; i++) {
+        savedShrink.push(children[i].style.flexShrink);
+        children[i].style.flexShrink = '0';
+      }
+      var containerWidth = flexRow.clientWidth;
+      var totalWidth = 0;
+      var visibleCount = 0;
+      for (var i = 0; i < children.length; i++) {
+        var w = children[i].offsetWidth;
+        if (w > 0) { totalWidth += w; visibleCount++; }
+      }
+      if (visibleCount > 1) totalWidth += 16 * (visibleCount - 1);
+      for (var i = 0; i < children.length; i++) {
+        children[i].style.flexShrink = savedShrink[i];
+      }
+      return totalWidth > containerWidth;
+    }
+
+    function checkNavOverflow() {
+      if (!navEl || !flexRow) return;
+      if (window.innerWidth < 1024) {
+        navEl.classList.remove('nav-overflow-active');
+        overflowActive = false;
+        setLogoCompact(false);
+        setNavCompact(false);
+        return;
+      }
+      
+      navEl.classList.remove('nav-overflow-active');
+      overflowActive = false;
+      setLogoCompact(false);
+      setNavCompact(false);
+
+      
+      if (!measureNavOverflow()) return;
+
+      
+      setNavCompact(true);
+      if (!measureNavOverflow()) return;
+
+      
+      setLogoCompact(true);
+      if (!measureNavOverflow()) return;
+
+      
+      setLogoCompact(false);
+      setNavCompact(false);
+      navEl.classList.add('nav-overflow-active');
+      overflowActive = true;
     }
 
     function syncNavByViewport() {
@@ -513,6 +319,7 @@
     if (closeIcon) closeIcon.style.transition = 'opacity ' + navMotionMs + 'ms ' + navEase;
 
     window.addEventListener('resize', function () {
+      checkNavOverflow();
       syncNavByViewport();
       if (isOpen) setPanelHeightPx(getPanelTargetPx(), false);
     });
@@ -521,6 +328,10 @@
       closeIcon.style.opacity = '0';
       closeIcon.style.pointerEvents = 'none';
     }
+
+    
+    checkNavOverflow();
+    window.addEventListener('load', checkNavOverflow);
 
     toggle.addEventListener('click', function (e) {
       e.preventDefault();
@@ -688,47 +499,955 @@
     if (window.__oocConsoleMessageShown) return;
     window.__oocConsoleMessageShown = true;
 
-    var logo =
-      '    ____             _     \n' +
-      '  / __ \\____ ______(_)____\n' +
-      ' / / / / __ `/ ___/ / ___/\n' +
-      '/ /_/ / /_/ (__  ) (__  )\n' +
-      '\\____/\\__,_/____/_/____/\n' +
-      '\n' +
-      '   ____  ______\n' +
-      '  / __ \\/ ____/\n' +
-      ' / / / / /_    \n' +
-      '/ /_/ / __/    \n' +
-      '\\____/_/       \n' +
-      '\n' +
-      '   ________                          \n' +
-      '  / ____/ /_  ____ _____  ____ ____  \n' +
-      ' / /   / __ \\/ __ `/ __ \\/ __ `/ _ \\ \n' +
-      '/ /___/ / / / /_/ / / / / /_/ /  __/ \n' +
-      '\\____/_/ /_/\\__,_/_/ /_/\\__, /\\___/  \n' +
-      '                       /____/         ';
+    var logo = '  ___            _          __    ___ _                          \n' +
+      ' / _ \\ __ _ ___ (_)___  __ / _|  / __| |_  __ _ _ _  __ _ ___   \n' +
+      '| (_) / _` (_-< | (_-< / _|  _| | (__| \' \\/ _` | \' \\/ _` / -_)  \n' +
+      ' \\___/\\__,_/__/ |_/__/ \\__|_|    \\___|_||_\\__,_|_||_\\__, \\___|  \n' +
+      '                                                    |___/        ';
 
-    console.log('%c' + logo, 'color:#4ade80;font-family:monospace;font-weight:700;');
+    console.log('%c' + logo, 'color:#4ade80;font-family:monospace;font-weight:700;line-height:1.3;');
     console.log(
-      '%cIf you opened DevTools out of curiosity, you are our kind of people.',
-      'color:#e5e7eb;font-size:13px;font-weight:600;'
+      '%c  Hey, conscious coder. %cYou just inspected a website that\n  tries to leave the internet better than it found it.',
+      'color:#4ade80;font-size:13px;font-weight:700;',
+      'color:#d1d5db;font-size:13px;font-weight:400;'
     );
     console.log(
-      '%cOasis of Change is building sustainable tech for real-world impact. If you code with purpose, come say hi: /contact',
-      'color:#9ca3af;font-size:12px;'
+      '%c  We build sustainable, accessible tech for nonprofits and\n' +
+      '  environmental orgs. Every page is lightweight by design.',
+      'color:#9ca3af;font-size:12px;line-height:1.5;'
     );
   }
 
+  function initContactForm() {
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+
+    // Record when the form became available; used as a min-fill-time check
+    // against bots that submit instantly.
+    window.__cfLoadedAt = Date.now();
+
+    var typeSelect = document.getElementById('cf-type');
+    var successEl = document.getElementById('cf-success');
+    var conditionals = form.querySelectorAll('.cf-conditional');
+
+    function showSections(type) {
+      conditionals.forEach(function (el) {
+        var showFor = el.getAttribute('data-cf-show');
+        var showUnless = el.getAttribute('data-cf-show-unless');
+        var visible = false;
+
+        if (showFor) {
+          visible = type === showFor;
+        } else if (showUnless) {
+          visible = type !== '' && type !== showUnless;
+        }
+
+        if (visible) {
+          el.classList.add('is-visible');
+        } else {
+          el.classList.remove('is-visible');
+        }
+      });
+      updateFileSuggestion(type);
+    }
+
+    // Context-aware hint for the "Attach a file" field — suggests what kind
+    // of document makes sense for each inquiry type. Rendered inside the
+    // #cf-file-suggest span right after the "Attach a file" label.
+    var FILE_SUGGESTIONS = {
+      'general':       'e.g. any supporting document',
+      'volunteer':     'e.g. CV / resume',
+      'partnership':   'e.g. partnership proposal or org one-pager',
+      'media':         'e.g. press credentials, journalist CV, or story brief',
+      'speaking':      'e.g. speaker bio, headshot, or sample deck',
+      'web-ready':     'e.g. current site brief or brand assets',
+      'wra-platform':  'e.g. organization overview or impact report',
+      'stw':           'e.g. talk proposal, bio, or session outline',
+      'vcasse':        'e.g. related research, bio, or proposal',
+      'tree-planting': 'e.g. site map or planting project proposal',
+    };
+    function updateFileSuggestion(type) {
+      var el = document.getElementById('cf-file-suggest');
+      if (!el) return;
+      var s = FILE_SUGGESTIONS[type];
+      el.textContent = s ? '— ' + s + ' ' : '';
+    }
+
+    // Pre-select inquiry type from URL parameter (?type=volunteer, etc.)
+    // Record the value in a module-level flag so the draft-restore pass can
+    // skip overwriting it — a shared ?type=… link should always beat an
+    // older locally-saved draft.
+    var urlPreselect = '';
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var preselect = params.get('type') || '';
+      if (preselect && typeSelect) {
+        for (var i = 0; i < typeSelect.options.length; i++) {
+          if (typeSelect.options[i].value === preselect) {
+            typeSelect.value = preselect;
+            urlPreselect = preselect;
+            showSections(preselect);
+            break;
+          }
+        }
+      }
+    } catch (e) {
+      // URLSearchParams not supported — ignore
+    }
+
+    if (typeSelect) {
+      typeSelect.addEventListener('change', function () {
+        showSections(this.value);
+      });
+    }
+
+    // ── "Other → please specify" auto-reveal ─────────────────────────────
+    // Any <select> that has an <option value="other">, or any checkbox group
+    // that contains <input value="other">, gets an accompanying "Please
+    // specify" text input injected right after it. Revealed on selection,
+    // hidden (and cleared) otherwise. This keeps the HTML DRY — we don't
+    // hand-author an "other" field next to every dropdown.
+    initOtherFields();
+
+    function initOtherFields() {
+      // Selects with an "other" option
+      form.querySelectorAll('select').forEach(function (sel) {
+        if (!sel.name) return;
+        var hasOther = false;
+        for (var i = 0; i < sel.options.length; i++) {
+          if (sel.options[i].value === 'other') { hasOther = true; break; }
+        }
+        if (!hasOther) return;
+
+        var otherDiv = makeOtherField(sel.name);
+        // Insert after the .cf-field wrapper holding the select.
+        var wrap = sel.closest('.cf-field') || sel.parentElement;
+        wrap.insertAdjacentElement('afterend', otherDiv);
+
+        sel.addEventListener('change', function () {
+          if (sel.value === 'other') revealOther(otherDiv);
+          else hideOther(otherDiv);
+        });
+        // Handle pre-selected value (e.g. from URL param or browser autofill)
+        if (sel.value === 'other') revealOther(otherDiv, true);
+      });
+
+      // Checkbox groups with an "other" value
+      var seenGroups = {};
+      form.querySelectorAll('input[type="checkbox"][value="other"]').forEach(function (box) {
+        var name = box.name;
+        if (!name || seenGroups[name]) return;
+        if (name === 'privacy_consent' || name === 'newsletter') return;
+        seenGroups[name] = true;
+
+        var fieldWrap = box.closest('.cf-field');
+        if (!fieldWrap) return;
+
+        var otherDiv = makeOtherField(name);
+        fieldWrap.insertAdjacentElement('afterend', otherDiv);
+
+        box.addEventListener('change', function () {
+          if (box.checked) revealOther(otherDiv);
+          else hideOther(otherDiv);
+        });
+      });
+    }
+
+    function makeOtherField(name) {
+      var wrap = document.createElement('div');
+      wrap.className = 'cf-other-field';
+      wrap.setAttribute('data-cf-other-for', name);
+      wrap.hidden = true;
+
+      var label = document.createElement('label');
+      label.className = 'cf-label';
+      label.setAttribute('for', 'cf-other-' + name);
+      label.textContent = 'Please specify';
+
+      var input = document.createElement('input');
+      input.type = 'text';
+      input.id = 'cf-other-' + name;
+      input.name = name + '_other';
+      input.className = 'cf-input';
+      input.placeholder = 'Tell us more';
+      input.autocomplete = 'off';
+
+      wrap.appendChild(label);
+      wrap.appendChild(input);
+      return wrap;
+    }
+
+    function revealOther(el, instant) {
+      if (!el.hidden) return;
+      el.hidden = false;
+      if (instant) { el.classList.add('is-visible'); return; }
+      // Force reflow so the transition animates from the initial state.
+      void el.offsetHeight;
+      el.classList.add('is-visible');
+    }
+    function hideOther(el) {
+      if (el.hidden) return;
+      el.classList.remove('is-visible');
+      var input = el.querySelector('input');
+      if (input) input.value = '';
+      setTimeout(function () {
+        if (!el.classList.contains('is-visible')) el.hidden = true;
+      }, 220);
+    }
+
+    // ── Enter-to-next navigation ─────────────────────────────────────────
+    // Pressing Enter on a text/email/tel/url/date input moves focus to the
+    // next visible form field (skipping hidden conditional sections, hidden
+    // "other" fields, and the honeypot). Cmd/Ctrl+Enter from anywhere submits
+    // the form. Textareas keep native Enter-for-newline behavior.
+    form.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter') return;
+
+      // Submit shortcut from anywhere
+      if (e.metaKey || e.ctrlKey) {
+        e.preventDefault();
+        if (typeof form.requestSubmit === 'function') form.requestSubmit();
+        else {
+          var sb = form.querySelector('.cf-submit');
+          if (sb) sb.click();
+        }
+        return;
+      }
+
+      var t = e.target;
+      if (!t || t.tagName !== 'INPUT') return;
+      var hijackTypes = ['text', 'email', 'tel', 'url', 'date'];
+      if (hijackTypes.indexOf(t.type) === -1) return;
+
+      e.preventDefault();
+      var focusables = Array.prototype.slice.call(form.querySelectorAll('input, select, textarea'));
+      var visible = focusables.filter(function (el) {
+        if (el.disabled || el.type === 'hidden') return false;
+        if (el.closest('.cf-honeypot')) return false;
+        var section = el.closest('.cf-conditional');
+        if (section && !section.classList.contains('is-visible')) return false;
+        var other = el.closest('.cf-other-field');
+        if (other && other.hidden) return false;
+        return el.offsetParent !== null;
+      });
+      var idx = visible.indexOf(t);
+      if (idx >= 0 && idx < visible.length - 1) {
+        var next = visible[idx + 1];
+        next.focus();
+        if (next.tagName === 'INPUT' && hijackTypes.indexOf(next.type) !== -1 && typeof next.select === 'function') {
+          try { next.select(); } catch (err) {}
+        }
+      }
+    });
+
+    // Clear field errors on interaction
+    function clearFieldError(field) {
+      var parent = field.closest('.cf-field');
+      if (!parent) parent = field.parentElement;
+      field.classList.remove('cf-input-error');
+      field.removeAttribute('aria-invalid');
+      field.removeAttribute('aria-describedby');
+      var err = parent ? parent.querySelector('.cf-error-text') : null;
+      if (err) err.remove();
+    }
+
+    form.addEventListener('input', function (e) { clearFieldError(e.target); });
+    form.addEventListener('change', function (e) { clearFieldError(e.target); });
+
+    function addError(field, message) {
+      var parent = field.closest('.cf-field');
+      if (!parent) parent = field.parentElement;
+      if (parent && parent.querySelector('.cf-error-text')) return;
+
+      // Give the error message an id so we can point aria-describedby at it
+      var errId = 'cf-err-' + (field.id || field.name || Math.random().toString(36).slice(2));
+      var err = document.createElement('p');
+      err.id = errId;
+      err.className = 'cf-error-text';
+      err.setAttribute('role', 'alert');
+      err.textContent = message;
+      if (parent) parent.appendChild(err);
+
+      field.setAttribute('aria-invalid', 'true');
+      field.setAttribute('aria-describedby', errId);
+
+      // Only add red border to text/select inputs, not checkboxes
+      if (field.tagName !== 'INPUT' || field.type !== 'checkbox') {
+        field.classList.add('cf-input-error');
+      }
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Defensive sync: make every native <select> match its custom widget's
+      // currently-selected option. Prevents visual/value drift if anything
+      // ever desyncs them (e.g. the draft-restore race that motivated this).
+      form.querySelectorAll('.cs-wrap').forEach(function (wrap) {
+        var nativeSel = wrap.nextElementSibling;
+        if (!nativeSel || nativeSel.tagName !== 'SELECT') return;
+        var chosen = wrap.querySelector('.cs-option[aria-selected="true"]');
+        if (chosen && chosen.dataset.value && nativeSel.value !== chosen.dataset.value) {
+          nativeSel.value = chosen.dataset.value;
+        }
+      });
+
+      // Clear previous errors
+      form.querySelectorAll('.cf-error-text').forEach(function (el) { el.remove(); });
+      form.querySelectorAll('.cf-input-error').forEach(function (el) { el.classList.remove('cf-input-error'); });
+
+      var required = form.querySelectorAll('[required]');
+      var valid = true;
+
+      required.forEach(function (field) {
+        // Skip fields inside hidden conditional sections
+        var section = field.closest('.cf-conditional');
+        if (section && !section.classList.contains('is-visible')) return;
+
+        if (field.type === 'checkbox' && !field.checked) {
+          valid = false;
+          addError(field, 'This field is required');
+        } else if (!field.value || !field.value.trim()) {
+          valid = false;
+          addError(field, 'This field is required');
+        } else if (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value)) {
+          valid = false;
+          addError(field, 'Please enter a valid email address');
+        }
+      });
+
+      if (!valid) {
+        // Focus the first invalid field so keyboard/screen-reader users land on it
+        var firstInvalid = form.querySelector('.cf-input-error, [required][aria-invalid="true"]');
+        if (!firstInvalid) {
+          // Fallback: first required field with empty value
+          firstInvalid = form.querySelector('[required]');
+        }
+        if (firstInvalid) {
+          // If the invalid field is a native <select> replaced by a custom one,
+          // focus the paired cs-trigger instead.
+          if (firstInvalid.tagName === 'SELECT' && firstInvalid.previousElementSibling && firstInvalid.previousElementSibling.classList.contains('cs-wrap')) {
+            var t = firstInvalid.previousElementSibling.querySelector('.cs-trigger');
+            if (t) t.focus();
+          } else {
+            firstInvalid.focus();
+          }
+        }
+        var firstErrorEl = form.querySelector('.cf-error-text');
+        if (firstErrorEl && firstErrorEl.parentElement) {
+          firstErrorEl.parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        announceToScreenReader('Form has errors. Please review the highlighted fields.');
+        return;
+      }
+
+      // Serialize form into a plain object (grouping multi-value checkboxes
+      // into arrays) so the server receives clean JSON.
+      var payload = {};
+      var fd = new FormData(form);
+      fd.forEach(function (val, key) {
+        if (Object.prototype.hasOwnProperty.call(payload, key)) {
+          if (!Array.isArray(payload[key])) payload[key] = [payload[key]];
+          payload[key].push(val);
+        } else {
+          payload[key] = val;
+        }
+      });
+      // FormData omits unchecked checkboxes; coerce consent explicitly.
+      var consentEl = form.querySelector('[name="privacy_consent"]');
+      payload.privacy_consent = !!(consentEl && consentEl.checked);
+      var newsletterEl = form.querySelector('[name="newsletter"]');
+      payload.newsletter = !!(newsletterEl && newsletterEl.checked);
+      payload.form_loaded_at = window.__cfLoadedAt || 0;
+
+      var submitBtn = form.querySelector('.cf-submit');
+      var originalLabel = submitBtn ? submitBtn.textContent : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.setAttribute('aria-busy', 'true');
+        submitBtn.textContent = 'Sending\u2026';
+      }
+      clearFormError();
+      announceToScreenReader('Sending your message…');
+
+      uploadFileIfNeeded().then(function (fileUrl) {
+        if (fileUrl) payload.attachment_url = fileUrl;
+        return fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+      }).then(function (r) {
+        return r.json().then(function (j) { return { ok: r.ok, body: j }; }, function () { return { ok: r.ok, body: {} }; });
+      }).then(function (result) {
+        if (!result.ok) {
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.removeAttribute('aria-busy'); submitBtn.textContent = originalLabel; }
+          var msg = (result.body && result.body.error)
+            || 'Something went wrong. Please try again, or email us directly.';
+          showFormError(msg);
+          return;
+        }
+        if (typeof window.__cfClearDraft === 'function') window.__cfClearDraft();
+        form.style.display = 'none';
+        if (successEl) {
+          successEl.style.display = '';
+          // Move focus to the success message so screen readers announce it
+          // and keyboard focus lands in a sensible place.
+          if (typeof successEl.focus === 'function') {
+            successEl.setAttribute('tabindex', '-1');
+            successEl.focus();
+          }
+        }
+      }).catch(function () {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.removeAttribute('aria-busy'); submitBtn.textContent = originalLabel; }
+        showFormError('Network error. Please check your connection and try again.');
+      });
+    });
+
+    function clearFormError() {
+      var existing = form.querySelector('[data-cf-form-error]');
+      if (existing) existing.remove();
+    }
+
+    function showFormError(msg) {
+      clearFormError();
+      var el = document.createElement('p');
+      el.setAttribute('data-cf-form-error', '');
+      el.className = 'cf-error-text';
+      el.setAttribute('role', 'alert');
+      el.style.marginTop = '0.75rem';
+      el.textContent = msg;
+      var submitBtnEl = form.querySelector('.cf-submit');
+      var submitField = submitBtnEl ? submitBtnEl.closest('.cf-field') : null;
+      if (submitField) submitField.appendChild(el);
+    }
+
+    // ── Draft auto-save ──────────────────────────────────────────────────────
+    // Saves form data to localStorage every 30 s and on beforeunload.
+    // Restored automatically on next visit; banner appears with a discard option.
+    (function initDraftSave() {
+      var DRAFT_KEY = 'cf_draft';
+      var DRAFT_TTL = 7 * 24 * 60 * 60 * 1000; // 7 days in ms
+      var banner = document.getElementById('cf-draft-banner');
+      var discardBtn = banner ? banner.querySelector('.cf-draft-discard') : null;
+
+      function saveDraft() {
+        var payload = {};
+        var fd = new FormData(form);
+        fd.forEach(function (val, key) {
+          if (key === 'website_url') return; // honeypot — never persist
+          if (Object.prototype.hasOwnProperty.call(payload, key)) {
+            if (!Array.isArray(payload[key])) payload[key] = [payload[key]];
+            payload[key].push(val);
+          } else {
+            payload[key] = val;
+          }
+        });
+        // Store checked booleans for checkboxes that FormData omits when unchecked
+        var consent = form.querySelector('[name="privacy_consent"]');
+        var newsletter = form.querySelector('[name="newsletter"]');
+        if (consent)    payload.privacy_consent = consent.checked;
+        if (newsletter) payload.newsletter = newsletter.checked;
+
+        try {
+          localStorage.setItem(DRAFT_KEY, JSON.stringify({ ts: Date.now(), data: payload }));
+        } catch (e) { /* storage full or private mode */ }
+      }
+
+      function loadDraft() {
+        try {
+          var raw = localStorage.getItem(DRAFT_KEY);
+          if (!raw) return;
+          var parsed = JSON.parse(raw);
+          if (!parsed || !parsed.data) return;
+          if (Date.now() - parsed.ts > DRAFT_TTL) { localStorage.removeItem(DRAFT_KEY); return; }
+          var d = parsed.data;
+
+          // Restore each field
+          Object.keys(d).forEach(function (key) {
+            // If the URL pre-selected an inquiry type, don't let an older
+            // saved draft overwrite it. Shared ?type=… links always win.
+            if (key === 'inquiry_type' && urlPreselect) return;
+            var val = d[key];
+            var els = form.querySelectorAll('[name="' + key + '"]');
+            if (!els.length) return;
+            if (els[0].type === 'checkbox') {
+              // boolean (single checkbox like consent / newsletter)
+              if (typeof val === 'boolean') {
+                els[0].checked = val;
+              } else {
+                // checkbox group — val is an array
+                var vals = Array.isArray(val) ? val : [val];
+                els.forEach(function (cb) { cb.checked = vals.indexOf(cb.value) !== -1; });
+              }
+            } else if (els[0].tagName === 'SELECT') {
+              els[0].value = val;
+              els[0].dispatchEvent(new Event('change', { bubbles: true }));
+            } else {
+              els[0].value = val;
+            }
+          });
+
+          if (banner) banner.style.display = '';
+        } catch (e) { /* corrupt storage */ }
+      }
+
+      function clearDraft() {
+        try { localStorage.removeItem(DRAFT_KEY); } catch (e) {}
+        if (banner) banner.style.display = 'none';
+      }
+
+      // Expose so submit handler can clear on success
+      window.__cfClearDraft = clearDraft;
+
+      // Restore draft on page load (banner hidden by default via CSS/HTML)
+      loadDraft();
+
+      // Auto-save on input/change and on tab close
+      var saveTimer;
+      form.addEventListener('input', function () {
+        clearTimeout(saveTimer);
+        saveTimer = setTimeout(saveDraft, 1500);
+      });
+      form.addEventListener('change', function () {
+        clearTimeout(saveTimer);
+        saveTimer = setTimeout(saveDraft, 1500);
+      });
+      window.addEventListener('beforeunload', saveDraft);
+
+      if (discardBtn) {
+        discardBtn.addEventListener('click', function () {
+          clearDraft();
+          form.reset();
+          // Re-sync conditional sections after reset
+          var typeEl = document.getElementById('cf-type');
+          if (typeEl) typeEl.dispatchEvent(new Event('change', { bubbles: true }));
+        });
+      }
+    }());
+
+    // ── Character counter ────────────────────────────────────────────────────
+    (function initCharCounter() {
+      var textarea = document.getElementById('cf-message');
+      var counter  = document.getElementById('cf-char-count');
+      if (!textarea || !counter) return;
+      var MAX = 5000;
+
+      function update() {
+        var len = textarea.value.length;
+        counter.textContent = len.toLocaleString() + ' / ' + MAX.toLocaleString();
+        counter.classList.remove('cf-char-warn', 'cf-char-alert');
+        if (len >= MAX)  counter.classList.add('cf-char-alert');
+        else if (len >= 4750) counter.classList.add('cf-char-alert');
+        else if (len >= 4000) counter.classList.add('cf-char-warn');
+      }
+
+      textarea.addEventListener('input', update);
+      update();
+    }());
+
+    // ── Inline email validation (on blur) ────────────────────────────────────
+    (function initInlineValidation() {
+      var emailInput = document.getElementById('cf-email');
+      if (!emailInput) return;
+
+      emailInput.addEventListener('blur', function () {
+        var v = emailInput.value.trim();
+        if (!v) return; // empty — leave required validation to submit
+        var parent = emailInput.closest('.cf-field') || emailInput.parentElement;
+        var existing = parent ? parent.querySelector('.cf-error-text') : null;
+        if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) {
+          emailInput.classList.remove('cf-input-error');
+          emailInput.classList.add('cf-input-valid');
+          if (existing) existing.remove();
+        } else {
+          emailInput.classList.remove('cf-input-valid');
+          emailInput.classList.add('cf-input-error');
+          if (!existing && parent) {
+            var err = document.createElement('p');
+            err.className = 'cf-error-text';
+            err.setAttribute('role', 'alert');
+            err.textContent = 'Please enter a valid email address';
+            parent.appendChild(err);
+          }
+        }
+      });
+
+      emailInput.addEventListener('input', function () {
+        emailInput.classList.remove('cf-input-valid');
+      });
+    }());
+
+    // ── File attachment ──────────────────────────────────────────────────────
+    var _attachedFile = null;
+
+    function announceToScreenReader(msg) {
+      var region = document.getElementById('cf-sr-status');
+      if (!region) return;
+      // Clear first so repeated messages re-announce
+      region.textContent = '';
+      setTimeout(function () { region.textContent = msg; }, 60);
+    }
+
+    (function initFileUpload() {
+      var btn      = document.getElementById('cf-file-btn');
+      var input    = document.getElementById('cf-file-input');
+      var nameEl   = document.getElementById('cf-file-name');
+      var clearBtn = document.getElementById('cf-file-clear');
+      if (!btn || !input) return;
+
+      btn.addEventListener('click', function () { input.click(); });
+
+      input.addEventListener('change', function () {
+        var file = input.files && input.files[0];
+        if (!file) { _attachedFile = null; return; }
+        _attachedFile = file;
+        if (nameEl) {
+          nameEl.querySelector('.cf-file-name-text').textContent = file.name + ' (' + (file.size / 1024).toFixed(0) + ' KB)';
+          nameEl.classList.add('has-file');
+        }
+        btn.style.display = 'none';
+        announceToScreenReader('File attached: ' + file.name);
+        // Move focus to the clear button so keyboard users can undo the action
+        if (clearBtn) clearBtn.focus();
+      });
+
+      if (clearBtn) {
+        clearBtn.addEventListener('click', function () {
+          _attachedFile = null;
+          input.value = '';
+          if (nameEl) nameEl.classList.remove('has-file');
+          btn.style.display = '';
+          announceToScreenReader('Attachment removed');
+          btn.focus();
+        });
+      }
+    }());
+
+    function uploadFileIfNeeded() {
+      if (!_attachedFile) return Promise.resolve(null);
+      var file = _attachedFile;
+
+      return new Promise(function (resolve) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          // Strip the data-URL prefix to get raw base64
+          var base64 = e.target.result.split(',')[1];
+          fetch('/api/upload', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ filename: file.name, contentType: file.type, data: base64 })
+          }).then(function (r) {
+            return r.json();
+          }).then(function (j) {
+            resolve((j && j.ok && j.url) ? j.url : null);
+          }).catch(function () { resolve(null); });
+        };
+        reader.onerror = function () { resolve(null); };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    // ── Custom select dropdowns (cs-*) ───────────────────────────────────────
+    // Replaces every select.cf-input with an accessible combobox on desktop.
+    // On mobile (≤639px) the native widget is shown instead (CSS handles swap).
+    (function initCustomSelects() {
+      // Skip on mobile — CSS already hides .cs-wrap there
+      if (window.matchMedia && window.matchMedia('(max-width: 639px)').matches) return;
+
+      form.querySelectorAll('select.cf-input').forEach(function (sel) {
+        // Build wrapper
+        var wrap = document.createElement('div');
+        wrap.className = 'cs-wrap';
+
+        var uid = (sel.id || sel.name || Math.random().toString(36).slice(2));
+
+        // Trigger button
+        var trigger = document.createElement('button');
+        trigger.type = 'button';
+        trigger.className = 'cs-trigger';
+        trigger.setAttribute('aria-haspopup', 'listbox');
+        trigger.setAttribute('aria-expanded', 'false');
+        var listboxId = 'cs-lb-' + uid;
+        trigger.setAttribute('aria-controls', listboxId);
+        // Link trigger to the field's <label for=…> so screen readers announce the label
+        var labelEl = sel.id ? document.querySelector('label[for="' + sel.id + '"]') : null;
+        if (labelEl) {
+          if (!labelEl.id) labelEl.id = 'cs-lbl-' + uid;
+          trigger.setAttribute('aria-labelledby', labelEl.id);
+        } else if (sel.getAttribute('aria-label')) {
+          trigger.setAttribute('aria-label', sel.getAttribute('aria-label'));
+        }
+        if (sel.required) trigger.setAttribute('aria-required', 'true');
+
+        var labelText = document.createElement('span');
+        labelText.className = 'cs-label-text cs-placeholder';
+        var chevron = document.createElement('span');
+        chevron.className = 'cs-chevron';
+        chevron.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
+        trigger.appendChild(labelText);
+        trigger.appendChild(chevron);
+
+        // Listbox
+        var listbox = document.createElement('ul');
+        listbox.id = listboxId;
+        listbox.className = 'cs-listbox';
+        listbox.setAttribute('role', 'listbox');
+        if (labelEl) listbox.setAttribute('aria-labelledby', labelEl.id);
+        else if (sel.getAttribute('aria-label')) listbox.setAttribute('aria-label', sel.getAttribute('aria-label'));
+        listbox.tabIndex = -1;
+
+        // Populate options from the native select
+        var optionEls = [];
+        var placeholder = '';
+        for (var i = 0; i < sel.options.length; i++) {
+          var opt = sel.options[i];
+          if (opt.value === '') { placeholder = opt.text; continue; }
+          (function (opt, optIdx) {
+            var li = document.createElement('li');
+            li.id = 'cs-opt-' + uid + '-' + optIdx;
+            li.className = 'cs-option';
+            li.setAttribute('role', 'option');
+            li.setAttribute('aria-selected', 'false');
+            li.dataset.value = opt.value;
+            li.textContent = opt.text;
+            listbox.appendChild(li);
+            optionEls.push(li);
+          }(opt, i));
+        }
+
+        if (placeholder) labelText.textContent = placeholder;
+
+        wrap.appendChild(trigger);
+        wrap.appendChild(listbox);
+
+        // Insert the custom widget right before the native select
+        sel.parentNode.insertBefore(wrap, sel);
+
+        var highlighted = -1;
+        var isOpen = false;
+
+        function open() {
+          isOpen = true;
+          listbox.classList.add('is-open');
+          trigger.setAttribute('aria-expanded', 'true');
+          // If nothing is highlighted yet, start at the selected option (if any) or 0
+          if (highlighted < 0) {
+            var selIdx = optionEls.findIndex(function (o) { return o.getAttribute('aria-selected') === 'true'; });
+            highlight(selIdx >= 0 ? selIdx : 0);
+          }
+          if (highlighted >= 0) optionEls[highlighted].scrollIntoView({ block: 'nearest' });
+        }
+
+        function close() {
+          isOpen = false;
+          listbox.classList.remove('is-open');
+          trigger.setAttribute('aria-expanded', 'false');
+          trigger.removeAttribute('aria-activedescendant');
+          highlighted = -1;
+          optionEls.forEach(function (li) { li.classList.remove('is-highlighted'); });
+        }
+
+        function selectOption(idx) {
+          if (idx < 0 || idx >= optionEls.length) return;
+          var li = optionEls[idx];
+          optionEls.forEach(function (o) { o.setAttribute('aria-selected', 'false'); });
+          li.setAttribute('aria-selected', 'true');
+          labelText.textContent = li.textContent;
+          labelText.classList.remove('cs-placeholder');
+          // Sync native select so FormData picks it up
+          sel.value = li.dataset.value;
+          sel.dispatchEvent(new Event('change', { bubbles: true }));
+          close();
+          trigger.focus();
+        }
+
+        function highlight(idx) {
+          if (idx < 0) idx = optionEls.length - 1;
+          if (idx >= optionEls.length) idx = 0;
+          optionEls.forEach(function (o) { o.classList.remove('is-highlighted'); });
+          if (optionEls[idx]) {
+            optionEls[idx].classList.add('is-highlighted');
+            optionEls[idx].scrollIntoView({ block: 'nearest' });
+            // aria-activedescendant points to the visually-highlighted option
+            // so screen readers read it even though focus stays on the trigger.
+            trigger.setAttribute('aria-activedescendant', optionEls[idx].id);
+          }
+          highlighted = idx;
+        }
+
+        trigger.addEventListener('click', function () {
+          if (isOpen) close(); else open();
+        });
+
+        // Typeahead: jump to first option starting with typed characters.
+        var typeaheadBuf = '';
+        var typeaheadTimer = null;
+        function typeahead(ch) {
+          clearTimeout(typeaheadTimer);
+          typeaheadBuf += ch.toLowerCase();
+          typeaheadTimer = setTimeout(function () { typeaheadBuf = ''; }, 600);
+          var match = optionEls.findIndex(function (o) {
+            return o.textContent.toLowerCase().indexOf(typeaheadBuf) === 0;
+          });
+          if (match >= 0) {
+            if (!isOpen) open();
+            highlight(match);
+          }
+        }
+
+        trigger.addEventListener('keydown', function (e) {
+          if (e.key === 'ArrowDown') { e.preventDefault(); if (!isOpen) open(); else highlight(highlighted + 1); }
+          else if (e.key === 'ArrowUp') { e.preventDefault(); if (!isOpen) open(); else highlight(highlighted - 1); }
+          else if (e.key === 'Home') { e.preventDefault(); if (!isOpen) open(); highlight(0); }
+          else if (e.key === 'End') { e.preventDefault(); if (!isOpen) open(); highlight(optionEls.length - 1); }
+          else if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (isOpen) { if (highlighted >= 0) selectOption(highlighted); } else open(); }
+          else if (e.key === 'Escape') { if (isOpen) { e.preventDefault(); close(); } }
+          else if (e.key === 'Tab') { close(); /* let tab proceed */ }
+          else if (e.key.length === 1 && /\S/.test(e.key)) { typeahead(e.key); }
+        });
+
+        optionEls.forEach(function (li, idx) {
+          li.addEventListener('mouseenter', function () { highlight(idx); });
+          li.addEventListener('click', function () { selectOption(idx); });
+        });
+
+        // Close on outside click
+        document.addEventListener('click', function (e) {
+          if (!wrap.contains(e.target)) close();
+        });
+
+        // If the native select already has a value (e.g. from URL param), sync it
+        if (sel.value) {
+          var preIdx = optionEls.findIndex(function (li) { return li.dataset.value === sel.value; });
+          if (preIdx >= 0) {
+            optionEls[preIdx].setAttribute('aria-selected', 'true');
+            labelText.textContent = optionEls[preIdx].textContent;
+            labelText.classList.remove('cs-placeholder');
+            highlighted = preIdx;
+          }
+        }
+
+        // Also listen for native select changes (e.g. from URL pre-select) so
+        // the custom widget stays in sync.
+        sel.addEventListener('change', function () {
+          var idx = optionEls.findIndex(function (li) { return li.dataset.value === sel.value; });
+          if (idx >= 0) {
+            optionEls.forEach(function (o) { o.setAttribute('aria-selected', 'false'); });
+            optionEls[idx].setAttribute('aria-selected', 'true');
+            labelText.textContent = optionEls[idx].textContent;
+            labelText.classList.remove('cs-placeholder');
+          }
+        });
+      });
+    }());
+  }
+
+  function initLightbox() {
+    var triggers = document.querySelectorAll('[data-lightbox-trigger]');
+    if (!triggers.length) return;
+
+    // Build the overlay once and reuse it.
+    var overlay = document.createElement('div');
+    overlay.className = 'lightbox';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-label', 'Image viewer');
+    overlay.innerHTML =
+      '<button type="button" class="lightbox-close" aria-label="Close image viewer">' +
+      '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>' +
+      '</button>' +
+      '<img class="lightbox-image" alt="" />';
+    document.body.appendChild(overlay);
+
+    var overlayImg = overlay.querySelector('.lightbox-image');
+    var closeBtn = overlay.querySelector('.lightbox-close');
+    var lastTrigger = null;
+
+    function openLightbox(trigger) {
+      lastTrigger = trigger;
+      overlayImg.src = trigger.getAttribute('data-lightbox-src');
+      overlayImg.alt = trigger.getAttribute('data-lightbox-alt') || '';
+      overlay.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    }
+
+    function closeLightbox() {
+      overlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+      if (lastTrigger) lastTrigger.focus();
+    }
+
+    triggers.forEach(function (trigger) {
+      trigger.addEventListener('click', function () {
+        openLightbox(trigger);
+      });
+    });
+
+    closeBtn.addEventListener('click', closeLightbox);
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closeLightbox();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
+        closeLightbox();
+      }
+    });
+  }
+
+  function initFooterLocale() {
+    var brand = document.querySelector('.site-footer-brand');
+    if (!brand || brand.querySelector('.footer-locale')) return;
+    // Derive base path from the brand logo img — its src already has the correct
+    // depth prefix ('../' on blog pages, '' on root). This keeps the flag working
+    // regardless of how deep the page is in the directory tree.
+    var logo = brand.querySelector('img');
+    var base = '';
+    if (logo) {
+      var src = logo.getAttribute('src') || '';
+      var idx = src.indexOf('images/');
+      if (idx !== -1) base = src.slice(0, idx);
+    }
+    var locale = document.createElement('div');
+    locale.className = 'footer-locale';
+    locale.setAttribute('aria-label', 'Based in Vancouver, Canada');
+    locale.innerHTML =
+      '<span>Based in Vancouver, Canada</span>' +
+      '<img class="footer-locale-flag" src="' + base + 'images/flag-canada.svg" alt="" width="22" height="11" loading="lazy" aria-hidden="true">';
+    brand.appendChild(locale);
+  }
+
+  function initScrollReveal() {
+    if (!('IntersectionObserver' in window)) return;
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var targets = document.querySelectorAll('[data-reveal]');
+    if (!targets.length) return;
+    if (reduced) {
+      targets.forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    targets.forEach(function (el) { observer.observe(el); });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
-    injectGlobalFooterStyles();
-    renderGlobalFooter();
-    injectFooterExternalLinkIconStyles();
-    injectNavDesktopDropdownStyles();
     initMobileNav();
     initAccordion();
     initBlogToggle();
     initImageSlider();
     initSmoothScroll();
+    initContactForm();
+    initLightbox();
+    initFooterLocale();
+    initScrollReveal();
     logCuriousCoderMessage();
   });
 })();

@@ -1,0 +1,9 @@
+{
+  "name": "oasis-of-change-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Oasis of Change website — static HTML/CSS/JS with Vercel serverless functions.",
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,310 @@
+{
+  "nodes": [
+    {
+      "id": "mittler_after_redesign_screenshot",
+      "label": "Mittler Senior Technology — After Redesign (1200w)",
+      "file_type": "image",
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign-1200w.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "mittler_before_redesign_screenshot",
+      "label": "Mittler Senior Technology — Before Redesign (1200w)",
+      "file_type": "image",
+      "source_file": "public/images/case-studies/mittler-senior-tech-before-redesign-1200w.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "mittler_hero_section",
+      "label": "Mittler Hero Section — Full-Bleed Photo Background with Headline",
+      "file_type": "image",
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign-1200w.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "mittler_stats_bar",
+      "label": "Mittler Impact Statistics Bar (3500+ Seniors, 450+ Classes, 150+ Teens, 10+ Countries)",
+      "file_type": "image",
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign-1200w.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "mittler_nav_after",
+      "label": "Mittler Navigation Bar — After Redesign (Services, Organizations, Our Team, Our Story, Contact + CTA)",
+      "file_type": "image",
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign-1200w.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "mittler_nav_before",
+      "label": "Mittler Navigation — Before Redesign (Compact Sidebar-Style Layout)",
+      "file_type": "image",
+      "source_file": "public/images/case-studies/mittler-senior-tech-before-redesign-1200w.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "mittler_cta_buttons",
+      "label": "Mittler Dual CTA Buttons — For Seniors / For Organizations",
+      "file_type": "image",
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign-1200w.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "mittler_before_content_layout",
+      "label": "Mittler Before Redesign — Text-Heavy Layout with Tech Tip Tuesday Banner and Sidebar Navigation",
+      "file_type": "image",
+      "source_file": "public/images/case-studies/mittler-senior-tech-before-redesign-1200w.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "mittler_classes_services_section",
+      "label": "Mittler Classes and Services Section",
+      "file_type": "image",
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign-1200w.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "mittler_brand_green",
+      "label": "Mittler Brand Colour — Green Primary (used for logo, CTA buttons, nav accents)",
+      "file_type": "image",
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign-1200w.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "mittler_sponsor_cta",
+      "label": "Mittler Sponsor a Class CTA Button (top-right nav, green)",
+      "file_type": "image",
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign-1200w.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "mittler_after_redesign_screenshot",
+      "target": "mittler_before_redesign_screenshot",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "mittler_after_redesign_screenshot",
+      "target": "mittler_hero_section",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "mittler_after_redesign_screenshot",
+      "target": "mittler_stats_bar",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "mittler_after_redesign_screenshot",
+      "target": "mittler_nav_after",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "mittler_after_redesign_screenshot",
+      "target": "mittler_cta_buttons",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "mittler_after_redesign_screenshot",
+      "target": "mittler_classes_services_section",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "mittler_after_redesign_screenshot",
+      "target": "mittler_sponsor_cta",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "mittler_before_redesign_screenshot",
+      "target": "mittler_nav_before",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/case-studies/mittler-senior-tech-before-redesign-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "mittler_before_redesign_screenshot",
+      "target": "mittler_before_content_layout",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/images/case-studies/mittler-senior-tech-before-redesign-1200w.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "mittler_nav_after",
+      "target": "mittler_nav_before",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign-1200w.webp",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "mittler_hero_section",
+      "target": "mittler_before_content_layout",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign-1200w.webp",
+      "source_location": null,
+      "weight": 0.85
+    },
+    {
+      "source": "mittler_cta_buttons",
+      "target": "mittler_brand_green",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign-1200w.webp",
+      "source_location": null,
+      "weight": 0.95
+    },
+    {
+      "source": "mittler_sponsor_cta",
+      "target": "mittler_brand_green",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign-1200w.webp",
+      "source_location": null,
+      "weight": 0.95
+    },
+    {
+      "source": "mittler_nav_after",
+      "target": "mittler_brand_green",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign-1200w.webp",
+      "source_location": null,
+      "weight": 0.85
+    },
+    {
+      "source": "mittler_stats_bar",
+      "target": "mittler_hero_section",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign-1200w.webp",
+      "source_location": null,
+      "weight": 0.8
+    },
+    {
+      "source": "mittler_cta_buttons",
+      "target": "mittler_hero_section",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign-1200w.webp",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "mittler_classes_services_section",
+      "target": "mittler_hero_section",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign-1200w.webp",
+      "source_location": null,
+      "weight": 0.75
+    },
+    {
+      "source": "mittler_after_redesign_screenshot",
+      "target": "mittler_brand_green",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "public/images/case-studies/mittler-senior-tech-after-redesign-1200w.webp",
+      "source_location": null,
+      "weight": 0.9
+    }
+  ],
+  "hyperedges": [],
+  "input_tokens": 0,
+  "output_tokens": 0
+}
