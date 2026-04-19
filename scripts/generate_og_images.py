@@ -21,7 +21,7 @@ PUBLIC = ROOT / 'public'
 OG_DIR = PUBLIC / 'images' / 'og'
 LOGO_PATH = ROOT / 'scripts' / 'og_logo.png'
 
-SITE_BASE = 'https://oasisofchange.org'
+SITE_BASE = 'https://oasisofchange.com'
 CANONICAL_SUFFIX = ' | Oasis of Change, Inc.'
 
 # Canvas
@@ -47,7 +47,7 @@ FONT_REG_CANDIDATES = [
 ]
 
 PADDING_X = 72
-LOGO_TARGET_HEIGHT = 56
+LOGO_TARGET_HEIGHT = 88
 ACCENT_BAR_WIDTH = 6
 
 
@@ -127,11 +127,8 @@ def render_og(title: str, out_path: Path) -> None:
     logo_y = PADDING_X  # same padding top
     paste_logo(img, logo_y)
 
-    # Divider under logo
-    divider_y = logo_y + LOGO_TARGET_HEIGHT + 36
-    draw.line([(PADDING_X, divider_y), (W - PADDING_X, divider_y)], fill=DIVIDER, width=1)
-
     # Title block — auto-fit type size so at most 4 lines
+    divider_y = logo_y + LOGO_TARGET_HEIGHT + 36
     max_text_width = W - PADDING_X * 2
     for size in (88, 80, 72, 64, 56, 50):
         title_font = load_font(FONT_BOLD_CANDIDATES, size)
@@ -154,7 +151,7 @@ def render_og(title: str, out_path: Path) -> None:
 
     # Footer wordmark
     foot_font = load_font(FONT_REG_CANDIDATES, 26)
-    draw.text((PADDING_X, footer_y), 'oasisofchange.org', font=foot_font, fill=MUTED)
+    draw.text((PADDING_X, footer_y), 'oasisofchange.com', font=foot_font, fill=MUTED)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     img.save(out_path, 'PNG', optimize=True)
