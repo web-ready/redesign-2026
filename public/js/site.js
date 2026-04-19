@@ -1460,11 +1460,14 @@
         var start = facade.getAttribute('data-start');
         var title = facade.getAttribute('data-title') || 'YouTube video';
         if (!id) return;
-        facade.classList.add('is-loading');
+        facade.classList.add('is-active', 'is-loading');
         var params = 'autoplay=1&rel=0&modestbranding=1&playsinline=1';
         if (start && start !== '0') params += '&start=' + encodeURIComponent(start);
+        var spinner = document.createElement('span');
+        spinner.className = 'yt-spinner';
+        spinner.setAttribute('aria-hidden', 'true');
         var iframe = document.createElement('iframe');
-        iframe.className = 'w-full h-full';
+        iframe.className = 'yt-iframe';
         iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?' + params;
         iframe.title = title;
         iframe.setAttribute('frameborder', '0');
@@ -1473,11 +1476,8 @@
         iframe.allowFullscreen = true;
         iframe.addEventListener('load', function () {
           facade.classList.remove('is-loading');
+          if (spinner.parentNode) spinner.parentNode.removeChild(spinner);
         });
-        // Keep the spinner visible over the poster; only remove the poster once the iframe is in the DOM
-        var spinner = document.createElement('span');
-        spinner.className = 'yt-spinner';
-        spinner.setAttribute('aria-hidden', 'true');
         facade.appendChild(spinner);
         facade.appendChild(iframe);
         facade.removeAttribute('data-yt-facade');

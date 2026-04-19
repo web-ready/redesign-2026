@@ -2124,9 +2124,21 @@ textarea.cf-input {
     animation: none;
   }
 }
-/* Loading state: hide the play button instantly, dim the poster, show spinner */
-.yt-facade.is-loading .yt-play { display: none; }
-.yt-facade.is-loading::after { background: rgba(0, 0, 0, 0.55); }
+/* Active state: the facade has been clicked — poster & play button are gone for good */
+.yt-facade.is-active .yt-play,
+.yt-facade.is-active img { display: none; }
+.yt-facade.is-active::after { display: none; }
+.yt-facade .yt-iframe {
+  grid-column: 1;
+  grid-row: 1;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  z-index: 1;
+}
+/* Loading state: dark overlay + spinner while the iframe boots */
+.yt-facade.is-loading { background: #000; }
 .yt-spinner {
   grid-column: 1;
   grid-row: 1;
