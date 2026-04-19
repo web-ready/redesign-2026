@@ -2017,69 +2017,91 @@ textarea.cf-input {
   transition: opacity 0.3s ease;
 }
 .yt-facade .yt-play {
-  --yt-size: 96px;
+  --yt-size: 92px;
   width: var(--yt-size);
   height: var(--yt-size);
   border-radius: 9999px;
-  background: rgba(15, 15, 15, 0.55);
-  -webkit-backdrop-filter: blur(14px) saturate(140%);
-  backdrop-filter: blur(14px) saturate(140%);
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  background:
+    radial-gradient(120% 120% at 50% 0%, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0) 55%),
+    rgba(10, 10, 10, 0.58);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  backdrop-filter: blur(16px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.24);
   box-shadow:
-    0 10px 40px rgba(0, 0, 0, 0.45),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    0 12px 36px rgba(0, 0, 0, 0.5),
+    0 2px 8px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
   color: #fff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.3s ease, transform 0.3s cubic-bezier(.2,.7,.2,1), border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background 0.35s ease,
+    transform 0.35s cubic-bezier(.2, .7, .2, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    color 0.25s ease;
   pointer-events: none;
   z-index: 2;
   align-self: center;
   justify-self: center;
   position: relative;
 }
-/* Outer pulse ring */
+/* Idle breathing ring — sits behind the circle, gently pulses */
 .yt-facade .yt-play::before {
   content: '';
   position: absolute;
-  inset: -10px;
+  inset: -8px;
   border-radius: inherit;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  opacity: 0.6;
-  transition: transform 0.4s ease, opacity 0.3s ease, border-color 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  opacity: 0.55;
+  transition: transform 0.45s ease, opacity 0.35s ease, border-color 0.35s ease;
   pointer-events: none;
+  animation: yt-breath 3.6s ease-in-out infinite;
+}
+@keyframes yt-breath {
+  0%, 100% { transform: scale(1); opacity: 0.45; }
+  50%      { transform: scale(1.06); opacity: 0.75; }
 }
 .yt-facade .yt-play svg {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   display: block;
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
+  overflow: visible;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
 }
 .yt-facade:hover img,
 .yt-facade:focus-visible img {
-  transform: scale(1.025);
-  filter: brightness(1.04);
+  transform: scale(1.02);
+  filter: brightness(1.03) contrast(1.02);
 }
 .yt-facade:hover .yt-play,
 .yt-facade:focus-visible .yt-play {
-  background: #4ade80;
-  border-color: rgba(255, 255, 255, 0.95);
-  color: #0a0a0a;
-  transform: scale(1.07);
+  background:
+    radial-gradient(120% 120% at 50% 0%, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0) 60%),
+    #4ade80;
+  border-color: rgba(255, 255, 255, 0.92);
+  color: #052e16;
+  transform: scale(1.05);
   box-shadow:
-    0 14px 44px rgba(74, 222, 128, 0.45),
-    0 0 0 4px rgba(74, 222, 128, 0.18),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    0 16px 44px rgba(74, 222, 128, 0.45),
+    0 0 0 5px rgba(74, 222, 128, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+.yt-facade:hover .yt-play svg,
+.yt-facade:focus-visible .yt-play svg {
+  filter: none;
 }
 .yt-facade:hover .yt-play::before,
 .yt-facade:focus-visible .yt-play::before {
-  transform: scale(1.12);
+  animation: none;
+  transform: scale(1.18);
   opacity: 0;
   border-color: rgba(74, 222, 128, 0.6);
 }
 .yt-facade:active .yt-play {
-  transform: scale(1.02);
+  transform: scale(1.015);
+  transition-duration: 0.12s;
 }
 .yt-facade:focus-visible {
   outline: 3px solid #4ade80;
@@ -2087,7 +2109,7 @@ textarea.cf-input {
 }
 @media (max-width: 640px) {
   .yt-facade .yt-play {
-    --yt-size: 72px;
+    --yt-size: 68px;
   }
   .yt-facade .yt-play svg {
     width: 26px;
@@ -2099,5 +2121,29 @@ textarea.cf-input {
   .yt-facade .yt-play,
   .yt-facade .yt-play::before {
     transition: none;
+    animation: none;
   }
+}
+/* Loading state: hide the play button instantly, dim the poster, show spinner */
+.yt-facade.is-loading .yt-play { display: none; }
+.yt-facade.is-loading::after { background: rgba(0, 0, 0, 0.55); }
+.yt-spinner {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+  justify-self: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-top-color: #4ade80;
+  animation: yt-spin 0.9s linear infinite;
+  z-index: 3;
+  pointer-events: none;
+}
+@keyframes yt-spin {
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .yt-spinner { animation-duration: 2s; }
 }

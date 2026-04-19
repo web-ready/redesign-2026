@@ -1440,25 +1440,54 @@
 
   function initYouTubeFacades() {
     var facades = document.querySelectorAll('[data-yt-facade]');
+    var warmed = false;
+    function warmYouTube() {
+      if (warmed) return;
+      warmed = true;
+      ['https://www.youtube-nocookie.com', 'https://i.ytimg.com', 'https://s.ytimg.com'].forEach(function (host) {
+        var l = document.createElement('link');
+        l.rel = 'preconnect';
+        l.href = host;
+        document.head.appendChild(l);
+      });
+    }
     facades.forEach(function (facade) {
+      var activated = false;
       function activate() {
+        if (activated) return;
+        activated = true;
         var id = facade.getAttribute('data-video-id');
-        var start = facade.getAttribute('data-start') || '0';
+        var start = facade.getAttribute('data-start');
         var title = facade.getAttribute('data-title') || 'YouTube video';
         if (!id) return;
+        facade.classList.add('is-loading');
+        var params = 'autoplay=1&rel=0&modestbranding=1&playsinline=1';
+        if (start && start !== '0') params += '&start=' + encodeURIComponent(start);
         var iframe = document.createElement('iframe');
         iframe.className = 'w-full h-full';
-        iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&start=' + start + '&rel=0&modestbranding=1';
+        iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?' + params;
         iframe.title = title;
         iframe.setAttribute('frameborder', '0');
         iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
         iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
         iframe.allowFullscreen = true;
-        facade.innerHTML = '';
+        iframe.addEventListener('load', function () {
+          facade.classList.remove('is-loading');
+        });
+        // Keep the spinner visible over the poster; only remove the poster once the iframe is in the DOM
+        var spinner = document.createElement('span');
+        spinner.className = 'yt-spinner';
+        spinner.setAttribute('aria-hidden', 'true');
+        facade.appendChild(spinner);
         facade.appendChild(iframe);
         facade.removeAttribute('data-yt-facade');
       }
-      facade.addEventListener('click', activate, { once: true });
+      // Pre-warm connections when the user shows intent (hover / focus / touch)
+      var prewarm = function () { warmYouTube(); };
+      facade.addEventListener('pointerenter', prewarm, { once: true });
+      facade.addEventListener('focusin', prewarm, { once: true });
+      facade.addEventListener('touchstart', prewarm, { once: true, passive: true });
+      facade.addEventListener('click', activate);
       facade.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); }
       });
