@@ -78,6 +78,15 @@ def build(out_dir):
             return 1
         out_path.write_text(rendered, encoding='utf-8')
     print(f'Built {len(pages)} pages.')
+
+    # Post-build: generate per-page OG images and inject og:image / twitter:image tags
+    if out_dir == OUT:
+        try:
+            from scripts.generate_og_images import main as og_main
+            og_main()
+        except Exception as e:
+            print(f'WARN: OG image generation failed: {e}', file=sys.stderr)
+
     return 0
 
 
