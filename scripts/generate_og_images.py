@@ -67,10 +67,21 @@ def slug_for(html_path: Path) -> str:
 
 
 def page_title(html_text: str) -> str:
-    m = re.search(r'<title>([^<]*)</title>', html_text, re.I | re.S)
-    if not m:
+    # Prefer <meta property="og:title"> so OG images reflect the customized social title.
+    # Fall back to <title> if og:title is absent.
+    raw = ''
+    m_og = re.search(
+        r'<meta\s+property=["\']og:title["\']\s+content=["\']([^"\']*)["\']',
+        html_text, re.I
+    )
+    if m_og:
+        raw = html.unescape(m_og.group(1)).strip()
+    if not raw:
+        m_title = re.search(r'<title>([^<]*)</title>', html_text, re.I | re.S)
+        if m_title:
+            raw = html.unescape(m_title.group(1)).strip()
+    if not raw:
         return 'Oasis of Change'
-    raw = html.unescape(m.group(1)).strip()
     if raw.endswith(CANONICAL_SUFFIX):
         raw = raw[: -len(CANONICAL_SUFFIX)].strip()
     # Drop anything after " | " so sub-titles stay clean.
