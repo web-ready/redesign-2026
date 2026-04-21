@@ -759,6 +759,34 @@ select.cf-input {
   padding-right: 2.5rem;
   cursor: pointer;
 }
+/* Opt into Chromium's customizable <select> so the picker expands to fit all
+   options instead of capping at a small max-height with a scrollbar.
+   Supported in Chrome/Edge 135+ (Apr 2025); other browsers fall back to
+   their native popup, which is UA-controlled. */
+@supports (appearance: base-select) {
+  select.cf-input,
+  select.cf-input::picker(select) {
+    appearance: base-select;
+  }
+  select.cf-input::picker(select) {
+    max-height: none;
+    border: 1px solid #d1d5db;
+    border-radius: 0.625rem;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    padding: 0.25rem;
+    font-size: 0.9375rem;
+  }
+  select.cf-input option {
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+  }
+  select.cf-input option:hover,
+  select.cf-input option:focus,
+  select.cf-input option:checked {
+    background: #f3f4f6;
+  }
+}
 textarea.cf-input {
   resize: vertical;
   min-height: 4.5rem;
@@ -2159,3 +2187,5 @@ textarea.cf-input {
 @media (prefers-reduced-motion: reduce) {
   .yt-spinner { animation-duration: 2s; }
 }
+
+.max-w-\[1400px\] { max-width: 1400px; }
