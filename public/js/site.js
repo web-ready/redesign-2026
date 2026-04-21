@@ -1396,6 +1396,13 @@
     });
   }
 
+  function initCopyrightYear() {
+    var year = String(new Date().getFullYear());
+    document.querySelectorAll('[data-copyright-year]').forEach(function (el) {
+      el.textContent = year;
+    });
+  }
+
   function initFooterLocale() {
     var brand = document.querySelector('.site-footer-brand');
     if (!brand || brand.querySelector('.footer-locale')) return;
@@ -1503,6 +1510,7 @@
     initContactForm();
     initLightbox();
     initFooterLocale();
+    initCopyrightYear();
     initScrollReveal();
     initYouTubeFacades();
     logCuriousCoderMessage();
