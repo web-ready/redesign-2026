@@ -2295,6 +2295,60 @@ details[open] > summary .group-open\:rotate-45,
 .focus\:ring-white\/20:focus { box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.20); }
 .underline-offset-4 { text-underline-offset: 4px; }
 
+/* =====================================================================
+   News & Press list (news/index.html)
+   Mobile-first stacked rows. At md+ becomes a 3-column row with the
+   title flexing to fill, the tag and CTA fixed-width on either side.
+   ===================================================================== */
+.news-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.news-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+.news-row__tag p {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.news-row__body { min-width: 0; }
+.news-row__cta { margin-top: 0.5rem; }
+
+@media (min-width: 768px) {
+  .news-row {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+  .news-row__tag {
+    flex: 0 0 auto;
+    width: 9rem;
+    padding-top: 0.25rem;
+  }
+  .news-row__tag p {
+    font-size: 0.875rem;
+    letter-spacing: 0;
+    text-transform: none;
+    white-space: nowrap;
+  }
+  .news-row__body {
+    flex: 1 1 auto;
+    padding-right: 1rem;
+  }
+  .news-row__cta {
+    flex: 0 0 auto;
+    margin-top: 0.25rem;
+    margin-left: auto;
+  }
+}
+
 /* Accessible skip-link for the TEDx page */
 .tedx-skip-link {
   position: absolute;
