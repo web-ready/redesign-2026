@@ -2189,3 +2189,136 @@ textarea.cf-input {
 }
 
 .max-w-\[1400px\] { max-width: 1400px; }
+
+/* =====================================================================
+   TEDx talk page utilities (tedx-talk.html)
+   These classes are not present in the pre-built tailwind.min.css bundle,
+   so they're declared here. Keep names identical to the Tailwind syntax
+   used in markup so the page works without a fresh Tailwind compile.
+   ===================================================================== */
+
+/* Brand dark green (deep forest) */
+.bg-\[\#0b2a1f\] { background-color: #0b2a1f; }
+.hover\:bg-\[\#103a2c\]:hover { background-color: #103a2c; }
+.border-\[\#0b2a1f\] { border-color: #0b2a1f; }
+.text-\[\#0b2a1f\] { color: #0b2a1f; }
+
+/* Soft neutral background for alternating sections */
+.bg-\[\#f5f7f5\] { background-color: #f5f7f5; }
+
+/* Tailwind green palette additions (escaped + plain) */
+.text-green-50  { color: #f0fdf4; }
+.text-green-100 { color: #dcfce7; }
+.text-green-200 { color: #bbf7d0; }
+.text-green-800 { color: #166534; }
+.text-green-900 { color: #14532d; }
+.bg-green-200   { background-color: #bbf7d0; }
+.bg-green-800   { background-color: #166534; }
+.bg-green-900   { background-color: #14532d; }
+.hover\:bg-green-100:hover { background-color: #dcfce7; }
+.hover\:text-green-100:hover { color: #dcfce7; }
+.hover\:text-green-900:hover { color: #14532d; }
+.hover\:border-green-700:hover { border-color: #15803d; }
+
+/* Translucent green text variants */
+.text-green-100\/80 { color: rgba(220, 252, 231, 0.8); }
+.text-green-100\/70 { color: rgba(220, 252, 231, 0.7); }
+
+/* Subtle borders / dividers used by the FAQ and resource cards */
+.border-black\/\[0\.08\] { border-color: rgba(0, 0, 0, 0.08); }
+.border-white\/\[0\.15\] { border-color: rgba(255, 255, 255, 0.15); }
+.divide-black\/\[0\.08\] > :not([hidden]) ~ :not([hidden]) {
+  border-top-width: 1px;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+.border-y {
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+.divide-y > :not([hidden]) ~ :not([hidden]) {
+  border-top-width: 1px;
+  border-style: solid;
+}
+
+/* Translucent surface used inside the dark-green stat panel */
+.bg-white\/\[0\.06\] { background-color: rgba(255, 255, 255, 0.06); }
+
+/* Custom soft shadows on the hero, cards, and resource tiles */
+.shadow-\[0_4px_16px_rgba\(0\2c 0\2c 0\2c 0\.04\)\] {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+.shadow-\[0_8px_24px_rgba\(11\2c 42\2c 31\2c 0\.08\)\] {
+  box-shadow: 0 8px 24px rgba(11, 42, 31, 0.08);
+}
+.hover\:shadow-\[0_8px_24px_rgba\(11\2c 42\2c 31\2c 0\.08\)\]:hover {
+  box-shadow: 0 8px 24px rgba(11, 42, 31, 0.08);
+}
+.shadow-\[0_20px_60px_rgba\(0\2c 0\2c 0\2c 0\.18\)\] {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+/* Hero headline scale at lg breakpoint */
+@media (min-width: 1024px) {
+  .lg\:text-\[3\.4rem\] { font-size: 3.4rem; line-height: 1; }
+}
+
+/* Three-column resource grid at sm */
+@media (min-width: 640px) {
+  .sm\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Multi-direction gap utilities used in hero meta row */
+.gap-x-6 { column-gap: 1.5rem; }
+.gap-y-2 { row-gap: 0.5rem; }
+
+/* FAQ <details> accordion: rotate the +/− toggle when open */
+details[open] > summary .group-open\:rotate-45,
+.group[open] .group-open\:rotate-45 {
+  transform: rotate(45deg);
+}
+
+/* Strip default disclosure marker so our custom +/− shows */
+.list-none { list-style: none; }
+.list-none::-webkit-details-marker { display: none; }
+
+/* Misc utilities used on the TEDx page that the bundle doesn't ship */
+.cursor-pointer { cursor: pointer; }
+.h-3 { height: 0.75rem; }
+.w-3 { width: 0.75rem; }
+.h-10 { height: 2.5rem; }
+.w-10 { width: 2.5rem; }
+.focus\:ring-white\/30:focus { box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.30); }
+.focus\:ring-white\/20:focus { box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.20); }
+.underline-offset-4 { text-underline-offset: 4px; }
+
+/* Accessible skip-link for the TEDx page */
+.tedx-skip-link {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.tedx-skip-link:focus {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  width: auto;
+  height: auto;
+  margin: 0;
+  clip: auto;
+  z-index: 200;
+  background: #000;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: 600;
+}
