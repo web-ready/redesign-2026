@@ -1,2 +1,12 @@
 .vercel
 .env*.local
+
+# Python build artifacts
+__pycache__/
+*.pyc
+
+# Playwright MCP working directory
+.playwright-mcp/
+
+# Ad-hoc accessibility/QA snapshots
+np-snapshot.md
