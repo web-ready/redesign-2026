@@ -10,6 +10,24 @@
 
   var activeLang = 'en';
 
+  // Set html.lang as early as possible (before DOMContentLoaded) so CSS
+  // rules driven by html[lang="…"] (e.g. hard-coded translation variants)
+  // resolve to the correct text on first paint instead of flashing English.
+  try {
+    var earlyParams = new URLSearchParams(location.search);
+    var earlyRaw = (earlyParams.get('l') || earlyParams.get('L') || earlyParams.get('lang') || earlyParams.get('language') || '').toLowerCase().trim();
+    var earlyStored = '';
+    try { earlyStored = localStorage.getItem(STORAGE_KEY) || ''; } catch (e) {}
+    var earlyCode = earlyRaw || earlyStored;
+    var earlyValid = false;
+    for (var ei = 0; ei < LANGS.length; ei++) {
+      if (LANGS[ei].code === earlyCode) { earlyValid = true; break; }
+    }
+    if (earlyValid && earlyCode && earlyCode !== 'en') {
+      document.documentElement.lang = earlyCode;
+    }
+  } catch (e) {}
+
   // Module-level references populated by build functions, used by updateSwitcherUI().
   var desktopBtnLabel = null;
   var desktopDropdownEl = null;
@@ -451,12 +469,14 @@
     es: {
       title: 'Sobre la traducción',
       body: 'Usamos Google Translate para que Oasis of Change sea accesible a más personas. La traducción puede no ser perfecta y pasar por alto algunos matices, pero creemos que el alcance vale más que la perfección. Si algo se ve raro, puedes volver al inglés en cualquier momento.',
-      dismiss: 'Entendido'
+      dismiss: 'Entendido',
+      close: 'Cerrar'
     },
     fr: {
       title: 'À propos de la traduction',
       body: 'Nous utilisons Google Translate pour rendre Oasis of Change accessible au plus grand nombre. La traduction n’est pas toujours parfaite et peut manquer certaines nuances, mais nous pensons que la portée vaut plus que la perfection. Si quelque chose semble incorrect, vous pouvez revenir à l’anglais à tout moment.',
-      dismiss: 'Compris'
+      dismiss: 'Compris',
+      close: 'Fermer'
     }
   };
 
@@ -476,6 +496,15 @@
     var card = document.createElement('div');
     card.className = 'ooc-lang-disclaimer-card';
 
+    var closeBtn = document.createElement('button');
+    closeBtn.type = 'button';
+    closeBtn.className = 'ooc-lang-disclaimer-close';
+    closeBtn.setAttribute('aria-label', copy.close);
+    closeBtn.innerHTML =
+      '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+        '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>' +
+      '</svg>';
+
     var title = document.createElement('h2');
     title.id = 'ooc-lang-disclaimer-title';
     title.className = 'ooc-lang-disclaimer-title';
@@ -485,10 +514,14 @@
     body.className = 'ooc-lang-disclaimer-body';
     body.textContent = copy.body;
 
+    var actions = document.createElement('div');
+    actions.className = 'ooc-lang-disclaimer-actions';
+
     var btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'ooc-lang-disclaimer-btn';
     btn.textContent = copy.dismiss;
+    actions.appendChild(btn);
 
     function dismiss() {
       overlay.remove();
@@ -498,14 +531,16 @@
       if (e.key === 'Escape') dismiss();
     }
     btn.addEventListener('click', dismiss);
+    closeBtn.addEventListener('click', dismiss);
     overlay.addEventListener('click', function (e) {
       if (e.target === overlay) dismiss();
     });
     document.addEventListener('keydown', onKey);
 
+    card.appendChild(closeBtn);
     card.appendChild(title);
     card.appendChild(body);
-    card.appendChild(btn);
+    card.appendChild(actions);
     overlay.appendChild(card);
     document.body.appendChild(overlay);
 

@@ -2295,9 +2295,11 @@ html[lang="fr"] [data-lang-text="en"] { display: none; }
   to   { opacity: 1; }
 }
 .ooc-lang-disclaimer-card {
+  position: relative;
   background: #fff;
   border-radius: 1rem;
   padding: 1.5rem;
+  padding-right: 3rem;
   max-width: 28rem;
   width: 100%;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
@@ -2308,7 +2310,31 @@ html[lang="fr"] [data-lang-text="en"] { display: none; }
   to   { transform: translateY(0); opacity: 1; }
 }
 @media (min-width: 640px) {
-  .ooc-lang-disclaimer-card { padding: 2rem; }
+  .ooc-lang-disclaimer-card { padding: 2rem; padding-right: 3.5rem; }
+}
+.ooc-lang-disclaimer-close {
+  position: absolute;
+  top: 0.875rem;
+  right: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  border-radius: 9999px;
+  background: transparent;
+  color: #6b7280;
+  cursor: pointer;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+.ooc-lang-disclaimer-close:hover {
+  background: #f3f4f6;
+  color: #111;
+}
+.ooc-lang-disclaimer-close:focus-visible {
+  outline: 2px solid rgb(74, 222, 128);
+  outline-offset: 2px;
 }
 .ooc-lang-disclaimer-title {
   font-family: inherit;
@@ -2324,6 +2350,10 @@ html[lang="fr"] [data-lang-text="en"] { display: none; }
   line-height: 1.65;
   color: #4b5563;
   margin: 0 0 1.5rem;
+}
+.ooc-lang-disclaimer-actions {
+  display: flex;
+  justify-content: flex-end;
 }
 .ooc-lang-disclaimer-btn {
   display: inline-flex;
