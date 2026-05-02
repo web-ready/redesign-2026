@@ -2264,6 +2264,30 @@ details[open] > summary .group-open\:rotate-45,
   font-weight: 600;
 }
 
+/* ── Icon swap on hover ───────────────────────────────────────────────────
+   Wrap two icons in <span class="icon-swap"> with .icon-swap-default and
+   .icon-swap-hover. The hover icon fades in when the parent <a> or <button>
+   is hovered. Used for external-link buttons (arrow → external glyph). */
+.icon-swap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+.icon-swap > svg {
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.2s ease;
+}
+.icon-swap-hover { opacity: 0; }
+a:hover .icon-swap-default,
+button:hover .icon-swap-default { opacity: 0; }
+a:hover .icon-swap-hover,
+button:hover .icon-swap-hover { opacity: 1; }
+
 /* ── Hard-coded translations ──────────────────────────────────────────────
    Where Google Translate produces awkward output, we ship multiple language
    variants in the markup with [data-lang-text="<code>"] and toggle them via
