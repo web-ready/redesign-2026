@@ -95,6 +95,49 @@
     }, 120);
   }
 
+  // ── Brand-name no-translate guard ─────────────────────────────────────────
+  //
+  // Adds translate="no" / class="notranslate" to proper names and brand names
+  // that must never be altered by Google Translate (company names, initiative
+  // names, product names, copyright notices).  This runs synchronously in the
+  // DOMContentLoaded handler — before loadGoogleTranslate() is called — so the
+  // attributes are present when Google Translate first inspects the DOM.
+
+  function markBrandNamesNotranslate() {
+    // Initiative/brand hrefs whose link text is a proper name.
+    var brandPaths = [
+      'web-ready',
+      'vcasse',
+      'wra-platform',
+      'sustainable-technology-week'
+    ];
+
+    for (var i = 0; i < brandPaths.length; i++) {
+      var links = document.querySelectorAll('a[href*="' + brandPaths[i] + '"]');
+      for (var j = 0; j < links.length; j++) {
+        var link = links[j];
+        // Desktop nav dropdown: only the title span carries the brand name;
+        // leave the description span translatable.
+        var titleSpan = link.querySelector('.nav-dd-link-title');
+        if (titleSpan) {
+          titleSpan.setAttribute('translate', 'no');
+          titleSpan.classList.add('notranslate');
+        } else {
+          // Mobile nav and footer links: the element itself is the brand name.
+          link.setAttribute('translate', 'no');
+          link.classList.add('notranslate');
+        }
+      }
+    }
+
+    // Protect "Oasis of Change, Inc." in the footer copyright line.
+    var copyrightEl = document.querySelector('[data-copyright-year]');
+    if (copyrightEl && copyrightEl.parentElement) {
+      copyrightEl.parentElement.setAttribute('translate', 'no');
+      copyrightEl.parentElement.classList.add('notranslate');
+    }
+  }
+
   // ── Google Translate UI suppressor ────────────────────────────────────────
 
   function injectGTHideCSS() {
@@ -435,6 +478,7 @@
     }
 
     injectGTHideCSS();
+    markBrandNamesNotranslate();
     inject();
     updateSwitcherUI();
 
