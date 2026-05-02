@@ -253,8 +253,16 @@
       }
       if (supportContainer && supportLink) {
         supportContainer.style.alignItems = 'center';
-        supportContainer.style.gap = '0.75rem';
-        supportContainer.insertBefore(buildDesktopSwitcher(), supportLink);
+        // Explicit spacer — guarantees horizontal space between switcher and
+        // CTA even if Google Translate strips inline styles or the gap/margin
+        // CSS gets clobbered during its DOM walk.
+        var switcher = buildDesktopSwitcher();
+        var spacer = document.createElement('span');
+        spacer.className = 'notranslate';
+        spacer.setAttribute('aria-hidden', 'true');
+        spacer.style.cssText = 'display:inline-block;width:0.75rem;flex-shrink:0';
+        supportContainer.insertBefore(switcher, supportLink);
+        supportContainer.insertBefore(spacer, supportLink);
       }
 
       // 2. Mobile nav-bar globe button — wrap globe+hamburger in a btnGroup so
@@ -421,7 +429,88 @@
     if (code === activeLang) return;
     saveLang(code);
     setGTCookie(code);
+    // Flag the upcoming non-English switch so we show a one-time machine-
+    // translation disclaimer after the page reloads. Switching back to EN
+    // clears any pending flag instead.
+    try {
+      if (code !== 'en') {
+        sessionStorage.setItem('ooc-lang-disclaimer-pending', code);
+      } else {
+        sessionStorage.removeItem('ooc-lang-disclaimer-pending');
+      }
+    } catch (e) {}
     location.reload();
+  }
+
+  // ── Translation disclaimer ────────────────────────────────────────────────
+  // One-time pop-up shown after the user switches to a non-English language.
+  // Copy is provided per language and marked translate="no" so Google
+  // Translate doesn't re-translate it.
+
+  var DISCLAIMER_COPY = {
+    es: {
+      title: 'Sobre la traducción',
+      body: 'Usamos Google Translate para que Oasis of Change sea accesible a más personas. La traducción puede no ser perfecta y pasar por alto algunos matices, pero creemos que el alcance vale más que la perfección. Si algo se ve raro, puedes volver al inglés en cualquier momento.',
+      dismiss: 'Entendido'
+    },
+    fr: {
+      title: 'À propos de la traduction',
+      body: 'Nous utilisons Google Translate pour rendre Oasis of Change accessible au plus grand nombre. La traduction n’est pas toujours parfaite et peut manquer certaines nuances, mais nous pensons que la portée vaut plus que la perfection. Si quelque chose semble incorrect, vous pouvez revenir à l’anglais à tout moment.',
+      dismiss: 'Compris'
+    }
+  };
+
+  function showLangDisclaimer(code) {
+    var copy = DISCLAIMER_COPY[code];
+    if (!copy) return;
+    if (document.querySelector('[data-ooc-lang-disclaimer]')) return;
+
+    var overlay = document.createElement('div');
+    overlay.setAttribute('data-ooc-lang-disclaimer', '');
+    overlay.setAttribute('translate', 'no');
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-labelledby', 'ooc-lang-disclaimer-title');
+    overlay.className = 'ooc-lang-disclaimer notranslate';
+
+    var card = document.createElement('div');
+    card.className = 'ooc-lang-disclaimer-card';
+
+    var title = document.createElement('h2');
+    title.id = 'ooc-lang-disclaimer-title';
+    title.className = 'ooc-lang-disclaimer-title';
+    title.textContent = copy.title;
+
+    var body = document.createElement('p');
+    body.className = 'ooc-lang-disclaimer-body';
+    body.textContent = copy.body;
+
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'ooc-lang-disclaimer-btn';
+    btn.textContent = copy.dismiss;
+
+    function dismiss() {
+      overlay.remove();
+      document.removeEventListener('keydown', onKey);
+    }
+    function onKey(e) {
+      if (e.key === 'Escape') dismiss();
+    }
+    btn.addEventListener('click', dismiss);
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) dismiss();
+    });
+    document.addEventListener('keydown', onKey);
+
+    card.appendChild(title);
+    card.appendChild(body);
+    card.appendChild(btn);
+    overlay.appendChild(card);
+    document.body.appendChild(overlay);
+
+    // Focus the dismiss button so keyboard users can confirm/Escape immediately.
+    setTimeout(function () { btn.focus(); }, 50);
   }
 
   // ── Bootstrap ─────────────────────────────────────────────────────────────
@@ -448,5 +537,16 @@
     }
 
     loadGoogleTranslate();
+
+    // Show the translation disclaimer once after the user has just switched
+    // to a non-English language. Defer briefly so it appears over content
+    // that has already been translated.
+    try {
+      var pendingLang = sessionStorage.getItem('ooc-lang-disclaimer-pending');
+      if (pendingLang && pendingLang !== 'en' && pendingLang === activeLang) {
+        sessionStorage.removeItem('ooc-lang-disclaimer-pending');
+        setTimeout(function () { showLangDisclaimer(pendingLang); }, 600);
+      }
+    } catch (e) {}
   });
 })();
