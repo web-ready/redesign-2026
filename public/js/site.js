@@ -558,6 +558,7 @@
       'general':       'e.g. any supporting document',
       'volunteer':     'e.g. CV / resume',
       'partnership':   'e.g. partnership proposal or org one-pager',
+      'donation':      'e.g. donor profile, foundation guidelines, or gift agreement',
       'media':         'e.g. press credentials, journalist CV, or story brief',
       'speaking':      'e.g. speaker bio, headshot, or sample deck',
       'web-ready':     'e.g. current site brief or brand assets',
@@ -931,6 +932,23 @@
       var banner = document.getElementById('cf-draft-banner');
       var discardBtn = banner ? banner.querySelector('.cf-draft-discard') : null;
 
+      // Treat the form as "empty" if the user hasn't entered anything meaningful.
+      // Default-checked boxes, the topic dropdown alone, and consent toggles
+      // don't count — drafts should only persist real typed/selected data.
+      function hasUserContent(payload) {
+        return Object.keys(payload).some(function (key) {
+          if (key === 'privacy_consent' || key === 'newsletter') return false;
+          if (key === 'inquiry_type') return false;
+          var v = payload[key];
+          if (typeof v === 'string') return v.trim() !== '';
+          if (Array.isArray(v)) return v.some(function (x) {
+            return typeof x === 'string' ? x.trim() !== '' : !!x;
+          });
+          if (typeof v === 'boolean') return v;
+          return v != null;
+        });
+      }
+
       function saveDraft() {
         var payload = {};
         var fd = new FormData(form);
@@ -949,6 +967,11 @@
         if (consent)    payload.privacy_consent = consent.checked;
         if (newsletter) payload.newsletter = newsletter.checked;
 
+        if (!hasUserContent(payload)) {
+          try { localStorage.removeItem(DRAFT_KEY); } catch (e) {}
+          return;
+        }
+
         try {
           localStorage.setItem(DRAFT_KEY, JSON.stringify({ ts: Date.now(), data: payload }));
         } catch (e) { /* storage full or private mode */ }
@@ -962,6 +985,7 @@
           if (!parsed || !parsed.data) return;
           if (Date.now() - parsed.ts > DRAFT_TTL) { localStorage.removeItem(DRAFT_KEY); return; }
           var d = parsed.data;
+          if (!hasUserContent(d)) { localStorage.removeItem(DRAFT_KEY); return; }
 
           // Restore each field
           Object.keys(d).forEach(function (key) {
@@ -1018,10 +1042,40 @@
       if (discardBtn) {
         discardBtn.addEventListener('click', function () {
           clearDraft();
-          form.reset();
-          // Re-sync conditional sections after reset
+          // Cancel any pending auto-save so the empty form doesn't get re-saved.
+          clearTimeout(saveTimer);
+          // Clear each field explicitly. form.reset() only restores
+          // defaultValue/defaultChecked, which doesn't reliably wipe values
+          // that were set programmatically by loadDraft().
+          Array.prototype.forEach.call(form.elements, function (el) {
+            if (!el.name && el.tagName !== 'TEXTAREA') return;
+            if (el.type === 'checkbox' || el.type === 'radio') {
+              el.checked = false;
+            } else if (el.tagName === 'SELECT') {
+              // Belt-and-suspenders: clear via every API we can in case one
+              // doesn't stick (some browsers retain JS-set selection state).
+              for (var i = 0; i < el.options.length; i++) {
+                el.options[i].selected = false;
+              }
+              el.value = '';
+              if (el.selectedIndex === -1 && el.options.length > 0) {
+                el.options[0].selected = true;
+              }
+            } else if (el.type !== 'submit' && el.type !== 'button' && el.type !== 'reset') {
+              el.value = '';
+            }
+          });
+          // Hide any dynamically-revealed "Other → please specify" fields.
+          form.querySelectorAll('.cf-other-field').forEach(function (el) {
+            el.classList.remove('is-visible');
+            el.hidden = true;
+          });
+          // Re-sync conditional sections and the message char counter,
+          // which only listen for user-driven events.
           var typeEl = document.getElementById('cf-type');
           if (typeEl) typeEl.dispatchEvent(new Event('change', { bubbles: true }));
+          var msgEl = document.getElementById('cf-message');
+          if (msgEl) msgEl.dispatchEvent(new Event('input', { bubbles: true }));
         });
       }
     }());

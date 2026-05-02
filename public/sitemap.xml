@@ -36,7 +36,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/case-studies.html</loc>
+    <loc>https://oasisofchange.com/case-studies/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -131,17 +131,22 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/denman-place-mall.html</loc>
+    <loc>https://oasisofchange.com/case-studies/denman-place-mall/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/mittler-senior-technology.html</loc>
+    <loc>https://oasisofchange.com/case-studies/mittler-senior-technology/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://oasisofchange.com/oasis-of-change-website.html</loc>
+    <loc>https://oasisofchange.com/case-studies/oasis-of-change-website/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://oasisofchange.com/case-studies/breathwave/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>

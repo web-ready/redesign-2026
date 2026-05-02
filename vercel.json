@@ -1,4 +1,10 @@
 {
   "cleanUrls": true,
-  "outputDirectory": "public"
+  "outputDirectory": "public",
+  "redirects": [
+    { "source": "/mittler-senior-technology", "destination": "/case-studies/mittler-senior-technology", "permanent": true },
+    { "source": "/denman-place-mall",         "destination": "/case-studies/denman-place-mall",         "permanent": true },
+    { "source": "/breathwave",                "destination": "/case-studies/breathwave",                "permanent": true },
+    { "source": "/oasis-of-change-website",   "destination": "/case-studies/oasis-of-change-website",   "permanent": true }
+  ]
 }
