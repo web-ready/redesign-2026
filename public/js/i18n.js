@@ -95,6 +95,32 @@
     }, 120);
   }
 
+  // ── Custom translation overrides ─────────────────────────────────────────
+  //
+  // For key elements where Google Translate produces inaccurate results (e.g.
+  // the hero headline), authors can supply a curated translation directly in
+  // the HTML via data-i18n-es / data-i18n-fr attributes.  This function finds
+  // those elements, swaps in the curated text, then marks them translate="no"
+  // so Google Translate never overwrites the handcrafted copy.
+  //
+  // Must run BEFORE loadGoogleTranslate() so the attributes are set when GT
+  // first inspects the DOM.
+
+  function applyCustomTranslations() {
+    if (activeLang === 'en') return;
+    var attr = 'data-i18n-' + activeLang;
+    var els = document.querySelectorAll('[' + attr + ']');
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i];
+      var text = el.getAttribute(attr);
+      if (text) {
+        el.textContent = text;
+        el.setAttribute('translate', 'no');
+        el.classList.add('notranslate');
+      }
+    }
+  }
+
   // ── Brand-name no-translate guard ─────────────────────────────────────────
   //
   // Adds translate="no" / class="notranslate" to proper names and brand names
@@ -478,6 +504,7 @@
     }
 
     injectGTHideCSS();
+    applyCustomTranslations();
     markBrandNamesNotranslate();
     inject();
     updateSwitcherUI();
