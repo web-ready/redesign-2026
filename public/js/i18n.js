@@ -523,9 +523,18 @@
     btn.textContent = copy.dismiss;
     actions.appendChild(btn);
 
+    // Lock the page behind the modal so the user can't scroll the underlying
+    // content while the disclaimer is open.
+    var prevBodyOverflow = document.body.style.overflow;
+    var prevHtmlOverflow = document.documentElement.style.overflow;
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+
     function dismiss() {
       overlay.remove();
       document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = prevBodyOverflow;
+      document.documentElement.style.overflow = prevHtmlOverflow;
     }
     function onKey(e) {
       if (e.key === 'Escape') dismiss();

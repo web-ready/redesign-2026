@@ -2298,8 +2298,7 @@ html[lang="fr"] [data-lang-text="en"] { display: none; }
   position: relative;
   background: #fff;
   border-radius: 1rem;
-  padding: 1.5rem;
-  padding-right: 3rem;
+  padding: 2.25rem 1.75rem 1.75rem;
   max-width: 28rem;
   width: 100%;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
@@ -2310,7 +2309,7 @@ html[lang="fr"] [data-lang-text="en"] { display: none; }
   to   { transform: translateY(0); opacity: 1; }
 }
 @media (min-width: 640px) {
-  .ooc-lang-disclaimer-card { padding: 2rem; padding-right: 3.5rem; }
+  .ooc-lang-disclaimer-card { padding: 2.75rem 2.25rem 2.25rem; }
 }
 .ooc-lang-disclaimer-close {
   position: absolute;
@@ -2333,7 +2332,7 @@ html[lang="fr"] [data-lang-text="en"] { display: none; }
   color: #111;
 }
 .ooc-lang-disclaimer-close:focus-visible {
-  outline: 2px solid rgb(74, 222, 128);
+  outline: 2px solid #111;
   outline-offset: 2px;
 }
 .ooc-lang-disclaimer-title {
@@ -2344,6 +2343,7 @@ html[lang="fr"] [data-lang-text="en"] { display: none; }
   margin: 0 0 0.75rem;
   letter-spacing: -0.01em;
   line-height: 1.3;
+  text-align: center;
 }
 .ooc-lang-disclaimer-body {
   font-size: 0.9375rem;
@@ -2353,7 +2353,7 @@ html[lang="fr"] [data-lang-text="en"] { display: none; }
 }
 .ooc-lang-disclaimer-actions {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 .ooc-lang-disclaimer-btn {
   display: inline-flex;
@@ -2374,7 +2374,7 @@ html[lang="fr"] [data-lang-text="en"] { display: none; }
   background: #1f1f1f;
 }
 .ooc-lang-disclaimer-btn:focus-visible {
-  outline: 2px solid rgb(74, 222, 128);
+  outline: 2px solid rgba(255, 255, 255, 0.7);
   outline-offset: 2px;
 }
 @media (prefers-reduced-motion: reduce) {
