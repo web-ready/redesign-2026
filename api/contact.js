@@ -3,10 +3,22 @@
 //
 // Required env var (set in Vercel Dashboard → Project → Settings → Environment
 // Variables): SLACK_WEBHOOK_URL
+// Optional env var: ALLOWED_ORIGINS — comma-separated list of allowed
+// origins. Defaults to the production hostnames. Cross-origin browser POSTs
+// from anywhere else are rejected, which prevents trivial CSRF / spam-relay.
 // Never commit the webhook URL to the repo; it lives only on Vercel's servers.
 
 const MIN_FORM_TIME_MS = 3000;
 const MAX_MESSAGE_LEN = 5000;
+const MAX_FIELD_LEN = 1000;          // applied to every non-message field
+const MAX_OTHER_LEN = 500;           // "_other" free-text inputs
+const MAX_REQUEST_BYTES = 64 * 1024; // hard cap on the JSON body itself
+const ALLOWED_BLOB_HOST = 'blob.vercel-storage.com';
+
+const DEFAULT_ALLOWED_ORIGINS = [
+  'https://oasisofchange.com',
+  'https://www.oasisofchange.com',
+];
 
 // Per-inquiry presentation: emoji icon, accent-bar color, short display label.
 const INQUIRY_META = {
@@ -80,9 +92,33 @@ const SECTION_FIELDS = {
 // Fields whose values should be rendered as hyperlinks in Slack.
 const URL_FIELDS = new Set(['website', 'linkedin', 'attachment_url', 'webready_url']);
 
-// Escape characters that have special meaning in Slack mrkdwn.
+// Slack mrkdwn requires escaping &, <, > (per Slack docs). We additionally
+// strip the URL-syntax pipe character so user input cannot break out of the
+// `<url|text>` link-construction pattern below.
 function esc(s) {
-  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+// For values used inside a Slack `<url|text>` construction the `|` separator
+// must also be neutralised, otherwise an attacker can inject a forged link
+// label or URL.
+function escForLink(s) {
+  return esc(s).replace(/\|/g, '%7C');
+}
+
+// Validate a URL is http/https and parseable. Returns the normalised string,
+// or null if it should not be rendered as a hyperlink.
+function safeHttpUrl(value) {
+  if (typeof value !== 'string') return null;
+  const trimmed = value.trim();
+  if (!trimmed) return null;
+  let u;
+  try { u = new URL(trimmed); } catch (e) { return null; }
+  if (u.protocol !== 'http:' && u.protocol !== 'https:') return null;
+  return u.toString();
 }
 
 function isFilled(v) {
@@ -94,6 +130,37 @@ function isFilled(v) {
 function truncate(s, n) {
   s = String(s);
   return s.length > n ? s.slice(0, n) + '…' : s;
+}
+
+// Defensive: shrink each scalar value down to MAX_FIELD_LEN before any
+// formatting work. Prevents a malicious client from blowing up the Slack
+// payload size or using extremely long single-line strings to evade pattern
+// checks.
+function clampValue(v, max) {
+  if (v == null) return v;
+  if (Array.isArray(v)) {
+    return v.slice(0, 50).map(item => typeof item === 'string' ? truncate(item, max) : item);
+  }
+  if (typeof v === 'string') return truncate(v, max);
+  return v;
+}
+
+function clampPayload(data) {
+  const out = {};
+  for (const key of Object.keys(data)) {
+    if (typeof key !== 'string' || key.length > 80) continue;
+    const v = data[key];
+    if (key === 'message') {
+      out[key] = typeof v === 'string' ? truncate(v, MAX_MESSAGE_LEN) : v;
+    } else if (key.endsWith('_other')) {
+      out[key] = clampValue(v, MAX_OTHER_LEN);
+    } else if (typeof v === 'boolean' || typeof v === 'number') {
+      out[key] = v;
+    } else {
+      out[key] = clampValue(v, MAX_FIELD_LEN);
+    }
+  }
+  return out;
 }
 
 // Render a field's value for Slack. If the field is "other" and the user
@@ -112,8 +179,10 @@ function displayValue(data, key) {
   }
   if (v === 'other' && hasOther) return esc('Other — ' + other);
   if (URL_FIELDS.has(key) && isFilled(v)) {
-    const safe = esc(String(v));
-    return `<${safe}|${safe}>`;
+    const url = safeHttpUrl(String(v));
+    if (!url) return esc(String(v));
+    const safeUrl = escForLink(url);
+    return `<${safeUrl}|${safeUrl}>`;
   }
   return esc(v);
 }
@@ -139,9 +208,13 @@ function buildBlocks(data, submissionId) {
   });
 
   // ── Contact ────────────────────────────────────────────────────────────
+  // Email is rendered as a Slack mailto link. encodeURIComponent (not
+  // encodeURI) ensures any reserved URL chars in the address don't break out
+  // into the surrounding `?subject=…&body=…` query string further down.
+  const safeMailto = encodeURIComponent(String(data.email));
   const contactFields = [
     `*Name:*\n${esc(name)}`,
-    `*Email:*\n<mailto:${esc(data.email)}|${esc(data.email)}>`,
+    `*Email:*\n<mailto:${safeMailto}|${escForLink(String(data.email))}>`,
   ];
   if (isFilled(data.phone)) contactFields.push(`*Phone:*\n${esc(data.phone)}`);
 
@@ -217,19 +290,35 @@ function buildBlocks(data, submissionId) {
   }
 
   // ── Attachment ─────────────────────────────────────────────────────────
+  // Only render the attachment link if it parses as an http(s) URL pointing
+  // at our blob host. Any other URL is shown as plain text so the channel
+  // can't be tricked into linking to attacker-controlled content.
   if (isFilled(data.attachment_url)) {
-    const url = esc(String(data.attachment_url));
-    blocks.push({
-      type: 'section',
-      text: { type: 'mrkdwn', text: `*📎 Attachment*\n<${url}|Download file>` },
-    });
+    const raw = String(data.attachment_url);
+    const url = safeHttpUrl(raw);
+    let host = '';
+    try { host = url ? new URL(url).hostname : ''; } catch (e) {}
+    if (url && (host === ALLOWED_BLOB_HOST || host.endsWith('.' + ALLOWED_BLOB_HOST))) {
+      const safeUrl = escForLink(url);
+      blocks.push({
+        type: 'section',
+        text: { type: 'mrkdwn', text: `*📎 Attachment*\n<${safeUrl}|Download file>` },
+      });
+    } else {
+      blocks.push({
+        type: 'section',
+        text: { type: 'mrkdwn', text: `*📎 Attachment (untrusted host, not linked):*\n${esc(raw)}` },
+      });
+    }
   }
 
   // ── Action button: Reply via email ─────────────────────────────────────
   if (isFilled(data.email)) {
     const subject = 'Re: Your ' + meta.label + ' inquiry';
     const body = 'Hi ' + (data.first_name || 'there') + ',\n\nThanks for reaching out to Oasis of Change.\n\n';
-    const mailto = 'mailto:' + encodeURI(String(data.email))
+    // encodeURIComponent throughout — encodeURI would leave ?, &, # alone in
+    // the address part and let it bleed into the query string.
+    const mailto = 'mailto:' + encodeURIComponent(String(data.email))
       + '?subject=' + encodeURIComponent(subject)
       + '&body=' + encodeURIComponent(body);
     blocks.push({
@@ -266,12 +355,46 @@ function buildBlocks(data, submissionId) {
   return { blocks, color: meta.color, label: meta.label, name };
 }
 
+function getAllowedOrigins() {
+  const env = process.env.ALLOWED_ORIGINS;
+  if (env && env.trim()) {
+    return env.split(',').map(s => s.trim()).filter(Boolean);
+  }
+  return DEFAULT_ALLOWED_ORIGINS;
+}
+
+// Cross-origin browser POSTs to this endpoint should only succeed from our
+// own front-end. If an Origin header is present, require it to match one of
+// the configured allowed origins (or *.vercel.app for preview deployments).
+// If Origin is absent the request is allowed through — non-browser clients
+// (curl, automated tests, etc.) don't always send one, and we can't reliably
+// distinguish them from a same-origin browser request.
+function originAllowed(origin) {
+  if (!origin) return true;
+  const allowed = getAllowedOrigins();
+  if (allowed.includes(origin)) return true;
+  try {
+    const host = new URL(origin).hostname;
+    if (host === 'localhost' || host === '127.0.0.1') return true;
+    if (host.endsWith('.vercel.app')) return true;
+  } catch (e) {
+    return false;
+  }
+  return false;
+}
+
 module.exports = async (req, res) => {
   res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Cache-Control', 'no-store');
+  res.setHeader('X-Content-Type-Options', 'nosniff');
 
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
     return res.status(405).json({ ok: false, error: 'Method not allowed' });
+  }
+
+  if (!originAllowed(req.headers.origin)) {
+    return res.status(403).json({ ok: false, error: 'Origin not allowed' });
   }
 
   const webhook = process.env.SLACK_WEBHOOK_URL;
@@ -282,9 +405,16 @@ module.exports = async (req, res) => {
 
   let data = req.body;
   if (typeof data === 'string') {
+    if (data.length > MAX_REQUEST_BYTES) {
+      return res.status(413).json({ ok: false, error: 'Payload too large' });
+    }
     try { data = JSON.parse(data); } catch (e) { data = {}; }
   }
-  data = data || {};
+  if (!data || typeof data !== 'object' || Array.isArray(data)) {
+    return res.status(400).json({ ok: false, error: 'Invalid payload' });
+  }
+
+  data = clampPayload(data);
 
   // ── Spam protection ──────────────────────────────────────────────────
   if (isFilled(data.website_url)) {
@@ -307,7 +437,8 @@ module.exports = async (req, res) => {
   if (missing.length) {
     return res.status(400).json({ ok: false, error: 'Missing required fields', fields: missing });
   }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(data.email))) {
+  if (!/^[^\s@<>"'`,;:|\\]+@[^\s@<>"'`,;:|\\]+\.[^\s@<>"'`,;:|\\]+$/.test(String(data.email))
+      || String(data.email).length > 254) {
     return res.status(400).json({ ok: false, error: 'Invalid email address' });
   }
   if (String(data.message).length > MAX_MESSAGE_LEN) {
