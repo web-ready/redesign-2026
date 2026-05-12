@@ -64,7 +64,6 @@
     updateCompare(Number(range.value));
   });
 
-  // Keep keyboard focus behavior predictable for screen reader and keyboard users.
   handle.addEventListener('keydown', function (event) {
     if (event.key === 'ArrowLeft' || event.key === 'ArrowDown') {
       event.preventDefault();

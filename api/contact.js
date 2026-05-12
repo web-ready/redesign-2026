@@ -1,18 +1,8 @@
-// api/contact.js
-// Vercel serverless function — relays contact form submissions to Slack.
-//
-// Required env var (set in Vercel Dashboard → Project → Settings → Environment
-// Variables): SLACK_WEBHOOK_URL
-// Optional env var: ALLOWED_ORIGINS — comma-separated list of allowed
-// origins. Defaults to the production hostnames. Cross-origin browser POSTs
-// from anywhere else are rejected, which prevents trivial CSRF / spam-relay.
-// Never commit the webhook URL to the repo; it lives only on Vercel's servers.
-
 const MIN_FORM_TIME_MS = 3000;
 const MAX_MESSAGE_LEN = 5000;
-const MAX_FIELD_LEN = 1000;          // applied to every non-message field
-const MAX_OTHER_LEN = 500;           // "_other" free-text inputs
-const MAX_REQUEST_BYTES = 64 * 1024; // hard cap on the JSON body itself
+const MAX_FIELD_LEN = 1000;
+const MAX_OTHER_LEN = 500;
+const MAX_REQUEST_BYTES = 64 * 1024;
 const ALLOWED_BLOB_HOST = 'blob.vercel-storage.com';
 
 const DEFAULT_ALLOWED_ORIGINS = [
@@ -20,7 +10,6 @@ const DEFAULT_ALLOWED_ORIGINS = [
   'https://www.oasisofchange.com',
 ];
 
-// Per-inquiry presentation: emoji icon, accent-bar color, short display label.
 const INQUIRY_META = {
   'general':       { emoji: '💬', color: '#6b7280', label: 'General Inquiry' },
   'volunteer':     { emoji: '🙌', color: '#16a34a', label: 'Volunteer' },
@@ -89,7 +78,6 @@ const SECTION_FIELDS = {
   'tree-planting': ['tree_interest'],
 };
 
-// Fields whose values should be rendered as hyperlinks in Slack.
 const URL_FIELDS = new Set(['website', 'linkedin', 'attachment_url', 'webready_url']);
 
 // Slack mrkdwn requires escaping &, <, > (per Slack docs). We additionally
@@ -109,8 +97,6 @@ function escForLink(s) {
   return esc(s).replace(/\|/g, '%7C');
 }
 
-// Validate a URL is http/https and parseable. Returns the normalised string,
-// or null if it should not be rendered as a hyperlink.
 function safeHttpUrl(value) {
   if (typeof value !== 'string') return null;
   const trimmed = value.trim();
@@ -201,16 +187,14 @@ function buildBlocks(data, submissionId) {
   const name = [data.first_name, data.last_name].filter(Boolean).join(' ') || 'Unknown';
   const blocks = [];
 
-  // ── Header ─────────────────────────────────────────────────────────────
   blocks.push({
     type: 'header',
     text: { type: 'plain_text', text: `${meta.emoji} ${meta.label}`, emoji: true },
   });
 
-  // ── Contact ────────────────────────────────────────────────────────────
-  // Email is rendered as a Slack mailto link. encodeURIComponent (not
-  // encodeURI) ensures any reserved URL chars in the address don't break out
-  // into the surrounding `?subject=…&body=…` query string further down.
+  // encodeURIComponent (not encodeURI) ensures any reserved URL chars in the
+  // address don't break out into the surrounding `?subject=…&body=…` query
+  // string further down.
   const safeMailto = encodeURIComponent(String(data.email));
   const contactFields = [
     `*Name:*\n${esc(name)}`,
@@ -223,7 +207,6 @@ function buildBlocks(data, submissionId) {
     fields: contactFields.map(t => ({ type: 'mrkdwn', text: t })),
   });
 
-  // ── Organization ───────────────────────────────────────────────────────
   const orgKeys = ['organization', 'organization_type', 'website', 'linkedin', 'role', 'employees'];
   const orgFilled = orgKeys.filter(k => isFilled(data[k]));
   if (orgFilled.length) {
@@ -241,7 +224,6 @@ function buildBlocks(data, submissionId) {
     });
   }
 
-  // ── Inquiry-specific details ───────────────────────────────────────────
   const sectionKeys = SECTION_FIELDS[inquiry] || [];
   const typeFilled = sectionKeys.filter(k => isFilled(data[k]));
   if (typeFilled.length) {
@@ -280,7 +262,6 @@ function buildBlocks(data, submissionId) {
     }
   }
 
-  // ── Message ────────────────────────────────────────────────────────────
   if (isFilled(data.message)) {
     blocks.push({ type: 'divider' });
     blocks.push({
@@ -289,7 +270,6 @@ function buildBlocks(data, submissionId) {
     });
   }
 
-  // ── Attachment ─────────────────────────────────────────────────────────
   // Only render the attachment link if it parses as an http(s) URL pointing
   // at our blob host. Any other URL is shown as plain text so the channel
   // can't be tricked into linking to attacker-controlled content.
@@ -312,7 +292,6 @@ function buildBlocks(data, submissionId) {
     }
   }
 
-  // ── Action button: Reply via email ─────────────────────────────────────
   if (isFilled(data.email)) {
     const subject = 'Re: Your ' + meta.label + ' inquiry';
     const body = 'Hi ' + (data.first_name || 'there') + ',\n\nThanks for reaching out to Oasis of Change.\n\n';
@@ -332,7 +311,6 @@ function buildBlocks(data, submissionId) {
     });
   }
 
-  // ── Footer ─────────────────────────────────────────────────────────────
   const footer = [];
   footer.push(`*ID:* \`${submissionId}\``);
   if (isFilled(data.referral_source)) {
@@ -416,7 +394,6 @@ module.exports = async (req, res) => {
 
   data = clampPayload(data);
 
-  // ── Spam protection ──────────────────────────────────────────────────
   if (isFilled(data.website_url)) {
     return res.status(200).json({ ok: true });
   }
@@ -425,7 +402,6 @@ module.exports = async (req, res) => {
     return res.status(200).json({ ok: true });
   }
 
-  // ── Server-side validation ───────────────────────────────────────────
   const missing = [];
   if (!isFilled(data.inquiry_type)) missing.push('inquiry_type');
   if (!isFilled(data.first_name))   missing.push('first_name');
@@ -448,7 +424,6 @@ module.exports = async (req, res) => {
     return res.status(400).json({ ok: false, error: 'Invalid inquiry type' });
   }
 
-  // ── Build and send to Slack ──────────────────────────────────────────
   const submissionId = genSubmissionId();
   const { blocks, color, label, name } = buildBlocks(data, submissionId);
 

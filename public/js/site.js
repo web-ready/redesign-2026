@@ -602,16 +602,14 @@
       });
     }
 
-    // ── "Other → please specify" auto-reveal ─────────────────────────────
-    // Any <select> that has an <option value="other">, or any checkbox group
-    // that contains <input value="other">, gets an accompanying "Please
-    // specify" text input injected right after it. Revealed on selection,
-    // hidden (and cleared) otherwise. This keeps the HTML DRY — we don't
-    // hand-author an "other" field next to every dropdown.
+    // Any <select> with an <option value="other">, or any checkbox group
+    // containing <input value="other">, gets an accompanying "Please specify"
+    // text input injected right after it. Revealed on selection, hidden (and
+    // cleared) otherwise. Keeps the HTML DRY — we don't hand-author an "other"
+    // field next to every dropdown.
     initOtherFields();
 
     function initOtherFields() {
-      // Selects with an "other" option
       form.querySelectorAll('select').forEach(function (sel) {
         if (!sel.name) return;
         var hasOther = false;
@@ -621,7 +619,6 @@
         if (!hasOther) return;
 
         var otherDiv = makeOtherField(sel.name);
-        // Insert after the .cf-field wrapper holding the select.
         var wrap = sel.closest('.cf-field') || sel.parentElement;
         wrap.insertAdjacentElement('afterend', otherDiv);
 
@@ -633,7 +630,6 @@
         if (sel.value === 'other') revealOther(otherDiv, true);
       });
 
-      // Checkbox groups with an "other" value
       var seenGroups = {};
       form.querySelectorAll('input[type="checkbox"][value="other"]').forEach(function (box) {
         var name = box.name;
@@ -696,7 +692,6 @@
       }, 220);
     }
 
-    // ── Enter-to-next navigation ─────────────────────────────────────────
     // Pressing Enter on a text/email/tel/url/date input moves focus to the
     // next visible form field (skipping hidden conditional sections, hidden
     // "other" fields, and the honeypot). Cmd/Ctrl+Enter from anywhere submits
@@ -704,7 +699,6 @@
     form.addEventListener('keydown', function (e) {
       if (e.key !== 'Enter') return;
 
-      // Submit shortcut from anywhere
       if (e.metaKey || e.ctrlKey) {
         e.preventDefault();
         if (typeof form.requestSubmit === 'function') form.requestSubmit();
@@ -741,7 +735,6 @@
       }
     });
 
-    // Clear field errors on interaction
     function clearFieldError(field) {
       var parent = field.closest('.cf-field');
       if (!parent) parent = field.parentElement;
@@ -793,7 +786,6 @@
         }
       });
 
-      // Clear previous errors
       form.querySelectorAll('.cf-error-text').forEach(function (el) { el.remove(); });
       form.querySelectorAll('.cf-input-error').forEach(function (el) { el.classList.remove('cf-input-error'); });
 
@@ -801,7 +793,6 @@
       var valid = true;
 
       required.forEach(function (field) {
-        // Skip fields inside hidden conditional sections
         var section = field.closest('.cf-conditional');
         if (section && !section.classList.contains('is-visible')) return;
 
@@ -821,7 +812,6 @@
         // Focus the first invalid field so keyboard/screen-reader users land on it
         var firstInvalid = form.querySelector('.cf-input-error, [required][aria-invalid="true"]');
         if (!firstInvalid) {
-          // Fallback: first required field with empty value
           firstInvalid = form.querySelector('[required]');
         }
         if (firstInvalid) {
@@ -923,8 +913,7 @@
       if (submitField) submitField.appendChild(el);
     }
 
-    // ── Draft auto-save ──────────────────────────────────────────────────────
-    // Saves form data to localStorage every 30 s and on beforeunload.
+    // Saves form data to localStorage on input/change and on beforeunload.
     // Restored automatically on next visit; banner appears with a discard option.
     (function initDraftSave() {
       var DRAFT_KEY = 'cf_draft';
@@ -987,7 +976,6 @@
           var d = parsed.data;
           if (!hasUserContent(d)) { localStorage.removeItem(DRAFT_KEY); return; }
 
-          // Restore each field
           Object.keys(d).forEach(function (key) {
             // If the URL pre-selected an inquiry type, don't let an older
             // saved draft overwrite it. Shared ?type=… links always win.
@@ -996,11 +984,9 @@
             var els = form.querySelectorAll('[name="' + key + '"]');
             if (!els.length) return;
             if (els[0].type === 'checkbox') {
-              // boolean (single checkbox like consent / newsletter)
               if (typeof val === 'boolean') {
                 els[0].checked = val;
               } else {
-                // checkbox group — val is an array
                 var vals = Array.isArray(val) ? val : [val];
                 els.forEach(function (cb) { cb.checked = vals.indexOf(cb.value) !== -1; });
               }
@@ -1021,13 +1007,10 @@
         if (banner) banner.style.display = 'none';
       }
 
-      // Expose so submit handler can clear on success
       window.__cfClearDraft = clearDraft;
 
-      // Restore draft on page load (banner hidden by default via CSS/HTML)
       loadDraft();
 
-      // Auto-save on input/change and on tab close
       var saveTimer;
       form.addEventListener('input', function () {
         clearTimeout(saveTimer);
@@ -1080,7 +1063,6 @@
       }
     }());
 
-    // ── Character counter ────────────────────────────────────────────────────
     (function initCharCounter() {
       var textarea = document.getElementById('cf-message');
       var counter  = document.getElementById('cf-char-count');
@@ -1100,7 +1082,6 @@
       update();
     }());
 
-    // ── Inline email validation (on blur) ────────────────────────────────────
     (function initInlineValidation() {
       var emailInput = document.getElementById('cf-email');
       if (!emailInput) return;
@@ -1132,7 +1113,6 @@
       });
     }());
 
-    // ── File attachment ──────────────────────────────────────────────────────
     var _attachedFile = null;
 
     function announceToScreenReader(msg) {
@@ -1202,21 +1182,17 @@
       });
     }
 
-    // ── Custom select dropdowns (cs-*) ───────────────────────────────────────
     // Replaces every select.cf-input with an accessible combobox on desktop.
     // On mobile (≤639px) the native widget is shown instead (CSS handles swap).
     (function initCustomSelects() {
-      // Skip on mobile — CSS already hides .cs-wrap there
       if (window.matchMedia && window.matchMedia('(max-width: 639px)').matches) return;
 
       form.querySelectorAll('select.cf-input').forEach(function (sel) {
-        // Build wrapper
         var wrap = document.createElement('div');
         wrap.className = 'cs-wrap';
 
         var uid = (sel.id || sel.name || Math.random().toString(36).slice(2));
 
-        // Trigger button
         var trigger = document.createElement('button');
         trigger.type = 'button';
         trigger.className = 'cs-trigger';
@@ -1242,7 +1218,6 @@
         trigger.appendChild(labelText);
         trigger.appendChild(chevron);
 
-        // Listbox
         var listbox = document.createElement('ul');
         listbox.id = listboxId;
         listbox.className = 'cs-listbox';
@@ -1251,7 +1226,6 @@
         else if (sel.getAttribute('aria-label')) listbox.setAttribute('aria-label', sel.getAttribute('aria-label'));
         listbox.tabIndex = -1;
 
-        // Populate options from the native select
         var optionEls = [];
         var placeholder = '';
         for (var i = 0; i < sel.options.length; i++) {
@@ -1275,7 +1249,6 @@
         wrap.appendChild(trigger);
         wrap.appendChild(listbox);
 
-        // Insert the custom widget right before the native select
         sel.parentNode.insertBefore(wrap, sel);
 
         var highlighted = -1;
@@ -1366,7 +1339,6 @@
           li.addEventListener('click', function () { selectOption(idx); });
         });
 
-        // Close on outside click
         document.addEventListener('click', function (e) {
           if (!wrap.contains(e.target)) close();
         });
