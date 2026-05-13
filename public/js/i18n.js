@@ -28,14 +28,11 @@
     }
   } catch (e) {}
 
-  // Module-level references populated by build functions, used by updateSwitcherUI().
   var desktopBtnLabel = null;
   var desktopDropdownEl = null;
   var isDropdownOpen = false;
   var mobileBarDropdownEl = null;
   var isMobileBarDropdownOpen = false;
-
-  // ── Storage ────────────────────────────────────────────────────────────────
 
   function loadLang() {
     try { var v = localStorage.getItem(STORAGE_KEY); return v && findLang(v) ? v : 'en'; }
@@ -59,8 +56,6 @@
     } catch (e) { return null; }
   }
 
-  // ── Google Translate cookie ────────────────────────────────────────────────
-
   function setGTCookie(langCode) {
     var val = langCode === 'en' ? '' : '/en/' + langCode;
     var expires = langCode === 'en'
@@ -74,8 +69,6 @@
       }
     } catch (e) {}
   }
-
-  // ── Google Translate loader ────────────────────────────────────────────────
 
   function loadGoogleTranslate() {
     var el = document.createElement('div');
@@ -113,8 +106,6 @@
     }, 120);
   }
 
-  // ── Google Translate UI suppressor ────────────────────────────────────────
-
   function injectGTHideCSS() {
     var s = document.createElement('style');
     s.id = 'ooc-gt-hide';
@@ -129,8 +120,6 @@
       'body { top: 0 !important; }';
     document.head.appendChild(s);
   }
-
-  // ── SVG helpers ───────────────────────────────────────────────────────────
 
   function globeSvg(w, h) {
     w = w || 16; h = h || 16;
@@ -151,13 +140,10 @@
       '</svg>';
   }
 
-  // ── Desktop: globe + language code + chevron dropdown ─────────────────────
-  //
   // Uses role="menu" + role="menuitemradio" so that:
   //   1. <button> elements are valid menuitemradio children (no role conflict)
   //   2. Options are direct children of the menu (no intermediate wrapper)
   //   3. aria-checked communicates the selected language to screen readers
-
   function buildDesktopSwitcher() {
     var wrap = document.createElement('div');
     wrap.setAttribute('data-lang-switcher', '');
@@ -200,13 +186,10 @@
     return wrap;
   }
 
-  // ── Mobile nav-bar: globe button + compact dropdown ────────────────────────
-  //
   // Wrapped together with the hamburger in a btnGroup div so justify-between
   // treats both as one unit (keeping them right-aligned together).
   // The wrap is display:none at min-width:1024px via CSS so
   // measureNavOverflow() in site.js sees offsetWidth:0.
-
   function buildMobileBarSwitcher() {
     var wrap = document.createElement('div');
     wrap.className = 'lang-mobile-globe-wrap notranslate';
@@ -246,18 +229,15 @@
     return wrap;
   }
 
-  // ── Injection ──────────────────────────────────────────────────────────────
-
   function inject() {
     var navEl = document.querySelector('nav[aria-label="Main"]');
     var flexRow = navEl ? navEl.firstElementChild : null;
 
     if (flexRow) {
-      // 1. Desktop dropdown — placed inside the support container (the
-      //    hidden lg:flex div with justify-end) before the CTA link. This
-      //    groups the lang switcher and CTA together at the right edge of
-      //    the nav bar. The support container is already hidden on mobile
-      //    via Tailwind's `hidden lg:flex`, so no extra display:none needed.
+      // Desktop dropdown — placed inside the support container (the hidden
+      // lg:flex div with justify-end) before the CTA link. The support
+      // container is already hidden on mobile via Tailwind's `hidden lg:flex`,
+      // so no extra display:none needed.
       var supportContainer = null;
       var supportLink = null;
       var candidates = flexRow.querySelectorAll('.justify-end');
@@ -283,8 +263,8 @@
         supportContainer.insertBefore(spacer, supportLink);
       }
 
-      // 2. Mobile nav-bar globe button — wrap globe+hamburger in a btnGroup so
-      //    justify-between treats them as one unit (keeps them grouped on the right).
+      // Mobile nav-bar globe button — wrap globe+hamburger in a btnGroup so
+      // justify-between treats them as one unit (keeps them grouped on the right).
       var hamburger = flexRow.querySelector('[data-mobile-toggle]');
       if (hamburger) {
         var btnGroup = document.createElement('div');
@@ -305,8 +285,6 @@
     // Notify site.js resize listeners so overflow check runs with new DOM state.
     window.dispatchEvent(new Event('resize'));
   }
-
-  // ── Desktop dropdown handlers ─────────────────────────────────────────────
 
   function closeDropdown() {
     if (!desktopDropdownEl) return;
@@ -345,8 +323,6 @@
       if (e.key === 'Escape' && isDropdownOpen) closeDropdown();
     });
   }
-
-  // ── Mobile bar globe button handlers ──────────────────────────────────────
 
   function openMobileBarDropdown() {
     if (!mobileBarDropdownEl) return;
@@ -396,8 +372,6 @@
     });
   }
 
-  // ── Click-outside: closes both dropdowns ──────────────────────────────────
-
   function initGlobalClickOutside() {
     document.addEventListener('click', function (e) {
       if (isDropdownOpen) {
@@ -411,16 +385,12 @@
     });
   }
 
-  // ── UI sync ───────────────────────────────────────────────────────────────
-
   function updateSwitcherUI() {
     var info = findLang(activeLang);
     if (!info) return;
 
-    // Desktop dropdown label
     if (desktopBtnLabel) desktopBtnLabel.textContent = info.short;
 
-    // Desktop dropdown options (role="menuitemradio" uses aria-checked)
     var opts = document.querySelectorAll('[data-lang-option]');
     for (var i = 0; i < opts.length; i++) {
       var code = opts[i].getAttribute('data-lang-option');
@@ -431,7 +401,6 @@
       if (checkSpan) checkSpan.innerHTML = active ? checkSvg() : '';
     }
 
-    // Mobile bar dropdown pills
     var barPills = document.querySelectorAll('[data-lang-mobile-dd-pill]');
     for (var i = 0; i < barPills.length; i++) {
       var code = barPills[i].getAttribute('data-lang-mobile-dd-pill');
@@ -440,8 +409,6 @@
       barPills[i].setAttribute('aria-pressed', active ? 'true' : 'false');
     }
   }
-
-  // ── Switch ────────────────────────────────────────────────────────────────
 
   function switchTo(code) {
     if (code === activeLang) return;
@@ -460,11 +427,9 @@
     location.reload();
   }
 
-  // ── Translation disclaimer ────────────────────────────────────────────────
   // One-time pop-up shown after the user switches to a non-English language.
   // Copy is provided per language and marked translate="no" so Google
   // Translate doesn't re-translate it.
-
   var DISCLAIMER_COPY = {
     es: {
       title: 'Sobre la traducción',
@@ -556,8 +521,6 @@
     // Focus the dismiss button so keyboard users can confirm/Escape immediately.
     setTimeout(function () { btn.focus(); }, 50);
   }
-
-  // ── Bootstrap ─────────────────────────────────────────────────────────────
 
   document.addEventListener('DOMContentLoaded', function () {
     var urlLang = getUrlLang();

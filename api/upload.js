@@ -1,14 +1,3 @@
-// api/upload.js
-// Vercel serverless function — accepts a base64-encoded file from the contact
-// form and stores it in Vercel Blob, returning a public download URL.
-//
-// Required env var (Vercel Dashboard → Project → Settings → Environment
-// Variables): BLOB_READ_WRITE_TOKEN
-// Optional env var: ALLOWED_ORIGINS — comma-separated list of allowed
-// browser origins. Defaults to the production hostnames.
-// If the token is not set, the endpoint returns an error and the contact form
-// omits the file URL from the Slack message rather than failing entirely.
-
 const ALLOWED_TYPES = new Set([
   'application/pdf',
   'application/msword',
@@ -30,8 +19,8 @@ const EXTENSIONS_BY_TYPE = {
   'image/webp': ['webp'],
 };
 
-const MAX_BASE64_CHARS = 5.5 * 1024 * 1024; // ~4 MB decoded
-const MAX_DECODED_BYTES = 4 * 1024 * 1024;  // 4 MB hard cap on file size
+const MAX_BASE64_CHARS = 5.5 * 1024 * 1024; // ~4 MB decoded after base64 expansion
+const MAX_DECODED_BYTES = 4 * 1024 * 1024;
 
 const DEFAULT_ALLOWED_ORIGINS = [
   'https://oasisofchange.com',
