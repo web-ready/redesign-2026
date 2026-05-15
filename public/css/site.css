@@ -687,6 +687,20 @@
   flex-direction: column;
   gap: 0.375rem;
 }
+.cf-field:has(select.cf-input) {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+}
+.cf-field:has(select.cf-input) .cf-label {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  min-width: max-content;
+}
+.cf-field:has(select.cf-input) select.cf-input {
+  flex: 1;
+  min-width: 0;
+}
 .cf-label {
   font-size: 0.875rem;
   font-weight: 500;
