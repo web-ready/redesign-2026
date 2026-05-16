@@ -334,6 +334,7 @@
         margin-right: 0.35rem;
       }
       .tedx-hero-share-btn {
+        position: relative;
         display: inline-flex; align-items: center; justify-content: center;
         width: 2.5rem; height: 2.5rem; border-radius: 9999px;
         background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18);
@@ -347,6 +348,28 @@
       .tedx-hero-share-btn:focus-visible { outline: 2px solid rgba(255,255,255,0.6); outline-offset: 2px; }
       .tedx-hero-share-btn.is-copied { background: #ffffff; color: #0b2a1f; border-color: #ffffff; }
       .tedx-hero-share-btn svg { width: 1rem; height: 1rem; }
+      .tedx-hero-share-copy-feedback {
+        position: absolute; left: 50%; bottom: calc(100% + 0.5rem);
+        transform: translateX(-50%) translateY(0.25rem);
+        background: #ffffff; color: #0b2a1f;
+        font-size: 0.75rem; font-weight: 600; letter-spacing: 0.01em;
+        padding: 0.35rem 0.6rem; border-radius: 0.4rem;
+        white-space: nowrap; pointer-events: none;
+        opacity: 0; box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+        transition: opacity 200ms ease, transform 200ms ease;
+      }
+      .tedx-hero-share-copy-feedback::after {
+        content: ''; position: absolute; top: 100%; left: 50%;
+        transform: translateX(-50%);
+        border: 5px solid transparent; border-top-color: #ffffff;
+      }
+      .tedx-hero-share-btn.is-copied .tedx-hero-share-copy-feedback {
+        opacity: 1; transform: translateX(-50%) translateY(0);
+      }
+      @media (max-width: 479px) {
+        .tedx-hero-share-label { display: none; }
+        .tedx-hero-share { gap: 0.4rem; }
+      }
 
       .tedx-share-grid {
         display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.625rem;
@@ -762,7 +785,9 @@
                   </a>
                   <button type="button" class="tedx-hero-share-btn" data-share="copy" data-share-context="hero" aria-label="Copy link to this page">
                     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M10 13a4 4 0 0 0 5.66 0l3-3a4 4 0 0 0-5.66-5.66l-1 1M14 11a4 4 0 0 0-5.66 0l-3 3a4 4 0 0 0 5.66 5.66l1-1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span class="tedx-hero-share-copy-feedback" aria-hidden="true">Link copied</span>
                   </button>
+                  <span class="sr-only" role="status" aria-live="polite" id="tedx-share-status"></span>
                 </div>
               </div>
 
@@ -1419,13 +1444,16 @@
         function copyLink(btn, context) {
           var url = window.location.href.split('#')[0];
           var label = btn.querySelector('.share-btn-label');
+          var status = document.getElementById('tedx-share-status');
           var done = function () {
             var orig = label ? label.textContent : '';
             if (label) label.textContent = 'Link copied';
             btn.classList.add('is-copied');
+            if (status) status.textContent = 'Link copied to clipboard';
             setTimeout(function () {
               if (label) label.textContent = orig;
               btn.classList.remove('is-copied');
+              if (status) status.textContent = '';
             }, 2200);
             track('copy_link', {
               share_context: context,
