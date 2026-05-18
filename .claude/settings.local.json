@@ -16,7 +16,21 @@
       "mcp__playwright__browser_click",
       "mcp__playwright__browser_tabs",
       "mcp__playwright__browser_run_code",
-      "mcp__playwright__browser_press_key"
+      "mcp__playwright__browser_press_key",
+      "PowerShell(npm *)",
+      "PowerShell(Get-Command *)",
+      "PowerShell(Test-Path *)",
+      "PowerShell(winget install *)",
+      "PowerShell(Get-Content *)",
+      "WebFetch(domain:github.com)",
+      "PowerShell(cmd /c dir \"C:\\\\Program Files\\\\nodejs\" /b)",
+      "PowerShell(& 'C:\\\\Program Files\\\\nodejs\\\\npx.cmd' -y @owloops/claude-powerline@latest --help 2>&1 | Select-Object -First 60)",
+      "PowerShell($env:Path = 'C:\\\\Program Files\\\\nodejs;' + $env:Path; & 'C:\\\\Program Files\\\\nodejs\\\\npx.cmd' -y @owloops/claude-powerline@latest --help 2>&1 | Select-Object -First 80)",
+      "PowerShell($src = Get-Content -Raw 'C:\\\\Users\\\\Gabriel-Dalton\\\\AppData\\\\Local\\\\npm-cache\\\\_npx\\\\a98f461866e2a8e1\\\\node_modules\\\\@owloops\\\\claude-powerline\\\\dist\\\\index.mjs'; $re = [regex]'rate_limits|native rate|resets_at|used_pct|used_percent|fiveHour|five_hour|weeklyUsage|sessionUsage|usage_pct|reset_at'; $m = $re.Matches\\($src\\); foreach \\($x in $m | Select-Object -First 40\\) { $i = $x.Index; $start = [Math]::Max\\(0, $i - 50\\); $end = [Math]::Min\\($src.Length, $i + 100\\); $snip = $src.Substring\\($start, $end - $start\\) -replace \"`n\", '\\\\n'; \"[{0}] {1}\" -f $i, $snip })",
+      "Bash(cp ~/.claude/statusline-tokens.ps1 ~/Desktop/claude-statusline-tokens/statusline-tokens.ps1)",
+      "Read(//c/Users/Gabriel-Dalton/Desktop/claude-statusline-tokens/**)",
+      "PowerShell(Add-Type -AssemblyName System.IO.Compression.FileSystem; $zip = \"$env:USERPROFILE\\\\Desktop\\\\claude-statusline-tokens.zip\"; $a = [System.IO.Compression.ZipFile]::OpenRead\\($zip\\); $a.Entries | Select-Object FullName, Length | Format-Table -AutoSize; $a.Dispose\\(\\))",
+      "PowerShell(Join-Path *)"
     ]
   }
 }

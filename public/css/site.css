@@ -1,3 +1,65 @@
+/* -------------------------------------------------------------
+   Responsiveness safety baseline
+   Prevents text/element overflow at any viewport when content
+   (e.g. translated copy) is longer than the original English.
+   ------------------------------------------------------------- */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+html, body {
+  overflow-x: clip;
+}
+:where(h1, h2, h3, h4, h5, h6) {
+  overflow-wrap: anywhere;
+  word-break: normal;
+  hyphens: auto;
+}
+:where(p, li, blockquote, dt, dd, figcaption, label, a, span) {
+  overflow-wrap: anywhere;
+}
+:where(img, svg, video, canvas, picture, iframe) {
+  max-width: 100%;
+  height: auto;
+}
+/* Tables in long-form pages (annual report, etc.) must not blow out the viewport */
+:where(table) {
+  max-width: 100%;
+}
+:where(pre, code) {
+  max-width: 100%;
+  overflow-x: auto;
+}
+/* Code/identifier strings should be allowed to break instead of forcing horizontal scroll */
+:where(code) {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+/* Re-enable in-word breaking for headings only when content actually overflows */
+:where(.font-heading) {
+  overflow-wrap: anywhere;
+}
+
+/* Flex/grid pill rows: prevent fixed-width siblings from pushing siblings off-card.
+   Applied via opt-in class `.flow-row` for known pill+text layouts. */
+.flow-row {
+  flex-wrap: wrap;
+}
+.flow-row > * {
+  min-width: 0;
+}
+
+/* Tailwind's `flex justify-between` with a nowrap pill chip is a frequent overflow
+   pattern when the left text gets translated. The opt-in `.responsive-chip-row`
+   class lets the chip drop to a new line on small viewports instead of pushing
+   the sibling text out of the parent. */
+.responsive-chip-row {
+  flex-wrap: wrap;
+  row-gap: 0.5rem;
+}
+.responsive-chip-row > :not(.shrink-0) {
+  min-width: 0;
+}
+
 .site-global-footer .site-footer-link {
   display: block;
   overflow-wrap: break-word !important;
